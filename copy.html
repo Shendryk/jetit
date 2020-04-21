@@ -1,0 +1,150 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GSA Reservation system</title>
+	<link href="style_db.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+<!--
+	@import url("style.css");
+-->
+	</style>
+
+</head>
+<body>
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+  <TR>
+    <TD  class="top_1">
+ ID:1/ADMIN/CMPT/MAIN/adminzza/ </TD>
+
+    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+  </TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+	function start_time() {
+	  setInterval("postRequest()", 1000);
+	}
+
+        function postRequest() {
+
+	var xmlHttp;
+        var strURL =  "ajax.tab.php";
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+         var xmlHttp = new XMLHttpRequest();
+       	} else if (window.ActiveXObject) { // IE
+         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      	}
+
+    	xmlHttp.open('GET', strURL, true);
+    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    	xmlHttp.onreadystatechange = function() {
+
+        	if (xmlHttp.readyState == 4) {
+			xmlDoc = xmlHttp.responseXML;
+                	print_din_tab(xmlDoc);
+        	}
+    	}
+    	xmlHttp.send(strURL);
+	}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+  <tr>
+    <td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_off   onclick="location.href='lt_users.php'">Users</td>
+<td class=tab_1_on >Airlines</td>
+<td class=tab_1_off   onclick="location.href='pg_pay_new.php'">Payments</td>
+<td class=tab_1_off   onclick="location.href='pg_deposits.php'">Finances</td>
+<td class=tab_1_off   onclick="location.href='pg_rate.php'">ROE</td>
+<td class=tab_1_off   onclick="location.href='pg_user_marg.php'">Markups</td>
+<td class=tab_1_off   onclick="location.href='pg_pnr.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='lt_user_types.php'">Lists</td>
+<td class=tab_1_off   onclick="location.href='pg_hist.php'">Investigation</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+  <tr>
+    <td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='pg_airlines.php'">List</td>
+<td class=tab_2_off onclick="location.href='pg_fare_view.php'">View fare</td>
+<td class=tab_2_off onclick="location.href='pg_bundles.php'">Bundles</td>
+<td class=tab_2_on  >Fare_rule</td>
+<td class=tab_2_off onclick="location.href='pg_fare_list.php'">fare_list</td>
+<td class=tab_2_off onclick="location.href='pg_spec_fare.php'">Special fares</td>
+<td class=tab_2_off onclick="location.href='pg_air_tkt.php'">Ticket text</td>
+<td class=tab_2_off onclick="location.href='pg_air_txt.php'">Start page</td>
+</TR></TABLE>
+</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_3">&nbsp;</td>
+  </tr>
+
+
+
+</table>
+
+<script>
+ function print_din_tab(xmlDoc){
+
+}
+</script>
+<form class="pme-form-copy" method="post" action="pg_fare_line.php" name="PME_sys_form">
+<input type="hidden" name="PME_sys_sfn[0]" value="0" />
+<input type="hidden" name="PME_sys_cur_tab" value="PME_dhtml_tab0" />
+<input type="hidden" name="PME_sys_qfn" value="" />
+<input type="hidden" name="PME_sys_rec" value="" />
+<input type="hidden" name="PME_sys_fm" value="0" />
+<input type="hidden" name="PME_sys_fl" value="0" />
+<table summary="navigation" class="pme-navigation-copy">
+<tr class="pme-navigation-copy">
+<td class="pme-buttons-copy">
+<input type="submit" class="pme-save-copy" name="PME_sys_savecopy" value="Confirm" title="Confirm" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="pme-cancel-copy" name="PME_sys_cancelcopy" value="Ignore" title="Ignore" />
+</td>
+</tr></table>
+<hr size="1" class="pme-hr-copy" />
+<table class="pme-main-copy" summary="pg_fare_line">
+<tr class="pme-row-copy-0">
+<td class="pme-key-copy-0">ID</td>
+<td class="pme-value-copy-0">
+<input class="pme-input-copy-0" type="text" disabled name="PME_data_ID" value="1" size="11" maxlength="11" />
+</td>
+</tr>
+<tr class="pme-row-copy-1">
+<td class="pme-key-copy-1">FULL NAME</td>
+<td class="pme-value-copy-1">
+<input class="pme-input-copy-1" type="text" name="PME_data_FARE_NAME" value="Hand Luggage 1-8 kg" size="50" maxlength="50" />
+</td>
+</tr>
+<tr class="pme-row-copy-0">
+<td class="pme-key-copy-0">PRIOR</td>
+<td class="pme-value-copy-0">
+<input class="pme-input-copy-0" type="text" name="PME_data_PRIOR" value="10" size="11" maxlength="11" />
+</td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>

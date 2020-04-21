@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GSA Reservation system</title>
+	<link href="style_db.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+<!--
+	@import url("style.css");
+-->
+
+td.top_1 {                                              
+
+	background-image: url(images/logoPQ.png);
+  background-size: 150px 50px;
+}
+
+	</style>
+
+</head>
+<body onload="from_to_set()">
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+  <TR>
+    <TD  class="top_1">
+ ID:14/SALE/pupkin travel/pupkin HRK/pu22/(W6) </TD>
+
+    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+  </TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+	function start_time() {
+	  setInterval("postRequest()", 1000);
+	}
+
+        function postRequest() {
+
+	var xmlHttp;
+        var strURL =  "ajax.tab.php";
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+         var xmlHttp = new XMLHttpRequest();
+       	} else if (window.ActiveXObject) { // IE
+         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      	}
+
+    	xmlHttp.open('GET', strURL, true);
+    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    	xmlHttp.onreadystatechange = function() {
+
+        	if (xmlHttp.readyState == 4) {
+			xmlDoc = xmlHttp.responseXML;
+                	print_din_tab(xmlDoc);
+        	}
+    	}
+    	xmlHttp.send(strURL);
+	}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+  <tr>
+    <td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_on >Reservation</td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_d.php'"><div id='_req'>Status update</div></td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_s.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='pg_term_s.php'">Settings & Info</td>
+<td class=tab_1_off   onclick="location.href='pg_mapPC.php'">Maps</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+  <tr>
+    <td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='pg_create.php'">Create PC</td>
+<td class=tab_2_off onclick="location.href='pg_createEG.php'">Create EG</td>
+<td class=tab_2_on  >Create PQ</td>
+<td class=tab_2_off onclick="location.href='pg_createPS.php'">Create PS</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs.php'">Non ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_t.php'">Ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_r.php'">Refunded PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_c.php'">Canceled PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_p.php'">Problem PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_all.php'">All PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_group.php'">Group</td>
+</TR></TABLE>
+</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_3">&nbsp;</td>
+  </tr>
+
+
+
+</table>
+
+<script>
+ function print_din_tab(xmlDoc){
+
+	txt = xmlDoc.getElementsByTagName('req')[0].childNodes[0].nodeValue;
+	if (txt == 0) {txt=''};	document.getElementById('_req').innerHTML = 'Status update ' + txt;
+}
+</script>
+<script> start_time(); </script>
+<h3>&nbsp &nbsp</h3>
+<link href="CalendarControl.css" rel="stylesheet" type="text/css">
+<script src="CalendarControl.js" language="javascript"> </script>
+
+<form name="av_fare" action="pg_farePQ.php" method="POST" id="av_fare">
+<table><tr><td>
+<script type='text/javascript' >
+function from_to_set() {
+  document.getElementById('from').value='HRK';
+  if (document.getElementById('from').selectedIndex <0) {document.getElementById('from').selectedIndex=0 };
+cp_ret(document.getElementById('from').value);
+  document.getElementById('to').value='SAW';
+  if (document.getElementById('to').selectedIndex <0) {document.getElementById('to').selectedIndex=0 };
+}
+CityCode = new Array (['ALC','Alicante'],['ALA','Alma-ata'],['AYT','Antalya'],['BCN','Barcelona'],['BRI','Bari'],['BUS','Batumi'],['BVA','Beauvais'],['BER','Berlin'],['BLQ','Bologna'],['BOJ','Bourgas'],['CTA','Catania'],['CMB','Colombo'],['DEL','Delhi'],['DOH','Doha'],['FAO','Faro'],['HAM','Hamburg'],['HER','Heraklion'],['IST','Istanbul_'],['CFU','Kerkyra/corfu'],['HRK','Kharkov'],['IEV','Kiev'],['KUT','Kutaisi'],['SUF','Lamezia'],['LCA','Larnaca'],['LIS','Lisbon'],['LWO','Lvov'],['MAD','Madrid'],['BGY','Milano'],['MSQ','Minsk 2'],['NAP','Naples'],['NCE','Nice'],['ODS','Odessa'],['PMI','Palma de Mallorca'],['PED','Pardubice'],['CDG','Paris'],['PSA','Pisa'],['TAT','Poprad'],['PRG','Prague'],['PUY','Pula'],['RMI','Rimini'],['FCO','Rome'],['SZG','Salzburg'],['SHJ','Sharjah'],['ARN','Stockholm'],['TBS','Tbilisi'],['TLV','Tel-aviv'],['TFS','Tenerife'],['TIA','Tirana'],['TRN','Torino'],['VAR','Varna'],['VIE','Vienna'],['VNO','Vilnius'],['WAW','Warsaw'],['EVN','Yerevan'],['ZTH','Zakynthos'],['OZH','Zaporozhye'],['ZRH','Zurich']);
+CityPair = new Array (['ALC','IEV'],['ALA','IEV'],['AYT','IEV'],['BCN','HRK','IEV','LWO','ODS','OZH'],['BRI','IEV'],['BUS','HRK','IEV','LWO','ODS','OZH'],['BVA','HRK','IEV','LWO'],['BER','IEV'],['BLQ','IEV'],['BOJ','HRK','IEV','LWO','OZH'],['CTA','IEV'],['CMB','IEV'],['DEL','IEV'],['DOH','IEV'],['FAO','IEV'],['HAM','IEV'],['HER','HRK','IEV','LWO','ODS','OZH'],['IST','IEV'],['CFU','IEV'],['HRK','BCN','BUS','bva','BOJ','HER','IEV','KUT','SUF','LCA','LWO','ODS','PRG','RMI','SHJ','TBS','TLV'],['IEV','ALC','ALA','AYT','BCN','BRI','BUS','BVA','BER','BLQ','BOJ','CTA','CMB','DEL','DOH','FAO','HAM','HER','IST','CFU','HRK','SUF','LCA','LIS','LWO','MAD','BGY','MSQ','NAP','NCE','PMI','PED','CDG','PSA','TAT','PRG','PUY','RMI','FCO','SZG','SHJ','TBS','TFS','TIA','TRN','VAR','VIE','VNO','WAW','EVN','ZTH','OZH','ZRH'],['KUT','HRK','ODS'],['SUF','HRK','IEV','ODS'],['LCA','HRK','IEV','ODS','OZH'],['LIS','IEV'],['LWO','BCN','BUS','BVA','BOJ','HER','HRK','IEV','BGY','NAP','PRG','FCO','SHJ','TLV'],['MAD','IEV'],['BGY','IEV','LWO'],['MSQ','IEV'],['NAP','IEV','LWO'],['NCE','IEV'],['ODS','BCN','BUS','HER','HRK','IEV','KUT','SUF','LCA','RMI','TBS','EVN'],['PMI','IEV'],['PED','IEV'],['CDG','IEV'],['PSA','IEV'],['TAT','IEV'],['PRG','HRK','IEV','LWO','OZH'],['PUY','IEV'],['RMI','HRK','IEV','ODS','OZH'],['FCO','IEV','LWO'],['SZG','IEV'],['SHJ','HRK','IEV','LWO','OZH'],['ARN'],['TBS','HRK','IEV','ODS'],['TLV','HRK','LWO','OZH'],['TFS','IEV'],['TIA','IEV'],['TRN','IEV'],['VAR','IEV'],['VIE','IEV'],['VNO','IEV'],['WAW','IEV'],['EVN','IEV','ODS'],['ZTH','IEV'],['OZH','BCN','BUS','BOJ','HER','IEV','LCA','PRG','RMI','SHJ','TLV'],['ZRH','IEV']);
+function city_name(code) {
+  var depPortIndex = 0;
+  while ((depPortIndex < CityCode.length) && (code != CityCode[depPortIndex][0])){
+      depPortIndex++;
+  }
+  if (depPortIndex==CityCode.length) {
+    return 'XXX';
+  } else {
+    return CityCode[depPortIndex][1];
+ } 
+}
+
+function city_full_name(code) {
+  return city_name(code)+'('+code+')';
+}
+
+function cp_ret(dcity) {
+  document.getElementById("to").options.length=0;
+  var depPortIndex = 0;
+  while ((depPortIndex < CityPair.length) && (dcity != CityPair[depPortIndex][0])){
+      depPortIndex++;
+  }
+  if (depPortIndex==CityPair.length) {
+       return ;
+  } 
+  i=1;
+  while (i< CityPair[depPortIndex].length){document.getElementById("to").options[document.getElementById("to").options.length] = new Option(city_full_name(CityPair[depPortIndex][i]),CityPair[depPortIndex][i]);
+      i++;
+  }
+}  
+</script>
+
+<label>&nbsp &nbsp From</label><SELECT name='from' id='from' class='pme-input-change-0' onChange='cp_ret(this.value)'>
+<OPTION value=ALC>Alicante(ALC)</OPTION>
+<OPTION value=ALA>Alma-ata(ALA)</OPTION>
+<OPTION value=AYT>Antalya(AYT)</OPTION>
+<OPTION value=BCN>Barcelona(BCN)</OPTION>
+<OPTION value=BRI>Bari(BRI)</OPTION>
+<OPTION value=BUS>Batumi(BUS)</OPTION>
+<OPTION value=BVA>Beauvais(BVA)</OPTION>
+<OPTION value=BER>Berlin(BER)</OPTION>
+<OPTION value=BLQ>Bologna(BLQ)</OPTION>
+<OPTION value=BOJ>Bourgas(BOJ)</OPTION>
+<OPTION value=CTA>Catania(CTA)</OPTION>
+<OPTION value=CMB>Colombo(CMB)</OPTION>
+<OPTION value=DEL>Delhi(DEL)</OPTION>
+<OPTION value=DOH>Doha(DOH)</OPTION>
+<OPTION value=FAO>Faro(FAO)</OPTION>
+<OPTION value=HAM>Hamburg(HAM)</OPTION>
+<OPTION value=HER>Heraklion(HER)</OPTION>
+<OPTION value=IST>Istanbul_(IST)</OPTION>
+<OPTION value=CFU>Kerkyra/corfu(CFU)</OPTION>
+<OPTION  SELECTED value=HRK>Kharkov(HRK)</OPTION>
+<OPTION value=IEV>Kiev(IEV)</OPTION>
+<OPTION value=KUT>Kutaisi(KUT)</OPTION>
+<OPTION value=SUF>Lamezia(SUF)</OPTION>
+<OPTION value=LCA>Larnaca(LCA)</OPTION>
+<OPTION value=LIS>Lisbon(LIS)</OPTION>
+<OPTION value=LWO>Lvov(LWO)</OPTION>
+<OPTION value=MAD>Madrid(MAD)</OPTION>
+<OPTION value=BGY>Milano(BGY)</OPTION>
+<OPTION value=MSQ>Minsk 2(MSQ)</OPTION>
+<OPTION value=NAP>Naples(NAP)</OPTION>
+<OPTION value=NCE>Nice(NCE)</OPTION>
+<OPTION value=ODS>Odessa(ODS)</OPTION>
+<OPTION value=PMI>Palma de Mallorca(PMI)</OPTION>
+<OPTION value=PED>Pardubice(PED)</OPTION>
+<OPTION value=CDG>Paris(CDG)</OPTION>
+<OPTION value=PSA>Pisa(PSA)</OPTION>
+<OPTION value=TAT>Poprad(TAT)</OPTION>
+<OPTION value=PRG>Prague(PRG)</OPTION>
+<OPTION value=PUY>Pula(PUY)</OPTION>
+<OPTION value=RMI>Rimini(RMI)</OPTION>
+<OPTION value=FCO>Rome(FCO)</OPTION>
+<OPTION value=SZG>Salzburg(SZG)</OPTION>
+<OPTION value=SHJ>Sharjah(SHJ)</OPTION>
+<OPTION value=ARN>Stockholm(ARN)</OPTION>
+<OPTION value=TBS>Tbilisi(TBS)</OPTION>
+<OPTION value=TLV>Tel-aviv(TLV)</OPTION>
+<OPTION value=TFS>Tenerife(TFS)</OPTION>
+<OPTION value=TIA>Tirana(TIA)</OPTION>
+<OPTION value=TRN>Torino(TRN)</OPTION>
+<OPTION value=VAR>Varna(VAR)</OPTION>
+<OPTION value=VIE>Vienna(VIE)</OPTION>
+<OPTION value=VNO>Vilnius(VNO)</OPTION>
+<OPTION value=WAW>Warsaw(WAW)</OPTION>
+<OPTION value=EVN>Yerevan(EVN)</OPTION>
+<OPTION value=ZTH>Zakynthos(ZTH)</OPTION>
+<OPTION value=OZH>Zaporozhye(OZH)</OPTION>
+<OPTION value=ZRH>Zurich(ZRH)</OPTION>
+</select>
+  
+  <label>&nbsp &nbsp To</label><select id='to' name='to' class='pme-input-change-0'>
+  </select>
+
+
+
+<script>
+function rotate_date(dateField) {
+    if(dateField) {
+      try {
+        var dateString = new String(dateField);
+        var dateParts = dateString.split("-");
+        return  dateParts[2]+dateParts[1]+dateParts[0];
+      } catch(e) {}
+    }
+}
+
+function pick_ret_date(field,showDays) {
+
+  var dd = rotate_date(document.getElementById('date_d').value);
+  var dr = rotate_date(document.getElementById('date_r').value);
+ 
+  if (dd>dr) {
+    document.getElementById('date_r').value=document.getElementById('date_d').value;
+  }
+  showCalendarControl(field,showDays);
+}
+
+</script>
+ 
+
+
+	    <label>&nbsp &nbsp Departure</label>
+	    <input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="27-04-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" 
+
+  placeholder="dd-mm-yyyy"
+
+    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+
+    onkeyup="
+        var v = this.value;
+        if (v.match(/^\d{2}$/) !== null) {
+            this.value = v + '-';
+        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+            this.value = v + '-';
+        }"
+  />
+	    <label>Return</label>
+	    <input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="04-05-2020"     class="pme-input-change-1" onfocus="pick_ret_date(this,'');" 
+
+  placeholder="dd-mm-yyyy"
+
+    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+
+    onkeyup="
+        var v = this.value;
+
+        if (v.match(/^\d{2}$/) !== null) {
+            this.value = v + '-';
+        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+            this.value = v + '-';
+        }"
+ />
+
+      <input id='owrt' type='checkbox' name='oneway' value=0             <label>One Way Adt </label>
+   <input id="adt" name="adt" type="text" size="1" maxlength="1" value="1" class="pme-input-change-1">
+chd<input id="chd" name="chd" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
+inf<input id="inf" name="inf" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
+
+	    <input type='submit' value='Search'  class="but_long_W" onclick='this.form.action="pg_farePQ.php"' />
+
+
+
+<script language="javascript"> 
+
+document.getElementById('owrt').onchange = function() {
+    document.getElementById('date_r').disabled = this.checked;
+};
+ 
+</script>
+
+	</form>
+</td></tr>
+<tr><td>
+<dl>
+<h4>
+Подовження загальнонаціонального карантину: SkyUp скасовує всі регулярні рейси до 24 квітня 2020 року
+<dl>
+<h4>
+У зв’язку із продовженням заходів, покликаних запобігти поширенню коронавірусної інфекції, авіакомпанія SkyUp Airlines скасовує всі регулярні рейси до 24 квітня включно.<br>
+ Пасажири, які придбали квитки на рейси з вильотом у період тимчасового припинення авіасполучення,<br>
+ можуть перенести їх на більш пізній термін або отримати відшкодування вартості квитка згідно з умовами тарифу.<br>
+<br>
+Карантин – форс-мажорна обставина<br>
+<br>
+Авіакомпанія не може виконати рейси у вищезазначений період часу у зв’язку із запровадженням органами державної влади України та інших країн світу тимчасового обмеження перетинання державного кордону,<br>
+ а також карантину, який офіційно віднесено до форс-мажорних обставин (Закон України «Про внесення змін до деяких законодавчих актів України, спрямованих на запобігання виникненню і поширенню коронавірусної хвороби (COVID-19)» від 17.03.2020 р.).<br>
+<br>
+Умови перебронювання або відшкодування вартості квитків з вильотом у період до 24 квітня<br>
+<br>
+Згідно із законодавством та відповідно до правил авіакомпанії, у випадку скасування рейсу через форс-мажорні обставини, пасажир може розраховувати на:<br>
+<br>
+•         Зміну дати вильоту без додаткових доплат;<br>
+•         Повернення вартості придбаних авіаквитків згідно з умовами застосованого тарифу<br>
+<br>
+<dl>
+<h4>
+<dt>З більш детальною інформацією можна ознайомитися на сайті Авіакомпанії Скай Ап</dt>
+<dd><a href="https://skyup.aero/uk/news/plan-dij-skyup-dlya-pasazhiriv-na-period-diyi-zaboroni-aviaspoluchennya_165"target="_blank">Click here</a> 
+</i>
+</h4>
+</dl>
+<br>
+
+<br>
+З повагою,<br>	
+ТОВ "Джет Тім Україна"<br>
+-------------------------------------------------------------------------------------------------------------------<br>
+Зміни польотної програми до Італії<br>
+На деяких італійських напрямках відкладається старт польотної програми.<br>
+Відтак:<br>
+•	Київ – Рим, Бергамо, Болонья, Піза – старт польотів 1 червня 2020;<br>
+•	Київ – Барі – старт польотів 1 травня 2020;<br>
+•	Львів – Рим, Бергамо - старт польотів 1 червня 2020.<br>
+Виконання рейсів до Неаполя продовжиться без змін.<br>
+Старт польотів до Ріміні та Ламеції Терме, запланований на 30 травня 2020, а також до Катанії (початок 26 травня) поки що лишається без змін.<br>
+
+**********************************************************************************************************************
+<br>
+Уважаемый Коллеги,<br>
+<br>
+при бронировании перелетов авиакомпании Sky Up есть ряд особенностей, на которые мы хотим обратить Ваше внимание,
+<br>а именно:<br>
+<br>1. Авиакомпания Sky Up не поддерживает SPLIT.<br>
+Следовательно, во избежание неудобств, рекомендуем создавать бронирования по одному человеку.<br>
+<br>2. При формировании запроса поиска необходимо вводить количество взрослых, детей, младенцев, для которых будем создавать бронирование.
+<br> В дальнейшем именно столько полей будет активировано для ввода данных пассажиров<br>
+<br>3. Паспортные данные являются обязательными для создания бронирования<br>
+<br>4. Существует особенность выбора полетных сегментов/тарифных пакетов.
+<br> Система предлагает все возможные из доступных варианты комбинации тарифных пакетов. Выбор делается только в левой части экрана отображения полетных данных<br>
+<br>5. Отображение стоимости<br>
+В бронировании отображается итоговая стоимость за всех пас-ов. Разбивка стоимости по каждому из пассажиров и сегментам происходит ТОЛЬКО после выписки авиабилетов.<br>
+<br>В случае возникновения дополнительных вопросов, пожалуйста, обращайтесь по электронному адресу hd@jetit.com.ua<br>
+<br>
+<br>
+С уважением,<br>
+ООО "ДЖЕТ ТИМ УКРАИНА"
+
+</td></tr>
+</table>
+
+	</body>
+	</html>
