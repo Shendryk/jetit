@@ -1,7 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-		"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+<html><head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>GSA Reservation system</title>
 	<link href="style_db.css" rel="stylesheet" type="text/css">
@@ -10,26 +7,47 @@
 	@import url("style.css");
 -->
 
-td.top_1 {                                              
 
-	background-image: url(images/logoPQ.png);
-  background-size: 150px 50px;
+td.top_1 {                                              
+	height: 35px;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 10pt;
+	margin-left: 100px;
+	font-weight: bold;
+	color: Black; 
+	background-color: white;
+
+
+	background-image: url(images/logo.gif);
+
+ 	background-repeat: no-repeat;
+
+	vertical-align: middle; 
+	background-position:  bottom;
+	background-position: left;
+	text-align: left;
+	padding-left: 300px;
 }
 
-	</style>
+
+
+
+
+</style>
+
 
 </head>
 <body onload="from_to_set()">
 
 
-<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
-  <TR>
-    <TD  class="top_1">
- ID:14/SALE/pupkin travel/pupkin HRK/pu22/(W6) </TD>
+<table class="table_title" cellspacing="0" cellpadding="0" border="1">
+  <tbody><tr>
+    <td class="top_1">
+ ID:71/SALE/test/Kiev test/test/ </td>
 
-    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
-  </TR>
-</TABLE>
+    <td class="top_1_1"><a href="lt_login.php"><img src="images/exit.png" border="0"></a> </td>
+  </tr>
+</tbody></table>
 
 
 
@@ -65,37 +83,36 @@ td.top_1 {
 	}
 </script>
 
-<table cellpadding="0" cellspacing="0" class="table_top100">
-  <tr>
+<table class="table_top100" cellspacing="0" cellpadding="0">
+  <tbody><tr>
     <td class="td_tabul_1">
-<TABLE cellPadding=0 cellspacing=0 border=0>
-<TR>
-<td class=tab_1_on >Reservation</td>
-<td class=tab_1_off   onclick="location.href='pg_tickets_d.php'"><div id='_req'>Status update</div></td>
-<td class=tab_1_off   onclick="location.href='pg_tickets_s.php'">Reports</td>
-<td class=tab_1_off   onclick="location.href='pg_term_s.php'">Settings & Info</td>
-<td class=tab_1_off   onclick="location.href='pg_mapPC.php'">Maps</td>
-</TR></TABLE>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="tab_1_on">Reservation</td>
+<td class="tab_1_off" onclick="location.href='pg_tickets_d.php'"><div id="_req">Status update </div></td>
+<td class="tab_1_off" onclick="location.href='pg_tickets_s.php'">Reports</td>
+<td class="tab_1_off" onclick="location.href='pg_term_s.php'">Settings &amp; Info</td>
+<td class="tab_1_off" onclick="location.href='pg_mapPC.php'">Maps</td>
+</tr></tbody></table>
 </td>
 </tr>
-</table>
+</tbody></table>
 
-<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
-  <tr>
+<table class="table_top" width="100" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr>
     <td class="td_tabul_2_1">
-<TABLE cellPadding=0 cellspacing=0 border=0><TR>
-<td class=tab_2_off onclick="location.href='pg_create.php'">Create PC</td>
-<td class=tab_2_off onclick="location.href='pg_createEG.php'">Create EG</td>
-<td class=tab_2_on  >Create PQ</td>
-<td class=tab_2_off onclick="location.href='pg_createPS.php'">Create PS</td>
-<td class=tab_2_off onclick="location.href='pg_pnrs.php'">Non ticketed PNRs</td>
-<td class=tab_2_off onclick="location.href='pg_pnrs_t.php'">Ticketed PNRs</td>
-<td class=tab_2_off onclick="location.href='pg_pnrs_r.php'">Refunded PNRs</td>
-<td class=tab_2_off onclick="location.href='pg_pnrs_c.php'">Canceled PNRs</td>
-<td class=tab_2_off onclick="location.href='pg_pnrs_p.php'">Problem PNRs</td>
-<td class=tab_2_off onclick="location.href='pg_pnrs_all.php'">All PNRs</td>
-<td class=tab_2_off onclick="location.href='pg_group.php'">Group</td>
-</TR></TABLE>
+<table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
+<td class="tab_2_on">Create PC</td>
+<td class="tab_2_off" onclick="location.href='pg_createEG.php'">Create EG</td>
+<td class="tab_2_off" onclick="location.href='pg_createPQ.php'">Create PQ</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs.php'">Non ticketed PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_t.php'">Ticketed PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_r.php'">Refunded PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_c.php'">Canceled PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_p.php'">Problem PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_all.php'">All PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_group.php'">Group</td>
+</tr></tbody></table>
 </td>
   </tr>
   <tr>
@@ -104,10 +121,7 @@ td.top_1 {
   <tr>
     <td class="td_tabul_2_3">&nbsp;</td>
   </tr>
-
-
-
-</table>
+</tbody></table>
 
 <script>
  function print_din_tab(xmlDoc){
@@ -117,22 +131,22 @@ td.top_1 {
 }
 </script>
 <script> start_time(); </script>
-<h3>&nbsp &nbsp</h3>
+<h3>&nbsp; &nbsp;</h3>
 <link href="CalendarControl.css" rel="stylesheet" type="text/css">
-<script src="CalendarControl.js" language="javascript"> </script>
+<script src="CalendarControl.js" language="javascript"> </script><iframe id="CalendarControlIFrame" src="javascript:false;" style="border: 0px; overlow: hidden;" title="Calendar Control"></iframe><div id="CalendarControl"></div>
 
-<form name="av_fare" action="pg_farePQ.php" method="POST" id="av_fare">
-<table><tr><td>
-<script type='text/javascript' >
+<form name="av_fare" action="pg_fare.php" method="POST" id="av_fare">
+
+<script type="text/javascript">
 function from_to_set() {
-  document.getElementById('from').value='HRK';
+  document.getElementById('from').value='IEV';
   if (document.getElementById('from').selectedIndex <0) {document.getElementById('from').selectedIndex=0 };
 cp_ret(document.getElementById('from').value);
-  document.getElementById('to').value='SAW';
+  document.getElementById('to').value='ADB';
   if (document.getElementById('to').selectedIndex <0) {document.getElementById('to').selectedIndex=0 };
 }
-CityCode = new Array (['ALC','Alicante'],['ALA','Alma-ata'],['AYT','Antalya'],['BCN','Barcelona'],['BRI','Bari'],['BUS','Batumi'],['BVA','Beauvais'],['BER','Berlin'],['BLQ','Bologna'],['BOJ','Bourgas'],['CTA','Catania'],['CMB','Colombo'],['DEL','Delhi'],['DOH','Doha'],['FAO','Faro'],['HAM','Hamburg'],['HER','Heraklion'],['IST','Istanbul_'],['CFU','Kerkyra/corfu'],['HRK','Kharkov'],['IEV','Kiev'],['KUT','Kutaisi'],['SUF','Lamezia'],['LCA','Larnaca'],['LIS','Lisbon'],['LWO','Lvov'],['MAD','Madrid'],['BGY','Milano'],['MSQ','Minsk 2'],['NAP','Naples'],['NCE','Nice'],['ODS','Odessa'],['PMI','Palma de Mallorca'],['PED','Pardubice'],['CDG','Paris'],['PSA','Pisa'],['TAT','Poprad'],['PRG','Prague'],['PUY','Pula'],['RMI','Rimini'],['FCO','Rome'],['SZG','Salzburg'],['SHJ','Sharjah'],['ARN','Stockholm'],['TBS','Tbilisi'],['TLV','Tel-aviv'],['TFS','Tenerife'],['TIA','Tirana'],['TRN','Torino'],['VAR','Varna'],['VIE','Vienna'],['VNO','Vilnius'],['WAW','Warsaw'],['EVN','Yerevan'],['ZTH','Zakynthos'],['OZH','Zaporozhye'],['ZRH','Zurich']);
-CityPair = new Array (['ALC','IEV'],['ALA','IEV'],['AYT','IEV'],['BCN','HRK','IEV','LWO','ODS','OZH'],['BRI','IEV'],['BUS','HRK','IEV','LWO','ODS','OZH'],['BVA','HRK','IEV','LWO'],['BER','IEV'],['BLQ','IEV'],['BOJ','HRK','IEV','LWO','OZH'],['CTA','IEV'],['CMB','IEV'],['DEL','IEV'],['DOH','IEV'],['FAO','IEV'],['HAM','IEV'],['HER','HRK','IEV','LWO','ODS','OZH'],['IST','IEV'],['CFU','IEV'],['HRK','BCN','BUS','bva','BOJ','HER','IEV','KUT','SUF','LCA','LWO','ODS','PRG','RMI','SHJ','TBS','TLV'],['IEV','ALC','ALA','AYT','BCN','BRI','BUS','BVA','BER','BLQ','BOJ','CTA','CMB','DEL','DOH','FAO','HAM','HER','IST','CFU','HRK','SUF','LCA','LIS','LWO','MAD','BGY','MSQ','NAP','NCE','PMI','PED','CDG','PSA','TAT','PRG','PUY','RMI','FCO','SZG','SHJ','TBS','TFS','TIA','TRN','VAR','VIE','VNO','WAW','EVN','ZTH','OZH','ZRH'],['KUT','HRK','ODS'],['SUF','HRK','IEV','ODS'],['LCA','HRK','IEV','ODS','OZH'],['LIS','IEV'],['LWO','BCN','BUS','BVA','BOJ','HER','HRK','IEV','BGY','NAP','PRG','FCO','SHJ','TLV'],['MAD','IEV'],['BGY','IEV','LWO'],['MSQ','IEV'],['NAP','IEV','LWO'],['NCE','IEV'],['ODS','BCN','BUS','HER','HRK','IEV','KUT','SUF','LCA','RMI','TBS','EVN'],['PMI','IEV'],['PED','IEV'],['CDG','IEV'],['PSA','IEV'],['TAT','IEV'],['PRG','HRK','IEV','LWO','OZH'],['PUY','IEV'],['RMI','HRK','IEV','ODS','OZH'],['FCO','IEV','LWO'],['SZG','IEV'],['SHJ','HRK','IEV','LWO','OZH'],['ARN'],['TBS','HRK','IEV','ODS'],['TLV','HRK','LWO','OZH'],['TFS','IEV'],['TIA','IEV'],['TRN','IEV'],['VAR','IEV'],['VIE','IEV'],['VNO','IEV'],['WAW','IEV'],['EVN','IEV','ODS'],['ZTH','IEV'],['OZH','BCN','BUS','BOJ','HER','IEV','LCA','PRG','RMI','SHJ','TLV'],['ZRH','IEV']);
+CityCode = new Array (['AAL','Aalborg'],['AUH','Abu Dhabi'],['ADA','Adana'],['AJI','Agri'],['GZP','Alanya Gazipasa'],['ALA','Alma-ata'],['AMM','Amman'],['AMS','Amsterdam'],['ESB','Ankara'],['AYT','Antalya'],['ATH','Athens'],['BGW','Baghdad'],['BAH','Bahrain'],['GYD','Baku'],['EDO','Balikesir Korfez'],['BCN','Barcelona'],['BSR','Basrah'],['BAL','Batman'],['BUS','Batumi'],['XHQ','Batumi'],['BEY','Beirut'],['BEG','Belgrade'],['SXF','Berlin'],['BLL','Billund'],['BGG','Bingol'],['FRU','Bishkek'],['BJV','Bodrum'],['BLQ','Bologna'],['BRE','Bremen'],['CRL','Brussels'],['OTP','Bucharest'],['BUD','Budapest'],['CAI','Cairo'],['CMN','Casablanca'],['CGN','Cologne'],['CPH','Copenhagen'],['TEQ','Çorlu'],['DLM','Dalaman'],['DMM','Dammam'],['DNZ','Denizli'],['DIY','Diyabakir'],['DOH','Doha'],['DXB','Dubai'],['DUS','Duesseldorf'],['EIN','Eindhoven'],['EZS','Elazig'],['EBL','Erbil'],['ERF','Erfurt'],['ERC','Erzincan'],['ERZ','Erzurum'],['FRA','Frankfurt'],['GZT','Gaziantep'],['GVA','Geneva'],['GOT','Gothenborg'],['GRV','Grozny'],['HAM','Hamburg'],['HAJ','Hannover'],['HTY','Hatay'],['HEL','Helsinki'],['HRG','Hurghada'],['SAW','Istanbul '],['IST','Istanbul_'],['ADB','Izmir'],['JED','Jeddah'],['KCM','Kahramanmaras'],['KHI','Karachi'],['KSY','Kars'],['ASR','Kayseri'],['HRK','Kharkov'],['KBP','Kiev'],['IEV','Kiev'],['KYA','Konya'],['KRR','Krasnodar'],['KWI','Kuwait'],['LEJ','Leipzig'],['STN','London'],['LWO','Lvov'],['LYS','Lyon'],['MED','Madinah'],['MAD','Madrid'],['MLX','Malatya'],['MAN','Manchester'],['MQM','Mardin'],['MRS','Marseille'],['MZH','Merzifon'],['BGY','Milano'],['MRV','Mineralnye Vody'],['DME','Moscow'],['BSL','Mulhouse'],['MUC','Munich'],['MSR','Mus'],['MCT','Muscat'],['NAV','Nevsehir'],['ECN','Nicosia'],['NRK','Norrkoeping'],['NUE','Nuernberg'],['OGU','Ordu-Giresun'],['OSL','Oslo'],['PAD','Paderborn'],['ORY','Paris'],['CDG','Paris'],['PRG','Prague'],['PRN','Pristina'],['RKT','Ras Al Khaimah'],['RUH','Riyadh'],['FCO','Rome'],['RTM','Rotterdam'],['SZF','Samsun'],['GNY','Sanliurfa'],['SJJ','Sarajevo'],['SHJ','Sharjah'],['SSH','Sharm El Sheikh'],['NOP','Sinop'],['NKT','Sirnak'],['VAS','Sivas'],['SFT','Skelleftea'],['SKP','Skopje'],['ARN','Stockholm'],['STR','Stuttgart'],['ISU','Sulaymaniyah'],['TBS','Tbilisi'],['IKA','Tehran'],['TLV','Tel-aviv'],['TIA','Tirana'],['TZX','Trabzon'],['USQ','Usak'],['VAN','Van'],['VCE','Venice'],['VIE','Vienna'],['OZH','Zaporozhye'],['ZRH','Zurich']);
+CityPair = new Array (['AAL','AYT','SAW'],['AUH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BCN','BUS','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MRS','BGY','DME','BSL','MUC','ECN','NUE','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VCE','VIE','OZH','ZRH'],['ADA','AUH','AJI','GZP','ALA','AMM','AMS','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BSR','XHQ','BUS','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','BRU','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EBL','ERC','ERZ','FRA','GVA','GRV','HAM','HAJ','HEL','HRG','SAW','ADB','JED','KHI','HRK','IEV','KBP','KRR','KWI','STN','LWO','LYS','MED','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['AJI','ADA','ESB','CGN','HTY','SAW','ADB','KBP','ECN','VAS'],['GZP','AUH','ADA','ALA','AMS','ESB','ATH','BGW','BAH','EDO','BCN','BSR','BAL','BUS','XHQ','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['ALA','AUH','ADA','GZP','AMS','ESB','AYT','ATH','BAH','EDO','BCN','BAL','BUS','BEY','BEG','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','KCM','KHI','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MAD','MLX','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','SSH','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['AMM','ADA','AMS','ESB','AYT','BJV','CGN','CPH','TEQ','DLM','DUS','EZS','FRA','GVA','HAM','SAW','ADB','ASR','KBP','STN','MUC','ECN','GNY','ARN','STR','TZX','VIE'],['AMS','AUH','ADA','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BEG','BGG','FRU','BJV','OTP','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','KSY','ASR','HRK','KYA','KRR','KWI','LWO','MED','MLX','MQM','MZH','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TIA','TZX','VAN'],['ESB','AUH','ADA','AJI','GZP','ALA','AMM','AMS','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BSR','BAL','XHQ','BUS','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','BRU','OTP','BUD','CAI','CMN','CGN','CPH','TEQ','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KCM','KHI','KSY','HRK','KBP','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['AYT','AAL','AUH','ADA','ALA','AMM','AMS','ESB','ATH','BGW','BAH','EDO','BCN','BSR','BAL','XHQ','BUS','BEY','BEG','SXF','BLL','BGG','FRU','BJV','BLQ','BRE','BRU','CRL','OTP','BUD','CAI','CMN','CGN','CPH','TEQ','DMM','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERF','ERC','ERZ','FRA','GZT','GVA','GOT','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KBP','KYA','KRR','KWI','LEJ','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NRK','NUE','OGU','OSL','PAD','CDG','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SFT','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['ATH','AUH','ADA','GZP','ALA','AMS','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','SXF','BGG','FRU','BJV','BLQ','CRL','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','FRA','GZT','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','JED','KHI','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MLX','MQM','MRS','BGY','MRV','BSL','MUC','MSR','MCT','ECN','NUE','OGU','ORY','PRG','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','ARN','STR','TBS','IKA','TLV','TZX','VAN','VIE','ZRH'],['BGW','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DUS','EIN','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['BAH','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DUS','EIN','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['GYD','ADA','ESB','DUS','EZS','HTY','SAW','ADB','ASR','STN','MQM','BSL','ECN','GNY','TZX'],['EDO','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','BCN','BSR','BAL','BUS','XHQ','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['BCN','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','ASR','KYA','KRR','KWI','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','TBS','IKA','TLV','TZX','VAN'],['BSR','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['BAL','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','XHQ','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EBL','FRA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','KHI','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','FCO','SZF','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VCE','VIE','ZRH'],['BUS','AUH','ADA','GZP','ALA','AMS','ESB','AYT','BGW','BAH','EDO','BSR','XHQ','BEY','FRU','BJV','CMN','CGN','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','GZT','GRV','HAJ','HTY','HRG','SAW','ADB','JED','KHI','ASR','KYA','KRR','KWI','STN','LYS','MLX','MRV','MCT','ECN','NUE','OGU','PRN','RUH','SZF','GNY','SHJ','SSH','VAS','IKA','TLV','TZX','VAN'],['XHQ','ADA','GZP','ESB','AYT','EDO','BUS','BJV','DLM','DNZ','DIY','EZS','ERC','ERZ','GZT','HTY','SAW','ADB','ASR','KYA','MLX','OGU','SZF','GNY','VAS','TZX','VAN'],['BEY','ADA','GZP','AMM','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DIY','DOH','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','HAM','HAJ','HTY','HEL','SAW','ADB','KCM','KHI','KSY','ASR','HRK','KYA','KRR','STN','LWO','LYS','MAD','MLX','MAN','MQM','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['BEG','AUH','ADA','GZP','ALA','AMS','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','BUD','CMN','CGN','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','GZT','GRV','HAJ','HTY','HRG','SAW','ADB','JED','KHI','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MLX','MQM','MRV','MUC','MCT','ECN','NUE','OGU','RUH','SZF','GNY','SHJ','SSH','VAS','STR','TBS','IKA','TLV','TZX','VAN','VIE'],['SXF','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BUS','BEY','BEG','BGG','FRU','BJV','OTP','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','ASR','HRK','KYA','KRR','KWI','MED','MLX','MQM','MZH','MRV','DME','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TIA','TZX','VAN','OZH'],['BLL','AYT','SAW'],['BGG','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BEY','SXF','FRU','BJV','CRL','CMN','CGN','DLM','DMM','DNZ','DOH','DXB','DUS','EBL','FRA','GZT','GRV','HAJ','HTY','HRG','SAW','ADB','ASR','HRK','KYA','KRR','KWI','STN','BGY','MRV','BSL','MCT','ECN','NUE','OGU','PRG','PRN','RKT','SZF','SJJ','SHJ','SSH','NOP','VAS','SKP','STR','TBS','IKA','TLV','TIA','TZX','VIE'],['FRU','AUH','ADA','GZP','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BAL','BUS','BEY','BEG','SXF','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['BJV','AUH','ADA','GZP','ALA','AMM','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BAL','BUS','XHQ','BEY','BEG','SXF','BGG','FRU','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','TEQ','DMM','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','JED','KCM','KHI','KSY','ASR','HRK','KBP','IEV','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['BLQ','AUH','ADA','GZP','ALA','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','ASR','KYA','KRR','KWI','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','TBS','IKA','TLV','TZX','VAN'],['BRE','AYT'],['CRL','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BUS','BEY','BEG','BGG','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MZH','MRV','DME','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TIA','TZX','VAN','OZH'],['OTP','AUH','ADA','GZP','ALA','AMS','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','SXF','FRU','BJV','CMN','CGN','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERZ','GZT','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MLX','MQM','MRV','MSR','MCT','ECN','NUE','OGU','PRN','RUH','SZF','GNY','SHJ','SSH','VAS','TBS','IKA','TLV','TIA','TZX','VAN','VIE'],['BUD','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','ASR','KYA','KRR','KWI','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','TBS','IKA','TLV','TZX','VAN'],['CAI','ADA','GZP','ESB','AYT','BJV','DLM','DNZ','EZS','ERZ','GZT','GRV','HTY','SAW','ADB','KSY','ASR','KYA','KRR','STN','MLX','MRV','ECN','SZF','GNY','NOP','VAS','TZX'],['CMN','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['CGN','AUH','ADA','AJI','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BUS','BEY','BEG','BGG','FRU','BJV','OTP','CMN','TEQ','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','LWO','MED','MLX','MQM','MZH','MRV','DME','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TIA','TZX','VAN','OZH'],['CPH','AUH','ADA','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['TEQ','ESB','AYT','BJV','CGN','DUS','SAW','ADB','ECN'],['DLM','AUH','ADA','ALA','AMM','AMS','ESB','ATH','BGW','BAH','EDO','BCN','BSR','BAL','BUS','XHQ','BEY','BEG','SXF','BGG','FRU','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DMM','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','JED','KCM','KHI','KSY','ASR','HRK','IEV','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['DMM','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DUS','EIN','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['DNZ','AUH','ADA','GZP','ALA','AMS','ESB','ATH','BGW','BAH','BCN','BSR','BAL','XHQ','BUS','BEY','BEG','SXF','BGG','FRU','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DMM','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['DIY','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BUS','XHQ','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EBL','FRA','GVA','GRV','HAM','HAJ','HEL','HRG','SAW','ADB','KHI','HRK','KYA','KRR','KWI','STN','LWO','LYS','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','FCO','SZF','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VCE','VIE','ZRH'],['DOH','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','KRR','STN','LWO','LYS','MAD','MLX','MAN','MQM','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['DXB','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MAN','MQM','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['DUS','AUH','ADA','AJI','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BSR','BAL','BEY','BEG','BGG','FRU','BJV','OTP','CMN','TEQ','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KBP','KYA','KRR','KWI','LWO','MED','MLX','MQM','MZH','MRV','DME','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TIA','TZX','VAN'],['EIN','AUH','ADA','GZP','ALA','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','DLM','DMM','DNZ','DOH','DXB','EBL','ERC','GZT','GRV','HRG','SAW','ADB','JED','KSY','ASR','KYA','KRR','KWI','MED','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','SHJ','SSH','TBS','IKA','TLV','TZX'],['EZS','AUH','GZP','ALA','AMM','AMS','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BUS','XHQ','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EBL','FRA','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KHI','HRK','KBP','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','FCO','SZF','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VCE','VIE','ZRH'],['EBL','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BEY','BEG','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','TEQ','DLM','DNZ','DIY','DUS','EIN','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','SAW','ADB','KCM','KSY','ASR','HRK','KBP','KYA','STN','LWO','LYS','MAD','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['ERF','AYT','SAW'],['ERC','AUH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BUS','XHQ','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EBL','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KCM','KHI','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MAN','MRS','BGY','MRV','DME','BSL','MUC','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RUH','FCO','SZF','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','VCE','VIE','OZH','ZRH'],['ERZ','AUH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EBL','FRA','GVA','GRV','HAM','HAJ','HEL','HRG','SAW','ADB','JED','KHI','KYA','KRR','KWI','STN','LWO','LYS','MAD','MAN','MZH','BGY','MRV','DME','BSL','MUC','ECN','NUE','OGU','OSL','ORY','PRN','RUH','FCO','SZF','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VIE','ZRH'],['FRA','AUH','ADA','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BEG','BGG','FRU','BJV','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','KBP','KYA','KRR','KWI','MED','MLX','MQM','MZH','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['GZT','AUH','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','XHQ','BUS','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EBL','ERC','ERZ','FRA','GVA','GRV','HAM','HAJ','HEL','HRG','SAW','ADB','JED','KHI','HRK','KRR','KWI','STN','LWO','LYS','MED','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['GVA','AUH','ADA','GZP','ALA','AMM','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','TBS','IKA','TLV','TZX','VAN'],['GOT','AYT','SAW'],['GRV','ADA','GZP','AMS','ESB','AYT','ATH','BCN','BUS','BEG','SXF','BJV','BLQ','CRL','OTP','BUD','CAI','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MAN','MRS','BGY','DME','BSL','MUC','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VCE','VIE','OZH','ZRH'],['HAM','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BEG','BGG','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','KBP','KYA','KRR','KWI','MED','MLX','MQM','MZH','MRV','DME','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN','OZH'],['HAJ','ADA','GZP','ESB','AYT','ATH','EDO','BAL','BUS','BEY','BEG','BGG','FRU','BJV','OTP','DLM','DNZ','DIY','EZS','ERC','ERZ','GZT','HTY','SAW','ADB','KCM','KSY','ASR','HRK','KYA','KRR','LWO','MLX','MQM','MZH','DME','MSR','ECN','OGU','SZF','GNY','SJJ','NOP','VAS','SKP','TBS','TLV','TIA','TZX','VAN','OZH'],['HTY','AUH','AJI','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BSR','BAL','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EZS','EBL','ERC','FRA','GVA','GRV','HAM','HAJ','HEL','HRG','SAW','ADB','JED','KHI','HRK','KBP','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VIE','OZH','ZRH'],['HEL','AUH','ADA','GZP','ALA','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','DLM','DMM','DNZ','DOH','DXB','EZS','EBL','ERC','GZT','GRV','HTY','HRG','SAW','ADB','JED','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','TBS','IKA','TLV','TZX','VAN'],['HRG','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KHI','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MAN','MQM','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['SAW','AAL','AUH','ADA','AJI','GZP','ALA','AMM','AMS','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BSR','BAL','BUS','XHQ','BEY','BEG','SXF','BLL','BGG','FRU','BJV','BLQ','BRE','CRL','OTP','BUD','CAI','CMN','CGN','CPH','TEQ','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERF','ERC','ERZ','FRA','GZT','GVA','GOT','GRV','HAM','HAJ','HTY','HEL','HRG','ADB','JED','KCM','KHI','KSY','ASR','HRK','KBP','IEV','KYA','KRR','KWI','LEJ','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NRK','NUE','OGU','OSL','PAD','ORY','PRG','PRN','RKT','RUH','FCO','RTM','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SFT','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['IST','ADB','KBP'],['ADB','AUH','ADA','AJI','GZP','ALA','AMM','AMS','ESB','AYT','ATH','BGW','BAH','GYD','BCN','BSR','BAL','XHQ','BUS','BEY','BEG','SXF','BGG','FRU','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','TEQ','DMM','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','IST','JED','KCM','KHI','KSY','ASR','HRK','KBP','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['JED','ADA','GZP','AMS','ESB','AYT','ATH','BCN','BUS','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DUS','EIN','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','SAW','ADB','KSY','ASR','HRK','STN','LWO','LYS','MAD','MAN','MRS','BGY','DME','BSL','MUC','ECN','NUE','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VCE','VIE','OZH','ZRH'],['KCM','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BEY','SXF','FRU','BJV','CRL','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EBL','ERC','FRA','GVA','GRV','HAJ','HRG','SAW','ADB','KRR','KWI','STN','LYS','MAN','MZH','BGY','MRV','DME','MSR','MCT','ECN','OGU','PRG','PRN','RKT','FCO','SZF','SJJ','SHJ','SSH','NOP','ARN','STR','TBS','IKA','TLV','TZX','VAN','VIE','ZRH'],['KHI','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['KSY','AUH','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','XHQ','BUS','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EBL','FRA','GRV','HAM','HAJ','HRG','SAW','ADB','JED','KHI','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MRS','BGY','MRV','BSL','MUC','MCT','ECN','NUE','OGU','ORY','PRG','PRN','RKT','RUH','SZF','SJJ','SHJ','SSH','NOP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VCE','VIE','ZRH'],['ASR','AUH','AJI','GZP','ALA','AMS','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BSR','BAL','BUS','XHQ','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EBL','FRA','GVA','GRV','HAM','HAJ','HEL','HRG','SAW','ADB','JED','KHI','HRK','KBP','KRR','KWI','STN','LWO','LYS','MED','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','RTM','SZF','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['HRK','AUH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BGG','FRU','BJV','CRL','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','GZT','GRV','HAJ','HTY','HRG','SAW','ADB','JED','KCM','KSY','ASR','KYA','KRR','KWI','STN','LYS','MED','MLX','MAN','MQM','BGY','MRV','MUC','MSR','MCT','ECN','NUE','OGU','PRN','RKT','RUH','FCO','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','ARN','TBS','IKA','TLV','TZX','VAN','VIE','ZRH'],['KBP','ADA','AJI','AMM','ESB','AYT','BJV','CPH','DUS','EZS','EBL','FRA','HAM','HTY','SAW','IST','ADB','ASR','STN','MQM','ECN','SZF','GNY','VAS','STR','TZX','VIE'],['IEV','ADA','ESB','BJV','DLM','SAW'],['KYA','AUH','ALA','AMS','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BAL','XHQ','BUS','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KHI','KSY','HRK','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['KRR','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEY','BEG','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CAI','CGN','CPH','DLM','DNZ','DIY','DOH','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HAJ','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MAN','MQM','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['KWI','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','KRR','STN','LWO','LYS','MAD','MLX','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['LEJ','AYT','SAW'],['STN','AUH','ADA','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BSR','BAL','BUS','BEY','BEG','BGG','FRU','BJV','OTP','CAI','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KBP','KYA','KRR','KWI','LWO','MED','MLX','MQM','MZH','MRV','DME','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TIA','TZX','VAN','OZH'],['LWO','AUH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','EDO','BSR','BAL','BEY','BEG','BGG','FRU','BJV','CRL','CGN','CPH','DLM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','GZT','GRV','HAJ','HTY','HRG','SAW','ADB','KCM','KSY','ASR','KYA','KRR','KWI','STN','LYS','MLX','MAN','MQM','BGY','MRV','MUC','MSR','ECN','NUE','OGU','PRN','RUH','FCO','SZF','GNY','SSH','NOP','VAS','ARN','TBS','IKA','TLV','TZX','VAN','VIE','ZRH'],['LYS','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BUS','BEY','BEG','FRU','BJV','OTP','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','KSY','ASR','HRK','KYA','KRR','KWI','LWO','MED','MLX','MRV','DME','MCT','ECN','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','VAS','SKP','TBS','IKA','TLV','TIA','TZX','OZH'],['MED','ADA','GZP','AMS','ESB','AYT','ATH','BCN','BUS','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DIY','DUS','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','SAW','ADB','KSY','ASR','HRK','STN','LWO','LYS','MAD','MAN','MRS','BGY','DME','BSL','MUC','ECN','NUE','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VCE','VIE','OZH','ZRH'],['MAD','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BGG','FRU','BJV','DLM','DMM','DNZ','DOH','DXB','EZS','EBL','ERC','GZT','GRV','HTY','HRG','SAW','ADB','JED','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MZH','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['MLX','AUH','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BUS','XHQ','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EBL','FRA','GVA','GRV','HAM','HAJ','HEL','HRG','SAW','ADB','JED','KHI','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RUH','FCO','SZF','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VIE','OZH','ZRH'],['MAN','AUH','ADA','GZP','ALA','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','TBS','IKA','TLV','TZX','VAN'],['MQM','GZP','ALA','AMS','ESB','AYT','ATH','BAH','GYD','EDO','BCN','BUS','XHQ','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EBL','FRA','GVA','GRV','HAM','HRG','SAW','ADB','KHI','HRK','KBP','KYA','KRR','KWI','STN','LWO','LYS','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MCT','ECN','NUE','OGU','ORY','PRG','PRN','RKT','FCO','SZF','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VCE','VIE','ZRH'],['MRS','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BGG','FRU','BJV','DLM','DMM','DNZ','DOH','DXB','EZS','EBL','ERC','GZT','GRV','HTY','HRG','SAW','ADB','JED','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['MZH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BAL','BEY','SXF','FRU','BJV','CRL','OTP','BUD','CMN','CGN','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERZ','FRA','GZT','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MLX','MQM','BGY','MRV','BSL','MUC','MCT','ECN','NUE','ORY','PRG','PRN','RKT','GNY','SJJ','SHJ','SSH','SKP','ARN','STR','TBS','IKA','TLV','VAN','VIE','ZRH'],['BGY','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','KSY','ASR','HRK','KYA','KRR','KWI','LWO','MED','MLX','MQM','MZH','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['MRV','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CAI','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MAN','MQM','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['DME','AUH','ADA','GZP','ALA','AMS','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','CGN','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','GZT','GRV','HAJ','HTY','HRG','SAW','ADB','JED','KHI','KSY','ASR','KYA','KRR','KWI','STN','LYS','MED','MLX','MQM','MRV','MSR','MCT','ECN','NUE','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','STR','TBS','IKA','TLV','TZX','VAN','VIE'],['BSL','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BSR','BAL','BEY','BGG','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MZH','MRV','DME','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['MUC','AUH','ADA','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['MSR','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BUS','XHQ','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EBL','FRA','GZT','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','KCM','KHI','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MRS','MZH','BGY','MRV','BSL','MUC','MCT','ECN','NUE','OGU','ORY','PRG','PRN','RKT','FCO','SZF','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VCE','VIE','ZRH'],['MCT','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BUS','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DIY','DUS','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MRS','BGY','DME','BSL','MUC','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['NAV','STN'],['ECN','AUH','ADA','AJI','GZP','ALA','AMM','AMS','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BSR','BAL','BUS','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','BRU','CRL','OTP','BUD','CAI','CMN','CGN','CPH','TEQ','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KBP','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['NRK','AYT','SAW'],['NUE','AUH','ADA','GZP','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BUS','BEY','BEG','BGG','FRU','BJV','OTP','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','LWO','MLX','MQM','MRV','DME','MSR','MCT','ECN','PRN','RUH','SZF','GNY','SJJ','SHJ','SSH','VAS','SKP','TBS','IKA','TLV','TIA','TZX','VAN'],['OGU','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','BCN','BSR','BUS','XHQ','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MAD','MLX','MAN','MRS','BGY','MRV','DME','BSL','MUC','MCT','ECN','NUE','OSL','ORY','PRG','PRN','RKT','FCO','GNY','SJJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','VCE','VIE','OZH','ZRH'],['OSL','AUH','ADA','GZP','ALA','ESB','AYT','BGW','BAH','BSR','BEY','FRU','BJV','DLM','DMM','DNZ','DOH','DXB','EZS','EBL','GZT','GRV','HTY','HRG','SAW','ADB','JED','KSY','ASR','KYA','KRR','KWI','MED','MLX','MRV','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','TBS','IKA','TLV','TZX'],['PAD','AYT','SAW'],['ORY','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BEG','BGG','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MZH','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['CDG','AYT'],['PRG','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BEG','BGG','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','KSY','ASR','KYA','KRR','KWI','MED','MLX','MQM','MZH','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','TBS','IKA','TLV','TZX','VAN'],['PRN','ADA','GZP','AMS','ESB','AYT','EDO','BCN','BAL','BUS','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','NOP','VAS','ARN','STR','TBS','TLV','TZX','VAN','VCE','VIE','OZH','ZRH'],['RKT','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BUS','SXF','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DIY','DUS','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MRS','BGY','DME','BSL','MUC','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['RUH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BCN','BEG','SXF','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DUS','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','SAW','ADB','KSY','ASR','HRK','KYA','STN','LWO','LYS','MLX','MRS','BGY','DME','BSL','MUC','ECN','NUE','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TLV','TIA','TZX','VCE','VIE','OZH','ZRH'],['FCO','AUH','ADA','GZP','ALA','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','LWO','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['RTM','SAW','ADB','ASR'],['SZF','AUH','ADA','AJI','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BSR','BAL','XHQ','BUS','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OSL','ORY','PRG','PRN','RKT','RUH','FCO','GNY','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','VAN','VCE','VIE','OZH','ZRH'],['GNY','AUH','GZP','ALA','AMM','AMS','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BSR','XHQ','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EBL','FRA','GVA','GRV','HAM','HAJ','HEL','HRG','SAW','ADB','JED','KHI','HRK','KBP','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MAN','MRS','MZH','BGY','MRV','DME','BSL','MUC','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RUH','FCO','SZF','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VAN','VIE','OZH','ZRH'],['SJJ','AUH','ADA','GZP','ALA','AMS','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','SXF','FRU','BJV','CRL','BUD','CMN','CGN','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','GZT','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MLX','MQM','MZH','BGY','MRV','MSR','MCT','ECN','NUE','OGU','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','ARN','TBS','IKA','TLV','TZX','VAN','VIE','ZRH'],['SHJ','ADA','GZP','ALA','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MQM','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['SSH','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DIY','DUS','EIN','EZS','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','KYA','STN','LWO','LYS','MAD','MLX','MAN','MQM','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OGU','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','VAS','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['NOP','AUH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BAL','BUS','XHQ','BEY','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','FRA','GZT','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','JED','KCM','KHI','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MLX','MAN','MQM','MRS','BGY','MRV','BSL','MUC','MSR','MCT','ECN','NUE','OGU','ORY','PRG','PRN','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','VAS','ARN','STR','TBS','IKA','TLV','TIA','VAN','VCE','VIE','OZH','ZRH'],['NKT','STN'],['VAS','AUH','GZP','ALA','AMS','ESB','AYT','ATH','BAH','EDO','BCN','BAL','XHQ','BUS','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','FRA','GZT','GVA','HAM','HTY','HEL','HRG','SAW','ADB','JED','KHI','HRK','KYA','KWI','STN','LWO','LYS','MED','MAD','MAN','MRS','BGY','DME','BSL','MUC','MSR','MCT','ECN','OSL','ORY','PRG','PRN','RKT','FCO','GNY','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','TLV','TIA','VAN','VCE','VIE','ZRH'],['SFT','AYT','SAW'],['SKP','AUH','ADA','GZP','ALA','AMS','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','SXF','FRU','BJV','CRL','BUD','CMN','CGN','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','FRA','GZT','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MLX','MQM','MRS','BGY','MRV','BSL','MUC','MSR','MCT','ECN','NUE','OGU','ORY','PRG','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','ARN','STR','TBS','IKA','TLV','TZX','VAN','VIE','ZRH'],['ARN','AUH','ADA','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BGG','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','ASR','KYA','KRR','KWI','LWO','MED','MLX','MQM','MZH','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['STR','AUH','ADA','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BEG','BGG','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','KBP','KYA','KRR','KWI','MED','MLX','MQM','MZH','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TZX','VAN'],['ISU','STN'],['TBS','AUH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BAL','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','IKA','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['IKA','ADA','GZP','AMS','ESB','AYT','ATH','EDO','BCN','BAL','BUS','BEG','SXF','BGG','BJV','BLQ','CRL','OTP','BUD','CGN','CPH','DLM','DNZ','DUS','EIN','ERC','ERZ','FRA','GZT','GVA','HAM','HTY','HEL','SAW','ADB','KCM','KSY','ASR','HRK','STN','LWO','LYS','MAD','MAN','MRS','MZH','BGY','DME','BSL','MUC','MSR','ECN','NUE','OSL','ORY','PRG','FCO','SZF','GNY','SJJ','NOP','SKP','ARN','STR','TBS','TLV','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['TLV','AUH','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BAL','BUS','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERC','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','MZH','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','RUH','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TIA','TZX','VAN','VCE','VIE','OZH','ZRH'],['TIA','AUH','ADA','GZP','ALA','AMS','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','SXF','FRU','BJV','BUD','CMN','CGN','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EZS','EBL','ERC','ERZ','GZT','GRV','HAM','HAJ','HTY','HRG','SAW','ADB','JED','KHI','KSY','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MED','MLX','MQM','MRV','MUC','MSR','MCT','ECN','NUE','OGU','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','ARN','TBS','IKA','TLV','TZX','VAN','ZRH'],['TZX','AUH','ADA','AJI','GZP','ALA','AMM','AMS','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BCN','BSR','BAL','BUS','XHQ','BEY','BEG','SXF','BGG','FRU','BJV','BLQ','CRL','OTP','BUD','CAI','CMN','CGN','CPH','DLM','DMM','DNZ','DIY','DOH','DXB','DUS','EIN','EZS','EBL','ERZ','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KBP','KYA','KRR','KWI','STN','LWO','LYS','MED','MAD','MLX','MAN','MQM','MRS','BGY','MRV','DME','BSL','MUC','MSR','MCT','ECN','NUE','OSL','ORY','PRG','PRN','RKT','RUH','FCO','GNY','SJJ','SHJ','SSH','NOP','SKP','ARN','STR','TBS','IKA','TLV','TIA','VAN','VCE','VIE','OZH','ZRH'],['USQ','STN'],['VAN','ADA','GZP','ALA','AMS','ESB','AYT','ATH','BGW','BAH','EDO','BCN','BSR','BEY','BEG','SXF','FRU','BJV','BLQ','CRL','OTP','BUD','CMN','CGN','CPH','DLM','DMM','DNZ','DOH','DXB','DUS','EIN','EBL','FRA','GZT','GVA','GRV','HAM','HAJ','HTY','HEL','HRG','SAW','ADB','KCM','KHI','ASR','HRK','KYA','KRR','KWI','STN','LWO','LYS','MAD','MLX','MAN','MZH','BGY','MRV','DME','BSL','MUC','MCT','ECN','NUE','OGU','OSL','ORY','PRG','PRN','RKT','FCO','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','ARN','STR','TBS','IKA','TLV','TIA','TZX','VIE','ZRH'],['VCE','AUH','ADA','GZP','ALA','ESB','AYT','BGW','BAH','EDO','BSR','BAL','BEY','FRU','BJV','CMN','DLM','DMM','DNZ','DOH','DXB','EZS','EBL','ERC','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','ASR','KYA','KRR','KWI','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RUH','SZF','SHJ','SSH','VAS','TBS','IKA','TLV','TZX'],['VIE','AUH','ADA','GZP','ALA','AMM','ESB','AYT','ATH','BGW','BAH','GYD','EDO','BSR','BAL','BEY','BEG','BGG','FRU','BJV','CMN','TEQ','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KHI','KSY','ASR','HRK','KBP','KYA','KRR','KWI','LWO','MED','MLX','MQM','MZH','MRV','DME','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TIA','TZX','VAN'],['OZH','AUH','ADA','GZP','AMS','ESB','AYT','BGW','BAH','EDO','BSR','BEY','SXF','FRU','BJV','CMN','CGN','DLM','DMM','DNZ','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HAJ','HRG','SAW','ADB','JED','KHI','ASR','KYA','KRR','KWI','STN','LYS','MED','MLX','MRV','MCT','ECN','NUE','OGU','PRN','RKT','RUH','SZF','GNY','SHJ','SSH','VAS','TBS','IKA','TLV','TZX'],['ZRH','AUH','ADA','GZP','ALA','ESB','AYT','ATH','BGW','BAH','EDO','BSR','BAL','BEY','BGG','FRU','BJV','CMN','DLM','DMM','DNZ','DIY','DOH','DXB','EZS','EBL','ERC','ERZ','GZT','GRV','HTY','HRG','SAW','ADB','JED','KCM','KHI','KSY','ASR','HRK','KYA','KRR','KWI','LWO','MED','MLX','MQM','MRV','MSR','MCT','ECN','OGU','PRN','RKT','RUH','SZF','GNY','SJJ','SHJ','SSH','NOP','VAS','SKP','TBS','IKA','TLV','TIA','TZX','VAN']);
 function city_name(code) {
   var depPortIndex = 0;
   while ((depPortIndex < CityCode.length) && (code != CityCode[depPortIndex][0])){
@@ -165,68 +179,142 @@ function cp_ret(dcity) {
 }  
 </script>
 
-<label>&nbsp &nbsp From</label><SELECT name='from' id='from' class='pme-input-change-0' onChange='cp_ret(this.value)'>
-<OPTION value=ALC>Alicante(ALC)</OPTION>
-<OPTION value=ALA>Alma-ata(ALA)</OPTION>
-<OPTION value=AYT>Antalya(AYT)</OPTION>
-<OPTION value=BCN>Barcelona(BCN)</OPTION>
-<OPTION value=BRI>Bari(BRI)</OPTION>
-<OPTION value=BUS>Batumi(BUS)</OPTION>
-<OPTION value=BVA>Beauvais(BVA)</OPTION>
-<OPTION value=BER>Berlin(BER)</OPTION>
-<OPTION value=BLQ>Bologna(BLQ)</OPTION>
-<OPTION value=BOJ>Bourgas(BOJ)</OPTION>
-<OPTION value=CTA>Catania(CTA)</OPTION>
-<OPTION value=CMB>Colombo(CMB)</OPTION>
-<OPTION value=DEL>Delhi(DEL)</OPTION>
-<OPTION value=DOH>Doha(DOH)</OPTION>
-<OPTION value=FAO>Faro(FAO)</OPTION>
-<OPTION value=HAM>Hamburg(HAM)</OPTION>
-<OPTION value=HER>Heraklion(HER)</OPTION>
-<OPTION value=IST>Istanbul_(IST)</OPTION>
-<OPTION value=CFU>Kerkyra/corfu(CFU)</OPTION>
-<OPTION  SELECTED value=HRK>Kharkov(HRK)</OPTION>
-<OPTION value=IEV>Kiev(IEV)</OPTION>
-<OPTION value=KUT>Kutaisi(KUT)</OPTION>
-<OPTION value=SUF>Lamezia(SUF)</OPTION>
-<OPTION value=LCA>Larnaca(LCA)</OPTION>
-<OPTION value=LIS>Lisbon(LIS)</OPTION>
-<OPTION value=LWO>Lvov(LWO)</OPTION>
-<OPTION value=MAD>Madrid(MAD)</OPTION>
-<OPTION value=BGY>Milano(BGY)</OPTION>
-<OPTION value=MSQ>Minsk 2(MSQ)</OPTION>
-<OPTION value=NAP>Naples(NAP)</OPTION>
-<OPTION value=NCE>Nice(NCE)</OPTION>
-<OPTION value=ODS>Odessa(ODS)</OPTION>
-<OPTION value=PMI>Palma de Mallorca(PMI)</OPTION>
-<OPTION value=PED>Pardubice(PED)</OPTION>
-<OPTION value=CDG>Paris(CDG)</OPTION>
-<OPTION value=PSA>Pisa(PSA)</OPTION>
-<OPTION value=TAT>Poprad(TAT)</OPTION>
-<OPTION value=PRG>Prague(PRG)</OPTION>
-<OPTION value=PUY>Pula(PUY)</OPTION>
-<OPTION value=RMI>Rimini(RMI)</OPTION>
-<OPTION value=FCO>Rome(FCO)</OPTION>
-<OPTION value=SZG>Salzburg(SZG)</OPTION>
-<OPTION value=SHJ>Sharjah(SHJ)</OPTION>
-<OPTION value=ARN>Stockholm(ARN)</OPTION>
-<OPTION value=TBS>Tbilisi(TBS)</OPTION>
-<OPTION value=TLV>Tel-aviv(TLV)</OPTION>
-<OPTION value=TFS>Tenerife(TFS)</OPTION>
-<OPTION value=TIA>Tirana(TIA)</OPTION>
-<OPTION value=TRN>Torino(TRN)</OPTION>
-<OPTION value=VAR>Varna(VAR)</OPTION>
-<OPTION value=VIE>Vienna(VIE)</OPTION>
-<OPTION value=VNO>Vilnius(VNO)</OPTION>
-<OPTION value=WAW>Warsaw(WAW)</OPTION>
-<OPTION value=EVN>Yerevan(EVN)</OPTION>
-<OPTION value=ZTH>Zakynthos(ZTH)</OPTION>
-<OPTION value=OZH>Zaporozhye(OZH)</OPTION>
-<OPTION value=ZRH>Zurich(ZRH)</OPTION>
+<label>&nbsp; &nbsp; From</label><select name="from" id="from" class="pme-input-change-0" onchange="cp_ret(this.value)">
+<option value="AAL">Aalborg(AAL)</option>
+<option value="AUH">Abu Dhabi(AUH)</option>
+<option value="ADA">Adana(ADA)</option>
+<option value="AJI">Agri(AJI)</option>
+<option value="GZP">Alanya Gazipasa(GZP)</option>
+<option value="ALA">Alma-ata(ALA)</option>
+<option value="AMM">Amman(AMM)</option>
+<option value="AMS">Amsterdam(AMS)</option>
+<option value="ESB">Ankara(ESB)</option>
+<option value="AYT">Antalya(AYT)</option>
+<option value="ATH">Athens(ATH)</option>
+<option value="BGW">Baghdad(BGW)</option>
+<option value="BAH">Bahrain(BAH)</option>
+<option value="GYD">Baku(GYD)</option>
+<option value="EDO">Balikesir Korfez(EDO)</option>
+<option value="BCN">Barcelona(BCN)</option>
+<option value="BSR">Basrah(BSR)</option>
+<option value="BAL">Batman(BAL)</option>
+<option value="BUS">Batumi(BUS)</option>
+<option value="XHQ">Batumi(XHQ)</option>
+<option value="BEY">Beirut(BEY)</option>
+<option value="BEG">Belgrade(BEG)</option>
+<option value="SXF">Berlin(SXF)</option>
+<option value="BLL">Billund(BLL)</option>
+<option value="BGG">Bingol(BGG)</option>
+<option value="FRU">Bishkek(FRU)</option>
+<option value="BJV">Bodrum(BJV)</option>
+<option value="BLQ">Bologna(BLQ)</option>
+<option value="BRE">Bremen(BRE)</option>
+<option value="CRL">Brussels(CRL)</option>
+<option value="OTP">Bucharest(OTP)</option>
+<option value="BUD">Budapest(BUD)</option>
+<option value="CAI">Cairo(CAI)</option>
+<option value="CMN">Casablanca(CMN)</option>
+<option value="CGN">Cologne(CGN)</option>
+<option value="CPH">Copenhagen(CPH)</option>
+<option value="TEQ">Çorlu(TEQ)</option>
+<option value="DLM">Dalaman(DLM)</option>
+<option value="DMM">Dammam(DMM)</option>
+<option value="DNZ">Denizli(DNZ)</option>
+<option value="DIY">Diyabakir(DIY)</option>
+<option value="DOH">Doha(DOH)</option>
+<option value="DXB">Dubai(DXB)</option>
+<option value="DUS">Duesseldorf(DUS)</option>
+<option value="EIN">Eindhoven(EIN)</option>
+<option value="EZS">Elazig(EZS)</option>
+<option value="EBL">Erbil(EBL)</option>
+<option value="ERF">Erfurt(ERF)</option>
+<option value="ERC">Erzincan(ERC)</option>
+<option value="ERZ">Erzurum(ERZ)</option>
+<option value="FRA">Frankfurt(FRA)</option>
+<option value="GZT">Gaziantep(GZT)</option>
+<option value="GVA">Geneva(GVA)</option>
+<option value="GOT">Gothenborg(GOT)</option>
+<option value="GRV">Grozny(GRV)</option>
+<option value="HAM">Hamburg(HAM)</option>
+<option value="HAJ">Hannover(HAJ)</option>
+<option value="HTY">Hatay(HTY)</option>
+<option value="HEL">Helsinki(HEL)</option>
+<option value="HRG">Hurghada(HRG)</option>
+<option value="SAW">Istanbul (SAW)</option>
+<option value="IST">Istanbul_(IST)</option>
+<option value="ADB">Izmir(ADB)</option>
+<option value="JED">Jeddah(JED)</option>
+<option value="KCM">Kahramanmaras(KCM)</option>
+<option value="KHI">Karachi(KHI)</option>
+<option value="KSY">Kars(KSY)</option>
+<option value="ASR">Kayseri(ASR)</option>
+<option value="HRK">Kharkov(HRK)</option>
+<option value="KBP">Kiev(KBP)</option>
+<option selected="" value="IEV">Kiev(IEV)</option>
+<option value="KYA">Konya(KYA)</option>
+<option value="KRR">Krasnodar(KRR)</option>
+<option value="KWI">Kuwait(KWI)</option>
+<option value="LEJ">Leipzig(LEJ)</option>
+<option value="STN">London(STN)</option>
+<option value="LWO">Lvov(LWO)</option>
+<option value="LYS">Lyon(LYS)</option>
+<option value="MED">Madinah(MED)</option>
+<option value="MAD">Madrid(MAD)</option>
+<option value="MLX">Malatya(MLX)</option>
+<option value="MAN">Manchester(MAN)</option>
+<option value="MQM">Mardin(MQM)</option>
+<option value="MRS">Marseille(MRS)</option>
+<option value="MZH">Merzifon(MZH)</option>
+<option value="BGY">Milano(BGY)</option>
+<option value="MRV">Mineralnye Vody(MRV)</option>
+<option value="DME">Moscow(DME)</option>
+<option value="BSL">Mulhouse(BSL)</option>
+<option value="MUC">Munich(MUC)</option>
+<option value="MSR">Mus(MSR)</option>
+<option value="MCT">Muscat(MCT)</option>
+<option value="NAV">Nevsehir(NAV)</option>
+<option value="ECN">Nicosia(ECN)</option>
+<option value="NRK">Norrkoeping(NRK)</option>
+<option value="NUE">Nuernberg(NUE)</option>
+<option value="OGU">Ordu-Giresun(OGU)</option>
+<option value="OSL">Oslo(OSL)</option>
+<option value="PAD">Paderborn(PAD)</option>
+<option value="ORY">Paris(ORY)</option>
+<option value="CDG">Paris(CDG)</option>
+<option value="PRG">Prague(PRG)</option>
+<option value="PRN">Pristina(PRN)</option>
+<option value="RKT">Ras Al Khaimah(RKT)</option>
+<option value="RUH">Riyadh(RUH)</option>
+<option value="FCO">Rome(FCO)</option>
+<option value="RTM">Rotterdam(RTM)</option>
+<option value="SZF">Samsun(SZF)</option>
+<option value="GNY">Sanliurfa(GNY)</option>
+<option value="SJJ">Sarajevo(SJJ)</option>
+<option value="SHJ">Sharjah(SHJ)</option>
+<option value="SSH">Sharm El Sheikh(SSH)</option>
+<option value="NOP">Sinop(NOP)</option>
+<option value="NKT">Sirnak(NKT)</option>
+<option value="VAS">Sivas(VAS)</option>
+<option value="SFT">Skelleftea(SFT)</option>
+<option value="SKP">Skopje(SKP)</option>
+<option value="ARN">Stockholm(ARN)</option>
+<option value="STR">Stuttgart(STR)</option>
+<option value="ISU">Sulaymaniyah(ISU)</option>
+<option value="TBS">Tbilisi(TBS)</option>
+<option value="IKA">Tehran(IKA)</option>
+<option value="TLV">Tel-aviv(TLV)</option>
+<option value="TIA">Tirana(TIA)</option>
+<option value="TZX">Trabzon(TZX)</option>
+<option value="USQ">Usak(USQ)</option>
+<option value="VAN">Van(VAN)</option>
+<option value="VCE">Venice(VCE)</option>
+<option value="VIE">Vienna(VIE)</option>
+<option value="OZH">Zaporozhye(OZH)</option>
+<option value="ZRH">Zurich(ZRH)</option>
 </select>
   
-  <label>&nbsp &nbsp To</label><select id='to' name='to' class='pme-input-change-0'>
-  </select>
+  <label>&nbsp; &nbsp; To</label><select id="to" name="to" class="pme-input-change-0">
+  <option value="ADA">Adana(ADA)</option><option value="ESB">Ankara(ESB)</option><option value="BJV">Bodrum(BJV)</option><option value="DLM">Dalaman(DLM)</option><option value="SAW">Istanbul (SAW)</option></select>
 
 
 
@@ -256,44 +344,28 @@ function pick_ret_date(field,showDays) {
  
 
 
-	    <label>&nbsp &nbsp Departure</label>
-	    <input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="27-04-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" 
-
-  placeholder="dd-mm-yyyy"
-
-    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-
-    onkeyup="
+	    <label>&nbsp; &nbsp; Departure</label>
+	    <input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="29-04-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" placeholder="dd-mm-yyyy" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" onkeyup="
         var v = this.value;
         if (v.match(/^\d{2}$/) !== null) {
             this.value = v + '-';
         } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
             this.value = v + '-';
-        }"
-  />
+        }">
 	    <label>Return</label>
-	    <input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="04-05-2020"     class="pme-input-change-1" onfocus="pick_ret_date(this,'');" 
-
-  placeholder="dd-mm-yyyy"
-
-    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-
-    onkeyup="
+	    <input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="06-05-2020" class="pme-input-change-1" onfocus="pick_ret_date(this,'');" placeholder="dd-mm-yyyy" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" onkeyup="
         var v = this.value;
 
         if (v.match(/^\d{2}$/) !== null) {
             this.value = v + '-';
         } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
             this.value = v + '-';
-        }"
- />
+        }">
 
-      <input id='owrt' type='checkbox' name='oneway' value=0             <label>One Way Adt </label>
-   <input id="adt" name="adt" type="text" size="1" maxlength="1" value="1" class="pme-input-change-1">
-chd<input id="chd" name="chd" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
-inf<input id="inf" name="inf" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
+      <input id="owrt" type="checkbox" name="oneway" value="0">One Way	
+Seat <input id="adt" name="seat" type="text" size="1" maxlength="1" value="1" class="pme-input-change-1">
+	    <input type="submit" value="Search" class="but_long_W" onclick="this.form.action=&quot;pg_fare.php&quot;">
 
-	    <input type='submit' value='Search'  class="but_long_W" onclick='this.form.action="pg_farePQ.php"' />
 
 
 
@@ -306,74 +378,45 @@ document.getElementById('owrt').onchange = function() {
 </script>
 
 	</form>
-</td></tr>
-<tr><td>
-<dl>
-<h4>
-Подовження загальнонаціонального карантину: SkyUp скасовує всі регулярні рейси до 24 квітня 2020 року
-<dl>
-<h4>
-У зв’язку із продовженням заходів, покликаних запобігти поширенню коронавірусної інфекції, авіакомпанія SkyUp Airlines скасовує всі регулярні рейси до 24 квітня включно.<br>
- Пасажири, які придбали квитки на рейси з вильотом у період тимчасового припинення авіасполучення,<br>
- можуть перенести їх на більш пізній термін або отримати відшкодування вартості квитка згідно з умовами тарифу.<br>
+
+
+<h2>Уважаемые коллеги!<br> 
+Обращаем Ваше внимание на изменения в выполнении рейсов Авиакомпании Pegasus Airlines из Украины.</h2>
+<p>
+Выполнение рейсов Pegasus Airlines в/из Украины приостановлено с 17.03.2020. <br>
+Вынуждены сообщить об отмене рейсов Авиакомпании Pegasus Airlines в период с 01.05.2020 по 15.05.2020 г.<br> 
 <br>
-Карантин – форс-мажорна обставина<br>
+Основываясь на положениях, опубликованных Генеральным директоратом гражданской авиации Турции,<br>
+Авиакомпания Pegasus Airlines предоставляет возможность изменения даты авиабилетов отмененных рейсов на альтернативные даты, в зависимости от наличия свободных мест.<br>
+Также предоставляется возможность изменения авиабилетов с использованием опции «открытая дата».<br>
+Пассажиры могут получить возврат неиспользованного авиабилета с «открытой датой» не ранее, чем через два месяца после снятия всех ограничений на перелеты.<br>
 <br>
-Авіакомпанія не може виконати рейси у вищезазначений період часу у зв’язку із запровадженням органами державної влади України та інших країн світу тимчасового обмеження перетинання державного кордону,<br>
- а також карантину, який офіційно віднесено до форс-мажорних обставин (Закон України «Про внесення змін до деяких законодавчих актів України, спрямованих на запобігання виникненню і поширенню коронавірусної хвороби (COVID-19)» від 17.03.2020 р.).<br>
+Правила изменений и возвратов авиабилетов на отмененные рейсы после 05.02.2020 (в том числе 05.02.2020):<br>
 <br>
-Умови перебронювання або відшкодування вартості квитків з вильотом у період до 24 квітня<br>
+•	авиабилеты, на отмененные рейсы до 26.03.2020, могут быть перевыписаны без штрафов или доплат разницы тарифов,<br> возможно сохранение длительности путешествия /изменение маршрута в рамках одной страны;<br>
+•	авиабилеты, на отмененные рейсы после 26.03.2020, могут быть перевыписаны без штрафов, но с доплатой разницы<br> тарифов, возможно сохранение длительности путешествия /изменение маршрута в рамках одной страны;<br> 
+•	произведение возвратов авиабилетов на отмененные рейсы приостановлено до дальнейшего уведомления;<br>
+•	возврат неиспользованного авиабилета с «открытой датой» может быть подтвержден не ранее, чем через 2 (два) месяца после снятия всех ограничений на перелеты.<br>
+•	Данные правила также применяются для запросов, которые ранее находились в обработке и не были рассмотрены Авиакомпанией.<br> 
 <br>
-Згідно із законодавством та відповідно до правил авіакомпанії, у випадку скасування рейсу через форс-мажорні обставини, пасажир може розраховувати на:<br>
 <br>
-•         Зміну дати вильоту без додаткових доплат;<br>
-•         Повернення вартості придбаних авіаквитків згідно з умовами застосованого тарифу<br>
-<br>
-<dl>
-<h4>
-<dt>З більш детальною інформацією можна ознайомитися на сайті Авіакомпанії Скай Ап</dt>
-<dd><a href="https://skyup.aero/uk/news/plan-dij-skyup-dlya-pasazhiriv-na-period-diyi-zaboroni-aviaspoluchennya_165"target="_blank">Click here</a> 
+Просим информировать пассажиров об изменениях в выполнении рейсов и отправить соответствующие SSR запросы в системе бронирования Jetit<br>
+
+C уважением,<br>
+ООО "Джет Тим Украина"
+<i>
+</i><dl><i>
+<dt>Ограничения на въезд (от 19/03/2020)</dt>
+<dd><a href="https://drive.google.com/file/d/1jtPRHhn4TkQSQgfCohO6bwQlk2O3fd1r/view?usp=sharing" target="_blank">Click here</a> 
+</dd><dt>PEGASUS FLEX на внутренние рейсы по сниженной стоимости 1 TL</dt>
+</i><dd><i><a href="https://drive.google.com/file/d/17-daxJ_2sMu6v0vYjSrQXBByY5QTWdfh/view?usp=sharing" target="_blank">Click here</a><br> 
 </i>
-</h4>
-</dl>
-<br>
+</dd></dl></p>
 
-<br>
-З повагою,<br>	
-ТОВ "Джет Тім Україна"<br>
--------------------------------------------------------------------------------------------------------------------<br>
-Зміни польотної програми до Італії<br>
-На деяких італійських напрямках відкладається старт польотної програми.<br>
-Відтак:<br>
-•	Київ – Рим, Бергамо, Болонья, Піза – старт польотів 1 червня 2020;<br>
-•	Київ – Барі – старт польотів 1 травня 2020;<br>
-•	Львів – Рим, Бергамо - старт польотів 1 червня 2020.<br>
-Виконання рейсів до Неаполя продовжиться без змін.<br>
-Старт польотів до Ріміні та Ламеції Терме, запланований на 30 травня 2020, а також до Катанії (початок 26 травня) поки що лишається без змін.<br>
 
-**********************************************************************************************************************
-<br>
-Уважаемый Коллеги,<br>
-<br>
-при бронировании перелетов авиакомпании Sky Up есть ряд особенностей, на которые мы хотим обратить Ваше внимание,
-<br>а именно:<br>
-<br>1. Авиакомпания Sky Up не поддерживает SPLIT.<br>
-Следовательно, во избежание неудобств, рекомендуем создавать бронирования по одному человеку.<br>
-<br>2. При формировании запроса поиска необходимо вводить количество взрослых, детей, младенцев, для которых будем создавать бронирование.
-<br> В дальнейшем именно столько полей будет активировано для ввода данных пассажиров<br>
-<br>3. Паспортные данные являются обязательными для создания бронирования<br>
-<br>4. Существует особенность выбора полетных сегментов/тарифных пакетов.
-<br> Система предлагает все возможные из доступных варианты комбинации тарифных пакетов. Выбор делается только в левой части экрана отображения полетных данных<br>
-<br>5. Отображение стоимости<br>
-В бронировании отображается итоговая стоимость за всех пас-ов. Разбивка стоимости по каждому из пассажиров и сегментам происходит ТОЛЬКО после выписки авиабилетов.<br>
-<br>В случае возникновения дополнительных вопросов, пожалуйста, обращайтесь по электронному адресу hd@jetit.com.ua<br>
-<br>
-<br>
-С уважением,<br>
-ООО "ДЖЕТ ТИМ УКРАИНА"
 
-</td></tr>
-</table>
 
-	</body>
-	</html>
+
+
+	
+	</body></html>
