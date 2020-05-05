@@ -36,7 +36,9 @@
 
 BODY {
 	/* background-color: #E1E6FC; */
-	background-color: #edeffb;
+	
+	/* background-color: #edeffb; */
+	background-color: #fff;  /* body */
 	/* background-color: #f3f3f3; */
 	MARGIN: 0px; 
   SCROLLBAR-HIGHLIGHT-COLOR: #e1e6fc; 
@@ -285,6 +287,7 @@ td.tab_1_on {
 	 font-weight: bold;
 	 /* color:   #064584; */
 	 background-color: #edeffb;
+	 background-color: #fff; /* body */
 	 /* background-color: #dfe0e9; */
 	 /* background: #c5dcfc; */
 	 /* height: 20px; */
@@ -313,6 +316,7 @@ td.td_tabul_2_1 {
 }
 
 td.tab_2_off {
+	background: #fff; /* body */
 	 background: #D1D4E0;
 	 height: 31px;
 	 text-align: center;
@@ -644,6 +648,7 @@ A:visited {
 	/* background-color: #c5dcfc;
 	background-color: #dfe0e9; */
 	background-color: #edeffb;
+	background-color: #fff; /* body */
 	
 
 }
