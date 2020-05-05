@@ -670,9 +670,9 @@ h1, h2, h3, h4, h5, p {
 
 form#av_fare {
 	padding: 15px 5px;
-    background-color: #00e1a0;
-		max-width: 950px;
-		
+    /* background-color: #00e1a0; */
+		max-width: 1000px;
+		border: 2px solid #00e1a0;
 }
 
 form#av_fare input, form#av_fare select {
@@ -810,6 +810,7 @@ input.but_long_W, .form button {
 	input.but_long_W:active, .form button:active {
 		background: rgb(33,147,90);
 		box-shadow: 0 3px rgb(33,147,90) inset;
+
 	}
 	
 	
