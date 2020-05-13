@@ -665,12 +665,15 @@ input.pme-input-change-0,
 input.pme-input-change-1
 
 {
-background-color: #FFF6b4; 
+/* background-color: #FFF6b4;  */
+background-color: #f6f7f6;
 /* background-color: #FFF;  */
 color: #000000; 
 font-size: 9pt;
 /* border: #c8c8c8 1px solid; */
 border:none;
+border: 1px solid #00e1a0;
+border-radius: 3px;
 }
 
 
@@ -701,8 +704,8 @@ select.pme-input-copy-1,
 select.pme-input-change-0,
 select.pme-input-change-1
 {
-background-color: #FFF6b4;
-/* background-color: #FFF; */
+/* background-color: #FFF6b4; */
+background-color: #f6f7f6;
 color: #000000; 
 font-size: 9pt; 
    border: 0px;

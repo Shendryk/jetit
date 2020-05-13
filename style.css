@@ -726,6 +726,7 @@ form#av_fare {
     /* background-color: #00e1a0; */
 		max-width: 1000px;
 		border: 2px solid #00e1a0;
+    border-radius: 10px;
 }
 
 form#av_fare input, form#av_fare select {
@@ -734,7 +735,9 @@ form#av_fare input, form#av_fare select {
 }
 
 form#av_fare select {
-margin: 0 10px 0 5px;
+	margin: 0 10px 0 5px;
+	border: 1px solid #00e1a0;
+	border-radius: 3px;
 }
 
 form#av_fare input {
@@ -921,7 +924,7 @@ input.but_long_W, .form button, .td.tab_2_off {
 .footer {
 	position: fixed;
 	bottom:0;
-	margin: 0 0 0 10px;
+	/* margin: 0 0 0 10px; */
 }
 /* .footer .wraps {
 	padding-top: 100%;
