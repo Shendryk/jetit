@@ -55,10 +55,10 @@ BODY {
 }
 
 TH {
-	FONT-SIZE: 9pt; COLOR: #4b4f56; FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
+	FONT-SIZE: 9pt; COLOR: #000; FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 }
 TD {
-	FONT-SIZE: 9pt; COLOR: #4b4f56; FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
+	FONT-SIZE: 9pt; COLOR: #000; FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 }
 P {
 	FONT-SIZE: 9pt; COLOR: #4b4f56; FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
@@ -776,7 +776,7 @@ form#av_fare input {
 
 .login-page {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 5% 0 0;
   margin: auto;
 }
 .login-page .form {

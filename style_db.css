@@ -39,12 +39,13 @@ form.pme-form-change
 /* background-color:#E1E6FC; */
 
 color:#000000;
+
 /*margin: 1px;*/
-border-top: thin solid #EBF1FF;
+/* border-top: thin solid #EBF1FF;
 border-left: thin solid #EBF1FF;
 border-right: thin solid #AFB5C5;
-border-bottom: thin solid #AFB5C5;
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+border-bottom: thin solid #AFB5C5; */
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
  font-size: 8pt;
 margin-top: 10px;
 }
@@ -55,19 +56,21 @@ table.pme-main-copy,
 table.pme-main-view,
 table.pme-main-change
 {
-background-color:#6699cc;
+/* background-color:#6699cc; */
+background-color:#d9d9d9;
+
 
  border-collapse:  collapse;
 color:#000000;
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
  font-size: 8pt;
 /*width: 961px;*/
  margin-left: 3px;
  border-right: 1px solid #CECECE;
 }
 th{ /* this border inherited below */
-border-bottom: 1px solid #F0F1FF;
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+/* border-bottom: 1px solid #F0F1FF; */
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 font-size: 8pt;
 font-weight:normal;
 vertical-align:middle;
@@ -76,12 +79,15 @@ vertical-align:middle;
 .pme-header,
 th.pme-header-right-align{
 background-color: #9DC6FF;
+background-color: #fff;
 COLOR: #000000;
 font-size: 8pt;
-FONT-FAMILY: Tahoma, Arial, sans-serif;
-padding-top: 2px;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
+/* padding-top: 2px;
 padding-left: 3px;
-padding-right: 2px;
+padding-right: 2px; */
+
+
 }
 /* Row 1, table.pme-main Clear/Hide/Search INPUT's */
 .pme-hide {
@@ -111,10 +117,11 @@ font-size:0px;
  padding-left: 20px;
 }
 .pme-search {
-background-color: #9DC6FF;
-background-image: url(images/search.gif);
+background-color: #fff;
+background-image: url(images/search.png);
 background-repeat:no-repeat; 
 background-position:top left; 
+background-position:center; 
 margin:0px; 
 padding-top:0px; 
 height: 20px;
@@ -141,37 +148,46 @@ padding-left: 20px;
 	.pme-filter during Search and Query.
 	(Can be disabled in forms by setting search = false.)
 
-   A, TR, TD */
+	 A, TR, TD */
+	 
+.pme-queryinfo {
+	text-align: center;
+} 
 .pme-sortinfo
 {
-background-color:#cccccc;
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+/* background-color:#cccccc; */
+background-color:#dadada;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 font-size:8pt;
 color:#000000;
 padding: 3px;
-border-bottom: 1px solid #575757;
-border-top:  1px solid #cccccc;
+/* border-bottom: 1px solid #575757; */
+/* border-top:  1px solid #cccccc; */
 text-align:  center;
 }
 /* Row 2 during Search (hidden otherwise) */
 tr.pme-filter
 {
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 font-size:8pt;
-background-color: #cccccc;
+/* background-color: #cccccc; */
 color:#000000;
 }
 input.pme-filter 
 {
 background-color:#ffffff;
 color:#000000;
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
  font-size: 8pt;
-border:1px solid #336699;
+/* border:1px solid #336699; */
+border: 1px solid #9f9f9f;
 }
+input.pme-filter:focus {
+	border: 1px solid #0050ff;
+} 
 /* Borders "could" be added to td.pme-filter */
 td.pme-filter {
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 font-size:8pt;
 text-align:left;
 padding: 3px;
@@ -186,17 +202,24 @@ margin-top: 5px;
 tr.pme-navigation{
 color:#000000;
 }
+
+.pme-navigation table tbody tr:nth-child(even) {
+	/* margin: 5px; */
+	background: rgb(14, 30, 51);
+}
+
+
 td.pme-navigation-0{
-background-image: url(images/p_d.gif);
+/* background-image: url(images/p_d.gif);
 background-repeat: repeat-x;
-background-position: top;
+background-position: top; */
 color:#000000;
 text-align:  center;
 }
 td.pme-navigation-1{
-background-image: url(images/p_d.gif);
+/* background-image: url(images/p_d.gif);
 background-repeat: repeat-x;
-background-position: top;
+background-position: top; */
 text-align:  center;
 color:#000000;
 }
@@ -605,13 +628,15 @@ font-size:0px;
 /* Data cells (ToDo List: experiment with removing/combining certain TD's below). */
 td.pme-cell-0,
 td.pme-cell-1{
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 font-size:8pt;
-padding: 3px;
-text-align: center;
-background-image: url(images/p_d.gif);
+padding: 5px 3px;
+/* text-align: center; */
+/* background-image: url(images/p_d.gif);
 background-repeat:  repeat-x;
-background-position: top;
+background-position: top; */
+/* border: 1px solid #d9d9d9; */
 }
 td.pme-sortinfo{
 border-bottom:0px solid #006699;
@@ -620,7 +645,7 @@ padding: 5px;
 td.pme-buttons,
 td.pme-stats{
 color:#000000;
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 font-size:8pt;
 vertical-align: middle;
 padding: 3px;
@@ -634,8 +659,7 @@ tr.pme-row-view-0,
 tr.pme-row-change-0
 
 {
-background-color: rgb(225,230,252);
-color:#000000;
+background-color: #f8f8f8;
 }
 
 tr.pme-row-1,
@@ -652,7 +676,7 @@ color:#000000;
 hr,hr.pme-hr{
 background-color:transparent;
 color:#9DC6FF;
-height:5px;
+/* height:5px; */
 width: 100%;
 }
 input.pme-input-0,
@@ -763,7 +787,7 @@ td.pme-help-delete-1,
 td.pme-help-change-0,
 td.pme-help-change-1
 {
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 font-size:8pt;
 padding: 2px;
 padding-left: 10px;
@@ -789,7 +813,7 @@ td.pme-value-delete-0,
 td.pme-value-delete-1,
 td.pme-value-change-0,
 td.pme-value-change-1 {	
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 font-size:8pt;
 padding: 2px;
 padding-left: 15px;
@@ -814,7 +838,7 @@ td.pme-key-view-1,
 td.pme-key-change-0,
 td.pme-key-change-1 
  {	
-FONT-FAMILY: Tahoma, Arial, sans-serif;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 font-size:8pt;
 padding: 2px;
 padding-left: 10px;
@@ -1132,4 +1156,119 @@ td.pme-tab-selected-delete
 	 width: 105px;
 }
 
+.pme-main a {
+color: #2a7ab8;
+color: #0050ff;
 
+text-decoration: none;
+}
+
+.pme-main tr:hover {
+	background-color: #00e1a0;
+}
+
+tr.pme-header th{
+	border: 1px solid #d9d9d9;
+	text-align: left;
+	padding: 5px 3px;
+}
+
+tr.pme-header th a{
+	/* border: 1px solid #d9d9d9;
+	text-align: left; */
+	/* padding: ; */
+}
+
+tr.pme-header th a::after{
+	content: "⮁"; /* Добавляемый текст */ 
+  color: #0050ff; /* Цвет текста */ 
+  /* background-color: #fc0; Цвет фона  */
+  /* font-size: 90%; Размер шрифта  */
+  padding-left: 2px;
+}
+
+.pme-main tr {
+	border-top: 1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.pme-main tr td {
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+}
+
+.pme-main tbody {
+	border: 2px solid #d9d9d9;
+	/* box-shadow: 0px 2px 4px #d1d1d1; */
+}
+
+input.pme-filter {
+	width: 100%;
+}
+
+tr.pme-filter:hover {
+	background-color: inherit;
+}
+
+tr.pme-navigation table td {
+	padding: 3px;
+}
+
+tr.pme-navigation table select {
+	float: right;
+	/* width: 100%; */
+	margin: 1px;
+}
+.pme-navigation tr td {
+	margin: 10px;
+}
+
+.pme-navigation tr td abbr {
+/* width: 100%; */
+padding-right: 5px;
+}
+
+table.article {
+	max-width: 824px;
+}
+
+
+table.article tr {
+	padding: 5px;
+}
+
+table.article td select, table.article td input {
+	width: 97%;
+	margin: 1px 0;
+}
+
+table.article td select {
+	height: 21px;
+	margin: 1px 0;
+}
+
+table.article td select:focus, table.article td input:focus {
+	border: 1px solid #0050ff;
+}
+
+.article td #c_code,
+.article td #c_code2, 
+.article td #a_code {
+	width: 20%;
+}
+.article td #phone {
+	width: 49%;
+}
+
+.pme-navigation table {
+	border-spacing: 0;
+	border: 1px solid #d9d9d9;
+}
+
+.pme-navigation table {
+
+}
+
+input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
+	margin-bottom: 10px;
+}
