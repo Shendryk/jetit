@@ -355,7 +355,7 @@ td.td_tabul_2_1 {
 td.tab_2_off {
 	background: #fff; /* body */
 	 background: #00e1a0;
-	 color: #555555;
+	 color: #000;
 	 line-height: 1.1;
 	 height: 34px;
 	 text-align: center;
@@ -387,7 +387,7 @@ td.tab_2_off:hover {
 td.tab_2_on {
 	 /* font-weight: bolder; */
 	 color: #fff; 
-	 color: #ece45b; 
+	 /* color: #ece45b;  */
 	 
 	 /* color: #03c38c; */
 	 background-color: #00e1a0;

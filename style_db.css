@@ -1164,7 +1164,7 @@ text-decoration: none;
 }
 
 .pme-main tr:hover {
-	background-color: #00e1a0;
+	background-color: rgb(224, 224, 224);
 }
 
 tr.pme-header th{

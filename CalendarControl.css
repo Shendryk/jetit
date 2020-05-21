@@ -43,10 +43,10 @@
   text-align: center;
 }
 
-#CalendarControl .flightday {
+/* #CalendarControl .flightday {
   background-color: #72cf6d;
   color: #000;
-}
+} */
 
 
 #CalendarControl .header {
@@ -61,16 +61,18 @@
 }
 
 #CalendarControl .weekend {
-  background-color: #FFC;
+	/* background-color: #FFC; */
+	background-color: #f0eaa2;
+	
   color: #000;
 }
 
 #CalendarControl .current {
-  border: 1px solid #339;
+  /* border: 1px solid #339; */
 	background-color: #336;
-	background-color: #00e1a0;
+	background-color: #06a679;
 	
-  color: #FFF;
+  color: #fff;
 }
 
 #CalendarControl .flightday,
@@ -83,6 +85,8 @@
   width: 2em;
 }
 
+
+
 #CalendarControl .flightday:hover,
 #CalendarControl .weekday:hover,
 #CalendarControl .weekend:hover,
@@ -90,6 +94,15 @@
   color: #FFF;
   background-color: #336;
   border: 1px solid #999;
+}
+
+#CalendarControl .flightday {
+	/* background-color: #72cf6d; */
+	background-color: #00e1a0;
+	
+	color: #000;
+	/* border: 1px solid #72cf6d; */
+	/* outline-offset: -1px; */
 }
 
 #CalendarControl .previous {
