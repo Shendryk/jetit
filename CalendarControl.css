@@ -92,7 +92,9 @@
 #CalendarControl .weekend:hover,
 #CalendarControl .current:hover {
   color: #FFF;
-  background-color: #336;
+	background-color: #336;
+	background-color: #06a679;
+	
   border: 1px solid #999;
 }
 
@@ -135,6 +137,8 @@
 }
 
 #CalendarControl .empty {
-  background-color: #CCC;
+	background-color: #CCC;
+	background-color: #f8f9f8;
+	
   border: 1px solid #FFF;
 }
