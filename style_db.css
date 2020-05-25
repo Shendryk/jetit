@@ -757,6 +757,8 @@ border: #c8c8c8 1px solid;
 select.fare-input-change
 {
 background-color: #FFF6b4;
+background-color: #f6f7f6;
+
 color: #000000; 
 font-size: 7pt; 
    border: 0px;
@@ -1215,10 +1217,19 @@ tr.pme-navigation table td {
 }
 
 tr.pme-navigation table select {
-	float: right;
+	/* float: right; */
 	/* width: 100%; */
-	margin: 1px;
+	margin: 3px 0;
+	padding: 3px;
 }
+
+tr.pme-navigation table select {
+	/* float: right; */
+	/* width: 100%; */
+	margin: 3px 0;
+	padding: 3px;
+}
+
 .pme-navigation tr td {
 	margin: 10px;
 }

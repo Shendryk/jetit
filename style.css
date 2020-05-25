@@ -64,7 +64,7 @@ P {
 	FONT-SIZE: 9pt; COLOR: #4b4f56; FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 }
 DIV {
-	FONT-SIZE: 9pt; COLOR: #4b4f56; FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
+	FONT-SIZE: 9pt; COLOR: #000; FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 }
 UL {
 	FONT-SIZE: 9pt; COLOR: #4b4f56; FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
@@ -988,3 +988,49 @@ input.but_long_W, .form button, .td.tab_2_off {
 } */
 
 /* Конец формы авторизации */
+
+.fare-wrapper {
+	/* background-color: #00e1a0; */
+/* display: flex;
+flex-wrap: wrap; */
+padding: 5px;
+
+}
+/* .fare-flight {
+	margin-right: 5px;
+} */
+
+.fare-flight::before {
+content: "";
+display: block;
+width: 15px;
+height: 12px;
+background-image: url(/images/plane-departure-solid.svg);
+background-repeat: no-repeat;
+float: left;
+margin-right: 3px;
+position: relative;
+top: 2px;
+}
+
+.fare-time {
+	display: inline-block;
+}
+.fare-time::before {
+	content: "";
+	display:inline-block;
+	width: 15px;
+	height: 12px;
+	background-image: url(/images/clock-solid.svg);
+	background-repeat: no-repeat;
+	/* float: left; */
+	/* margin-right: 3px; */
+	position: relative;
+	top: 2px;
+	}
+
+.fare-package SELECT {
+	width: 100%;
+	border: 1px solid #00e1a0;
+}
+
