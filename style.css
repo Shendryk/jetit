@@ -993,44 +993,87 @@ input.but_long_W, .form button, .td.tab_2_off {
 	/* background-color: #00e1a0; */
 /* display: flex;
 flex-wrap: wrap; */
-padding: 5px;
+/* padding: 5px; */
 
 }
 /* .fare-flight {
 	margin-right: 5px;
 } */
 
-.fare-flight::before {
+.fare-way, .fare-time {
+	padding-right: 10px;
+}
+
+.fare-way::before {
 content: "";
 display: block;
-width: 15px;
+width: 10px;
 height: 12px;
 background-image: url(/images/plane-departure-solid.svg);
+background-image: url(/images/map-marker-alt-solid.svg);
+background-image: url(/images/map-marker-alt-regular.svg);
+background-image: url(/images/map-marker-alt-light.svg);
 background-repeat: no-repeat;
 float: left;
 margin-right: 3px;
 position: relative;
-top: 2px;
+top: 3px;
 }
 
-.fare-time {
+.fare-time, .number-flight {
 	display: inline-block;
 }
 .fare-time::before {
 	content: "";
-	display:inline-block;
-	width: 15px;
+	display: inline-block;
+	width: 16px;
 	height: 12px;
 	background-image: url(/images/clock-solid.svg);
+	background-image: url(/images/clock-regular.svg);
+	background-image: url(/images/clock-light.svg);
 	background-repeat: no-repeat;
 	/* float: left; */
-	/* margin-right: 3px; */
+	margin-right: 1px;
 	position: relative;
 	top: 2px;
-	}
+	left: 1px;
+}
+
+.number-flight::before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 13px;
+	background-image: url(/images/plane-departure-solid.svg);
+	background-image: url(/images/plane-departure-regular.svg);
+	background-image: url(/images/plane-departure-light.svg);
+	background-repeat: no-repeat;
+	/* float: left; */
+	margin-right: 3px;
+	position: relative;
+	top: 3px;
+}
 
 .fare-package SELECT {
 	width: 100%;
 	border: 1px solid #00e1a0;
 }
 
+.fare-oneway {
+	position: relative;
+	margin: 5px;
+	padding: 5px;
+	/* background-color: #f3f3f3; */
+	/* border: 1px dotted #000; */
+	border-radius: 5px;
+}
+
+/* .fare-oneway{
+margin: 5px;
+padding: 5px;
+} */
+
+.fare-wrapper .fare-oneway:nth-child(even) {
+	border-top: 1px dashed #a4a4a4;
+	/* background-color: #333; */
+}

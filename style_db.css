@@ -264,11 +264,10 @@ cursor:none;
 }
 
 
-input.pme-prev:enabled {
-background-color: #B4D2FA;
-background-color:#E1E6FC;
+/* input.pme-prev:enabled {
+background-color: #fff;
 
-background-image: url(images/prev.gif);
+background-image: url(images/backward-regular.svg);
 background-repeat:no-repeat; 
 background-position:top left; 
 margin:0px; 
@@ -280,6 +279,28 @@ font-size:0px;
  padding-left: 20px;
 cursor:pointer;
 
+} */
+
+input.pme-prev:enabled {
+	background-color: #fff;
+	/* background-color: #E1E6FC; */
+	/* background-image: url(images/prev.gif); */
+	background-image: url(images/backward-regular.svg);
+	background-image: url(images/backward-light.svg);
+	
+	background-repeat: no-repeat;
+	position: relative;
+	top: -5px;
+	left: 0px;
+	/* background-position: top left; */
+	margin: 5px;
+	/* padding-top: 0px; */
+	height: 20px;
+	width: 20px;
+	border: 0px;
+	font-size: 0px;
+	/* padding-left: 20px; */
+	cursor: pointer;
 }
 
 input.pme-prev:disabled {
@@ -501,19 +522,24 @@ font-size:0px;
 }
 
 input.pme-next:enabled  {
-background-color: #B4D2FA;
-background-color:#E1E6FC;
-background-image: url(images/next.gif);
-background-repeat:no-repeat; 
-background-position:top left; 
-margin:0px; 
-padding-top:0px; 
-height: 20px;
-width: 20px;
-border: 0px; 
-font-size:0px;
- padding-left: 20px;
-cursor:pointer;
+background-color: #fff;
+/* background-color:#E1E6FC; */
+/* background-image: url(images/next.gif); */
+background-image: url(images/forward-regular.svg);
+background-image: url(images/forward-light.svg);
+background-repeat: no-repeat;
+	position: relative;
+	top: -5px;
+	left: 0px;
+	/* background-position: top left; */
+	margin: 5px;
+	/* padding-top: 0px; */
+	height: 20px;
+	width: 20px;
+	border: 0px;
+	font-size: 0px;
+	/* padding-left: 20px; */
+	cursor: pointer;
 }
 
 input.pme-next:disabled {
@@ -646,7 +672,7 @@ td.pme-buttons,
 td.pme-stats{
 color:#000000;
 FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
-font-size:8pt;
+font-size:10pt;
 vertical-align: middle;
 padding: 3px;
 }
@@ -1236,7 +1262,7 @@ tr.pme-navigation table select {
 
 .pme-navigation tr td abbr {
 /* width: 100%; */
-padding-right: 5px;
+/* padding-right: 5px; */
 }
 
 table.article {
@@ -1272,14 +1298,35 @@ table.article td select:focus, table.article td input:focus {
 }
 
 .pme-navigation table {
-	border-spacing: 0;
-	border: 1px solid #d9d9d9;
+	border: 2px solid #a4a4a4;
+	border-spacing: 5px;
+	border-collapse: collapse;
 }
 
-.pme-navigation table {
-
+.pme-navigation table tr td {
+	border: 1px solid #a4a4a4;;
+	
 }
+
+
 
 input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
 	margin-bottom: 10px;
 }
+
+
+/* .fare-wrapper .fare-oneway:nth-child(even)::before {
+	content: '';
+	position: relative;
+	bottom: 13px;
+	left: 50%;
+	width: 1px;
+	height: 20px;
+	border: 1px dashed #6FB7FF;
+} */
+
+.fare-input, .fare-flight-time, .fare-flight-number {
+	/* background-color: #f3f3f3; */
+	/* padding: 100%; */
+}
+
