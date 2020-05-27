@@ -1,0 +1,946 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GSA Reservation system</title>
+<link href="style_db_fare-v2.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+@import url("style.css");
+-->
+</style>
+
+</head>
+<body>
+
+
+<script language="Javascript">
+
+function get_min_seat(sel_id){
+var sa=9;
+if (document.getElementById(sel_id) !== null) {
+	var si=document.getElementById(sel_id).options.selectedIndex;
+	if (si==-1) {
+		return sa;
+	}
+	var fstr=document.getElementById(sel_id).options[si].text;
+	sa=fstr.substring(1, 2);
+}
+return sa;
+}
+
+function set_min_seat() {
+gl_seat=9;
+var c_s=9;
+
+var rec=get_sel_rec('D');
+if (rec==-1) {
+	gl_seat=0;
+	return 0; 
+}
+
+for (i = 1; i < 4; i++) {
+	c_s=get_min_seat('D'+i+'sel'+rec);
+	if  (c_s<gl_seat) {
+			gl_seat=c_s;
+	}
+}
+rec=get_sel_rec('R');
+if (rec==-1) {
+		return gl_seat; 
+}
+
+
+	for (i = 1; i < 4; i++) {
+	c_s=get_min_seat('R'+i+'sel'+rec);
+	if  (c_s<gl_seat) {
+			gl_seat=c_s;
+	}
+}
+return gl_seat;
+} 
+
+function get_fare(mess,rec,ftype) {
+var res = get_fare_opt(mess+'1sel'+rec,ftype);
+res = res+get_fare_opt(mess+'2sel'+rec,ftype);
+res = res+get_fare_opt(mess+'3sel'+rec,ftype);
+return  res;
+}
+
+
+
+function get_fare_opt(sel_id,ftype) {
+if (document.getElementById(sel_id) !== null) {
+	// find options
+	var si=document.getElementById(sel_id).options.selectedIndex;
+	// set selected fare code 
+		if (si==-1) {
+						 var dr=sel_id.substring(0, 1)
+						 var ind = get_sel_rec(dr);
+						 var ff=document.getElementsByName(dr+'Fl');
+						 ff[ind].checked=false;
+						 return 0; 
+		}
+
+	var fval=document.getElementById(sel_id).options[si].value;
+	// now we have  in sel_id  D1sel2 or R2sel5 (direction, segment number, sel, record number)
+	//  will have 3676624_HRKSAWPC429  
+			fval=fval+"_"+ document.getElementById(sel_id+"F").value;
+	//  alert(fval);
+	 ss= sel_id.substring(0, 2)+"FS";
+//        alert(ss);
+
+	document.getElementById(ss).value=fval;
+				 
+	// get text
+	var fstr=document.getElementById(sel_id).options[si].text;
+	// get substr (total fare) ignore class 
+	var fb=fstr.indexOf(ftype,3);
+	var fe=fstr.indexOf('/',fb);
+	if (fe<0) {
+		fe=fstr.length;
+	}
+	resm=Math.round(100*(parseFloat(fstr.substring(fb+1, fe)).toFixed(2)));
+	return resm;
+} else {
+	return 0;
+}  
+}
+
+
+function get_fare(mess,rec,ftype) {
+var res = get_fare_opt(mess+'1sel'+rec,ftype);
+res = res+get_fare_opt(mess+'2sel'+rec,ftype);
+res = res+get_fare_opt(mess+'3sel'+rec,ftype);
+return  res
+}
+
+function get_sel_rec(mess) {
+var i; 
+var rec=-1;
+var ff=document.getElementsByName(mess+'Fl');
+for (i = 0; i < ff.length; i++) {
+	if (ff[i].checked) {
+		rec = i;
+	}
+}
+return rec;
+} 
+
+
+function get_total_fare(ftype) {
+
+var fare=0;
+var rec=get_sel_rec('D');
+if (rec==-1) {
+	return "Flight not selected";
+}
+
+if (document.getElementById('RFl') != null) {
+	var recr=get_sel_rec('R');
+	if (recr==-1) {
+		return "Return flight not selected";
+	}
+	fare=get_fare('R',recr,ftype);
+}
+
+fare=fare+get_fare('D',rec,ftype);
+return   fare +(curr_sf-gl_sf)*100;
+}
+
+
+
+function   get_fare_mess() {
+var rec=get_sel_rec('D');
+if (rec==-1) {
+	return "Flight not selected";
+}
+if (document.getElementById('RFl') != null) {
+	var recr=get_sel_rec('R');
+	if (recr==-1) {
+		return "Return flight not selected";
+	}
+}
+
+var fare_info='<a href="javascript:void(0)" onclick="click_by_id(\'id_PC\');">(Package info)</a>';
+
+
+var tl='TKT price'+': ADLT '+ get_total_fare('A')/100 +
+	' СHLD: '+ get_total_fare('C')/100 +
+	' INF: '+ get_total_fare('I')/100;
+
+tl = tl + get_total_sf();
+tl = tl + get_total_pnr()+fare_info ;
+
+return tl;
+}
+
+
+
+function pax_count(){
+var pax_cnt=1;
+for (i0 = 1; i0 < 10; i0++) {
+	if (document.getElementById('pt'+i0) != null) {
+		pax_cnt=pax_cnt+1;
+	}
+}
+return pax_cnt;
+}
+
+
+
+
+
+
+function  recalc_sf() {
+ curr_sf=document.getElementById('sf_tt').value;
+ document.getElementById('submit_sf').value=curr_sf; 
+ recalc_all();      
+}
+
+
+function get_total_sf() {
+var i;
+var pax_cnt;
+var tot_sf;
+var pax_cnt=pax_count();
+var diff = (gl_sf-curr_sf)*pax_cnt;
+//    var out_mess ='';
+//    if (diff<0) {
+//       out_mess='. Add:'+(0-diff);       
+//    } else {
+//       out_mess='. Disc:'+diff;
+//    }
+//    return t_sf_mess='Incl.SF('+gl_sf+'):'+ pax_cnt+'x<input id="sf_tt" name="sf_tt" type="text" size="3" value="'+curr_sf+'" onchange="recalc_sf()" >'+    '='+curr_sf*pax_cnt+out_mess+'.Seat:'+set_min_seat();
+
+return t_sf_mess='. Included Service Fee:'+ pax_cnt+'x<input id="sf_tt" name="sf_tt" type="text" size="3" value="'+curr_sf+'" onchange="recalc_sf()" >'+
+'='+curr_sf*pax_cnt;
+
+
+}
+
+
+
+
+
+
+function   get_total_pnr() {
+var i;
+var tot0= get_total_fare('A');
+
+for (i0 = 1; i0 < 10; i0++) {
+	if (document.getElementById('pt'+i0) != null) {
+			fstr0=document.getElementById('pt'+i0).value;
+			tot0=tot0+get_total_fare(fstr0.substring(0, 1));
+	}
+}
+var tl0='. PNR total: '+ tot0/100 + ' ' + sale_mess;
+return tl0;
+}
+
+function check_sex() {
+var i;
+var res=true; 
+if (document.getElementById('gn').value=='-')  {
+	 res=false;
+}
+for (i0 = 1; i0 < 10; i0++) {
+	if (document.getElementById('gn'+i0) != null) {
+			if (document.getElementById('gn'+i0).value=='-')  {
+				res=false;
+			}
+	}
+
+}
+return res;
+}
+
+
+function clear_all(){
+	 
+document.getElementById('D1FS').value='';
+document.getElementById('D2FS').value='';
+document.getElementById('D3FS').value='';
+document.getElementById('R1FS').value='';
+document.getElementById('R2FS').value='';
+document.getElementById('R3FS').value='';
+}
+
+function recalc_all(){
+clear_all();
+
+var tmp=get_fare_mess();
+document.getElementById('mess_total').innerHTML=tmp;
+var ms= set_min_seat();
+if ((ms<pax_count()) && (ms>0)) {
+	alert('Check pax/seat accordance');
+}
+}
+
+function check_inf(cntr){
+if (cntr.value=='INF') {
+		alert('Reminder:enter infant after adult');
+}
+}
+
+
+function chng_select0(mess,rec) {
+var did1=mess+'1sel'+rec;
+var did2=mess+'2sel'+rec;
+if (document.getElementById(did2) !== null) {
+	if (document.getElementById(did2).disabled) {
+			document.getElementById(did2).value=document.getElementById(did1).value
+	}
+}
+
+did2=mess+'3sel'+rec;
+if (document.getElementById(did2) !== null) {
+	if (document.getElementById(did2).disabled) {
+			document.getElementById(did2).value=document.getElementById(did1).value
+	}
+}
+}
+
+function chng_select1(mess,rec) {
+chng_select0(mess,rec); 
+recalc_all();
+}
+
+
+var sale_mess='';
+</script>
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+<TR>
+<TD  class="top_1">
+ID:14/SALE/pupkin travel/pupkin HRK/pu22/(W6) </TD>
+
+<td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+</TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+function start_time() {
+setInterval("postRequest()", 1000);
+}
+
+		function postRequest() {
+
+var xmlHttp;
+		var strURL =  "ajax.tab.php";
+		if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+		 var xmlHttp = new XMLHttpRequest();
+		 } else if (window.ActiveXObject) { // IE
+			 var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+	xmlHttp.open('GET', strURL, true);
+	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xmlHttp.onreadystatechange = function() {
+
+			if (xmlHttp.readyState == 4) {
+	xmlDoc = xmlHttp.responseXML;
+							print_din_tab(xmlDoc);
+			}
+	}
+	xmlHttp.send(strURL);
+}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+<tr>
+<td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_on >Reservation</td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_d.php'"><div id='_req'>Status update</div></td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_s.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='pg_term_s.php'">Settings & Info</td>
+<td class=tab_1_off   onclick="location.href='pg_mapPC.php'">Maps</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+<tr>
+<td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_on  onclick="window.location = 'pg_create.php'" >Create PC</td>
+<td class=tab_2_off onclick="location.href='pg_createEG.php'">Create EG</td>
+<td class=tab_2_off onclick="location.href='pg_createPQ.php'">Create PQ</td>
+<td class=tab_2_off onclick="location.href='pg_createPS.php'">Create PS</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs.php'">Non ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_t.php'">Ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_r.php'">Refunded PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_c.php'">Canceled PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_p.php'">Problem PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_all.php'">All PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_group.php'">Group</td>
+</TR></TABLE>
+</td>
+</tr>
+<tr>
+<td class="td_tabul_2_2">&nbsp;</td>
+</tr>
+<tr>
+<td class="td_tabul_2_3">&nbsp;</td>
+</tr>
+
+
+
+</table>
+
+<script>
+function print_din_tab(xmlDoc){
+
+txt = xmlDoc.getElementsByTagName('req')[0].childNodes[0].nodeValue;
+if (txt == 0) {txt=''};	document.getElementById('_req').innerHTML = 'Status update ' + txt;
+}
+</script>
+<script> start_time(); </script>
+<script>
+function click_by_id(id_PC) {
+document.getElementById(id_PC).style.display='block';
+}
+
+window.onclick = function(event) {
+if (event.target == document.getElementById('id_PC')) {
+		document.getElementById('id_PC').style.display='none';
+}
+}
+
+
+
+</script>
+
+<div id="id_PC" class="w3-modal">
+<div class="w3-modal-content">
+	<div class="w3-container">
+		<span onclick="document.getElementById('id_PC').style.display='none'" class="w3-display-topright">&times;</span>
+	Pegasus Airlines<br>Fare/Package Info<br><table>
+<tr><td></td><td>ECO</td></tr>
+<td>8 kg</td><tr><td>Free baggage (INT, INT+DOM)</td><td>20kg</td></tr>
+<tr><td>Free baggage (DOM, DOM+DOM)</td><td>15kg</td></tr>
+<tr><td>Free baggage infant</td><td>10kg</td></tr>
+<tr><td>Free Meal</td><td>no</td></tr>
+<tr><td>Free seat selection</td><td>no</td></tr>
+</table>      </div>
+</div>
+</div>
+
+
+
+<table valign='top'><tr>
+<td class="pme-buttons" valign="middle" align="center">Antalya-Tel-aviv<BR>22-07-2020<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=22-07-2020&date_r=28-07-2020&seat=1'" class="pme-prev" name="PME_sys_navop" value="<" /> &nbsp23-07-2020 &nbsp<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=24-07-2020&date_r=28-07-2020&seat=1'" class="pme-next" name="PME_sys_navop" value=">" />24-07-2020</td><td class="pme-buttons" valign="middle" align="center">Tel-aviv-Antalya<BR>27-07-2020<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=23-07-2020&date_r=27-07-2020&seat=1'" class="pme-prev" name="PME_sys_navop" value="<" /> &nbsp28-07-2020 &nbsp<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=23-07-2020&date_r=29-07-2020&seat=1'" class="pme-next" name="PME_sys_navop" value="<" />29-07-2020</td></tr>
+<tr class='pme-navigation'><td valign='top'>
+<table border="0" >
+<tr>
+<td>
+	<input  type='radio' id='DFl' name='DFl' value='0' onchange='recalc_all()' />
+</td>
+<td>
+	<div class="flight-wrapper">
+		<div class="flight-oneway"> 
+			<div class="flight-values">
+				<span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Tel-aviv, Ben Gurion International Airport(TLV)">AYT TLV</abbr> </span>
+				<span class="flight-time">10:00 11:35</span>
+				<span class="flight-number">PC791&nbsp</span>
+			
+				<input id='D1sel0F' name='D1sel0F'   type='text' hidden value='AYTTLVPC7910723' />
+				<div class="flight-package">  
+					<SELECT id='D1sel0' name='D1sel0'  class='fare-input-change'  onchange='chng_select1("D",0)' >
+						<OPTION value='8980044_ECO'>U5-A3534/C3534/I1130/ECO</OPTION>
+					</SELECT> <br>
+				</div>
+			</div>
+		</div>
+	</div>
+</td>
+<td>01:35</td><td>3534</td></tr>
+<script> chng_select0("D",0); </script>
+<tr><td><input  type='radio' id='DFl' name='DFl' value='1' onchange='recalc_all()' /></td>
+<td>
+<div class="flight-wrapper">
+<div class="flight-oneway"> 
+	<div class="flight-values">
+		<span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Tel-aviv, Ben Gurion International Airport(TLV)">AYT TLV</abbr> </span>
+		<span class="flight-time">22:00 23:35</span> 
+		<span class="flight-number">PC787&nbsp</span> 
+	
+	<input id='D1sel1F' name='D1sel1F'   type='text' hidden value='AYTTLVPC7870723' />
+	<div class="flight-package"> 
+		<SELECT id='D1sel1' name='D1sel1'  class='fare-input-change'  onchange='chng_select1("D",1)' >
+		<OPTION value='8980044_ECO'>U6-A3534/C3534/I1130/ECO</OPTION>
+		</SELECT> <br>
+	</div>
+	</div>
+</div>
+</div>
+
+</td>
+<td>01:35</td><td> 3534</td></tr>
+<script> chng_select0("D",1); </script>
+
+<tr>
+<td><input  type='radio' id='DFl' name='DFl' value='2' onchange='recalc_all()' /></td>
+
+<td>
+<div class="flight-wrapper">
+	<div class="flight-oneway"> 
+
+		<div class="flight-values">
+			<span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Istanbul , Sabiha Gökçen International Airport(SAW)">AYT SAW</abbr> </span>
+			<span class="flight-time">06:05 07:20</span>
+			<span class="flight-number">PC2029</span> 
+		
+		
+		<input id='D1sel2F' name='D1sel2F'   type='text' hidden value='AYTSAWPC20290723' />
+		
+		<div class="flight-package">
+			<SELECT id='D1sel2' name='D1sel2'  class='fare-input-change'  onchange='chng_select1("D",2)' >
+			<OPTION value='9141004_ECO'>E9-A1598/C1598/I853/ECO</OPTION>
+			</SELECT> <br>
+		</div>
+	</div>
+	</div>
+
+	<div class="flight-oneway"> 
+
+		<div class="flight-values"> 
+			<span class="flight-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Tel-aviv, Ben Gurion International Airport(TLV)">SAW TLV</abbr> </span>
+			<span class="flight-time">13:05 15:15</span>
+			<span class="flight-number">PC783&nbsp</span> 
+		
+
+		<input id='D2sel2F' name='D2sel2F'   type='text' hidden value='SAWTLVPC7830723' />
+	
+		<div class="flight-package">
+			<SELECT id='D2sel2' name='D2sel2'  class='fare-input-change'  onchange='chng_select1("D",2)' >
+			<OPTION value='8986981_ECO'>U9-A2736/C2736/I608/ECO</OPTION>
+			<OPTION value='8986982_ECO'>U9-A2571/C2571/I608/ECO</OPTION>
+			</SELECT> <br>
+		</div>
+	</div>
+
+	</div>
+
+</div>
+</td>
+
+<td>09:10</td><td> 4169 (165)</td></tr>
+<script> chng_select0("D",2); </script>
+<tr><td><input  type='radio' id='DFl' name='DFl' value='3' onchange='recalc_all()' /></td>
+<td>
+<div class="flight-wrapper">
+<div class="flight-oneway">
+	<div class="flight-values">
+		<span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Istanbul , Sabiha Gökçen International Airport(SAW)">AYT SAW</abbr> </span>
+		<span class="flight-time">07:35 08:50</span> 
+		<span class="flight-number">PC2001</span> 
+	
+	<input id='D1sel3F' name='D1sel3F'   type='text' hidden value='AYTSAWPC20010723' />
+
+	<div class="flight-package">
+		<SELECT id='D1sel3' name='D1sel3'  class='fare-input-change'  onchange='chng_select1("D",3)' >
+		<OPTION value='9141004_ECO'>E9-A1598/C1598/I853/ECO</OPTION>
+		</SELECT> <br>
+	</div> 
+	</div>
+</div>
+
+<div class="flight-oneway">
+	<div class="flight-values">
+		<span class="flight-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Tel-aviv, Ben Gurion International Airport(TLV)">SAW TLV</abbr> </span>
+		<span class="flight-time">20:20 22:30</span>
+		<span class="flight-number">PC785&nbsp</span> 
+	
+		<input id='D2sel3F' name='D2sel3F'   type='text' hidden value='SAWTLVPC7850723' />
+	<div class="flight-package"> 
+		<SELECT id='D2sel3' name='D2sel3'  class='fare-input-change'  onchange='chng_select1("D",3)' >
+		<OPTION value='8986985_ECO'>V6-A4430/C4430/I608/ECO</OPTION>
+		<OPTION value='8986986_ECO'>V6-A4099/C4099/I608/ECO</OPTION>
+		</SELECT> <br>
+	</div>
+	</div>
+</div>
+</div>
+</td>
+<td>14:55</td><td> 5697 (331)</td></tr>
+<script> chng_select0("D",3); </script>
+<tr><td><input  type='radio' id='DFl' name='DFl' value='4' onchange='recalc_all()' /></td>
+<td>
+<div class="flight-wrapper">
+<div class="flight-oneway">
+	<div class="flight-values">
+		<span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Istanbul , Sabiha Gökçen International Airport(SAW)">AYT SAW</abbr> </span>
+		<span class="flight-time">07:35 08:50</span>
+		<span class="flight-number">PC2001</span> 
+	
+		<input id='D1sel4F' name='D1sel4F'   type='text' hidden value='AYTSAWPC20010723' />
+	<div class="flight-package">  
+		<SELECT id='D1sel4' name='D1sel4'  class='fare-input-change'  onchange='chng_select1("D",4)' >
+		<OPTION value='9141004_ECO'>E9-A1598/C1598/I853/ECO</OPTION>
+		</SELECT> <br>
+	</div>
+</div>
+</div>
+<div class="flight-oneway">
+	<div class="flight-values">
+		<span class="flight-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Tel-aviv, Ben Gurion International Airport(TLV)">SAW TLV</abbr> </span>
+		<span class="flight-time">13:05 15:15</span> 
+		<span class="flight-number">PC783&nbsp</span> 
+	
+		<input id='D2sel4F' name='D2sel4F'   type='text' hidden value='SAWTLVPC7830723' />
+
+	<div class="flight-package"> 
+		<SELECT id='D2sel4' name='D2sel4'  class='fare-input-change'  onchange='chng_select1("D",4)' >
+		<OPTION value='8986981_ECO'>U9-A2736/C2736/I608/ECO</OPTION>
+		<OPTION value='8986982_ECO'>U9-A2571/C2571/I608/ECO</OPTION>
+		</SELECT> <br>
+	</div>
+</div> 
+</div>
+</div>
+</td>
+<td>07:40</td><td> 4169 (165)</td></tr>
+<script> chng_select0("D",4); </script>
+
+</table>
+<font color='red'> RED TIME! DATE IS DIFFERENT FROM YOUR REQUEST</font></td>
+<td valign='top'>
+
+
+
+<table border="0" ><tr><td><input  type='radio' id='RFl' name='RFl' value='0' onchange='recalc_all()' /></td>
+<td>
+<div class="flight-wrapper">
+<div class="flight-oneway">
+	<div class="flight-values">
+		<span class="flight-way"><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Antalya, Antalya International Airport(AYT)">TLV AYT</abbr> </span>
+		<span class="flight-time">07:45 09:20</span>
+		<span class="flight-number">PC788&nbsp</span> 
+	
+
+<input id='R1sel0F' name='R1sel0F'   type='text' hidden value='TLVAYTPC7880728' />
+
+<div class="flight-package"> 
+	<SELECT id='R1sel0' name='R1sel0'  class='fare-input-change'  onchange='chng_select1("R",0)' >
+	<OPTION value='9140321_ECO'>Z9-A4450/C4450/I1130/ECO</OPTION>
+	</SELECT> <br>
+</div>
+</div> 
+</div>
+</div>
+
+
+</td>
+<td>01:35</td><td> 4450</td></tr>
+<script> chng_select0("R",0); </script>
+
+<tr><td><input  type='radio' id='RFl' name='RFl' value='1' onchange='recalc_all()' /></td>
+
+<td>
+<div class="flight-wrapper">
+	<div class="flight-oneway">
+		<div class="flight-values">
+			<span class="flight-way"><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Antalya, Antalya International Airport(AYT)">TLV AYT</abbr></span>
+			<span class="flight-time">12:35 14:10</span>
+			<span class="flight-number">PC792&nbsp</span> 
+		
+<input id='R1sel1F' name='R1sel1F'   type='text' hidden value='TLVAYTPC7920728' />
+<div class="flight-package"> 
+<SELECT id='R1sel1' name='R1sel1'  class='fare-input-change'  onchange='chng_select1("R",1)' >
+<OPTION value='9140302_ECO'>T9-A4036/C4036/I1130/ECO</OPTION>
+</SELECT> <br>
+</div>
+</div>
+</div>
+</div>
+</td>
+<td>01:35</td><td> 4036</td></tr>
+<script> chng_select0("R",1); </script>
+<tr><td><input  type='radio' id='RFl' name='RFl' value='2' onchange='recalc_all()' /></td>
+<td>
+<div class="flight-wrapper">
+<div class="flight-oneway">
+	<div class="flight-values">
+		<span class="flight-way"><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Istanbul , Sabiha Gökçen International Airport(SAW)">TLV SAW</abbr></span>
+		<span class="flight-time">05:10 07:25</span>
+		<span class="flight-number">PC786&nbsp</span> 
+
+	<input id='R1sel2F' name='R1sel2F'   type='text' hidden value='TLVSAWPC7860728' />
+	<div class="flight-package">
+		<SELECT id='R1sel2' name='R1sel2'  class='fare-input-change'  onchange='chng_select1("R",2)' >
+		<OPTION value='9140406_ECO'>N9-A7630/C6718/I1434/ECO</OPTION>
+		<OPTION value='9140405_ECO'>N9-A7299/C6387/I1434/ECO</OPTION>
+		</SELECT> <br>
+	</div>
+</div>
+</div>
+<div class="flight-oneway">
+	<div class="flight-values">
+		<span class="flight-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Antalya, Antalya International Airport(AYT)">SAW AYT</abbr> </span>
+		<span class="flight-time">12:10 13:25</span>
+		<span class="flight-number">PC2014</span> 
+	
+<input id='R2sel2F' name='R2sel2F'   type='text' hidden value='SAWAYTPC20140728' />
+<div class="flight-package">
+<SELECT id='R2sel2' name='R2sel2'  class='fare-input-change'  onchange='chng_select1("R",2)' >
+<OPTION value='9142067_ECO'>I9-A745/C745/I331/ECO</OPTION>
+</SELECT> <br>
+</div>
+</div>
+</div>
+</div>
+
+</td>
+<td>08:15</td><td> 8044 (331)</td></tr>
+<script> chng_select0("R",2); </script>
+
+</table>
+<font color='red'> RED TIME! DATE IS DIFFERENT FROM YOUR REQUEST</font></td>
+
+</tr>
+<tr><td Colspan="2"  ><p id="mess_total"></p></td>
+</tr></table>
+<script>
+var  v8980044 = ["ECO",20,"A3534/C3534/I1130"];
+var  v8980044 = ["ECO",20,"A3534/C3534/I1130"];
+var  v9141004 = ["ECO",20,"A1598/C1598/I853"];
+var  v8986982 = ["ECO",20,"A2571/C2571/I608"];
+var  v8986981 = ["ECO",20,"A2736/C2736/I608"];
+var  v9141004 = ["ECO",20,"A1598/C1598/I853"];
+var  v8986986 = ["ECO",20,"A4099/C4099/I608"];
+var  v8986985 = ["ECO",20,"A4430/C4430/I608"];
+var  v9141004 = ["ECO",20,"A1598/C1598/I853"];
+var  v9141004 = ["ECO",20,"A1598/C1598/I853"];
+var  v9141004 = ["ECO",20,"A1598/C1598/I853"];
+var  v8986981 = ["ECO",20,"A2736/C2736/I608"];
+var  v9141004 = ["ECO",20,"A1598/C1598/I853"];
+var  v9141006 = ["ECO",20,"A1322/C1322/I853"];
+var  v9141006 = ["ECO",20,"A1322/C1322/I853"];
+var  v9141006 = ["ECO",20,"A1322/C1322/I853"];
+var  v9141006 = ["ECO",20,"A1322/C1322/I853"];
+var  v9141006 = ["ECO",20,"A1322/C1322/I853"];
+var  v8986978 = ["ECO",20,"A3465/C3465/I608"];
+var  v9141004 = ["ECO",20,"A1598/C1598/I853"];
+var  v9141006 = ["ECO",20,"A1322/C1322/I853"];
+var  v9141006 = ["ECO",20,"A1322/C1322/I853"];
+var  v9140321 = ["ECO",20,"A4450/C4450/I1130"];
+var  v9140302 = ["ECO",20,"A4036/C4036/I1130"];
+var  v9140405 = ["ECO",20,"A7299/C6387/I1434"];
+var  v9140406 = ["ECO",20,"A7630/C6718/I1434"];
+var  v9142067 = ["ECO",20,"A745/C745/I331"];
+var  v9142065 = ["ECO",20,"A1021/C1021/I331"];
+var  v9142065 = ["ECO",20,"A1021/C1021/I331"];
+var  v9140393 = ["ECO",20,"A8386/C7474/I1434"];
+var  v9140394 = ["ECO",20,"A8717/C7806/I1434"];
+var  v9140405 = ["ECO",20,"A7299/C6387/I1434"];
+var  v9140406 = ["ECO",20,"A7630/C6718/I1434"];
+var  v9142070 = ["ECO",20,"A1297/C1297/I331"];
+var  v9142065 = ["ECO",20,"A1021/C1021/I331"];
+var  v9140417 = ["ECO",20,"A3437/C3437/I1130"];
+var  v9140418 = ["ECO",20,"A3768/C3768/I1130"];
+var  v9142065 = ["ECO",20,"A1021/C1021/I331"];
+var  v9142065 = ["ECO",20,"A1021/C1021/I331"];
+var  v9142066 = ["ECO",20,"A1573/C1573/I331"];
+
+var gl_seat=9; 
+
+var curr_sf=960;
+var gl_sf=960;
+
+function check_submit(){
+if (!check_sex()) {
+	alert("Check pax gender");
+	return false;
+}  
+
+var rec=get_sel_rec('D');
+if (rec==-1) {
+	alert("Flight not selected");
+	return false;
+}
+
+if (document.getElementById('RFl') != null) {
+	var recr=get_sel_rec('R');
+	if (recr==-1) {
+		alert("Return flight not selected");
+		return false;
+	}
+}
+document.getElementById('book_btn').disabled = true;
+return true;
+}
+
+</script>
+
+
+<form onsubmit="return check_submit()" name="book" action="pg_book.php"  method="POST" id="book" class="pme-form" >
+
+<input id="D1FS" name="D1FS" type="text" hidden value="" />
+<input id="D2FS" name="D2FS" type="text" hidden value="" />
+<input id="D3FS" name="D3FS" type="text" hidden value="" />
+
+<input id="R1FS" name="R1FS" type="text" hidden value="" />
+<input id="R2FS" name="R2FS" type="text" hidden value="" />
+<input id="R3FS" name="R3FS" type="text" hidden value="" />
+
+<input id="submit_sf" name="submit_sf" type="text" hidden value="960"/> 
+
+
+
+<script type="text/javascript">
+function NumToWord(nm) {
+var ones = Array("", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX","SEVEN", "EIGHT", "NINE");
+return ones[nm];
+}
+		function AddRow(sender) {
+				// Get current row index.
+				// Get current table.
+var table =  document.getElementsByName('PaxInfo')[0];
+			var rowIndex = table.rowIndex + 1;
+
+				// Create a new row.
+
+	 if (table.rows.length<18) {
+				var row = table.insertRow(table.rows.length);
+				// Create Col1.
+				var col1 = row.insertCell(0);
+				var tab_rown = Math.round(table.rows.length/2);
+				col1.innerHTML ='<SELECT id="pt'+tab_rown
+	+ '" name="pt'+tab_rown
+	+ '" class = "dropdown"  onchange="check_inf(this); recalc_all()" >                        <OPTION value="ADT">ADT</OPTION><OPTION value="CHD">CHD</OPTION><OPTION value="INF">INF</OPTION></SELECT>';
+
+				// Create Col2.
+				var col2 = row.insertCell(1);
+				col2.innerHTML = '<input id="f_name'+tab_rown
+	+ '" name="f_name'+tab_rown+'" type="text" size="24" maxlength="24" minlength="1" value="" placeholder="First Name" autocomplete="off"  onFocus="this.select()" />';
+				// Create Col3.
+				var col3 = row.insertCell(2);
+				col3.innerHTML = '<input id="s_name'+tab_rown
+	+ '" name="s_name'+tab_rown+'" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" placeholder="Surname(Family Name)" onFocus="this.select()" />';
+// for test generate surname
+//value="'+NumToWord(tab_rown)+'" 
+
+
+				// Create Col4.
+				var col4 = row.insertCell(3);
+				col4.innerHTML = '<input id="email'+tab_rown
+	+ '" name="email'+tab_rown+'" type="text" size="24" maxlength="35" minlength="5"  autocomplete="off" value=""  disabled onFocus="this.select()"  placeholder="Email" />';
+				var col5 = row.insertCell(4);
+				
+col5.innerHTML ='<input id="c_code'+tab_rown
+	+ '" name="c_code'+tab_rown+'" type="text" size="1" maxlength="4" minlength="2"  autocomplete="off" value="" onFocus="this.select()" disabled /> <input id="a_code" name="a_code'+tab_rown+'" type="text" size="1" maxlength="4" minlength="1" value="" onFocus="this.select()" disabled /> <input id="phone" name="phone'+tab_rown+'" type="text" size="7" maxlength="10" minlength="7" autocomplete="off"  value=""  onFocus="this.select()" disabled />';
+						
+// Second row
+
+				var row = table.insertRow(table.rows.length);
+				// Create Col1.
+				var col1 = row.insertCell(0);
+				col1.innerHTML ='<SELECT id="gn'+tab_rown
+	+ '" name="gn'+tab_rown
+	+ '" class = "dropdown" ><OPTION value="-">-</OPTION><OPTION value="M">M</OPTION><OPTION value="F">F</OPTION></SELECT>';
+
+				// Create Col2.
+				var col2 = row.insertCell(1);
+				col2.innerHTML = '<input id="b_date'+tab_rown
+	+ '" name="b_date'+tab_rown+'" type="text" size="24" maxlength="10" minlength="3"  autocomplete="off"  value="" onFocus="this.select()" placeholder="Birthday DD-MM-YYYY"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\\d{2}$/) !== null) {            this.value = v + \'-\';      } else if (v.match(/^\\d{2}\\-\\d{2}$/) !== null) {            this.value = v + \'-\'; }"/>';
+
+				// Create Col3.
+				var col3 = row.insertCell(2);
+				col3.innerHTML = '<input id="doc_num'+tab_rown
+	+ '" name="doc_num'+tab_rown+'" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off"  value=""    onFocus="this.select()" placeholder="Passport/ ID NO" disabled />';
+				// Create Col4.
+				var col4 = row.insertCell(3);
+				col4.innerHTML = '<input id="doc_cn'+tab_rown
+	+ '" name="doc_cn'+tab_rown+'" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" value=""    onFocus="this.select()" placeholder="Passport country" disabled />';
+				var col5 = row.insertCell(4);
+				col5.innerHTML = '<input id="val_doc'+tab_rown
+	+ '" name="val_doc'+tab_rown+'" type="text" size="20" maxlength="20" minlength="3"  autocomplete="off" value=""    onFocus="this.select()" placeholder="Valid till DD-MM-YYYY"   onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\\d{2}$/) !== null) {            this.value = v + \'-\';      } else if (v.match(/^\\d{2}\\-\\d{2}$/) !== null) {            this.value = v + \'-\'; }"  disabled />';
+}
+recalc_all();    
+}
+
+	 function DeleteRow(sender) {
+var table =  document.getElementsByName('PaxInfo')[0];
+if (table.rows.length>2) {
+				table.deleteRow(table.rows.length-1);
+				table.deleteRow(table.rows.length-1);
+			 } 
+	recalc_all();    
+}
+</script>
+
+<input type="button" class="pme-add" title="Add NEW"  onclick="AddRow(this)" />
+		<input type="button" class="pme-delete" title="Delete" onclick="DeleteRow(this)" />
+
+
+		<table name="PaxInfo" border="0" cellpadding="0" cellspacing="0" class="article">
+				<tr>
+						<td>
+	<SELECT id="pt" name="pt" class = "dropdown">                        		<OPTION value="ADT">ADT</OPTION>
+	</SELECT>
+						</td>
+						<td>
+								<input id="f_name" name="f_name" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" onFocus="this.select()"  placeholder="First Name" />
+						</td>
+						<td>
+								<input id="s_name" name="s_name" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" onFocus="this.select()"  placeholder="Surname(Family Name)" />
+						</td>
+						<td>
+							 <input id="email" name="email" type="text" size="24" maxlength="35" minlength="5"  autocomplete="off" value="pupukin@gmail.com" onFocus="this.select()"  placeholder="Email" />
+						</td>
+						<td>
+<input id="c_code" name="c_code" type="text" size="1" maxlength="4" minlength="2"  autocomplete="off"  value="+380" onFocus="this.select()" />
+<input id="a_code" name="a_code" type="text" size="1" maxlength="4" minlength="1"  autocomplete="off"  value="" onFocus="this.select()" />
+<input id="phone" name="phone" type="text" size="7" maxlength="10" minlength="7"  autocomplete="off"  value="" onFocus="this.select()" />
+						</td>
+				</tr>
+		 <tr>
+						<td>
+	<SELECT id="gn" name="gn" class = "dropdown">                        	
+<OPTION value="-">-</OPTION><OPTION value="M">M</OPTION><OPTION value="F">F</OPTION>;
+</SELECT>
+						</td>
+						<td>
+						<input id="b_date" name="b_date" type="text" size="24" maxlength="10" minlength="10"  autocomplete="off" value="" onFocus="this.select()"  placeholder="Birthday DD-MM-YYYY" 
+
+onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+
+onkeyup="
+		var v = this.value;
+		if (v.match(/^\d{2}$/) !== null) {
+				this.value = v + '-';
+		} else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+				this.value = v + '-';
+		}"
+
+/>
+						</td>
+						<td>
+								<input id="doc_num" name="doc_num" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" placeholder="Passport/ ID NO" value=""  onFocus="this.select()" disabled />
+						</td>
+						<td>
+						 <input id="doc_cn" name="doc_cn" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Passport country" disabled />
+						</td>
+						<td>
+	 <input id="val_doc" name="val_doc" type="text" size="20" maxlength="20" minlength="10"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Valid till DD-MM-YYYY "   onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\d{2}$/) !== null) { this.value = v + '-'; } else if (v.match(/^\d{2}\-\d{2}$/) !== null) { this.value = v + '-'; }" disabled /> 
+						</td>
+				</tr>
+		</table>
+<br>
+
+<input id="book_btn" type="submit" value="Book"  class="but_long_W" />
+</form></body>
+</html>
+
+
