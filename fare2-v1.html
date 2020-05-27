@@ -509,129 +509,99 @@ window.onclick = function(event) {
 
  <tr class='pme-navigation'>
   <td valign='top'>
-  <table border="1" id="shedTable">
+  <table border="0" id="shedTable">
   <tr>
     <td><input type='radio' id='DFl' name='DFl' value='0' onchange='sel_ret_rec();recalc_all()' /></td>
 
   <td>
-    <div class="fare-wrapper">
-      <div class="fare-flight">
-        <abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr>
-        <span class="fare-time">14:45 16:15 PQ432&nbsp UR-SQI</span>
+    <div class="flight-wrapper">
+    	<div class="flight-oneway">
+      <div class="flight-values">
+        <span class="flight-way"><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr></span>
+				<span class="flight-time">14:45 16:15</span>
+				<span class="flight-number">PQ432&nbsp UR-SQI</span>
       </div>
       <input id='D1sel0F' name='D1sel0F'   type='text' hidden value='BUSKBPPQ4320821_0' />
-      <div class="fare-package">
+      <div class="flight-package"> 
         <SELECT id='D1sel0' name='D1sel0'  class='fare-input-change'  onchange='chng_select1("D",0)' >
           <OPTION value='Standard'>S3-A2+C1+I1/Standard</OPTION>
         </SELECT> <br>
       </div>
-    </div>
+		</div>
+	</div>
   </td>
 <td>02:30</td><td> 14485.98</td></tr>
 
 <script> chng_select0("D",0); </script>
 <tr><td><input type='radio' id='DFl' name='DFl' value='1' onchange='sel_ret_rec();recalc_all()' /></td>
-<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
-<input id='D1sel1F' name='D1sel1F'   type='text' hidden value='BUSKBPPQ4320821_1' />
-<SELECT id='D1sel1' name='D1sel1'  class='fare-input-change'  onchange='chng_select1("D",1)' >
-<OPTION value='Standard'>S3-A2+C1+I1/Standard</OPTION>
-</SELECT> <br>
+<td>
+	<div class="flight-wrapper">
+    	<div class="flight-oneway">
+      <div class="flight-values">
+				<span class="flight-way"><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr></span> 
+				<span class="flight-time">14:45 16:15</span>
+				<span class="flight-number">PQ432&nbsp UR-SQI</span>
+			</div>
+			<input id='D1sel1F' name='D1sel1F'   type='text' hidden value='BUSKBPPQ4320821_1' />
+			<div class="flight-package"> 
+				<SELECT id='D1sel1' name='D1sel1'  class='fare-input-change'  onchange='chng_select1("D",1)' >
+				<OPTION value='Standard'>S3-A2+C1+I1/Standard</OPTION>
+				</SELECT> <br>
+</div>
+</div>
+</div>
 </td>
 <td>02:30</td><td> 16602.52</td></tr>
 <script> chng_select0("D",1); </script>
-<tr><td><input type='radio' id='DFl' name='DFl' value='2' onchange='sel_ret_rec();recalc_all()' /></td>
-<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
-<input id='D1sel2F' name='D1sel2F'   type='text' hidden value='BUSKBPPQ4320821_2' />
-<SELECT id='D1sel2' name='D1sel2'  class='fare-input-change'  onchange='chng_select1("D",2)' >
-<OPTION value='Standard'>S3-A2+C1+I1/Standard</OPTION>
-</SELECT> <br>
-</td>
-<td>02:30</td><td> 23076.3</td></tr>
-<script> chng_select0("D",2); </script>
-<tr><td><input type='radio' id='DFl' name='DFl' value='3' onchange='sel_ret_rec();recalc_all()' /></td>
-<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
-<input id='D1sel3F' name='D1sel3F'   type='text' hidden value='BUSKBPPQ4320821_3' />
-<SELECT id='D1sel3' name='D1sel3'  class='fare-input-change'  onchange='chng_select1("D",3)' >
-<OPTION value='Flex'>E3-A2+C1+I1/Flex</OPTION>
-</SELECT> <br>
-</td>
-<td>02:30</td><td> 21203.23</td></tr>
-<script> chng_select0("D",3); </script>
-<tr><td><input type='radio' id='DFl' name='DFl' value='4' onchange='sel_ret_rec();recalc_all()' /></td>
-<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
-<input id='D1sel4F' name='D1sel4F'   type='text' hidden value='BUSKBPPQ4320821_4' />
-<SELECT id='D1sel4' name='D1sel4'  class='fare-input-change'  onchange='chng_select1("D",4)' >
-<OPTION value='Flex'>E3-A2+C1+I1/Flex</OPTION>
-</SELECT> <br>
-</td>
-<td>02:30</td><td> 23319.77</td></tr>
-<script> chng_select0("D",4); </script>
-<tr><td><input type='radio' id='DFl' name='DFl' value='5' onchange='sel_ret_rec();recalc_all()' /></td>
-<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
-<input id='D1sel5F' name='D1sel5F'   type='text' hidden value='BUSKBPPQ4320821_5' />
-<SELECT id='D1sel5' name='D1sel5'  class='fare-input-change'  onchange='chng_select1("D",5)' >
-<OPTION value='Flex'>E3-A2+C1+I1/Flex</OPTION>
-</SELECT> <br>
-</td>
-<td>02:30</td><td> 29793.55</td></tr>
-<script> chng_select0("D",5); </script>
+
 </table>
 </td>
 <td valign='top'>
-<table border="1" id="shedTable"><tr><td><input type='radio' id='RFl' name='RFl' value='0' disabled /></td>
-<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
+
+
+<table border="0" id="shedTable"><tr><td><input type='radio' id='RFl' name='RFl' value='0' disabled /></td>
+<td>
+	
+	<div class="flight-wrapper">
+    <div class="flight-oneway">
+      <div class="flight-values">
+				<span class="flight-way"><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr></span> 
+				<span class="flight-time">10:15 13:45</span> 
+				<span class="flight-number">PQ431&nbsp UR-SQI</span>
 <input id='R1sel0F' name='R1sel0F'   type='text' hidden value='KBPBUSPQ4310828_0' />
+<div class="flight-package"> 
 <SELECT id='R1sel0' name='R1sel0'  class='fare-input-change'  onchange='chng_select1("R",0)' disabled>
 <OPTION value='Basic'>L/Basic</OPTION>
 </SELECT> <br>
+</div>
+</div>
+</div>
 </td>
 <td>02:30</td><td> -</td></tr>
 <script> chng_select0("R",0); </script>
 <tr><td><input type='radio' id='RFl' name='RFl' value='1' disabled /></td>
-<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
-<input id='R1sel1F' name='R1sel1F'   type='text' hidden value='KBPBUSPQ4310828_1' />
-<SELECT id='R1sel1' name='R1sel1'  class='fare-input-change'  onchange='chng_select1("R",1)' disabled>
-<OPTION value='Standard'>S/Standard</OPTION>
-</SELECT> <br>
+<td>
+	<div class="flight-wrapper">
+    <div class="flight-oneway">
+      <div class="flight-values">
+				<span class="flight-way"><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr></span>
+				<span class="flight-time">10:15 13:45</span>
+				<span class="flight-number">PQ431&nbsp UR-SQI</span> 
+			</div> 
+			<input id='R1sel1F' name='R1sel1F'   type='text' hidden value='KBPBUSPQ4310828_1' />
+			<div class="flight-package"> 
+				<SELECT id='R1sel1' name='R1sel1'  class='fare-input-change'  onchange='chng_select1("R",1)' disabled>
+					<OPTION value='Standard'>S/Standard</OPTION>
+				</SELECT> <br>
+			</div>
+		</div>
+	</div>
 </td>
 <td>02:30</td><td> -</td></tr>
 <script> chng_select0("R",1); </script>
-<tr><td><input type='radio' id='RFl' name='RFl' value='2' disabled /></td>
-<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
-<input id='R1sel2F' name='R1sel2F'   type='text' hidden value='KBPBUSPQ4310828_2' />
-<SELECT id='R1sel2' name='R1sel2'  class='fare-input-change'  onchange='chng_select1("R",2)' disabled>
-<OPTION value='Flex'>E/Flex</OPTION>
-</SELECT> <br>
-</td>
-<td>02:30</td><td> -</td></tr>
-<script> chng_select0("R",2); </script>
-<tr><td><input type='radio' id='RFl' name='RFl' value='3' disabled /></td>
-<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
-<input id='R1sel3F' name='R1sel3F'   type='text' hidden value='KBPBUSPQ4310828_3' />
-<SELECT id='R1sel3' name='R1sel3'  class='fare-input-change'  onchange='chng_select1("R",3)' disabled>
-<OPTION value='Basic'>L/Basic</OPTION>
-</SELECT> <br>
-</td>
-<td>02:30</td><td> -</td></tr>
-<script> chng_select0("R",3); </script>
-<tr><td><input type='radio' id='RFl' name='RFl' value='4' disabled /></td>
-<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
-<input id='R1sel4F' name='R1sel4F'   type='text' hidden value='KBPBUSPQ4310828_4' />
-<SELECT id='R1sel4' name='R1sel4'  class='fare-input-change'  onchange='chng_select1("R",4)' disabled>
-<OPTION value='Standard'>S/Standard</OPTION>
-</SELECT> <br>
-</td>
-<td>02:30</td><td> -</td></tr>
-<script> chng_select0("R",4); </script>
-<tr><td><input type='radio' id='RFl' name='RFl' value='5' disabled /></td>
-<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
-<input id='R1sel5F' name='R1sel5F'   type='text' hidden value='KBPBUSPQ4310828_5' />
-<SELECT id='R1sel5' name='R1sel5'  class='fare-input-change'  onchange='chng_select1("R",5)' disabled>
-<OPTION value='Flex'>E/Flex</OPTION>
-</SELECT> <br>
-</td>
-<td>02:30</td><td> -</td></tr>
-<script> chng_select0("R",5); </script>
+
+
+
 </table>
 </td>
 

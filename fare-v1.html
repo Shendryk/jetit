@@ -441,21 +441,21 @@ window.onclick = function(event) {
 <table valign='top'><tr>
 <td class="pme-buttons" valign="middle" align="center">Antalya-Tel-aviv<BR>22-07-2020<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=22-07-2020&date_r=28-07-2020&seat=1'" class="pme-prev" name="PME_sys_navop" value="<" /> &nbsp23-07-2020 &nbsp<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=24-07-2020&date_r=28-07-2020&seat=1'" class="pme-next" name="PME_sys_navop" value=">" />24-07-2020</td><td class="pme-buttons" valign="middle" align="center">Tel-aviv-Antalya<BR>27-07-2020<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=23-07-2020&date_r=27-07-2020&seat=1'" class="pme-prev" name="PME_sys_navop" value="<" /> &nbsp28-07-2020 &nbsp<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=23-07-2020&date_r=29-07-2020&seat=1'" class="pme-next" name="PME_sys_navop" value="<" />29-07-2020</td></tr>
 <tr class='pme-navigation'><td valign='top'>
-<table border="1" >
+<table border="0" >
   <tr>
     <td>
-			<div class="fare-input"><input  type='radio' id='DFl' name='DFl' value='0' onchange='recalc_all()' /></div>
+			<input  type='radio' id='DFl' name='DFl' value='0' onchange='recalc_all()' />
     </td>
     <td>
-      <div class="fare-wrapper">
-        <div class="fare-oneway"> 
-          <div class="fare-flight">
-            <span class="fare-way"><abbr title="Antalya, Antalya International Airport(AYT) - Tel-aviv, Ben Gurion International Airport(TLV)">AYT TLV</abbr> </span>
-						<span class="fare-time">10:00 11:35</span>
-						<span class="number-flight">PC791&nbsp</span>
+      <div class="flight-wrapper">
+        <div class="flight-oneway"> 
+          <div class="flight-values">
+            <span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Tel-aviv, Ben Gurion International Airport(TLV)">AYT TLV</abbr> </span>
+						<span class="flight-time">10:00 11:35</span>
+						<span class="flight-number">PC791&nbsp</span>
           </div>
           <input id='D1sel0F' name='D1sel0F'   type='text' hidden value='AYTTLVPC7910723' />
-          <div class="fare-package">  
+          <div class="flight-package">  
             <SELECT id='D1sel0' name='D1sel0'  class='fare-input-change'  onchange='chng_select1("D",0)' >
               <OPTION value='8980044_ECO'>U5-A3534/C3534/I1130/ECO</OPTION>
             </SELECT> <br>
@@ -463,19 +463,19 @@ window.onclick = function(event) {
         </div>
       </div>
 </td>
-<td><div class="fare-flight-time">01:35</div></td><td><div class="fare-flight-number">3534</div></td></tr>
+<td>01:35</td><td>3534</td></tr>
 <script> chng_select0("D",0); </script>
 <tr><td><input  type='radio' id='DFl' name='DFl' value='1' onchange='recalc_all()' /></td>
 <td>
-  <div class="fare-wrapper">
-    <div class="fare-oneway"> 
-      <div class="fare-flight">
-        <span class="fare-way"><abbr title="Antalya, Antalya International Airport(AYT) - Tel-aviv, Ben Gurion International Airport(TLV)">AYT TLV</abbr> </span>
-				<span class="fare-time">22:00 23:35</span> 
-				<span class="number-flight">PC787&nbsp</span> 
+  <div class="flight-wrapper">
+    <div class="flight-oneway"> 
+      <div class="flight-values">
+        <span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Tel-aviv, Ben Gurion International Airport(TLV)">AYT TLV</abbr> </span>
+				<span class="flight-time">22:00 23:35</span> 
+				<span class="flight-number">PC787&nbsp</span> 
       </div>
       <input id='D1sel1F' name='D1sel1F'   type='text' hidden value='AYTTLVPC7870723' />
-      <div class="fare-package"> 
+      <div class="flight-package"> 
         <SELECT id='D1sel1' name='D1sel1'  class='fare-input-change'  onchange='chng_select1("D",1)' >
         <OPTION value='8980044_ECO'>U6-A3534/C3534/I1130/ECO</OPTION>
         </SELECT> <br>
@@ -491,18 +491,18 @@ window.onclick = function(event) {
   <td><input  type='radio' id='DFl' name='DFl' value='2' onchange='recalc_all()' /></td>
 
   <td>
-    <div class="fare-wrapper">
-      <div class="fare-oneway"> 
+    <div class="flight-wrapper">
+      <div class="flight-oneway"> 
 
-        <div class="fare-flight">
-          <span class="fare-way"><abbr title="Antalya, Antalya International Airport(AYT) - Istanbul , Sabiha Gökçen International Airport(SAW)">AYT SAW</abbr> </span>
-					<span class="fare-time">06:05 07:20</span>
-					<span class="number-flight">PC2029</span> 
+        <div class="flight-values">
+          <span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Istanbul , Sabiha Gökçen International Airport(SAW)">AYT SAW</abbr> </span>
+					<span class="flight-time">06:05 07:20</span>
+					<span class="flight-number">PC2029</span> 
         </div>
         
         <input id='D1sel2F' name='D1sel2F'   type='text' hidden value='AYTSAWPC20290723' />
         
-        <div class="fare-package">
+        <div class="flight-package">
           <SELECT id='D1sel2' name='D1sel2'  class='fare-input-change'  onchange='chng_select1("D",2)' >
           <OPTION value='9141004_ECO'>E9-A1598/C1598/I853/ECO</OPTION>
           </SELECT> <br>
@@ -510,17 +510,17 @@ window.onclick = function(event) {
 
       </div>
   
-      <div class="fare-oneway"> 
+      <div class="flight-oneway"> 
 
-        <div class="fare-flight"> 
-          <span class="fare-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Tel-aviv, Ben Gurion International Airport(TLV)">SAW TLV</abbr> </span>
-					<span class="fare-time">13:05 15:15</span>
-					<span class="number-flight">PC783&nbsp</span> 
+        <div class="flight-values"> 
+          <span class="flight-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Tel-aviv, Ben Gurion International Airport(TLV)">SAW TLV</abbr> </span>
+					<span class="flight-time">13:05 15:15</span>
+					<span class="flight-number">PC783&nbsp</span> 
         </div>
 
         <input id='D2sel2F' name='D2sel2F'   type='text' hidden value='SAWTLVPC7830723' />
       
-        <div class="fare-package">
+        <div class="flight-package">
           <SELECT id='D2sel2' name='D2sel2'  class='fare-input-change'  onchange='chng_select1("D",2)' >
           <OPTION value='8986981_ECO'>U9-A2736/C2736/I608/ECO</OPTION>
           <OPTION value='8986982_ECO'>U9-A2571/C2571/I608/ECO</OPTION>
@@ -536,30 +536,30 @@ window.onclick = function(event) {
 <script> chng_select0("D",2); </script>
 <tr><td><input  type='radio' id='DFl' name='DFl' value='3' onchange='recalc_all()' /></td>
 <td>
-  <div class="fare-wrapper">
-    <div class="fare-oneway">
-      <div class="fare-flight">
-        <span class="fare-way"><abbr title="Antalya, Antalya International Airport(AYT) - Istanbul , Sabiha Gökçen International Airport(SAW)">AYT SAW</abbr> </span>
-				<span class="fare-time">07:35 08:50</span> 
-				<span class="number-flight">PC2001</span> 
+  <div class="flight-wrapper">
+    <div class="flight-oneway">
+      <div class="flight-values">
+        <span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Istanbul , Sabiha Gökçen International Airport(SAW)">AYT SAW</abbr> </span>
+				<span class="flight-time">07:35 08:50</span> 
+				<span class="flight-number">PC2001</span> 
       </div> 
       <input id='D1sel3F' name='D1sel3F'   type='text' hidden value='AYTSAWPC20010723' />
     
-      <div class="fare-package">
+      <div class="flight-package">
         <SELECT id='D1sel3' name='D1sel3'  class='fare-input-change'  onchange='chng_select1("D",3)' >
         <OPTION value='9141004_ECO'>E9-A1598/C1598/I853/ECO</OPTION>
         </SELECT> <br>
       </div>
     </div>
   
-    <div class="fare-oneway">
-      <div class="fare-flight">
-        <span class="fare-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Tel-aviv, Ben Gurion International Airport(TLV)">SAW TLV</abbr> </span>
-				<span class="fare-time">20:20 22:30</span>
-				<span class="number-flight">PC785&nbsp</span> 
+    <div class="flight-oneway">
+      <div class="flight-values">
+        <span class="flight-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Tel-aviv, Ben Gurion International Airport(TLV)">SAW TLV</abbr> </span>
+				<span class="flight-time">20:20 22:30</span>
+				<span class="flight-number">PC785&nbsp</span> 
       </div>
         <input id='D2sel3F' name='D2sel3F'   type='text' hidden value='SAWTLVPC7850723' />
-      <div class="fare-package"> 
+      <div class="flight-package"> 
         <SELECT id='D2sel3' name='D2sel3'  class='fare-input-change'  onchange='chng_select1("D",3)' >
         <OPTION value='8986985_ECO'>V6-A4430/C4430/I608/ECO</OPTION>
         <OPTION value='8986986_ECO'>V6-A4099/C4099/I608/ECO</OPTION>
@@ -572,29 +572,29 @@ window.onclick = function(event) {
 <script> chng_select0("D",3); </script>
 <tr><td><input  type='radio' id='DFl' name='DFl' value='4' onchange='recalc_all()' /></td>
 <td>
-  <div class="fare-wrapper">
-    <div class="fare-oneway">
-      <div class="fare-flight">
-        <span class="fare-way"><abbr title="Antalya, Antalya International Airport(AYT) - Istanbul , Sabiha Gökçen International Airport(SAW)">AYT SAW</abbr> </span>
-				<span class="fare-time">07:35 08:50</span>
-				<span class="number-flight">PC2001</span> 
+  <div class="flight-wrapper">
+    <div class="flight-oneway">
+      <div class="flight-values">
+        <span class="flight-way"><abbr title="Antalya, Antalya International Airport(AYT) - Istanbul , Sabiha Gökçen International Airport(SAW)">AYT SAW</abbr> </span>
+				<span class="flight-time">07:35 08:50</span>
+				<span class="flight-number">PC2001</span> 
       </div>
         <input id='D1sel4F' name='D1sel4F'   type='text' hidden value='AYTSAWPC20010723' />
-      <div class="fare-package">  
+      <div class="flight-package">  
         <SELECT id='D1sel4' name='D1sel4'  class='fare-input-change'  onchange='chng_select1("D",4)' >
         <OPTION value='9141004_ECO'>E9-A1598/C1598/I853/ECO</OPTION>
         </SELECT> <br>
       </div>
     </div>
-    <div class="fare-oneway">
-      <div class="fare-flight">
-        <span class="fare-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Tel-aviv, Ben Gurion International Airport(TLV)">SAW TLV</abbr> </span>
-				<span class="fare-time">13:05 15:15</span> 
-				<span class="number-flight">PC783&nbsp</span> 
+    <div class="flight-oneway">
+      <div class="flight-values">
+        <span class="flight-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Tel-aviv, Ben Gurion International Airport(TLV)">SAW TLV</abbr> </span>
+				<span class="flight-time">13:05 15:15</span> 
+				<span class="flight-number">PC783&nbsp</span> 
       </div> 
         <input id='D2sel4F' name='D2sel4F'   type='text' hidden value='SAWTLVPC7830723' />
 
-      <div class="fare-package"> 
+      <div class="flight-package"> 
         <SELECT id='D2sel4' name='D2sel4'  class='fare-input-change'  onchange='chng_select1("D",4)' >
         <OPTION value='8986981_ECO'>U9-A2736/C2736/I608/ECO</OPTION>
         <OPTION value='8986982_ECO'>U9-A2571/C2571/I608/ECO</OPTION>
@@ -612,18 +612,18 @@ window.onclick = function(event) {
 
 
 
-<table border="1" ><tr><td><input  type='radio' id='RFl' name='RFl' value='0' onchange='recalc_all()' /></td>
+<table border="0" ><tr><td><input  type='radio' id='RFl' name='RFl' value='0' onchange='recalc_all()' /></td>
 <td>
-  <div class="fare-wrapper">
-    <div class="fare-oneway">
-      <div class="fare-flight">
-        <span class="fare-way"><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Antalya, Antalya International Airport(AYT)">TLV AYT</abbr> </span>
-				<span class="fare-time">07:45 09:20</span>
-				<span class="number-flight">PC788&nbsp</span> 
+  <div class="flight-wrapper">
+    <div class="flight-oneway">
+      <div class="flight-values">
+        <span class="flight-way"><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Antalya, Antalya International Airport(AYT)">TLV AYT</abbr> </span>
+				<span class="flight-time">07:45 09:20</span>
+				<span class="flight-number">PC788&nbsp</span> 
       </div> 
 <input id='R1sel0F' name='R1sel0F'   type='text' hidden value='TLVAYTPC7880728' />
 
-  <div class="fare-package"> 
+  <div class="flight-package"> 
     <SELECT id='R1sel0' name='R1sel0'  class='fare-input-change'  onchange='chng_select1("R",0)' >
     <OPTION value='9140321_ECO'>Z9-A4450/C4450/I1130/ECO</OPTION>
     </SELECT> <br>
@@ -639,15 +639,15 @@ window.onclick = function(event) {
 <tr><td><input  type='radio' id='RFl' name='RFl' value='1' onchange='recalc_all()' /></td>
 
   <td>
-    <div class="fare-wrapper">
-      <div class="fare-oneway">
-				<div class="fare-flight">
-					<span class="fare-way"><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Antalya, Antalya International Airport(AYT)">TLV AYT</abbr></span>
-					<span class="fare-time">12:35 14:10</span>
-					<span class="number-flight">PC792&nbsp</span> 
+    <div class="flight-wrapper">
+      <div class="flight-oneway">
+				<div class="flight-values">
+					<span class="flight-way"><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Antalya, Antalya International Airport(AYT)">TLV AYT</abbr></span>
+					<span class="flight-time">12:35 14:10</span>
+					<span class="flight-number">PC792&nbsp</span> 
 				</div>
 <input id='R1sel1F' name='R1sel1F'   type='text' hidden value='TLVAYTPC7920728' />
-<div class="fare-package"> 
+<div class="flight-package"> 
 <SELECT id='R1sel1' name='R1sel1'  class='fare-input-change'  onchange='chng_select1("R",1)' >
 <OPTION value='9140302_ECO'>T9-A4036/C4036/I1130/ECO</OPTION>
 </SELECT> <br>
@@ -659,29 +659,29 @@ window.onclick = function(event) {
 <script> chng_select0("R",1); </script>
 <tr><td><input  type='radio' id='RFl' name='RFl' value='2' onchange='recalc_all()' /></td>
 <td>
-  <div class="fare-wrapper">
-    <div class="fare-oneway">
-      <div class="fare-flight">
-        <span class="fare-way"><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Istanbul , Sabiha Gökçen International Airport(SAW)">TLV SAW</abbr></span>
-				<span class="fare-time">05:10 07:25</span>
-				<span class="number-flight">PC786&nbsp</span> 
+  <div class="flight-wrapper">
+    <div class="flight-oneway">
+      <div class="flight-values">
+        <span class="flight-way"><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Istanbul , Sabiha Gökçen International Airport(SAW)">TLV SAW</abbr></span>
+				<span class="flight-time">05:10 07:25</span>
+				<span class="flight-number">PC786&nbsp</span> 
       </div>
       <input id='R1sel2F' name='R1sel2F'   type='text' hidden value='TLVSAWPC7860728' />
-      <div class="fare-package">
+      <div class="flight-package">
         <SELECT id='R1sel2' name='R1sel2'  class='fare-input-change'  onchange='chng_select1("R",2)' >
         <OPTION value='9140406_ECO'>N9-A7630/C6718/I1434/ECO</OPTION>
         <OPTION value='9140405_ECO'>N9-A7299/C6387/I1434/ECO</OPTION>
         </SELECT> <br>
       </div>
     </div>
-    <div class="fare-oneway">
-      <div class="fare-flight">
-        <span class="fare-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Antalya, Antalya International Airport(AYT)">SAW AYT</abbr> </span>
-				<span class="fare-time">12:10 13:25</span>
-				<span class="number-flight">PC2014</span> 
+    <div class="flight-oneway">
+      <div class="flight-values">
+        <span class="flight-way"><abbr title="Istanbul , Sabiha Gökçen International Airport(SAW) - Antalya, Antalya International Airport(AYT)">SAW AYT</abbr> </span>
+				<span class="flight-time">12:10 13:25</span>
+				<span class="flight-number">PC2014</span> 
       </div>
 <input id='R2sel2F' name='R2sel2F'   type='text' hidden value='SAWAYTPC20140728' />
-<div class="fare-package">
+<div class="flight-package">
   <SELECT id='R2sel2' name='R2sel2'  class='fare-input-change'  onchange='chng_select1("R",2)' >
   <OPTION value='9142067_ECO'>I9-A745/C745/I331/ECO</OPTION>
   </SELECT> <br>

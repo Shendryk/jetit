@@ -1297,36 +1297,115 @@ table.article td select:focus, table.article td input:focus {
 	width: 49%;
 }
 
-.pme-navigation table {
-	border: 2px solid #a4a4a4;
-	border-spacing: 5px;
-	border-collapse: collapse;
-}
-
-.pme-navigation table tr td {
-	border: 1px solid #a4a4a4;;
-	
-}
-
-
-
 input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
 	margin-bottom: 10px;
 }
 
 
-/* .fare-wrapper .fare-oneway:nth-child(even)::before {
-	content: '';
-	position: relative;
-	bottom: 13px;
-	left: 50%;
-	width: 1px;
-	height: 20px;
-	border: 1px dashed #6FB7FF;
-} */
+/* Стили для оформления fare */
 
-.fare-input, .fare-flight-time, .fare-flight-number {
-	/* background-color: #f3f3f3; */
-	/* padding: 100%; */
+.pme-navigation table {
+	border-spacing: 1px 7px;
+	margin: 0 5px;
+	/* border: 2px solid #a4a4a4; */
+	/* border-spacing: 5px; */
+	/* border-collapse: collapse; */
 }
+
+.pme-navigation table tr td:first-child {
+	border-radius:5px 0 0 5px;
+	/* border-left: 1px solid #d0d0d0; */
+}
+
+.pme-navigation table tr td:last-child {
+	border-radius: 0 5px 5px 0;
+	/* border: 1px solid #a4a4a4;; */
+	/* border-right: 1px solid #d0d0d0; */
+}
+
+
+.pme-navigation table tr td {
+	background-color: #bddeee;
+	/* border-top: 1px solid #d0d0d0; */
+	/* border-bottom: 1px solid #d0d0d0;  */
+	/* background-color: #00e1a0;  */
+}
+
+.flight-oneway {
+	position: relative;
+	padding: 3px;
+	border-radius: 5px;
+	/* margin: 5px; */
+	/* background-color: #f3f3f3; */
+	/* border: 1px dotted #000; */
+}
+
+.flight-wrapper .flight-oneway:nth-child(even) {
+	border-top: 1px dashed #fff;
+	/* background-color: #333; */
+}
+
+.flight-way, .flight-time, .flight-number {
+	display: inline-block;
+}
+
+.flight-way, .flight-time {
+	padding-right: 10px;
+}
+
+.flight-way abbr::before {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 12px;
+	background-image: url(/images/plane-departure-solid.svg);
+	background-image: url(/images/map-marker-alt-solid.svg);
+	background-image: url(/images/map-marker-alt-regular.svg);
+	background-image: url(/images/map-marker-alt-light.svg);
+	background-repeat: no-repeat;
+	margin-right: 3px;
+	position: relative;
+	top: 3px;
+	float: left;
+}
+
+
+.flight-time::before {
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 12px;
+	background-image: url(/images/clock-solid.svg);
+	background-image: url(/images/clock-regular.svg);
+	background-image: url(/images/clock-light.svg);
+	background-repeat: no-repeat;
+	margin-right: 1px;
+	position: relative;
+	top: 2px;
+	left: 1px;
+}
+
+.flight-number::before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 13px;
+	background-image: url(/images/plane-departure-solid.svg);
+	background-image: url(/images/plane-departure-regular.svg);
+	background-image: url(/images/plane-departure-light.svg);
+	background-repeat: no-repeat;
+	margin-right: 3px;
+	position: relative;
+	top: 3px;
+}
+
+.flight-package SELECT {
+	width: 100%;
+	border-radius: 3px;
+	/* border: 1px solid #00e1a0; */
+	border: 1px solid #6ddd99;
+	
+}
+
+
 
