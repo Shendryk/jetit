@@ -887,32 +887,33 @@ if (table.rows.length>2) {
 		<table name="PaxInfo" border="0" cellpadding="0" cellspacing="0" class="article">
 				<tr>
 						<td>
-	<SELECT id="pt" name="pt" class = "dropdown">                        		<OPTION value="ADT">ADT</OPTION>
-	</SELECT>
+							<SELECT id="pt" name="pt" class="dropdown pax-category">                        		
+								<OPTION value="ADT">ADT</OPTION>
+							</SELECT>
 						</td>
 						<td>
-								<input id="f_name" name="f_name" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" onFocus="this.select()"  placeholder="First Name" />
+								<input class="pax-name" id="f_name" name="f_name" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" onFocus="this.select()"  placeholder="First Name" />
 						</td>
 						<td>
-								<input id="s_name" name="s_name" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" onFocus="this.select()"  placeholder="Surname(Family Name)" />
+								<input class="pax-surname" id="s_name" name="s_name" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" onFocus="this.select()"  placeholder="Surname(Family Name)" />
 						</td>
 						<td>
-							 <input id="email" name="email" type="text" size="24" maxlength="35" minlength="5"  autocomplete="off" value="pupukin@gmail.com" onFocus="this.select()"  placeholder="Email" />
+							 <input class="pax-email" id="email" name="email" type="text" size="24" maxlength="35" minlength="5"  autocomplete="off" value="pupukin@gmail.com" onFocus="this.select()"  placeholder="Email" />
 						</td>
 						<td>
-<input id="c_code" name="c_code" type="text" size="1" maxlength="4" minlength="2"  autocomplete="off"  value="+380" onFocus="this.select()" />
-<input id="a_code" name="a_code" type="text" size="1" maxlength="4" minlength="1"  autocomplete="off"  value="" onFocus="this.select()" />
-<input id="phone" name="phone" type="text" size="7" maxlength="10" minlength="7"  autocomplete="off"  value="" onFocus="this.select()" />
+							<input class="pax-phone-c_code" id="c_code" name="c_code" type="text" size="1" maxlength="4" minlength="2"  autocomplete="off"  value="+380" onFocus="this.select()" />
+							<input class="pax-phone-a_code" id="a_code" name="a_code" type="text" size="1" maxlength="4" minlength="1"  autocomplete="off"  value="" onFocus="this.select()" />
+							<input class="pax-phone-number" id="phone" name="phone" type="text" size="7" maxlength="10" minlength="7"  autocomplete="off"  value="" onFocus="this.select()" />
 						</td>
 				</tr>
 		 <tr>
 						<td>
-	<SELECT id="gn" name="gn" class = "dropdown">                        	
-<OPTION value="-">-</OPTION><OPTION value="M">M</OPTION><OPTION value="F">F</OPTION>;
-</SELECT>
+							<SELECT class="pax-gender" id="gn" name="gn" class = "dropdown">                        	
+								<OPTION value="-">-</OPTION><OPTION value="M">M</OPTION><OPTION value="F">F</OPTION>;
+							</SELECT>
 						</td>
 						<td>
-						<input id="b_date" name="b_date" type="text" size="24" maxlength="10" minlength="10"  autocomplete="off" value="" onFocus="this.select()"  placeholder="Birthday DD-MM-YYYY" 
+						<input class="pax-birthday" id="b_date" name="b_date" type="text" size="24" maxlength="10" minlength="10"  autocomplete="off" value="" onFocus="this.select()"  placeholder="Birthday DD-MM-YYYY" 
 
 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
 
@@ -927,13 +928,13 @@ onkeyup="
 />
 						</td>
 						<td>
-								<input id="doc_num" name="doc_num" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" placeholder="Passport/ ID NO" value=""  onFocus="this.select()" disabled />
+							<input class="pax-doc-number" id="doc_num" name="doc_num" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" placeholder="Passport/ ID NO" value=""  onFocus="this.select()" disabled />
 						</td>
 						<td>
-						 <input id="doc_cn" name="doc_cn" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Passport country" disabled />
+						 	<input class="pax-citizenship" id="doc_cn" name="doc_cn" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Passport country" disabled />
 						</td>
 						<td>
-	 <input id="val_doc" name="val_doc" type="text" size="20" maxlength="20" minlength="10"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Valid till DD-MM-YYYY "   onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\d{2}$/) !== null) { this.value = v + '-'; } else if (v.match(/^\d{2}\-\d{2}$/) !== null) { this.value = v + '-'; }" disabled /> 
+							<input class="pax-valid-doc id="val_doc" name="val_doc" type="text" size="20" maxlength="20" minlength="10"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Valid till DD-MM-YYYY "   onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\d{2}$/) !== null) { this.value = v + '-'; } else if (v.match(/^\d{2}\-\d{2}$/) !== null) { this.value = v + '-'; }" disabled /> 
 						</td>
 				</tr>
 		</table>

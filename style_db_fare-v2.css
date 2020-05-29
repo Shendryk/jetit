@@ -1364,7 +1364,7 @@ input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
 
 .flight-way abbr::before {
 	content: "";
-	display: inline-block;
+	display: inline-gitblock;
 	width: 10px;
 	height: 12px;
 	background-image: url(images/plane-departure-solid.svg);
@@ -1421,3 +1421,60 @@ input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
 	border: 1px solid #6ddd99;
 	
 }
+
+.flight-package SELECT option:active {
+	/* width: 100%; */
+/* background-color: #000;
+color: #000;
+	 */
+}
+
+
+/* popup Окно */
+
+.w3-display-topright {
+	position: absolute;
+	right: 0;
+	top: -10px;
+	cursor: pointer;
+	font-size: 25px;
+}
+
+.w3-container {
+	padding: 15px;
+}
+
+.w3-container table {
+	border: 1px solid #dadada;
+	width: 100%;
+}
+
+.w3-container table tr:nth-child(even)  {
+	background-color: #f8f8f8;
+	}
+
+.w3-container table tr:first-child {
+background-color: #00e1a0;
+border-right:1px solid #00e1a0;
+}
+
+.w3-container table tr td{
+	padding: 5px;
+	}
+.w3-container table tr td:first-child {
+	/* background-color: #00e1a0; */
+	/* border-right:1px solid #00e1a0; */
+	}
+
+	/* pnp System SSRs */
+	#SerTbl {
+		/* border: 1px solid #dadada; */
+		margin-top: 5px;
+	}
+
+	#SerTbl tr:nth-child(even) {
+		background-color: #f8f8f8;
+
+	}
+
+
