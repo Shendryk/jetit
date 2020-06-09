@@ -64,7 +64,8 @@ FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
  font-size: 8pt;
 /*width: 961px;*/
  margin-left: 3px;
- border-right: 1px solid #CECECE;
+ /* border-right: 1px solid #CECECE; */
+ border: 2px solid #d9d9d9;
 }
 th{ 
 /* this border inherited below */
@@ -806,8 +807,10 @@ select.pme-input-change-1
 background-color: #f6f7f6;
 color: #000000; 
 font-size: 9pt; 
-   border: 0px;
+   /* border: 0px; */
 	margin: 0px;
+	border: 1px solid #00e1a0;
+/* width: 100%; */
 }
 
 
@@ -831,6 +834,8 @@ border: #c8c8c8 1px solid;
 select.fare-input-change
 {
 background-color: #FFF6b4;
+background-color: #f6f7f6;
+
 color: #000000; 
 font-size: 7pt; 
    border: 0px;
@@ -868,12 +873,13 @@ padding-left: 10px;
 padding-right: 10px;
  padding-bottom: 1px;
 text-align: left;
+border: 1px solid #d9d9d9;
 /*background-image: url(images/p_d.gif);
 background-repeat:  repeat-x;
 background-position: top;*/
-background-position:  left top;
-background-image: url(images/p_d.gif);
-background-repeat: no-repeat;
+/* background-position:  left top; */
+/* background-image: url(images/p_d.gif); */
+/* background-repeat: no-repeat; */
 }
 td.pme-value-0,
 td.pme-value-1,
@@ -895,7 +901,7 @@ padding-right: 10px;
  padding-bottom: 1px;
 text-align: left;
 background-position:  left bottom;
-background-image: url(images/p_d.gif);
+/* background-image: url(images/p_d.gif); */
 background-repeat: no-repeat;
 background-color: #E1E6FC;
 }
@@ -919,9 +925,10 @@ padding-left: 10px;
 padding-right: 10px;
  padding-bottom: 1px;
 text-align: left;
-background-position:  left top;
+border: 1px solid #d9d9d9;
+/* background-position:  left top;
 background-image: url(images/p_d.gif);
-background-repeat: no-repeat;
+background-repeat: no-repeat; */
 }
 
 
@@ -969,61 +976,74 @@ input.pme-save-add,
 input.pme-save-change,
 input.pme-save-copy
 {
-background-color: #67B4ED; 
+/* background-color: #67B4ED;  */
+background-color: #f2f2f2;
 border-style: outset; 
 background-image: url(images/save.png);
 background-repeat:no-repeat; 
-background-position:left ; 
+background-position:center left ; 
 font-weight: bold;
 font-size:9pt;
-border-right: 1px solid #006699; 
+border: 1px solid #cccccc;
+/* border-right: 1px solid #006699; 
 border-left: 3px solid #B4D2FA;
-border-top: 3px solid #B4D2FA;
+border-top: 3px solid #B4D2FA; */
 height: 27px;
 width: 100px;
 cursor: pointer;
 margin-bottom: 4px;
 padding-left:20px; 
+border-radius: 3px;
+box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
 }
 
 input.pme-save-delete
 {
-background-color: #67B4ED; 
+/* background-color: #67B4ED;  */
+background-color: #f2f2f2;
 border-style: outset; 
-background-image: url(images/del.gif);
+background-image: url(images/del.png);
 background-repeat:no-repeat; 
-background-position:left ; 
+background-position:center left ; 
 font-weight: bold;
 font-size:9pt;
-border-right: 1px solid #006699; 
+/* border-right: 1px solid #006699; 
 border-left: 3px solid #B4D2FA;
-border-top: 3px solid #B4D2FA;
+border-top: 3px solid #B4D2FA; */
 height: 27px;
 width: 100px;
 cursor: pointer;
 margin-bottom: 4px;
 padding-left:20px; 
+border: 1px solid #cccccc;
+border-radius: 3px;
+box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+
 }
 
 
 input.pme-change-view
 
 {
-background-color: #67B4ED; 
+/* background-color: #67B4ED;  */
+background-color: #f2f2f2;
 border-style: outset; 
 background-image: url(images/change.png);
 background-repeat:no-repeat; 
-background-position:left ; 
+background-position:center left ; 
 font-weight: bold;
 font-size:9pt;
-border-right: 1px solid #006699; 
+/* border-right: 1px solid #006699; 
 border-left: 3px solid #B4D2FA;
-border-top: 3px solid #B4D2FA;
+border-top: 3px solid #B4D2FA; */
 height: 27px;
 width: 100px;
 cursor: pointer;
 margin-bottom: 4px;
 padding-left:20px; 
+border: 1px solid #cccccc;
+border-radius: 3px;
+box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
 }
 
 input.pme-print-view
@@ -1193,21 +1213,25 @@ padding-left:20px;
 input.pme-more-change,
 input.pme-more-add
 {
-background-color: #67B4ED; 
+/* background-color: #67B4ED;  */
+background-color: #f2f2f2;
 border-style: outset; 
-background-image: url(images/more.gif);
+background-image: url(images/more.png);
 background-repeat:no-repeat; 
 background-position:left ; 
 font-weight: bold;
 font-size:9pt;
-border-right: 1px solid #006699; 
+border: 1px solid #cccccc;
+/* border-right: 1px solid #006699; 
 border-left: 3px solid #B4D2FA;
-border-top: 3px solid #B4D2FA;
+border-top: 3px solid #B4D2FA; */
 height: 27px;
 width: 100px;
 cursor: pointer;
 margin-bottom: 4px;
 padding-left:20px; 
+border-radius: 3px;
+box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
 }
 
 

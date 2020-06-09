@@ -1502,3 +1502,24 @@ border-right:1px solid #00e1a0;
 	}
 
 
+
+
+	/* добавление пассажиров для fare, fare2 стр. */
+.article .pax-phone-c_code,
+.article .pax-phone-a_code {
+	width: 18%;
+}
+
+.article .pax-phone-number {
+	width: 46%;
+}
+
+.pax-gender {width: 100%;}
+
+/* input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
+	margin-bottom: 10px;
+} */
+
+.pax-valid-doc, {
+	width: 100%;
+}

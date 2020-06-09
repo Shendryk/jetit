@@ -724,9 +724,10 @@ h1, h2, h3, h4, h5, p {
 form#av_fare {
 	padding: 15px 5px;
     /* background-color: #00e1a0; */
-		max-width: 1000px;
+		/* max-width: 1000px; */
 		border: 2px solid #00e1a0;
-    border-radius: 10px;
+		border-radius: 10px;
+		display: inline-block;
 }
 
 form#av_fare input, form#av_fare select {
@@ -1067,7 +1068,7 @@ input.but_long_W, .form button, .td.tab_2_off {
 	}
 	
 	table.article td select, table.article td input {
-		width: 97%;
+		/* width: 100%; */
 		margin: 1px 0;
 	}
 	
@@ -1080,14 +1081,14 @@ input.but_long_W, .form button, .td.tab_2_off {
 		border: 1px solid #0050ff;
 	}
 	
-	.article td #c_code,
+	/* .article td #c_code,
 	.article td #c_code2, 
 	.article td #a_code {
 		width: 17%;
 	}
 	.article td #phone {
 		width: 49%;
-	}
+	} */
 
 	/* popup Окно */
 
@@ -1303,3 +1304,22 @@ color: #000;
 	background-position: left center;
 }
 
+	/* добавление пассажиров для fare, fare2 стр. */
+	.article .pax-phone-c_code,
+	.article .pax-phone-a_code {
+		width: 19%;
+	}
+	
+	.article .pax-phone-number {
+		width: 45%;
+	}
+	
+	.pax-gender {width: 100%;}
+	
+	/* input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
+		margin-bottom: 10px;
+	} */
+	
+	.pax-valid-doc, {
+		width: 100%;
+	}

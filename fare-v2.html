@@ -818,15 +818,15 @@ var table =  document.getElementsByName('PaxInfo')[0];
 				var tab_rown = Math.round(table.rows.length/2);
 				col1.innerHTML ='<SELECT id="pt'+tab_rown
 	+ '" name="pt'+tab_rown
-	+ '" class = "dropdown"  onchange="check_inf(this); recalc_all()" >                        <OPTION value="ADT">ADT</OPTION><OPTION value="CHD">CHD</OPTION><OPTION value="INF">INF</OPTION></SELECT>';
+	+ '" class = "dropdown pax-category"  onchange="check_inf(this); recalc_all()" >                        <OPTION value="ADT">ADT</OPTION><OPTION value="CHD">CHD</OPTION><OPTION value="INF">INF</OPTION></SELECT>';
 
 				// Create Col2.
 				var col2 = row.insertCell(1);
-				col2.innerHTML = '<input id="f_name'+tab_rown
+				col2.innerHTML = '<input class="pax-name" id="f_name'+tab_rown
 	+ '" name="f_name'+tab_rown+'" type="text" size="24" maxlength="24" minlength="1" value="" placeholder="First Name" autocomplete="off"  onFocus="this.select()" />';
 				// Create Col3.
 				var col3 = row.insertCell(2);
-				col3.innerHTML = '<input id="s_name'+tab_rown
+				col3.innerHTML = '<input class="pax-surname" id="s_name'+tab_rown
 	+ '" name="s_name'+tab_rown+'" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" placeholder="Surname(Family Name)" onFocus="this.select()" />';
 // for test generate surname
 //value="'+NumToWord(tab_rown)+'" 
@@ -834,37 +834,37 @@ var table =  document.getElementsByName('PaxInfo')[0];
 
 				// Create Col4.
 				var col4 = row.insertCell(3);
-				col4.innerHTML = '<input id="email'+tab_rown
+				col4.innerHTML = '<input class="pax-email" id="email'+tab_rown
 	+ '" name="email'+tab_rown+'" type="text" size="24" maxlength="35" minlength="5"  autocomplete="off" value=""  disabled onFocus="this.select()"  placeholder="Email" />';
 				var col5 = row.insertCell(4);
 				
-col5.innerHTML ='<input id="c_code'+tab_rown
-	+ '" name="c_code'+tab_rown+'" type="text" size="1" maxlength="4" minlength="2"  autocomplete="off" value="" onFocus="this.select()" disabled /> <input id="a_code" name="a_code'+tab_rown+'" type="text" size="1" maxlength="4" minlength="1" value="" onFocus="this.select()" disabled /> <input id="phone" name="phone'+tab_rown+'" type="text" size="7" maxlength="10" minlength="7" autocomplete="off"  value=""  onFocus="this.select()" disabled />';
+col5.innerHTML ='<input class="pax-phone-c_code" id="c_code'+tab_rown
+	+ '" name="c_code'+tab_rown+'" type="text" size="1" maxlength="4" minlength="2"  autocomplete="off" value="" onFocus="this.select()" disabled /> <input class="pax-phone-a_code" id="a_code" name="a_code'+tab_rown+'" type="text" size="1" maxlength="4" minlength="1" value="" onFocus="this.select()" disabled /> <input class="pax-phone-number" id="phone" name="phone'+tab_rown+'" type="text" size="7" maxlength="10" minlength="7" autocomplete="off"  value=""  onFocus="this.select()" disabled />';
 						
 // Second row
 
 				var row = table.insertRow(table.rows.length);
 				// Create Col1.
 				var col1 = row.insertCell(0);
-				col1.innerHTML ='<SELECT id="gn'+tab_rown
+				col1.innerHTML ='<SELECT class="pax-gender" id="gn'+tab_rown
 	+ '" name="gn'+tab_rown
 	+ '" class = "dropdown" ><OPTION value="-">-</OPTION><OPTION value="M">M</OPTION><OPTION value="F">F</OPTION></SELECT>';
 
 				// Create Col2.
 				var col2 = row.insertCell(1);
-				col2.innerHTML = '<input id="b_date'+tab_rown
+				col2.innerHTML = '<input class="pax-birthday" id="b_date'+tab_rown
 	+ '" name="b_date'+tab_rown+'" type="text" size="24" maxlength="10" minlength="3"  autocomplete="off"  value="" onFocus="this.select()" placeholder="Birthday DD-MM-YYYY"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\\d{2}$/) !== null) {            this.value = v + \'-\';      } else if (v.match(/^\\d{2}\\-\\d{2}$/) !== null) {            this.value = v + \'-\'; }"/>';
 
 				// Create Col3.
 				var col3 = row.insertCell(2);
-				col3.innerHTML = '<input id="doc_num'+tab_rown
+				col3.innerHTML = '<input class="pax-doc-number" id="doc_num'+tab_rown
 	+ '" name="doc_num'+tab_rown+'" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off"  value=""    onFocus="this.select()" placeholder="Passport/ ID NO" disabled />';
 				// Create Col4.
 				var col4 = row.insertCell(3);
-				col4.innerHTML = '<input id="doc_cn'+tab_rown
+				col4.innerHTML = '<input class="pax-citizenship" id="doc_cn'+tab_rown
 	+ '" name="doc_cn'+tab_rown+'" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" value=""    onFocus="this.select()" placeholder="Passport country" disabled />';
 				var col5 = row.insertCell(4);
-				col5.innerHTML = '<input id="val_doc'+tab_rown
+				col5.innerHTML = '<input class="pax-valid-doc" id="val_doc'+tab_rown
 	+ '" name="val_doc'+tab_rown+'" type="text" size="20" maxlength="20" minlength="3"  autocomplete="off" value=""    onFocus="this.select()" placeholder="Valid till DD-MM-YYYY"   onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\\d{2}$/) !== null) {            this.value = v + \'-\';      } else if (v.match(/^\\d{2}\\-\\d{2}$/) !== null) {            this.value = v + \'-\'; }"  disabled />';
 }
 recalc_all();    
