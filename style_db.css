@@ -40,10 +40,10 @@ background-color:#fff;
 
 color:#000000;
 /*margin: 1px;*/
-border-top: thin solid #EBF1FF;
+/* border-top: thin solid #EBF1FF;
 border-left: thin solid #EBF1FF;
 border-right: thin solid #AFB5C5;
-border-bottom: thin solid #AFB5C5;
+border-bottom: thin solid #AFB5C5; */
 FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
  font-size: 8pt;
 margin-top: 10px;
@@ -165,18 +165,43 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 	.pme-filter during Search and Query.
 	(Can be disabled in forms by setting search = false.)
 
-   A, TR, TD */
-.pme-sortinfo
-{
-background-color:#cccccc;
+	 A, TR, TD */
+	 
+tr.pme-queryinfo {
+	/* border-top: 1px solid #cccccc; */
+	/* text-align: center; */
+	/* background-color: #cccccc; */
+	FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
+	padding: 5px;
+}
+
+td.pme-queryinfo{
+	border-bottom: 1px solid #c7c6c6;
+	border-top: 1px solid #c7c6c6;
+	padding: 5px;
+}
+
+.pme-queryinfo>td.pme-queryinfo:first-child {
+	text-align: center;
+}
+
+
+tr.pme-sortinfo {
+/* background-color:#cccccc; */
 FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
-font-size:8pt;
+font-size:9pt;
 color:#000000;
 padding: 3px;
-border-bottom: 1px solid #575757;
+border-left:1px solid #cccccc;
+/* border-bottom: 1px solid #575757; */
 border-top:  1px solid #cccccc;
-text-align:  center;
+/* text-align:  center; */
 }
+
+.pme-sortinfo>td.pme-sortinfo:first-child {
+	text-align: center;
+}
+
 /* Row 2 during Search (hidden otherwise) */
 tr.pme-filter
 {
@@ -713,8 +738,9 @@ background-repeat:  repeat-x;
 background-position: top; */
 }
 td.pme-sortinfo{
-border-bottom:0px solid #006699;
-padding: 5px;
+	border-bottom: 1px solid #c7c6c6;
+	border-top: 1px solid #c7c6c6;
+	padding: 5px;
 }
 td.pme-buttons,
 td.pme-stats{
