@@ -282,12 +282,11 @@ cursor:pointer;
 } */
 
 input.pme-prev:enabled {
-	background-color: #fff;
+	background-color: #F0FAFA;
 	/* background-color: #E1E6FC; */
 	/* background-image: url(images/prev.gif); */
 	background-image: url(images/backward-regular.svg);
 	background-image: url(images/backward-light.svg);
-	
 	background-repeat: no-repeat;
 	position: relative;
 	top: -5px;
@@ -301,6 +300,11 @@ input.pme-prev:enabled {
 	font-size: 0px;
 	/* padding-left: 20px; */
 	cursor: pointer;
+	padding: 5px;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+	border-radius: 3px;
+
+
 }
 
 input.pme-prev:disabled {
@@ -1266,7 +1270,10 @@ tr.pme-navigation table select {
 }
 
 table.article {
-	max-width: 824px;
+	/* max-width: 824px; */
+	box-sizing:border-box;
+	padding: 0;
+	margin: 0;
 }
 
 
@@ -1274,8 +1281,17 @@ table.article tr {
 	padding: 5px;
 }
 
+table.article tr:nth-child(even) {
+	margin-bottom: 5px;
+}
+
+table.article tr td {
+	padding: 0 1px;
+}
+
+
 table.article td select, table.article td input {
-	width: 97%;
+	/* width: 97%; */
 	margin: 1px 0;
 }
 
@@ -1288,20 +1304,28 @@ table.article td select:focus, table.article td input:focus {
 	border: 1px solid #0050ff;
 }
 
-.article td #c_code,
-.article td #c_code2, 
-.article td #a_code {
-	width: 20%;
-}
-.article td #phone {
-	width: 49%;
+
+
+
+
+.article .pax-phone-c_code,
+.article .pax-phone-a_code {
+	width: 18%;
 }
 
-input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
+.article .pax-phone-number {
+	width: 46%;
+}
+
+.pax-gender {width: 100%;}
+
+/* input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
 	margin-bottom: 10px;
+} */
+
+.pax-valid-doc, {
+	width: 100%;
 }
-
-
 
 /* Стили для оформления fare */
 

@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GSA Reservation system</title>
-<link href="style_db_fare-v2.css" rel="stylesheet" type="text/css">
+<link href="style_db.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 <!--
 @import url("style.css");
@@ -934,7 +934,7 @@ onkeyup="
 						 	<input class="pax-citizenship" id="doc_cn" name="doc_cn" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Passport country" disabled />
 						</td>
 						<td>
-							<input class="pax-valid-doc id="val_doc" name="val_doc" type="text" size="20" maxlength="20" minlength="10"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Valid till DD-MM-YYYY "   onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\d{2}$/) !== null) { this.value = v + '-'; } else if (v.match(/^\d{2}\-\d{2}$/) !== null) { this.value = v + '-'; }" disabled /> 
+							<input class="pax-valid-doc" id="val_doc" name="val_doc" type="text" size="20" maxlength="20" minlength="10"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Valid till DD-MM-YYYY "   onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\d{2}$/) !== null) { this.value = v + '-'; } else if (v.match(/^\d{2}\-\d{2}$/) !== null) { this.value = v + '-'; }" disabled /> 
 						</td>
 				</tr>
 		</table>

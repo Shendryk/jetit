@@ -1,0 +1,226 @@
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GSA Reservation system</title>
+<link href="style_db.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+@import url("style.css");
+-->
+</style>
+
+</head>
+<body>
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+<TR>
+<TD  class="top_1">
+ID:4/HELPDESK/CMPT/MAIN/h0/ </TD>
+
+<td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+</TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+function start_time() {
+setInterval("postRequest()", 1000);
+}
+
+		function postRequest() {
+
+var xmlHttp;
+		var strURL =  "ajax.tab.php";
+		if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+		 var xmlHttp = new XMLHttpRequest();
+		 } else if (window.ActiveXObject) { // IE
+			 var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+	xmlHttp.open('GET', strURL, true);
+	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xmlHttp.onreadystatechange = function() {
+
+			if (xmlHttp.readyState == 4) {
+	xmlDoc = xmlHttp.responseXML;
+							print_din_tab(xmlDoc);
+			}
+	}
+	xmlHttp.send(strURL);
+}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+<tr>
+<td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_off   onclick="location.href='pg_hd_new.php'">Requests</td>
+<td class=tab_1_on >PNR</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+<tr>
+<td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='pg_hd_pnrp.php'">Problems PNR</td>
+<td class=tab_2_on  >All PNR</td>
+<td class=tab_2_off onclick="location.href='pg_grouph.php'">Group</td>
+</TR></TABLE>
+</td>
+</tr>
+<tr>
+<td class="td_tabul_2_2">&nbsp;</td>
+</tr>
+<tr>
+<td class="td_tabul_2_3">&nbsp;</td>
+</tr>
+</table>
+
+<script>
+function print_din_tab(xmlDoc){
+
+}
+</script>
+<script>
+function openurl(myurl)
+{
+if (document.getElementsByClassName("pme-form-view").length!=0) {
+ var id = mSysRec;
+} else { 
+ var id = document.querySelector('input[name="PME_sys_rec"]:checked').value;
+}
+var wrk_url=myurl+"?sys_rec="+id;
+window.location.href =  wrk_url;
+}
+</script>
+<script> var mSysRec=29806;</script>
+<script>
+function toggleServices() {
+		 var elem=document.getElementById("SerTbl");
+		 var hide = elem.style.display =="none";
+		 if (hide) {
+				 elem.style.display="table";
+document.getElementById("seg1").style.display ="inline-block"; document.getElementById("seg2").style.display ="inline-block"; document.getElementById("pax1").style.display ="inline-block"; document.getElementById("pax2").style.display ="inline-block"; document.getElementById("pax3").style.display ="inline-block"; document.getElementById("pax4").style.display ="inline-block"; 
+			} 
+			else {
+			 elem.style.display="none";
+document.getElementById("seg1").style.display ="none"; document.getElementById("seg2").style.display ="none"; document.getElementById("pax1").style.display ="none"; document.getElementById("pax2").style.display ="none"; document.getElementById("pax3").style.display ="none"; document.getElementById("pax4").style.display ="none"; 
+			}
+}
+</script>
+
+<script>
+function click_by_id(id_PC) {
+document.getElementById(id_PC).style.display='block';
+}
+
+window.onclick = function(event) {
+if (event.target == document.getElementById('id_PC')) {
+		document.getElementById('id_PC').style.display='none';
+}
+}
+
+
+</script>
+
+<div id='id_PC' class='w3-modal'>
+<div class='w3-modal-content'>
+	<div class='w3-container'>
+		<span onclick="document.getElementById('id_PC').style.display='none'" class='w3-display-topright'>&times;</span>
+Pegasus Airlines<br>Fare/Package Info<br><table>
+<tr><td></td><td>ECO</td></tr>
+<td>8 kg</td><tr><td>Free baggage (INT, INT+DOM)</td><td>20kg</td></tr>
+<tr><td>Free baggage (DOM, DOM+DOM)</td><td>15kg</td></tr>
+<tr><td>Free baggage infant</td><td>10kg</td></tr>
+<tr><td>Free Meal</td><td>no</td></tr>
+<tr><td>Free seat selection</td><td>no</td></tr>
+</table>
+	</div>
+</div>
+</div>
+<table>
+<tr>
+<td><div class="pnr">PNR NO:&nbsp &nbsp &nbsp PC/P2XRJR&nbsp &nbsp &nbspLOG:T420SL11</div>
+	<BR>TK TL:&nbsp &nbsp &nbsp &nbsp &nbsp------<BR><BR></td>
+</tr>
+<tr><td><div style='display:none;' id='seg1'>1 &nbsp</div>PC433&nbsp&nbsp&nbsp &nbsp 09JUL20&nbsp &nbsp &nbspOZH SAW 1420 1625 PT2H5M  UAGT/YR <a href="javascript:void(0)" onclick= "click_by_id('id_PC');">ECO </a>HK <BR></td></tr><tr><td><div style='display:none;' id='seg2'>2 &nbsp</div>PC432&nbsp&nbsp&nbsp &nbsp 14JUL20&nbsp &nbsp &nbspSAW OZH 1140 1340 PT2H0M  UAGT/YR <a href="javascript:void(0)" onclick= "click_by_id('id_PC');">ECO </a>HK <BR></td></tr><tr>
+<TD><div class="guests">GUESTS</div></TD></tr>
+
+<tr>
+<td><div style='display:none;' id='pax1'>1 &nbsp</div>ADT MYKOLA SARANCHUK(M) 1970-01-01 6242327154988  a.krayniy@tui.ua  <BR></td>
+</tr>
+
+<tr>
+<td><div style='display:none;' id='pax2'>2 &nbsp</div>ADT VIKTORIIA SARANCHUK(F) 1970-01-01 6242327154989  a.krayniy@tui.ua  <BR></td>
+</tr>
+
+<tr>
+<td><div style='display:none;' id='pax3'>3 &nbsp</div>ADT SVITLANA SEVOSTIANOVA(F) 1970-01-01 6242327154990  a.krayniy@tui.ua  <BR></td>
+</tr>
+
+<tr>
+<td><div style='display:none;' id='pax4'>4 &nbsp</div>ADT SERHII MISHURA(M) 1970-01-01 6242327154991  a.krayniy@tui.ua  <BR></td>
+</tr>
+<tr>
+<td><a onclick='toggleServices();' href='#'>SYSTEM SSRs</a><br><table id="SerTbl"  align="left" style="display:none"><tr><td>S:1</td><td>P:1&nbsp </td><td>Cat:BAG&nbsp </td><td>Type:XBAG&nbsp </td><td>Value:20&nbsp</td><td>St:HK&nbsp </td><td>PaySt:included</td></tr>
+<tr><td>S:2</td><td>P:1&nbsp </td><td>Cat:BAG&nbsp </td><td>Type:XBAG&nbsp </td><td>Value:20&nbsp</td><td>St:HK&nbsp </td><td>PaySt:included</td></tr>
+<tr><td>S:1</td><td>P:4&nbsp </td><td>Cat:BAG&nbsp </td><td>Type:XBAG&nbsp </td><td>Value:20&nbsp</td><td>St:HK&nbsp </td><td>PaySt:included</td></tr>
+<tr><td>S:2</td><td>P:4&nbsp </td><td>Cat:BAG&nbsp </td><td>Type:XBAG&nbsp </td><td>Value:20&nbsp</td><td>St:HK&nbsp </td><td>PaySt:included</td></tr>
+<tr><td>S:1</td><td>P:3&nbsp </td><td>Cat:BAG&nbsp </td><td>Type:XBAG&nbsp </td><td>Value:20&nbsp</td><td>St:HK&nbsp </td><td>PaySt:included</td></tr>
+<tr><td>S:2</td><td>P:3&nbsp </td><td>Cat:BAG&nbsp </td><td>Type:XBAG&nbsp </td><td>Value:20&nbsp</td><td>St:HK&nbsp </td><td>PaySt:included</td></tr>
+<tr><td>S:1</td><td>P:2&nbsp </td><td>Cat:BAG&nbsp </td><td>Type:XBAG&nbsp </td><td>Value:20&nbsp</td><td>St:HK&nbsp </td><td>PaySt:included</td></tr>
+<tr><td>S:2</td><td>P:2&nbsp </td><td>Cat:BAG&nbsp </td><td>Type:XBAG&nbsp </td><td>Value:20&nbsp</td><td>St:HK&nbsp </td><td>PaySt:included</td></tr>
+</table>
+</td>
+</tr><tr>
+<td><div class="payment-info">PAYMENT INFO</div>
+<table>
+<tr>
+<td>1112</td><td>FLIGHT</td><td>PAID</td><td>6242327154988</td><td>MYKOLA SARANCHUK</td><td>USD</td><td>81.98</td><td>58.90</td><td>0.00</td><td>(0.00)</td><td>:140.88</td><td>R 28.150000</td><td></td></tr>
+<tr>
+<td>1112</td><td>FLIGHT</td><td>PAID</td><td>6242327154989</td><td>VIKTORIIA SARANCHUK</td><td>USD</td><td>81.98</td><td>58.90</td><td>0.00</td><td>(0.00)</td><td>:140.88</td><td>R 28.150000</td><td></td></tr>
+<tr>
+<td>1112</td><td>FLIGHT</td><td>PAID</td><td>6242327154990</td><td>SVITLANA SEVOSTIANOVA</td><td>USD</td><td>81.98</td><td>58.90</td><td>0.00</td><td>(0.00)</td><td>:140.88</td><td>R 28.150000</td><td></td></tr>
+<tr>
+<td>1112</td><td>FLIGHT</td><td>PAID</td><td>6242327154991</td><td>SERHII MISHURA</td><td>USD</td><td>81.98</td><td>58.90</td><td>0.00</td><td>(0.00)</td><td>:140.88</td><td>R 28.150000</td><td></td></tr>
+</table>
+<div class="total">TOTAL&nbspHOST: USD 563.52</div>
+</td>
+</tr></table><form class="pme-form-view" method="post" action="pg_hd_pnr.php" name="PME_sys_form">
+<input type="hidden" name="PME_sys_sfn[0]" value="-8" />
+<input type="hidden" name="PME_sys_qf3" value="TKT" />
+<input type="hidden" name="PME_sys_cur_tab" value="PME_dhtml_tab0" />
+<input type="hidden" name="PME_sys_qfn" value="&amp;PME_sys_qf3=TKT" />
+<input type="hidden" name="PME_sys_rec" value="29806" />
+<input type="hidden" name="PME_sys_fm" value="0" />
+<input type="hidden" name="PME_sys_fl" value="1" />
+<table class="pme-main-view" summary="pg_pnr">
+</table>
+<hr size="1" class="pme-hr-view" />
+<table summary="navigation" class="pme-navigation-view">
+<tr class="pme-navigation-view">
+<td class="pme-buttons-view">
+<input type="submit" class="pme-cancel-view" name="PME_sys_cancelview" value="Ignore" title="Ignore" />
+<input type="button" value="Live pnr" class="pme-live-view" onclick="openurl('pg_hd_pnr_l.php')" />
+</td>
+</tr></table>
+</form>
+</body>
+</html>
