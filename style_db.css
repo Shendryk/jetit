@@ -67,6 +67,11 @@ FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
  /* border-right: 1px solid #CECECE; */
  border: 2px solid #d9d9d9;
 }
+
+/* .pme-main-change input, .pme-main-change select  {
+	width: 100%;
+} */
+
 th{ 
 /* this border inherited below */
 /* border-bottom: 1px solid #F0F1FF; */
@@ -792,7 +797,8 @@ input.pme-input-change-1
 
 {
 /* background-color: #FFF6b4;  */
-background-color: #f6f7f6;
+/* background-color: #f6f7f6; */
+background-color: #fff;
 color: #000000; 
 font-size: 9pt;
 /* border: #c8c8c8 1px solid; */
@@ -831,6 +837,7 @@ select.pme-input-change-1
 {
 /* background-color: #FFF6b4; */
 background-color: #f6f7f6;
+background-color: #ffffff;
 color: #000000; 
 font-size: 9pt; 
    /* border: 0px; */
@@ -926,9 +933,9 @@ padding-left: 15px;
 padding-right: 10px;
  padding-bottom: 1px;
 text-align: left;
-background-position:  left bottom;
+/* background-position:  left bottom; */
 /* background-image: url(images/p_d.gif); */
-background-repeat: no-repeat;
+/* background-repeat: no-repeat; */
 background-color: #E1E6FC;
 }
 td.pme-key-0,

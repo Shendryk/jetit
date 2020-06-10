@@ -1281,13 +1281,15 @@ color: #000;
 .guests, .payment-info, .pnr {
 
 	background-color: #B4D2FA; 
+	/* background-color: #0050ff; */
 	
-	margin-top: 20px;
-	padding-top: 4px;
+	margin: 20px 0 5px ;
+	padding: 4px 0 2px 18px;
 	border-radius: 3px;
 	border: 0px;
-	padding-left: 18px;
-	font-weight: 600;
+	/* padding-left: 18px; */
+	font-size: 10pt;
+	/* font-weight: 600; */
 }
 
 .guests {
@@ -1307,12 +1309,12 @@ color: #000;
 	/* background-color: #B4D2FA;  */
 	
 	/* margin-top: 20px; */
-	padding-top: 4px;
+	padding-top: 5px;
 	border-radius: 3px;
 	margin-left:5px;
 	border: 0px;
 	padding-left: 18px;
-	font-weight: 600;
+	/* font-weight: 600; */
 }
 
 .total {
