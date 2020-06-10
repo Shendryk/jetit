@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>GSA Reservation system</title>
+        <link href="style_db.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+<!--
+        @import url("style.css");
+-->
+        </style>
+
+
+</head>
+<body>
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+  <TR>
+    <TD  class="top_1">
+ ID:1/ADMIN/CMPT/MAIN/adminzza/ </TD>
+
+    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+  </TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+	function start_time() {
+	  setInterval("postRequest()", 1000);
+	}
+
+        function postRequest() {
+
+	var xmlHttp;
+        var strURL =  "ajax.tab.php";
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+         var xmlHttp = new XMLHttpRequest();
+       	} else if (window.ActiveXObject) { // IE
+         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      	}
+
+    	xmlHttp.open('GET', strURL, true);
+    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    	xmlHttp.onreadystatechange = function() {
+
+        	if (xmlHttp.readyState == 4) {
+			xmlDoc = xmlHttp.responseXML;
+                	print_din_tab(xmlDoc);
+        	}
+    	}
+    	xmlHttp.send(strURL);
+	}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+  <tr>
+    <td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_on >Users</td>
+<td class=tab_1_off   onclick="location.href='pg_airlines.php'">Airlines</td>
+<td class=tab_1_off   onclick="location.href='pg_pay_new.php'">Payments</td>
+<td class=tab_1_off   onclick="location.href='pg_deposits.php'">Finances</td>
+<td class=tab_1_off   onclick="location.href='pg_rate.php'">ROE</td>
+<td class=tab_1_off   onclick="location.href='pg_user_marg.php'">Markups</td>
+<td class=tab_1_off   onclick="location.href='pg_pnr.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='lt_user_types.php'">Lists</td>
+<td class=tab_1_off   onclick="location.href='pg_hist.php'">Investigation</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+  <tr>
+    <td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='lt_users.php'">Agencies</td>
+<td class=tab_2_off onclick="location.href='pg_locations.php'">Locations</td>
+<td class=tab_2_on  >Terminals</td>
+</TR></TABLE>
+</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_3">&nbsp;</td>
+  </tr>
+
+
+
+</table>
+
+<script>
+ function print_din_tab(xmlDoc){
+
+}
+</script>
+<script>
+function openurl(myurl)
+{
+    if (document.getElementsByClassName("pme-form-view").length!=0) {
+     var id = mSysRec;
+    } else { 
+	   var id = document.querySelector('input[name="PME_sys_rec"]:checked').value;
+    }
+	var wrk_url=myurl+"?sys_rec="+id;
+	window.location.href =  wrk_url;
+}
+</script>
+<form class="pme-form-delete" method="post" action="lt_terminals.php" name="PME_sys_form">
+<input type="hidden" name="PME_sys_sfn[0]" value="-0" />
+<input type="hidden" name="PME_sys_cur_tab" value="PME_dhtml_tab0" />
+<input type="hidden" name="PME_sys_qfn" value="" />
+<input type="hidden" name="PME_sys_rec" value="85" />
+<input type="hidden" name="PME_sys_fm" value="0" />
+<input type="hidden" name="PME_sys_fl" value="0" />
+<table summary="navigation" class="pme-navigation-delete">
+<tr class="pme-navigation-delete">
+<td class="pme-buttons-delete">
+<input type="submit" class="pme-save-delete" name="PME_sys_savedelete" value="Delete" title="Delete" />
+<input type="submit" class="pme-cancel-delete" name="PME_sys_canceldelete" value="Ignore" title="Ignore" />
+</td>
+</tr></table>
+<hr size="1" class="pme-hr-delete" />
+<table class="pme-main-delete" summary="lt_terminals">
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">ID</td>
+<td class="pme-value-delete-0">
+85</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">AGENCY</td>
+<td class="pme-value-delete-1">
+TG travel</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">TERMINAL TYPE</td>
+<td class="pme-value-delete-0">
+SALE</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">ACCESS</td>
+<td class="pme-value-delete-1">
+YES</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">REMARKS</td>
+<td class="pme-value-delete-0">
+&nbsp;</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">IP RANGE FROM</td>
+<td class="pme-value-delete-1">
+&nbsp;</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">IP RANGE TO</td>
+<td class="pme-value-delete-0">
+&nbsp;</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">TICKETING OFFICE NAME</td>
+<td class="pme-value-delete-1">
+&nbsp;</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">TICKETING OFICE ADDRESS</td>
+<td class="pme-value-delete-0">
+&nbsp;</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">PHONE NO</td>
+<td class="pme-value-delete-1">
++380971111111</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">AGENT PERSONAL NAME</td>
+<td class="pme-value-delete-0">
+HD training</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">SYSTEM USER NAME</td>
+<td class="pme-value-delete-1">
+Sale</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">SYSTEM PASSWORD</td>
+<td class="pme-value-delete-0">
+Sale</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">EMAIL1</td>
+<td class="pme-value-delete-1">
+&nbsp;</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">EMAIL2</td>
+<td class="pme-value-delete-0">
+ukr@ukr.net</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">ORIGIN BY DEFAULT</td>
+<td class="pme-value-delete-1">
+HRK</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">DESTINATION BY DEFAULT</td>
+<td class="pme-value-delete-0">
+SAW</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">TIMEZONE</td>
+<td class="pme-value-delete-1">
+Europe/Kiev</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">SERVICE FEE CORRECTION</td>
+<td class="pme-value-delete-0">
+YES</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">FTP</td>
+<td class="pme-value-delete-1">
+NO</td>
+<td class="pme-help-delete-1">Access URL (Host name): ftp://link.jetit.com.ua; Login(User name): ID; Password: SYSTEM PASSWORD</td>
+</tr>
+<tr class="pme-row-delete-0">
+<td class="pme-key-delete-0">LAST ACCESS DATE</td>
+<td class="pme-value-delete-0">
+2020-01-27</td>
+<td class="pme-help-delete-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-delete-1">
+<td class="pme-key-delete-1">LAST ACCESS TIME</td>
+<td class="pme-value-delete-1">
+10:46:18</td>
+<td class="pme-help-delete-1">&nbsp;</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

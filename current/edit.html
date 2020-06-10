@@ -1,0 +1,429 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>GSA Reservation system</title>
+        <link href="style_db.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+<!--
+        @import url("style.css");
+-->
+        </style>
+
+
+</head>
+<body>
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+  <TR>
+    <TD  class="top_1">
+ ID:1/ADMIN/CMPT/MAIN/adminzza/ </TD>
+
+    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+  </TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+	function start_time() {
+	  setInterval("postRequest()", 1000);
+	}
+
+        function postRequest() {
+
+	var xmlHttp;
+        var strURL =  "ajax.tab.php";
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+         var xmlHttp = new XMLHttpRequest();
+       	} else if (window.ActiveXObject) { // IE
+         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      	}
+
+    	xmlHttp.open('GET', strURL, true);
+    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    	xmlHttp.onreadystatechange = function() {
+
+        	if (xmlHttp.readyState == 4) {
+			xmlDoc = xmlHttp.responseXML;
+                	print_din_tab(xmlDoc);
+        	}
+    	}
+    	xmlHttp.send(strURL);
+	}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+  <tr>
+    <td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_on >Users</td>
+<td class=tab_1_off   onclick="location.href='pg_airlines.php'">Airlines</td>
+<td class=tab_1_off   onclick="location.href='pg_pay_new.php'">Payments</td>
+<td class=tab_1_off   onclick="location.href='pg_deposits.php'">Finances</td>
+<td class=tab_1_off   onclick="location.href='pg_rate.php'">ROE</td>
+<td class=tab_1_off   onclick="location.href='pg_user_marg.php'">Markups</td>
+<td class=tab_1_off   onclick="location.href='pg_pnr.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='lt_user_types.php'">Lists</td>
+<td class=tab_1_off   onclick="location.href='pg_hist.php'">Investigation</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+  <tr>
+    <td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='lt_users.php'">Agencies</td>
+<td class=tab_2_off onclick="location.href='pg_locations.php'">Locations</td>
+<td class=tab_2_on  >Terminals</td>
+</TR></TABLE>
+</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_3">&nbsp;</td>
+  </tr>
+
+
+
+</table>
+
+<script>
+ function print_din_tab(xmlDoc){
+
+}
+</script>
+<script>
+function openurl(myurl)
+{
+    if (document.getElementsByClassName("pme-form-view").length!=0) {
+     var id = mSysRec;
+    } else { 
+	   var id = document.querySelector('input[name="PME_sys_rec"]:checked').value;
+    }
+	var wrk_url=myurl+"?sys_rec="+id;
+	window.location.href =  wrk_url;
+}
+</script>
+<script type="text/javascript"><!--
+
+function PME_js_trim(str)
+{
+	while (str.substring(0, 1) == " "
+			|| str.substring(0, 1) == "\n"
+			|| str.substring(0, 1) == "\r")
+	{
+		str = str.substring(1, str.length);
+	}
+	while (str.substring(str.length - 1, str.length) == " "
+			|| str.substring(str.length - 1, str.length) == "\n"
+			|| str.substring(str.length - 1, str.length) == "\r")
+	{
+		str = str.substring(0, str.length - 1);
+	}
+	return str;
+}
+
+function PME_js_form_control(theForm)
+{
+
+	if (theForm.PME_data_USER_ID.selectedIndex == -1) {
+		alert("Please enter AGENCY.");
+		theForm.PME_data_USER_ID.focus();
+		return false;
+	}
+
+	if (theForm.PME_data_ID_LOCATION.selectedIndex == -1) {
+		alert("Please enter LOCATION.");
+		theForm.PME_data_ID_LOCATION.focus();
+		return false;
+	}
+
+	if (theForm.PME_data_TERM_TYPE.selectedIndex == -1) {
+		alert("Please enter TERMINAL TYPE.");
+		theForm.PME_data_TERM_TYPE.focus();
+		return false;
+	}
+
+	if (theForm.PME_data_OPEN_STATUS.selectedIndex == -1) {
+		alert("Please enter ACCESS.");
+		theForm.PME_data_OPEN_STATUS.focus();
+		return false;
+	}
+
+	if (PME_js_trim(theForm.PME_data_USER_NAME.value) == "") {
+		alert("Please enter SYSTEM USER NAME.");
+		theForm.PME_data_USER_NAME.focus();
+		return false;
+	}
+
+	if (PME_js_trim(theForm.PME_data_PASSWORD.value) == "") {
+		alert("Please enter SYSTEM PASSWORD.");
+		theForm.PME_data_PASSWORD.focus();
+		return false;
+	}
+
+	if (theForm.PME_data_PAY_EMAIL.selectedIndex == -1) {
+		alert("Please enter SEND PAYMENT INFO.");
+		theForm.PME_data_PAY_EMAIL.focus();
+		return false;
+	}
+
+	return true;
+}
+
+// --></script>
+<form class="pme-form-change" method="post" action="lt_terminals.php" name="PME_sys_form">
+<input type="hidden" name="PME_sys_sfn[0]" value="-0" />
+<input type="hidden" name="PME_sys_cur_tab" value="PME_dhtml_tab0" />
+<input type="hidden" name="PME_sys_qfn" value="" />
+<input type="hidden" name="PME_sys_rec" value="85" />
+<input type="hidden" name="PME_sys_fm" value="0" />
+<input type="hidden" name="PME_sys_fl" value="0" />
+<table summary="navigation" class="pme-navigation-change">
+<tr class="pme-navigation-change">
+<td class="pme-buttons-change">
+<input type="submit" class="pme-save-change" name="PME_sys_savechange" value="Confirm" title="Confirm" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="pme-more-change" name="PME_sys_morechange" value="Apply" title="Apply" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="pme-cancel-change" name="PME_sys_cancelchange" value="Ignore" title="Ignore" />
+</td>
+</tr></table>
+<hr size="1" class="pme-hr-change" />
+<table class="pme-main-change" summary="lt_terminals">
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">ID</td>
+<td class="pme-value-change-0">
+<input class="pme-input-change-0" type="text" disabled name="PME_data_ID" value="85" size="11" maxlength="11" />
+</td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">AGENCY</td>
+<td class="pme-value-change-1">
+<select class="pme-input-change-1" name="PME_data_USER_ID" >
+<option value="288">__NO AGENCY__</option>
+<option value="289">_NO CONTRACT</option>
+<option value="101">4M</option>
+<option value="2">A1</option>
+<option value="173">Acksy</option>
+<option value="78">ACS</option>
+<option value="280">Adore Tour</option>
+<option value="259">Adzhun</option>
+<option value="212">Aero Voyage</option>
+<option value="286">Agency test</option>
+<option value="224">Air Bridge</option>
+<option value="268">AirTrans.Agency</option>
+<option value="240">Ak-ters</option>
+<option value="53">Akanta tour</option>
+<option value="269">Aladin tour</option>
+<option value="102">ALEKSA</option
+<option value="148">Zharovskaia T A</option>
+<option value="205">Zhdanova TA</option>
+</select></td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">LOCATION</td>
+<td class="pme-value-change-0">
+<select class="pme-input-change-0" name="PME_data_ID_LOCATION" >
+<option value="21" selected="selected">TG loc </option>
+</select></td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">TERMINAL TYPE</td>
+<td class="pme-value-change-1">
+<select class="pme-input-change-1" name="PME_data_TERM_TYPE" >
+<option value="A_MANAGER">A_MANAGER</option>
+<option value="ADMIN">ADMIN</option>
+<option value="ADMIN2">ADMIN2</option>
+<option value="ADMIN3">ADMIN3</option>
+<option value="ADMIN4">ADMIN4</option>
+<option value="ADMIN5">ADMIN5</option>
+<option value="ADMIN6">ADMIN6</option>
+<option value="ADMIN7">ADMIN7</option>
+<option value="F_MANAGER">F_MANAGER</option>
+<option value="HELPDESK">HELPDESK</option>
+<option value="L_MANAGER">L_MANAGER</option>
+<option value="SALE" selected="selected">SALE</option>
+<option value="SALE_DIR">SALE_DIR</option>
+<option value="SALE_T">SALE_T</option>
+</select></td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">ACCESS</td>
+<td class="pme-value-change-0">
+<select class="pme-input-change-0" name="PME_data_OPEN_STATUS" >
+<option value="YES" selected="selected">YES</option>
+<option value="NO">NO</option>
+</select></td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">REMARKS</td>
+<td class="pme-value-change-1">
+<input class="pme-input-change-1" type="text" name="PME_data_REM" value="" size="60" maxlength="100" />
+</td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">IP RANGE FROM</td>
+<td class="pme-value-change-0">
+<input class="pme-input-change-0" type="text" name="PME_data_IP_ADDR" value="" size="32" maxlength="32" />
+</td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">IP RANGE TO</td>
+<td class="pme-value-change-1">
+<input class="pme-input-change-1" type="text" name="PME_data_IP_ADDR_TO" value="" size="32" maxlength="32" />
+</td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">TICKETING OFFICE NAME</td>
+<td class="pme-value-change-0">
+<input class="pme-input-change-0" type="text" name="PME_data_FULL_NAME_ENG" value="" size="60" maxlength="150" />
+</td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">TICKETING OFICE ADDRESS</td>
+<td class="pme-value-change-1">
+<textarea class="pme-input-change-1" name="PME_data_ADDR_ENG" rows="5" cols="50" wrap="virtual"></textarea>
+</td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">PHONE NO</td>
+<td class="pme-value-change-0">
+<input class="pme-input-change-0" type="text" name="PME_data_PHONE" value="+380971111111" size="50" maxlength="50" />
+</td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">AGENT PERSONAL NAME</td>
+<td class="pme-value-change-1">
+<input class="pme-input-change-1" type="text" name="PME_data_USER_DATA" value="HD training" size="30" maxlength="30" />
+</td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">SYSTEM USER NAME</td>
+<td class="pme-value-change-0">
+<input class="pme-input-change-0" type="text" name="PME_data_USER_NAME" value="Sale" size="15" maxlength="15" />
+</td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">SYSTEM PASSWORD</td>
+<td class="pme-value-change-1">
+<input class="pme-input-change-1" type="text" name="PME_data_PASSWORD" value="Sale" size="15" maxlength="15" />
+</td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">EMAIL1</td>
+<td class="pme-value-change-0">
+<input class="pme-input-change-0" type="text" name="PME_data_EMAIL1" value="" size="50" maxlength="50" />
+</td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">SEND PAYMENT INFO</td>
+<td class="pme-value-change-1">
+<select class="pme-input-change-1" name="PME_data_PAY_EMAIL" >
+<option value="YES">YES</option>
+<option value="NO" selected="selected">NO</option>
+</select></td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">EMAIL2</td>
+<td class="pme-value-change-0">
+<input class="pme-input-change-0" type="text" name="PME_data_EMAIL2" value="ukr@ukr.net" size="50" maxlength="50" />
+</td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">ORIGIN BY DEFAULT</td>
+<td class="pme-value-change-1">
+<input class="pme-input-change-1" type="text" name="PME_data_DEF_FROM" value="HRK" size="3" maxlength="3" />
+</td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">DESTINATION BY DEFAULT</td>
+<td class="pme-value-change-0">
+<input class="pme-input-change-0" type="text" name="PME_data_DEF_TO" value="SAW" size="3" maxlength="3" />
+</td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">TIMEZONE</td>
+<td class="pme-value-change-1">
+<select class="pme-input-change-1" name="PME_data_TIMEZONE" >
+<option value="Africa/Abidjan">Africa/Abidjan</option>
+<option value="Pacific/Palau">Pacific/Palau</option>
+<option value="Pacific/Pitcairn">Pacific/Pitcairn</option>
+<option value="Pacific/Pohnpei">Pacific/Pohnpei</option>
+<option value="Pacific/Port_Moresby">Pacific/Port_Moresby</option>
+<option value="Pacific/Rarotonga">Pacific/Rarotonga</option>
+<option value="Pacific/Saipan">Pacific/Saipan</option>
+<option value="Pacific/Tahiti">Pacific/Tahiti</option>
+<option value="Pacific/Tarawa">Pacific/Tarawa</option>
+<option value="Pacific/Tongatapu">Pacific/Tongatapu</option>
+<option value="Pacific/Wake">Pacific/Wake</option>
+<option value="Pacific/Wallis">Pacific/Wallis</option>
+<option value="UTC">UTC</option>
+</select></td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">SERVICE FEE CORRECTION</td>
+<td class="pme-value-change-0">
+<select class="pme-input-change-0" name="PME_data_SF_MOD" >
+<option value="YES" selected="selected">YES</option>
+<option value="NO">NO</option>
+</select></td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">FTP</td>
+<td class="pme-value-change-1">
+<select class="pme-input-change-1" name="PME_data_FTP" >
+<option value="0" selected="selected">NO</option>
+<option value="1">YES</option>
+</select></td>
+<td class="pme-help-change-1">Access URL (Host name): ftp://link.jetit.com.ua; Login(User name): ID; Password: SYSTEM PASSWORD</td>
+</tr>
+<tr class="pme-row-change-0">
+<td class="pme-key-change-0">LAST ACCESS DATE</td>
+<td class="pme-value-change-0">
+<input class="pme-input-change-0" type="text" name="PME_data_DATE_USE" value="2020-01-27" size="10" maxlength="10" />
+</td>
+<td class="pme-help-change-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-change-1">
+<td class="pme-key-change-1">LAST ACCESS TIME</td>
+<td class="pme-value-change-1">
+<input class="pme-input-change-1" type="text" name="PME_data_TIME_USE" value="10:46:18" size="8" maxlength="8" />
+</td>
+<td class="pme-help-change-1">&nbsp;</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

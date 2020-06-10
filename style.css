@@ -641,13 +641,14 @@ form.f {
 	margin: 0px;	
 }
  a{
-background-color:transparent;
-color:#000000;
+/* background-color:transparent; */
+color: #0050ff;
+/* color:#000000; */
 FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
-font-size:8pt;
+/* font-size:8pt; */
 }
 a:hover{
-background-color:transparent;
+/* background-color:transparent; */
 color:#ff0000;
 }
 A:visited {
@@ -781,7 +782,7 @@ form#av_fare input {
 
 .login-page {
   width: 360px;
-  padding: 5% 0 0;
+  padding: 4% 0 0;
   margin: auto;
 }
 .login-page .form {
@@ -835,6 +836,10 @@ form#av_fare input {
   font-size: 14px;
 	border-radius: 5px;
 	border: 1px solid #c9c9c9;
+}
+
+.login-page .login-form input:focus {
+	border: 1px solid #0050ff;
 }
 
 /* Кнопка новый стиль */
@@ -1206,7 +1211,7 @@ border-right:1px solid #00e1a0;
 
 .flight-way abbr::before {
 	content: "";
-	display: inline-gitblock;
+	display: inline-block;
 	width: 10px;
 	height: 12px;
 	background-image: url(images/plane-departure-solid.svg);
@@ -1273,7 +1278,7 @@ color: #000;
 
 /* Стили для PNR */
 
-.guests, .payment-info, .total, .pnr {
+.guests, .payment-info, .pnr {
 
 	background-color: #B4D2FA; 
 	
@@ -1282,6 +1287,7 @@ color: #000;
 	border-radius: 3px;
 	border: 0px;
 	padding-left: 18px;
+	font-weight: 600;
 }
 
 .guests {
@@ -1294,6 +1300,19 @@ color: #000;
 	background-image: url(images/payment.png);
 	background-repeat: no-repeat;
 	background-position: left center;
+}
+
+ .total {
+
+	/* background-color: #B4D2FA;  */
+	
+	/* margin-top: 20px; */
+	padding-top: 4px;
+	border-radius: 3px;
+	margin-left:5px;
+	border: 0px;
+	padding-left: 18px;
+	font-weight: 600;
 }
 
 .total {

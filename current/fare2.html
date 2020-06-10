@@ -1,0 +1,816 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GSA Reservation system</title>
+	<link href="style_db.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+<!--
+	@import url("style.css");
+-->
+	</style>
+
+</head>
+
+<body onload="AddRow(this);AddRow(this);AddRow(this);">
+<script language="Javascript">
+
+  function get_min_seat(sel_id){
+    var sa=9;
+    if (document.getElementById(sel_id) !== null) {
+      var si=document.getElementById(sel_id).options.selectedIndex;
+      if (si==-1) {
+        return sa;
+      }
+      var fstr=document.getElementById(sel_id).options[si].text;
+      sa=fstr.substring(1, 2);
+    }
+    return sa;
+  }
+
+  function set_min_seat() {
+    gl_seat=9;
+    var c_s=9;
+    
+    var rec=get_sel_rec('D');
+    if (rec==-1) {
+      gl_seat=0;
+      return 0; 
+    }
+
+    for (i = 1; i < 4; i++) {
+      c_s=get_min_seat('D'+i+'sel'+rec);
+      if  (c_s<gl_seat) {
+          gl_seat=c_s;
+      }
+    }
+//    rec=get_sel_rec('R');
+//    if (rec==-1) {
+//        return gl_seat; 
+//    }
+
+
+//      for (i = 1; i < 4; i++) {
+//      c_s=get_min_seat('R'+i+'sel'+rec);
+//      if  (c_s<gl_seat) {
+//          gl_seat=c_s;
+//      }
+//    }
+    return gl_seat;
+  } 
+
+  function get_fare(mess,rec,ftype) {
+    var res = get_fare_opt(mess+'1sel'+rec,ftype);
+    res = res+get_fare_opt(mess+'2sel'+rec,ftype);
+    res = res+get_fare_opt(mess+'3sel'+rec,ftype);
+    return  res;
+  }
+
+
+
+  function get_fare_opt(sel_id,ftype) {
+    if (document.getElementById(sel_id) !== null) {
+//      alert(sel_id);
+      // find options
+      var si=document.getElementById(sel_id).options.selectedIndex;
+      // set selected fare code 
+        if (si==-1) {
+                 var dr=sel_id.substring(0, 1)
+                 var ind = get_sel_rec(dr);
+                 var ff=document.getElementsByName(dr+'Fl');
+                 ff[ind].checked=false;
+                 return 0; 
+        }
+
+      var fval=document.getElementById(sel_id).options[si].value;
+      // now we have  in sel_id  D1sel2 or R2sel5 (direction, segment number, sel, record number)
+      //  will have 3676624_HRKSAWPC429  
+          fval=fval+"_"+ document.getElementById(sel_id+"F").value;
+      //  alert(fval);
+       ss= sel_id.substring(0, 2)+"FS";
+//        alert(ss);
+
+      document.getElementById(ss).value=fval;
+             
+      // get text
+      var fstr=document.getElementById(sel_id).options[si].text;
+      // get substr (total fare) ignore class 
+      var fb=fstr.indexOf(ftype,3);
+      var fe=fstr.indexOf('/',fb);
+      if (fe<0) {
+        fe=fstr.length;
+      }
+      resm=100*(parseFloat(fstr.substring(fb+1, fe)).toFixed(2));
+      return resm;
+    } else {
+      return 0;
+    }  
+  }
+
+
+  function get_fare(mess,rec,ftype) {
+//   var res = document.getElementById('shedTable').rows[rec].cells[3].innerHTML;
+
+    var res = get_fare_opt(mess+'1sel'+rec,ftype);
+    res = res+get_fare_opt(mess+'2sel'+rec,ftype);
+    res = res+get_fare_opt(mess+'3sel'+rec,ftype);
+    return  res
+  }
+
+  function get_sel_rec(mess) {
+    var i; 
+    var rec=-1;
+    var ff=document.getElementsByName(mess+'Fl');
+    for (i = 0; i < ff.length; i++) {
+      if (ff[i].checked) {
+        rec = i;
+      }
+    }
+    return rec;
+  } 
+
+
+  function sel_ret_rec() {
+    var ff=document.getElementsByName('DFl');
+    for (i = 0; i < ff.length; i++) {
+      if (ff[i].checked) {
+        document.getElementsByName('RFl')[i].checked = true;
+      }
+    }
+
+  } 
+
+
+
+
+
+  function get_total_fare(ftype) {
+
+    var fare=0;
+    var rec=get_sel_rec('D');
+    if (rec==-1) {
+      return "Flight not selected";
+    }
+
+//    if (document.getElementById('RFl') != null) {
+//      var recr=get_sel_rec('R');
+//      if (recr==-1) {
+//        return "Return flight not selected";
+//      }
+//      fare=get_fare('R',recr,ftype);
+//    }
+
+    fare=fare+get_fare('D',rec,ftype);
+    return   fare +(curr_sf-gl_sf)*100;
+  }
+
+
+
+   function   get_fare_mess() {
+    var rec=get_sel_rec('D');
+    if (rec==-1) {
+      return "Flight not selected";
+    }
+    if (document.getElementById('RFl') != null) {
+      var recr=get_sel_rec('R');
+      if (recr==-1) {
+        return "Return flight not selected";
+      }
+    }
+    
+    var fare_info='<a href="javascript:void(0)" onclick="click_by_id(\'id_PQ\');">(Package info)</a>';
+
+//    alert(get_fare_opt('D1sel'+rec,'C'));
+//    var tl='TKT price'+': ADLT '+ get_total_fare('A')/100 +
+//      ' СHLD: '+ get_total_fare('C')/100 +
+//       ' INF: '+ get_total_fare('I')/100;
+
+  var tl='TKT price'+': ADLT '+ get_fare_opt('D1sel'+rec,'A')/100 +
+        ' СHLD: '+ get_fare_opt('D1sel'+rec,'C')/100 +
+       ' INF: '+ get_fare_opt('D1sel'+rec,'I')/100;
+
+
+
+
+//    alert(document.getElementById('shedTable').rows[rec].cells[3].innerHTML);    
+    tl = tl + get_total_sf();
+    tl = tl + get_total_pnr()+fare_info;
+
+    return tl;
+  }
+
+
+
+  function pax_count(){
+    var pax_cnt=1;
+    for (i0 = 1; i0 < 10; i0++) {
+      if (document.getElementById('pt'+i0) != null) {
+        pax_cnt=pax_cnt+1;
+      }
+    }
+    return pax_cnt;
+  }
+
+  
+
+   
+
+
+  function  recalc_sf() {
+     curr_sf=document.getElementById('sf_tt').value;
+     document.getElementById('submit_sf').value=curr_sf; 
+     recalc_all();      
+  }
+
+
+  function get_total_sf() {
+    var i;
+    var pax_cnt;
+    var tot_sf;
+    var pax_cnt=pax_count();
+    var diff = (gl_sf-curr_sf)*pax_cnt;
+//    var out_mess ='';
+//    if (diff<0) {
+//       out_mess='. Add:'+(0-diff);       
+//    } else {
+//       out_mess='. Disc:'+diff;
+//    }
+//    return t_sf_mess='Incl.SF('+gl_sf+'):'+ pax_cnt+'x<input id="sf_tt" name="sf_tt" type="text" size="3" value="'+curr_sf+'" onchange="recalc_sf()" >'+    '='+curr_sf*pax_cnt+out_mess+'.Seat:'+set_min_seat();
+  
+    return t_sf_mess='. Included Service Fee:'+ pax_cnt+'x<input id="sf_tt" name="sf_tt" type="text" size="3" value="'+curr_sf+'" onchange="recalc_sf()" >'+
+    '='+curr_sf*pax_cnt;
+    
+   
+  }
+  
+
+
+
+ 
+   
+  function   get_total_pnr() {
+    var i;
+    var tot0= get_total_fare('A');
+
+    for (i0 = 1; i0 < 10; i0++) {
+      if (document.getElementById('pt'+i0) != null) {
+          fstr0=document.getElementById('pt'+i0).value;
+          tot0=tot0+get_total_fare(fstr0.substring(0, 1));
+      }
+    }
+      var rec=get_sel_rec('D');
+      var totZ = document.getElementById('shedTable').rows[rec].cells[3].innerHTML;
+      var resm=100*(parseFloat(totZ).toFixed(2));
+
+
+
+
+    var tot0 =  resm/100+(curr_sf-gl_sf)*pax_count();
+        tot0 =(Math.round(tot0*100))/100;
+//    var tl0='. PNR total: '+ tot0/100 + ' ' + sale_mess;
+      var tl0='. PNR total: '+ tot0 + ' ' + sale_mess;
+    return tl0;
+  }
+
+  function check_sex() {
+    var i;
+    var str_;
+    var res=true; 
+    if (document.getElementById('gn').value=='-')  {
+       res=false;
+    }
+
+    if (!(document.getElementById('f_name').value.match(/^[a-zA-Z /-]+$/))) {
+      res=false;
+    }
+    if (!(document.getElementById('s_name').value.match(/^[a-zA-Z /-]+$/))) {
+      res=false;
+    }
+
+    if (!(document.getElementById('doc_num').value.match(/^[0-9a-zA-Z /-]+$/))) {
+      res=false;
+    }
+    if (!(document.getElementById('doc_cn').value.match(/^[a-zA-Z]+$/))) {
+      res=false;
+    }
+
+
+
+    for (i0 = 1; i0 < 10; i0++) {
+      if (document.getElementById('gn'+i0) != null) {
+          if (document.getElementById('gn'+i0).value=='-')  {
+            res=false;
+          }
+          if (!(document.getElementById('f_name'+i0).value.match(/^[a-zA-Z /-]+$/))) {
+            res=false;
+          }
+          if (!(document.getElementById('s_name'+i0).value.match(/^[a-zA-Z /-]+$/))) {
+            res=false;
+          }
+          if (!(document.getElementById('doc_num'+i0).value.match(/^[0-9a-zA-Z /-]+$/))) {
+            res=false;
+          }
+          if (!(document.getElementById('doc_cn'+i0).value.match(/^[a-zA-Z]+$/))) {
+            res=false;
+          }
+     }
+
+    }
+   return res;
+  }
+   
+   
+  function clear_all(){
+       
+    document.getElementById('D1FS').value='';
+    document.getElementById('D2FS').value='';
+    document.getElementById('D3FS').value='';
+    document.getElementById('R1FS').value='';
+    document.getElementById('R2FS').value='';
+    document.getElementById('R3FS').value='';
+  }
+
+  function recalc_all(){
+   clear_all();
+    var tmp=get_fare_mess();
+    document.getElementById('mess_total').innerHTML=tmp;
+    var ms= set_min_seat();
+    if ((ms<pax_count()) && (ms>0)) {
+      alert('Check pax/seat accordance');
+    }
+  }
+
+  function check_inf(cntr){
+    if (cntr.value=='INF') {
+        alert('Reminder:enter infant after adult');
+    }
+  }
+
+
+  function chng_select0(mess,rec) {
+    var did1=mess+'1sel'+rec;
+    var did2=mess+'2sel'+rec;
+    if (document.getElementById(did2) !== null) {
+      if (document.getElementById(did2).disabled) {
+          document.getElementById(did2).value=document.getElementById(did1).value
+      }
+    }
+
+    did2=mess+'3sel'+rec;
+    if (document.getElementById(did2) !== null) {
+      if (document.getElementById(did2).disabled) {
+          document.getElementById(did2).value=document.getElementById(did1).value
+      }
+    }
+  }
+
+  function chng_select1(mess,rec) {
+    chng_select0(mess,rec); 
+    recalc_all();
+  }
+
+
+var sale_mess='';
+</script>
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+  <TR>
+    <TD  class="top_1">
+ ID:14/SALE/pupkin travel/pupkin HRK/pu22/(W6) </TD>
+
+    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+  </TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+	function start_time() {
+	  setInterval("postRequest()", 1000);
+	}
+
+        function postRequest() {
+
+	var xmlHttp;
+        var strURL =  "ajax.tab.php";
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+         var xmlHttp = new XMLHttpRequest();
+       	} else if (window.ActiveXObject) { // IE
+         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      	}
+
+    	xmlHttp.open('GET', strURL, true);
+    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    	xmlHttp.onreadystatechange = function() {
+
+        	if (xmlHttp.readyState == 4) {
+			xmlDoc = xmlHttp.responseXML;
+                	print_din_tab(xmlDoc);
+        	}
+    	}
+    	xmlHttp.send(strURL);
+	}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+  <tr>
+    <td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_on >Reservation</td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_d.php'"><div id='_req'>Status update</div></td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_s.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='pg_term_s.php'">Settings & Info</td>
+<td class=tab_1_off   onclick="location.href='pg_mapPC.php'">Maps</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+  <tr>
+    <td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='pg_create.php'">Create PC</td>
+<td class=tab_2_off onclick="location.href='pg_createEG.php'">Create EG</td>
+<td class=tab_2_on  onclick="window.location = 'pg_createPQ.php'" >Create PQ</td>
+<td class=tab_2_off onclick="location.href='pg_createPS.php'">Create PS</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs.php'">Non ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_t.php'">Ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_r.php'">Refunded PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_c.php'">Canceled PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_p.php'">Problem PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_all.php'">All PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_group.php'">Group</td>
+</TR></TABLE>
+</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_3">&nbsp;</td>
+  </tr>
+
+
+
+</table>
+
+<script>
+ function print_din_tab(xmlDoc){
+
+	txt = xmlDoc.getElementsByTagName('req')[0].childNodes[0].nodeValue;
+	if (txt == 0) {txt=''};	document.getElementById('_req').innerHTML = 'Status update ' + txt;
+}
+</script>
+<script> start_time(); </script>
+Fare/roundtrip mode<br><script>
+function click_by_id(id_PQ) {
+  document.getElementById(id_PQ).style.display='block';
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('id_PQ')) {
+        document.getElementById('id_PQ').style.display='none';
+    }
+}
+
+
+
+</script>
+
+<div id="id_PQ" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id_PQ').style.display='none'" class="w3-display-topright">&times;</span>
+      SkyUp<br>Fare/Package Info<br><table>
+<tr><td></td><td>Basic</td><td>Standard</td><td>Flex</td></tr>
+<tr><td>Hand Luggage (55х40х20cm)</td><td>7 kg</td><td>7 kg</td><td>7 kg</td></tr>
+<tr><td>Free baggage</td><td>No</td><td>1PC (23kg)</td><td>1PC (23kg)</td></tr>
+<tr><td>Free baggage infant</td><td>No</td><td>10 kg</td><td>10 kg</td></tr>
+<tr><td>Free Meal</td><td>No</td><td>No</td><td>No</td></tr>
+<tr><td>Change(not less12h before dep)</td><td>No</td><td>50 usd</td><td>Free</td></tr>
+<tr><td>Refund(not later 12h before dep)</td><td>No</td><td>No</td><td>50 usd</td></tr>
+<tr><td>REF/CHNG in case NS</td><td>No</td><td>No</td><td>No</td></tr>
+</table>      </div>
+    </div>
+  </div>
+
+
+
+<table valign='top'><tr>
+<td class="pme-buttons" valign="middle" align="center">Batumi-Kiev<BR>20-08-2020<input type="button" onclick="location.href='pg_farePQ.php?from=BUS&to=IEV&date_d=20-08-2020&date_r=28-08-2020&adt=2&chd=1&inf=1'" class="pme-prev" name="PME_sys_navop" value="<" /> &nbsp21-08-2020 &nbsp<input type="button" onclick="location.href='pg_farePQ.php?from=BUS&to=IEV&date_d=22-08-2020&date_r=28-08-2020&adt=2&chd=1&inf=1'" class="pme-next" name="PME_sys_navop" value=">" />22-08-2020</td><td class="pme-buttons" valign="middle" align="center">Kiev-Batumi<BR>27-08-2020<input type="button" onclick="location.href='pg_farePQ.php?from=BUS&to=IEV&date_d=21-08-2020&date_r=27-08-2020&adt=2&chd=1&inf=1'" class="pme-prev" name="PME_sys_navop" value="<" /> &nbsp28-08-2020 &nbsp<input type="button" onclick="location.href='pg_farePQ.php?from=BUS&to=IEV&date_d=21-08-2020&date_r=29-08-2020&adt=2&chd=1&inf=1'" class="pme-next" name="PME_sys_navop" value="<" />29-08-2020</td></tr>
+<tr class='pme-navigation'><td valign='top'>
+<table border="1" id="shedTable"><tr><td><input type='radio' id='DFl' name='DFl' value='0' onchange='sel_ret_rec();recalc_all()' /></td>
+<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
+<input id='D1sel0F' name='D1sel0F'   type='text' hidden value='BUSKBPPQ4320821_0' />
+<SELECT id='D1sel0' name='D1sel0'  class='fare-input-change'  onchange='chng_select1("D",0)' >
+<OPTION value='Standard'>S3-A2+C1+I1/Standard</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> 14485.98</td></tr>
+<script> chng_select0("D",0); </script>
+<tr><td><input type='radio' id='DFl' name='DFl' value='1' onchange='sel_ret_rec();recalc_all()' /></td>
+<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
+<input id='D1sel1F' name='D1sel1F'   type='text' hidden value='BUSKBPPQ4320821_1' />
+<SELECT id='D1sel1' name='D1sel1'  class='fare-input-change'  onchange='chng_select1("D",1)' >
+<OPTION value='Standard'>S3-A2+C1+I1/Standard</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> 16602.52</td></tr>
+<script> chng_select0("D",1); </script>
+<tr><td><input type='radio' id='DFl' name='DFl' value='2' onchange='sel_ret_rec();recalc_all()' /></td>
+<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
+<input id='D1sel2F' name='D1sel2F'   type='text' hidden value='BUSKBPPQ4320821_2' />
+<SELECT id='D1sel2' name='D1sel2'  class='fare-input-change'  onchange='chng_select1("D",2)' >
+<OPTION value='Standard'>S3-A2+C1+I1/Standard</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> 23076.3</td></tr>
+<script> chng_select0("D",2); </script>
+<tr><td><input type='radio' id='DFl' name='DFl' value='3' onchange='sel_ret_rec();recalc_all()' /></td>
+<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
+<input id='D1sel3F' name='D1sel3F'   type='text' hidden value='BUSKBPPQ4320821_3' />
+<SELECT id='D1sel3' name='D1sel3'  class='fare-input-change'  onchange='chng_select1("D",3)' >
+<OPTION value='Flex'>E3-A2+C1+I1/Flex</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> 21203.23</td></tr>
+<script> chng_select0("D",3); </script>
+<tr><td><input type='radio' id='DFl' name='DFl' value='4' onchange='sel_ret_rec();recalc_all()' /></td>
+<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
+<input id='D1sel4F' name='D1sel4F'   type='text' hidden value='BUSKBPPQ4320821_4' />
+<SELECT id='D1sel4' name='D1sel4'  class='fare-input-change'  onchange='chng_select1("D",4)' >
+<OPTION value='Flex'>E3-A2+C1+I1/Flex</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> 23319.77</td></tr>
+<script> chng_select0("D",4); </script>
+<tr><td><input type='radio' id='DFl' name='DFl' value='5' onchange='sel_ret_rec();recalc_all()' /></td>
+<td><abbr title="Batumi, Batumi International Airport(BUS) - Kiev, Boryspil International Airport(KBP)">BUS KBP</abbr> 14:45 16:15 PQ432&nbsp UR-SQI 
+<input id='D1sel5F' name='D1sel5F'   type='text' hidden value='BUSKBPPQ4320821_5' />
+<SELECT id='D1sel5' name='D1sel5'  class='fare-input-change'  onchange='chng_select1("D",5)' >
+<OPTION value='Flex'>E3-A2+C1+I1/Flex</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> 29793.55</td></tr>
+<script> chng_select0("D",5); </script>
+</table>
+</td>
+<td valign='top'>
+<table border="1" id="shedTable"><tr><td><input type='radio' id='RFl' name='RFl' value='0' disabled /></td>
+<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
+<input id='R1sel0F' name='R1sel0F'   type='text' hidden value='KBPBUSPQ4310828_0' />
+<SELECT id='R1sel0' name='R1sel0'  class='fare-input-change'  onchange='chng_select1("R",0)' disabled>
+<OPTION value='Basic'>L/Basic</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> -</td></tr>
+<script> chng_select0("R",0); </script>
+<tr><td><input type='radio' id='RFl' name='RFl' value='1' disabled /></td>
+<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
+<input id='R1sel1F' name='R1sel1F'   type='text' hidden value='KBPBUSPQ4310828_1' />
+<SELECT id='R1sel1' name='R1sel1'  class='fare-input-change'  onchange='chng_select1("R",1)' disabled>
+<OPTION value='Standard'>S/Standard</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> -</td></tr>
+<script> chng_select0("R",1); </script>
+<tr><td><input type='radio' id='RFl' name='RFl' value='2' disabled /></td>
+<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
+<input id='R1sel2F' name='R1sel2F'   type='text' hidden value='KBPBUSPQ4310828_2' />
+<SELECT id='R1sel2' name='R1sel2'  class='fare-input-change'  onchange='chng_select1("R",2)' disabled>
+<OPTION value='Flex'>E/Flex</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> -</td></tr>
+<script> chng_select0("R",2); </script>
+<tr><td><input type='radio' id='RFl' name='RFl' value='3' disabled /></td>
+<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
+<input id='R1sel3F' name='R1sel3F'   type='text' hidden value='KBPBUSPQ4310828_3' />
+<SELECT id='R1sel3' name='R1sel3'  class='fare-input-change'  onchange='chng_select1("R",3)' disabled>
+<OPTION value='Basic'>L/Basic</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> -</td></tr>
+<script> chng_select0("R",3); </script>
+<tr><td><input type='radio' id='RFl' name='RFl' value='4' disabled /></td>
+<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
+<input id='R1sel4F' name='R1sel4F'   type='text' hidden value='KBPBUSPQ4310828_4' />
+<SELECT id='R1sel4' name='R1sel4'  class='fare-input-change'  onchange='chng_select1("R",4)' disabled>
+<OPTION value='Standard'>S/Standard</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> -</td></tr>
+<script> chng_select0("R",4); </script>
+<tr><td><input type='radio' id='RFl' name='RFl' value='5' disabled /></td>
+<td><abbr title="Kiev, Boryspil International Airport(KBP) - Batumi, Batumi International Airport(BUS)">KBP BUS</abbr> 10:15 13:45 PQ431&nbsp UR-SQI 
+<input id='R1sel5F' name='R1sel5F'   type='text' hidden value='KBPBUSPQ4310828_5' />
+<SELECT id='R1sel5' name='R1sel5'  class='fare-input-change'  onchange='chng_select1("R",5)' disabled>
+<OPTION value='Flex'>E/Flex</OPTION>
+</SELECT> <br>
+</td>
+<td>02:30</td><td> -</td></tr>
+<script> chng_select0("R",5); </script>
+</table>
+</td>
+
+</tr>
+<tr><td Colspan="2"  ><p id="mess_total"></p></td>
+</tr></table>
+<script>
+
+var gl_seat=9; 
+
+var curr_sf=0;
+var gl_sf=0;
+
+function check_submit(){
+    if (!check_sex()) {
+      alert("Check pax info");
+      return false;
+    }  
+    
+    var rec=get_sel_rec('D');
+    if (rec==-1) {
+      alert("Flight not selected");
+      return false;
+    }
+
+    if (document.getElementById('RFl') != null) {
+      var recr=get_sel_rec('R');
+      if (recr==-1) {
+        alert("Return flight not selected");
+        return false;
+      }
+    }
+    document.getElementById('book_btn').disabled = true;
+    return true;
+}
+
+</script>
+
+
+<form onsubmit="return check_submit()" name="book" action="pg_bookPQ.php"  method="POST" id="book" class="pme-form">
+
+<input id="D1FS" name="D1FS" type="text" hidden value="" />
+<input id="D2FS" name="D2FS" type="text" hidden value="" />
+<input id="D3FS" name="D3FS" type="text" hidden value="" />
+
+<input id="R1FS" name="R1FS" type="text" hidden value="" />
+<input id="R2FS" name="R2FS" type="text" hidden value="" />
+<input id="R3FS" name="R3FS" type="text" hidden value="" />
+
+<input id="submit_sf" name="submit_sf" type="text" hidden value="0"/> 
+
+
+
+<script type="text/javascript">
+function NumToWord(nm) {
+var ones = Array("", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX","SEVEN", "EIGHT", "NINE");
+ return ones[nm];
+ }
+        function AddRow(sender) {
+            // Get current row index.
+            // Get current table.
+		var table =  document.getElementsByName('PaxInfo')[0];
+	        var rowIndex = table.rowIndex + 1;
+
+            // Create a new row.
+
+	     if (table.rows.length<18) {
+            var row = table.insertRow(table.rows.length);
+            // Create Col1.
+            var col1 = row.insertCell(0);
+            var tab_rown = Math.round(table.rows.length/2);
+            col1.innerHTML ='<SELECT id="pt'+tab_rown
+			+ '" name="pt'+tab_rown
+			+ '" class = "dropdown"  onchange="check_inf(this); recalc_all()" >                        <OPTION value="ADT">ADT</OPTION><OPTION value="CHD">CHD</OPTION><OPTION value="INF">INF</OPTION></SELECT>';
+
+            // Create Col2.
+            var col2 = row.insertCell(1);
+            col2.innerHTML = '<input id="f_name'+tab_rown
+			+ '" name="f_name'+tab_rown+'" type="text" size="24" maxlength="24" minlength="1" value="" placeholder="First Name" autocomplete="off"  onFocus="this.select()" />';
+            // Create Col3.
+            var col3 = row.insertCell(2);
+            col3.innerHTML = '<input id="s_name'+tab_rown
+			+ '" name="s_name'+tab_rown+'" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" placeholder="Surname(Family Name)" onFocus="this.select()" />';
+// for test generate surname
+//value="'+NumToWord(tab_rown)+'" 
+
+
+            // Create Col4.
+            var col4 = row.insertCell(3);
+            col4.innerHTML = '<input id="email'+tab_rown
+			+ '" name="email'+tab_rown+'" type="text" size="24" maxlength="35" minlength="5"  autocomplete="off" value=""  disabled onFocus="this.select()"  placeholder="Email" />';
+            var col5 = row.insertCell(4);
+            
+col5.innerHTML ='<input id="c_code'+tab_rown
+			+ '" name="c_code'+tab_rown+'" type="text" size="1" maxlength="4" minlength="2"  autocomplete="off" value="" onFocus="this.select()" disabled /> <input id="a_code" name="a_code'+tab_rown+'" type="text" size="1" maxlength="4" minlength="1" value="" onFocus="this.select()" disabled /> <input id="phone" name="phone'+tab_rown+'" type="text" size="7" maxlength="10" minlength="7" autocomplete="off"  value=""  onFocus="this.select()" disabled />';
+                
+// Second row
+
+            var row = table.insertRow(table.rows.length);
+            // Create Col1.
+            var col1 = row.insertCell(0);
+            col1.innerHTML ='<SELECT id="gn'+tab_rown
+			+ '" name="gn'+tab_rown
+			+ '" class = "dropdown" ><OPTION value="-">-</OPTION><OPTION value="M">M</OPTION><OPTION value="F">F</OPTION></SELECT>';
+
+            // Create Col2.
+            var col2 = row.insertCell(1);
+            col2.innerHTML = '<input id="b_date'+tab_rown
+			+ '" name="b_date'+tab_rown+'" type="text" size="24" maxlength="10" minlength="3"  autocomplete="off"  value="" onFocus="this.select()" placeholder="Birthday DD-MM-YYYY"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\\d{2}$/) !== null) {            this.value = v + \'-\';      } else if (v.match(/^\\d{2}\\-\\d{2}$/) !== null) {            this.value = v + \'-\'; }"/>';
+
+            // Create Col3.
+            var col3 = row.insertCell(2);
+            col3.innerHTML = '<input id="doc_num'+tab_rown
+			+ '" name="doc_num'+tab_rown+'" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off"  value=""    onFocus="this.select()" placeholder="Passport/ ID NO" />';
+            // Create Col4.
+            var col4 = row.insertCell(3);
+            col4.innerHTML = '<input id="doc_cn'+tab_rown
+			+ '" name="doc_cn'+tab_rown+'" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" value="UA"    onFocus="this.select()" placeholder="Passport country" />';
+            var col5 = row.insertCell(4);
+            col5.innerHTML = '<input id="val_doc'+tab_rown
+			+ '" name="val_doc'+tab_rown+'" type="text" size="20" maxlength="20" minlength="3"  autocomplete="off" value=""    onFocus="this.select()" placeholder="Valid till DD-MM-YYYY"   onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\\d{2}$/) !== null) {            this.value = v + \'-\';      } else if (v.match(/^\\d{2}\\-\\d{2}$/) !== null) {            this.value = v + \'-\'; }"  />';
+	}
+recalc_all();    
+}
+ 
+       function DeleteRow(sender) {
+	var table =  document.getElementsByName('PaxInfo')[0];
+	if (table.rows.length>2) {
+            table.deleteRow(table.rows.length-1);
+            table.deleteRow(table.rows.length-1);
+           } 
+      recalc_all();    
+    }
+    </script>
+
+	<input type="button" disabled class="pme-add" title="Add NEW"  onclick="AddRow(this)" />
+        <input type="button" disabled class="pme-delete" title="Delete" onclick="DeleteRow(this)" />
+
+
+        <table name="PaxInfo" border="0" cellpadding="0" cellspacing="0" class="article">
+            <tr>
+                <td>
+			<SELECT id="pt" name="pt" class = "dropdown">                        		<OPTION value="ADT">ADT</OPTION>
+			</SELECT>
+                </td>
+                <td>
+                    <input id="f_name" name="f_name" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" onFocus="this.select()"  placeholder="First Name" />
+                </td>
+                <td>
+                    <input id="s_name" name="s_name" type="text" size="24" maxlength="24" minlength="1" autocomplete="off" value="" onFocus="this.select()"  placeholder="Surname(Family Name)" />
+                </td>
+                <td>
+                   <input id="email" name="email" type="text" size="24" maxlength="35" minlength="5"  autocomplete="off" value="pupukin@gmail.com" onFocus="this.select()"  placeholder="Email" />
+                </td>
+                <td>
+		<input id="c_code" name="c_code" type="text" size="1" maxlength="4" minlength="2"  autocomplete="off"  value="+380" onFocus="this.select()" />
+	<input id="a_code" name="a_code" type="text" size="1" maxlength="4" minlength="1"  autocomplete="off"  value="" onFocus="this.select()" />
+	  <input id="phone" name="phone" type="text" size="7" maxlength="10" minlength="7"  autocomplete="off"  value="" onFocus="this.select()" />
+                </td>
+            </tr>
+         <tr>
+                <td>
+			<SELECT id="gn" name="gn" class = "dropdown">                        	
+<OPTION value="-">-</OPTION><OPTION value="M">M</OPTION><OPTION value="F">F</OPTION>;
+		</SELECT>
+                </td>
+                <td>
+                <input id="b_date" name="b_date" type="text" size="24" maxlength="10" minlength="10"  autocomplete="off" value="" onFocus="this.select()"  placeholder="Birthday DD-MM-YYYY" 
+
+    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+
+    onkeyup="
+        var v = this.value;
+        if (v.match(/^\d{2}$/) !== null) {
+            this.value = v + '-';
+        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+            this.value = v + '-';
+        }"
+
+ />
+                </td>
+                <td>
+                    <input id="doc_num" name="doc_num" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" placeholder="Passport/ ID NO" value=""  onFocus="this.select()"  />
+                </td>
+                <td>
+                 <input id="doc_cn" name="doc_cn" type="text" size="24" maxlength="24" minlength="3"  autocomplete="off" value="UA"  onFocus="this.select()"  placeholder="Passport country" />
+                </td>
+                <td>
+		   <input id="val_doc" name="val_doc" type="text" size="20" maxlength="20" minlength="10"  autocomplete="off" value=""  onFocus="this.select()"  placeholder="Valid till DD-MM-YYYY "   onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="   var v = this.value;    if (v.match(/^\d{2}$/) !== null) { this.value = v + '-'; } else if (v.match(/^\d{2}\-\d{2}$/) !== null) { this.value = v + '-'; }" /> 
+                </td>
+            </tr>
+        </table>
+<br>
+
+<input id="book_btn"  type="submit" value="Book" class="but_long_W" />
+</form></body>
+</html>
