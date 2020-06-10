@@ -1278,56 +1278,47 @@ color: #000;
 
 /* Стили для PNR */
 
-.guests, .payment-info, .pnr {
+.pnr-number, .pnr-guests, .pnr-payment-info  {
 
 	background-color: #B4D2FA; 
-	/* background-color: #0050ff; */
-	
 	margin: 20px 0 5px ;
 	padding: 4px 0 2px 18px;
 	border-radius: 3px;
 	border: 0px;
-	/* padding-left: 18px; */
 	font-size: 10pt;
-	/* font-weight: 600; */
+}
+.pnr-number {
+	background-image: url(images/pnr.png);
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 
-.guests {
+.pnr-guests {
 	background-image: url(images/guests.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
 
-.payment-info {
+.pnr-payment-info {
 	background-image: url(images/payment.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
 
- .total {
-
-	/* background-color: #B4D2FA;  */
-	
-	/* margin-top: 20px; */
+ .pnr-total {
 	padding-top: 5px;
 	border-radius: 3px;
 	margin-left:5px;
 	border: 0px;
 	padding-left: 18px;
-	/* font-weight: 600; */
-}
-
-.total {
 	background-image: url(images/total.png);
 	background-repeat: no-repeat;
 	background-position: left center;
+
 }
 
-.pnr {
-	background-image: url(images/pnr.png);
-	background-repeat: no-repeat;
-	background-position: left center;
-}
+
+
 
 	/* добавление пассажиров для fare, fare2 стр. */
 	.article .pax-phone-c_code,
