@@ -1286,7 +1286,7 @@ color: #000;
 
 /* Стили для PNR */
 
-.pnr-number, .pnr-guests, .pnr-payment-info  {
+.pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests  {
 
 	background-color: #B4D2FA; 
 	margin: 20px 0 5px ;
@@ -1323,6 +1323,12 @@ color: #000;
 	background-repeat: no-repeat;
 	background-position: left center;
 
+}
+
+.pnr-active-requests {
+	background-image: url(images/requests.png);
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 
 
