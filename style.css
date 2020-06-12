@@ -1021,8 +1021,16 @@ input.but_long_W, .form button, .td.tab_2_off {
 	}
 	
 	tr.pme-header th a::after{
-		content: "⮁"; 
+		content: ""; 
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		/* background-color: #000; */
+		background-image: url(images/arrow.svg);
+		background-repeat: no-repeat;
+		background-position-y: bottom;
 		color: #0050ff; 
+		margin-left: 5px;
 		padding-left: 2px;
 	}
 	
@@ -1330,12 +1338,12 @@ color: #000;
 		width: 45%;
 	}
 	
-	.pax-gender {width: 100%;}
+	/* .pax-gender {width: 100%;} */
 	
 	/* input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
 		margin-bottom: 10px;
 	} */
 	
-	.pax-valid-doc, {
+	/* .pax-valid-doc {
 		width: 100%;
-	}
+	} */
