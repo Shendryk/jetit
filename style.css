@@ -1132,6 +1132,8 @@ input.but_long_W, .form button, .td.tab_2_off {
 
 .w3-container table tr:first-child {
 background-color: #00e1a0;
+background-color: #B4D2FA;
+
 border-right:1px solid #00e1a0;
 }
 
