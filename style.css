@@ -1363,7 +1363,7 @@ a.pnr-ssrs:active {
 		width: 45%;
 	}
 	
-	/* .pax-gender {width: 100%;} */
+	.article select.pax-gender {width: 100%;} 
 	
 	/* input#b_date, #gn, #doc_num, #doc_cn, #val_doc   {
 		margin-bottom: 10px;

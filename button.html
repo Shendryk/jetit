@@ -1,0 +1,172 @@
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GSA Reservation system</title>
+<link href="style_db.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+@import url("style.css");
+-->
+</style>
+
+</head>
+<body>
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+<TR>
+<TD  class="top_1">
+ID:4/HELPDESK/CMPT/MAIN/h0/ </TD>
+
+<td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+</TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+function start_time() {
+setInterval("postRequest()", 1000);
+}
+
+		function postRequest() {
+
+var xmlHttp;
+		var strURL =  "ajax.tab.php";
+		if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+		 var xmlHttp = new XMLHttpRequest();
+		 } else if (window.ActiveXObject) { // IE
+			 var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+	xmlHttp.open('GET', strURL, true);
+	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xmlHttp.onreadystatechange = function() {
+
+			if (xmlHttp.readyState == 4) {
+	xmlDoc = xmlHttp.responseXML;
+							print_din_tab(xmlDoc);
+			}
+	}
+	xmlHttp.send(strURL);
+}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+<tr>
+<td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_off   onclick="location.href='pg_hd_new.php'">Requests</td>
+<td class=tab_1_on >PNR</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+<tr>
+<td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='pg_hd_pnrp.php'">Problems PNR</td>
+<td class=tab_2_on  >All PNR</td>
+<td class=tab_2_off onclick="location.href='pg_grouph.php'">Group</td>
+</TR></TABLE>
+</td>
+</tr>
+<tr>
+<td class="td_tabul_2_2">&nbsp;</td>
+</tr>
+<tr>
+<td class="td_tabul_2_3">&nbsp;</td>
+</tr>
+</table>
+
+<script>
+function print_din_tab(xmlDoc){
+
+}
+</script>
+<script>
+function openurl(myurl)
+{
+if (document.getElementsByClassName("pme-form-view").length!=0) {
+ var id = mSysRec;
+} else { 
+ var id = document.querySelector('input[name="PME_sys_rec"]:checked').value;
+}
+var wrk_url=myurl+"?sys_rec="+id;
+window.location.href =  wrk_url;
+}
+</script>
+<script type="text/javascript"><!--
+
+function PME_js_filter_handler(theForm, theEvent)
+{
+var pressed_key = null;
+if (theEvent.which) {
+pressed_key = theEvent.which;
+} else {
+pressed_key = theEvent.keyCode;
+}
+if (pressed_key == 13) { // enter pressed
+theForm.submit();
+return false;
+}
+return true;
+}
+
+// --></script>
+<form class="pme-form" method="post" action="pg_hd_pnr.php" name="PME_sys_form">
+<input type="hidden" name="PME_sys_sfn[0]" value="-8" />
+<input type="hidden" name="PME_sys_fl" value="1" />
+<table summary="navigation" class="pme-navigation">
+<tr class="pme-navigation">
+<td class="pme-buttons">
+	<input disabled="" type="submit" class="pme-first" name="PME_sys_disablednavop" value="<<" title="<<">
+<input disabled="" type="submit" class="pme-prev" name="PME_sys_disablednavop" value="<" title="<">
+<input type="submit" class="pme-add" name="PME_sys_operation" value="Add New" title="Add New">
+<input type="submit" class="pme-view" name="PME_sys_operation" value="View" title="View">
+<input type="submit" class="pme-change" name="PME_sys_operation" value="Change" title="Change">
+<input type="submit" class="pme-copy" name="PME_sys_operation" value="Copy" title="Copy">
+<input type="submit" class="pme-delete" name="PME_sys_operation" value="Delete" title="Delete">
+<input type="submit" class="pme-next" name="PME_sys_navop" value=">" title=">">
+<input type="submit" class="pme-last" name="PME_sys_navop" value=">>" title=">>">
+<input type="submit" class="pme-goto" name="PME_sys_navop" value="Go to" title="Go to">
+<input type="submit" class="pme-search" name="PME_sys_sw" value="v" title="v">
+<input type="submit" class="pme-hide" name="PME_sys_sw" value="^" title="^">
+<input type="submit" class="pme-clear" name="PME_sys_sw" value="X" title="X">
+<br>
+<br>
+<input type="submit" class="pme-save-add" name="PME_sys_saveadd" value="Confirm" title="Confirm" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="pme-more-add" name="PME_sys_moreadd" value="Save&New" title="Save&New" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="pme-cancel-add" name="PME_sys_canceladd" value="Ignore" title="Ignore" />
+<input type="submit" class="pme-change-view" name="PME_sys_operation" value="Change" title="Change">
+<input type="submit" class="pme-more-change" name="PME_sys_morechange" value="Apply" title="Apply" onclick="return PME_js_form_control(this.form);">
+<input type="submit" class="pme-print-view" name="PME_sys_operation" value="Print" title="Change">
+<input type="submit" class="pme-ssr-view" name="PME_sys_operation" value="SSR+" title="Change">
+<input type="submit" class="pme-bag-view" name="PME_sys_operation" value="Bag" title="Change">
+<input type="submit" class="pme-live-view" name="PME_sys_operation" value="Live" title="Change">
+<input type="submit" class="pme-file-view" name="PME_sys_operation" value="File" title="Change">
+<input type="submit" class="pme-upload-view" name="PME_sys_operation" value="Upload" title="Change">
+<input type="submit" class="pme-file_select-view" name="PME_sys_operation" value="View" title="Change">
+<input type="submit" class="pme-more-add" name="PME_sys_operation" value="Add" title="Change">
+
+
+
+
+
+</td>
+
+</tr>
+</form>
