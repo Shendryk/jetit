@@ -1312,7 +1312,7 @@ color: #000;
 
 /* Стили для PNR */
 
-.pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests  {
+.pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests, .pnr-ssr  {
 
 	background-color: #B4D2FA; 
 	margin: 20px 0 5px ;
@@ -1325,6 +1325,17 @@ color: #000;
 	background-image: url(images/pnr.png);
 	background-repeat: no-repeat;
 	background-position: left center;
+}
+.pnr-ssr a {
+	text-decoration: none;
+}
+
+.pnr-ssr a.hide-content:after {
+	content: " ►";
+}
+
+.pnr-ssr a.show-content:after {
+	content: " ▼";
 }
 
 .pnr-guests {
