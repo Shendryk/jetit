@@ -1299,7 +1299,7 @@ color: #000;
 
 /* Стили для PNR */
 
-.pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests, .pnr-ssr  {
+.pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests, .pnr-ssr, .pnr-flight  {
 
 	background-color: #B4D2FA; 
 	margin: 20px 0 5px ;
@@ -1308,7 +1308,10 @@ color: #000;
 	border-radius: 3px 3px 0 0;
 	border: 0px;
 	font-size: 10pt;
+	font-weight:600;
 }
+
+
 
 .pnr-number {
 	background-image: url(images/pnr.png);
@@ -1316,9 +1319,18 @@ color: #000;
 	background-position: left center;
 }
 
+.pnr-flight {
+	background-image: url(images/pnr-flight.svg);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
 .pnr-ssr {
 	margin: 20px 0 0;
 	padding: 4px 0 2px 18px;
+	background-image: url(images/shopping-basket.png);
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 
 .pnr-ssr a {
