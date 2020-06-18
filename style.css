@@ -500,7 +500,7 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 /* ˭ﰪힺ���쩭 bg (#FFFFFF)*/
 
 input.but_long_D {
-font-weight: bold;
+/* font-weight: bold;
 font-size:9pt;
 color:#000000;
 border-style: none;
@@ -508,7 +508,22 @@ background-image: url("images/but_D.gif");
 height: 23px;
 width: 100px;
 cursor: pointer;
- margin-bottom: 2px;
+ margin-bottom: 2px; */
+
+ background-color: #f2f2f2;
+border-style: outset; 
+background-repeat:no-repeat; 
+background-position:center left ; 
+font-size: 10pt;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
+border: 1px solid #cccccc;
+height: 27px;
+min-width: 100px;
+margin-right: 5px;
+cursor: pointer; 
+margin-bottom: 4px;
+border-radius: 3px;
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 }
 /* ˭ﰪힺ���쩭  - bg (#B8C6F7)*/
 
@@ -531,6 +546,21 @@ background-image: url(images/but_arr.gif);
 height: 23px;
 width: 31px;
 cursor: hand;
+
+/* background-color: #f2f2f2;
+border-style: outset; 
+background-repeat:no-repeat; 
+background-position:center left ; 
+font-size: 10pt;
+FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
+border: 1px solid #cccccc;
+height: 27px;
+min-width: 100px;
+margin-right: 5px;
+cursor: pointer; 
+margin-bottom: 4px;
+border-radius: 3px;
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25); */
 }
 /*
  ˭ﰪힺ���잭 -->;
