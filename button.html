@@ -133,7 +133,8 @@ return true;
 <table summary="navigation" class="pme-navigation">
 <tr class="pme-navigation">
 <td class="pme-buttons">
-	<input disabled="" type="submit" class="pme-first" name="PME_sys_disablednavop" value="<<" title="<<">
+	<h2>Вариант 1</h2>
+<input disabled="" type="submit" class="pme-first" name="PME_sys_disablednavop" value="<<" title="<<">
 <input disabled="" type="submit" class="pme-prev" name="PME_sys_disablednavop" value="<" title="<">
 <input type="submit" class="pme-add" name="PME_sys_operation" value="Add New" title="Add New">
 <input type="submit" class="pme-view" name="PME_sys_operation" value="View" title="View">
@@ -169,8 +170,214 @@ return true;
 <div id="av_fare"><input type="submit" class="but_long_W" name="PME_sys_operation" value="Search" title="Change"></div>
 <br><br>
 <input id="mess" name="mess" type="text" size="50" maxlength="99" value="" class="field_y" />
+<br><br><br><br>
+<h2>Вариант 2</h2>
 
+<style>
+	.btn2	.btn-v2, 
+	.btn2	.btn-v2.pme-next:enabled,
+	.btn2 .btn-v2.pme-last:enabled,
+	.btn2 .btn-v2.pme-prev:disabled,
+	.btn2 .btn-v2.pme-first:disabled {
+	background-color: #fff;
+	}
+	</style>
+	<div class="btn2">
+		
+	<input disabled="" type="submit" class="btn-v2 pme-first" name="PME_sys_disablednavop" value="<<" title="<<">
+	<input disabled="" type="submit" class="btn-v2 pme-prev" name="PME_sys_disablednavop" value="<" title="<">
+	<input type="submit" class="btn-v2 pme-add" name="PME_sys_operation" value="Add New" title="Add New">
+	<input type="submit" class="btn-v2 pme-view" name="PME_sys_operation" value="View" title="View">
+	<input type="submit" class="btn-v2 pme-change" name="PME_sys_operation" value="Change" title="Change">
+	<input type="submit" class="btn-v2 pme-copy" name="PME_sys_operation" value="Copy" title="Copy">
+	<input type="submit" class="btn-v2 pme-delete" name="PME_sys_operation" value="Delete" title="Delete">
+	<input type="submit" class="btn-v2 pme-next" name="PME_sys_navop" value=">" title=">">
+	<input type="submit" class="btn-v2 pme-last" name="PME_sys_navop" value=">>" title=">>">
+	<input type="submit" class="btn-v2 pme-goto" name="PME_sys_navop" value="Go to" title="Go to">
+	<input type="submit" class="btn-v2 pme-search" name="PME_sys_sw" value="v" title="v">
+	<input type="submit" class="btn-v2 pme-hide" name="PME_sys_sw" value="^" title="^">
+	<input type="submit" class="btn-v2 pme-clear" name="PME_sys_sw" value="X" title="X">
+	<input type="submit" class="btn-v2 pme-excel" name="PME_sys_operation" value="Exel" title="Change">
+	<br>
+	<br>
+	<input type="submit" class="btn-v2 pme-save-add" name="PME_sys_saveadd" value="Confirm" title="Confirm" onclick="return PME_js_form_control(this.form);" />
+	<input type="submit" class="btn-v2 pme-more-add" name="PME_sys_moreadd" value="Save&New" title="Save&New" onclick="return PME_js_form_control(this.form);" />
+	<input type="submit" class="btn-v2 pme-cancel-add" name="PME_sys_canceladd" value="Ignore" title="Ignore" />
+	<input type="submit" class="btn-v2 pme-change-view" name="PME_sys_operation" value="Change" title="Change">
+	<input type="submit" class="btn-v2 pme-more-change" name="PME_sys_morechange" value="Apply" title="Apply" onclick="return PME_js_form_control(this.form);">
+	<input type="submit" class="btn-v2 pme-print-view" name="PME_sys_operation" value="Print" title="Change">
+	<input type="submit" class="btn-v2 pme-ssr-view" name="PME_sys_operation" value="SSR+" title="Change">
+	<input type="submit" class="btn-v2 pme-bag-view" name="PME_sys_operation" value="Bag" title="Change">
+	<input type="submit" class="btn-v2 pme-live-view" name="PME_sys_operation" value="Live" title="Change">
+	 <!-- <input type="submit" class="btn-v2 pme-file-view" name="PME_sys_operation" value="File" title="Change"> --> 
+	<input type="submit" class="btn-v2 pme-upload-view" name="PME_sys_operation" value="Upload" title="Change">
+	<input type="submit" class="btn-v2 pme-file_select-view" name="PME_sys_operation" value="View" title="Change">
+	<input type="submit" class="btn-v2 pme-more-add" name="PME_sys_operation" value="Add" title="Change">
+	<br>
+	<input type="submit" class="btn-v2 but_long_W" name="PME_sys_operation" value="but_long_W" title="but_long_W">
+	<input type="submit" class="btn-v2 but_long_L" name="PME_sys_operation" value="but_long_L" title="but_long_L">
+	
+	<div id="av_fare"><input type="submit" class="btn-v2 but_long_W" name="PME_sys_operation" value="Search" title="Change"></div>
+	<br><br>
+	<input id="mess" name="mess" type="text" size="50" maxlength="99" value="" class="btn-v2 field_y" />
+		
+	</div>
 
+	<br><br><br><br>
+<h2>Вариант 3</h2>
+<style>
+.btn3	.btn-v3, 
+.btn3	.btn-v3.pme-next:enabled,
+.btn3 .btn-v3.pme-last:enabled,
+.btn3 .btn-v3.pme-prev:disabled,
+.btn3 .btn-v3.pme-first:disabled {
+background-color: #fbfcff;
+}
+</style>
+<div class="btn3">
+	
+<input disabled="" type="submit" class="btn-v3 pme-first" name="PME_sys_disablednavop" value="<<" title="<<">
+<input disabled="" type="submit" class="btn-v3 pme-prev" name="PME_sys_disablednavop" value="<" title="<">
+<input type="submit" class="btn-v3 pme-add" name="PME_sys_operation" value="Add New" title="Add New">
+<input type="submit" class="btn-v3 pme-view" name="PME_sys_operation" value="View" title="View">
+<input type="submit" class="btn-v3 pme-change" name="PME_sys_operation" value="Change" title="Change">
+<input type="submit" class="btn-v3 pme-copy" name="PME_sys_operation" value="Copy" title="Copy">
+<input type="submit" class="btn-v3 pme-delete" name="PME_sys_operation" value="Delete" title="Delete">
+<input type="submit" class="btn-v3 pme-next" name="PME_sys_navop" value=">" title=">">
+<input type="submit" class="btn-v3 pme-last" name="PME_sys_navop" value=">>" title=">>">
+<input type="submit" class="btn-v3 pme-goto" name="PME_sys_navop" value="Go to" title="Go to">
+<input type="submit" class="btn-v3 pme-search" name="PME_sys_sw" value="v" title="v">
+<input type="submit" class="btn-v3 pme-hide" name="PME_sys_sw" value="^" title="^">
+<input type="submit" class="btn-v3 pme-clear" name="PME_sys_sw" value="X" title="X">
+<input type="submit" class="btn-v3 pme-excel" name="PME_sys_operation" value="Exel" title="Change">
+<br>
+<br>
+<input type="submit" class="btn-v3 pme-save-add" name="PME_sys_saveadd" value="Confirm" title="Confirm" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="btn-v3 pme-more-add" name="PME_sys_moreadd" value="Save&New" title="Save&New" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="btn-v3 pme-cancel-add" name="PME_sys_canceladd" value="Ignore" title="Ignore" />
+<input type="submit" class="btn-v3 pme-change-view" name="PME_sys_operation" value="Change" title="Change">
+<input type="submit" class="btn-v3 pme-more-change" name="PME_sys_morechange" value="Apply" title="Apply" onclick="return PME_js_form_control(this.form);">
+<input type="submit" class="btn-v3 pme-print-view" name="PME_sys_operation" value="Print" title="Change">
+<input type="submit" class="btn-v3 pme-ssr-view" name="PME_sys_operation" value="SSR+" title="Change">
+<input type="submit" class="btn-v3 pme-bag-view" name="PME_sys_operation" value="Bag" title="Change">
+<input type="submit" class="btn-v3 pme-live-view" name="PME_sys_operation" value="Live" title="Change">
+ <!-- <input type="submit" class="btn-v3 pme-file-view" name="PME_sys_operation" value="File" title="Change"> --> 
+<input type="submit" class="btn-v3 pme-upload-view" name="PME_sys_operation" value="Upload" title="Change">
+<input type="submit" class="btn-v3 pme-file_select-view" name="PME_sys_operation" value="View" title="Change">
+<input type="submit" class="btn-v3 pme-more-add" name="PME_sys_operation" value="Add" title="Change">
+<br>
+<input type="submit" class="btn-v3 but_long_W" name="PME_sys_operation" value="but_long_W" title="but_long_W">
+<input type="submit" class="btn-v3 but_long_L" name="PME_sys_operation" value="but_long_L" title="but_long_L">
+
+<div id="av_fare"><input type="submit" class="btn-v3 but_long_W" name="PME_sys_operation" value="Search" title="Change"></div>
+<br><br>
+<input id="mess" name="mess" type="text" size="50" maxlength="99" value="" class="btn-v3 field_y" />
+	
+</div>
+
+<br><br><br><br>
+<h2>Вариант 4</h2>
+<style>
+.btn4	.btn-v4, 
+.btn4	.btn-v4.pme-next:enabled,
+.btn4 .btn-v4.pme-last:enabled,
+.btn4 .btn-v4.pme-prev:disabled,
+.btn4 .btn-v4.pme-first:disabled {
+background-color: #fbfbfb;
+}
+</style>
+<div class="btn4">
+	
+<input disabled="" type="submit" class="btn-v4 pme-first" name="PME_sys_disablednavop" value="<<" title="<<">
+<input disabled="" type="submit" class="btn-v4 pme-prev" name="PME_sys_disablednavop" value="<" title="<">
+<input type="submit" class="btn-v4 pme-add" name="PME_sys_operation" value="Add New" title="Add New">
+<input type="submit" class="btn-v4 pme-view" name="PME_sys_operation" value="View" title="View">
+<input type="submit" class="btn-v4 pme-change" name="PME_sys_operation" value="Change" title="Change">
+<input type="submit" class="btn-v4 pme-copy" name="PME_sys_operation" value="Copy" title="Copy">
+<input type="submit" class="btn-v4 pme-delete" name="PME_sys_operation" value="Delete" title="Delete">
+<input type="submit" class="btn-v4 pme-next" name="PME_sys_navop" value=">" title=">">
+<input type="submit" class="btn-v4 pme-last" name="PME_sys_navop" value=">>" title=">>">
+<input type="submit" class="btn-v4 pme-goto" name="PME_sys_navop" value="Go to" title="Go to">
+<input type="submit" class="btn-v4 pme-search" name="PME_sys_sw" value="v" title="v">
+<input type="submit" class="btn-v4 pme-hide" name="PME_sys_sw" value="^" title="^">
+<input type="submit" class="btn-v4 pme-clear" name="PME_sys_sw" value="X" title="X">
+<input type="submit" class="btn-v4 pme-excel" name="PME_sys_operation" value="Exel" title="Change">
+<br>
+<br>
+<input type="submit" class="btn-v4 pme-save-add" name="PME_sys_saveadd" value="Confirm" title="Confirm" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="btn-v4 pme-more-add" name="PME_sys_moreadd" value="Save&New" title="Save&New" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="btn-v4 pme-cancel-add" name="PME_sys_canceladd" value="Ignore" title="Ignore" />
+<input type="submit" class="btn-v4 pme-change-view" name="PME_sys_operation" value="Change" title="Change">
+<input type="submit" class="btn-v4 pme-more-change" name="PME_sys_morechange" value="Apply" title="Apply" onclick="return PME_js_form_control(this.form);">
+<input type="submit" class="btn-v4 pme-print-view" name="PME_sys_operation" value="Print" title="Change">
+<input type="submit" class="btn-v4 pme-ssr-view" name="PME_sys_operation" value="SSR+" title="Change">
+<input type="submit" class="btn-v4 pme-bag-view" name="PME_sys_operation" value="Bag" title="Change">
+<input type="submit" class="btn-v4 pme-live-view" name="PME_sys_operation" value="Live" title="Change">
+ <!-- <input type="submit" class="btn-v4 pme-file-view" name="PME_sys_operation" value="File" title="Change"> --> 
+<input type="submit" class="btn-v4 pme-upload-view" name="PME_sys_operation" value="Upload" title="Change">
+<input type="submit" class="btn-v4 pme-file_select-view" name="PME_sys_operation" value="View" title="Change">
+<input type="submit" class="btn-v4 pme-more-add" name="PME_sys_operation" value="Add" title="Change">
+<br>
+<input type="submit" class="btn-v4 but_long_W" name="PME_sys_operation" value="but_long_W" title="but_long_W">
+<input type="submit" class="btn-v4 but_long_L" name="PME_sys_operation" value="but_long_L" title="but_long_L">
+
+<div id="av_fare"><input type="submit" class="btn-v4 but_long_W" name="PME_sys_operation" value="Search" title="Change"></div>
+<br><br>
+<input id="mess" name="mess" type="text" size="50" maxlength="99" value="" class="btn-v4 field_y" />
+	
+</div>
+
+<br><br><br><br>
+<h2>Вариант 5</h2>
+<style>
+.btn5	.btn-v5, 
+.btn5	.btn-v5.pme-next:enabled,
+.btn5 .btn-v5.pme-last:enabled,
+.btn5 .btn-v5.pme-prev:disabled,
+.btn5 .btn-v5.pme-first:disabled {
+background-color: #dee3f2;
+}
+</style>
+<div class="btn5">
+	
+<input disabled="" type="submit" class="btn-v5 pme-first" name="PME_sys_disablednavop" value="<<" title="<<">
+<input disabled="" type="submit" class="btn-v5 pme-prev" name="PME_sys_disablednavop" value="<" title="<">
+<input type="submit" class="btn-v5 pme-add" name="PME_sys_operation" value="Add New" title="Add New">
+<input type="submit" class="btn-v5 pme-view" name="PME_sys_operation" value="View" title="View">
+<input type="submit" class="btn-v5 pme-change" name="PME_sys_operation" value="Change" title="Change">
+<input type="submit" class="btn-v5 pme-copy" name="PME_sys_operation" value="Copy" title="Copy">
+<input type="submit" class="btn-v5 pme-delete" name="PME_sys_operation" value="Delete" title="Delete">
+<input type="submit" class="btn-v5 pme-next" name="PME_sys_navop" value=">" title=">">
+<input type="submit" class="btn-v5 pme-last" name="PME_sys_navop" value=">>" title=">>">
+<input type="submit" class="btn-v5 pme-goto" name="PME_sys_navop" value="Go to" title="Go to">
+<input type="submit" class="btn-v5 pme-search" name="PME_sys_sw" value="v" title="v">
+<input type="submit" class="btn-v5 pme-hide" name="PME_sys_sw" value="^" title="^">
+<input type="submit" class="btn-v5 pme-clear" name="PME_sys_sw" value="X" title="X">
+<input type="submit" class="btn-v5 pme-excel" name="PME_sys_operation" value="Exel" title="Change">
+<br>
+<br>
+<input type="submit" class="btn-v5 pme-save-add" name="PME_sys_saveadd" value="Confirm" title="Confirm" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="btn-v5 pme-more-add" name="PME_sys_moreadd" value="Save&New" title="Save&New" onclick="return PME_js_form_control(this.form);" />
+<input type="submit" class="btn-v5 pme-cancel-add" name="PME_sys_canceladd" value="Ignore" title="Ignore" />
+<input type="submit" class="btn-v5 pme-change-view" name="PME_sys_operation" value="Change" title="Change">
+<input type="submit" class="btn-v5 pme-more-change" name="PME_sys_morechange" value="Apply" title="Apply" onclick="return PME_js_form_control(this.form);">
+<input type="submit" class="btn-v5 pme-print-view" name="PME_sys_operation" value="Print" title="Change">
+<input type="submit" class="btn-v5 pme-ssr-view" name="PME_sys_operation" value="SSR+" title="Change">
+<input type="submit" class="btn-v5 pme-bag-view" name="PME_sys_operation" value="Bag" title="Change">
+<input type="submit" class="btn-v5 pme-live-view" name="PME_sys_operation" value="Live" title="Change">
+ <!-- <input type="submit" class="btn-v5 pme-file-view" name="PME_sys_operation" value="File" title="Change"> --> 
+<input type="submit" class="btn-v5 pme-upload-view" name="PME_sys_operation" value="Upload" title="Change">
+<input type="submit" class="btn-v5 pme-file_select-view" name="PME_sys_operation" value="View" title="Change">
+<input type="submit" class="btn-v5 pme-more-add" name="PME_sys_operation" value="Add" title="Change">
+<br>
+<input type="submit" class="btn-v5 but_long_W" name="PME_sys_operation" value="but_long_W" title="but_long_W">
+<input type="submit" class="btn-v5 but_long_L" name="PME_sys_operation" value="but_long_L" title="but_long_L">
+
+<div id="av_fare"><input type="submit" class="btn-v5 but_long_W" name="PME_sys_operation" value="Search" title="Change"></div>
+<br><br>
+<input id="mess" name="mess" type="text" size="50" maxlength="99" value="" class="btn-v5 field_y" />
+	
+</div>
 
 
 
