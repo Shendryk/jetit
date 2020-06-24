@@ -68,12 +68,22 @@ FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
  border: 2px solid #d9d9d9;
 }
 
- .pme-main-change select  {
+table.pme-main select,
+table.pme-main-add select,
+table.pme-main-delete select,
+table.pme-main-copy select,
+table.pme-main-view select,
+table.pme-main-change select  {
 	width: 100%;
 	border-radius:3px;
 }
 
-.pme-main-change input  {
+table.pme-main input,
+table.pme-main-add input,
+table.pme-main-delete input,
+table.pme-main-copy input,
+table.pme-main-view input,
+table.pme-main-change input   {
 	width: 99%;
 }
 
@@ -83,11 +93,21 @@ FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 	border: 1px solid #00e1a0;
 }
 
-.pme-main-change select:focus  {
+table.pme-main select:focus,
+table.pme-main-add select:focus,
+table.pme-main-delete select:focus,
+table.pme-main-copy select:focus,
+table.pme-main-view select:focus,
+table.pme-main-change select:focus  {
  border: 1px solid #0050ff;
 }
 
-.pme-main-change input:focus  {
+table.pme-main input:focus,
+table.pme-main-add input:focus,
+table.pme-main-delete input:focus,
+table.pme-main-copy input:focus,
+table.pme-main-view input:focus,
+table.pme-main-change input:focus   {
 	border: 1px solid #0050ff;
 }
 
