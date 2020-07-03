@@ -1,0 +1,166 @@
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GSA Reservation system</title>
+	<link href="style_db.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+<!--
+	@import url("style.css");
+-->
+
+
+td.top_1 {                                              
+	height: 45px;
+	font-family: 'Euclid Circular B', Tahoma, Arial, sans-serif;
+	font-size: 10pt;
+	margin-left: 100px;
+	font-weight: bold;
+	color: Black; 
+	background-color: white;
+
+
+	/* background-image: url(images/logo.gif); */
+	background-image: url(images/jetit_logo2.svg);
+	
+
+ 	background-repeat: no-repeat;
+
+	vertical-align: middle; 
+	background-position:  bottom;
+	background-position: left;
+	text-align: left;
+	padding-left: 300px;
+}
+
+
+
+
+
+</style>
+
+
+</head>
+<body onload="from_to_set()">
+
+
+<table class="table_title" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr>
+    <td class="top_1">
+ ID:71/SALE/test/Kiev test/test/ </td>
+
+    <td class="top_1_1">
+			<!-- <a href="lt_login.php"><img src="images/exit.png" border="0"></a>  -->
+			<a href="lt_login.php"><img src="images/exit-sign-out.svg" alt="exit" border="0"></a> 
+		</td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+
+<script language="Javascript">
+
+	function start_time() {
+	  setInterval("postRequest()", 1000);
+	}
+
+        function postRequest() {
+
+	var xmlHttp;
+        var strURL =  "ajax.tab.php";
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+         var xmlHttp = new XMLHttpRequest();
+       	} else if (window.ActiveXObject) { // IE
+         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      	}
+
+    	xmlHttp.open('GET', strURL, true);
+    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    	xmlHttp.onreadystatechange = function() {
+
+        	if (xmlHttp.readyState == 4) {
+			xmlDoc = xmlHttp.responseXML;
+                	print_din_tab(xmlDoc);
+        	}
+    	}
+    	xmlHttp.send(strURL);
+	}
+</script>
+
+<table class="table_top100" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td class="td_tabul_1">
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="tab_1_on">Reservation</td>
+<td class="tab_1_off" onclick="location.href='pg_tickets_d.php'"><div id="_req">Status update </div></td>
+<td class="tab_1_off" onclick="location.href='pg_tickets_s.php'">Reports</td>
+<td class="tab_1_off" onclick="location.href='pg_term_s.php'">Settings &amp; Info</td>
+<td class="tab_1_off" onclick="location.href='pg_mapPC.php'">Maps</td>
+</tr></tbody></table>
+</td>
+</tr>
+</tbody></table>
+
+<table class="table_top" width="100" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr>
+    <td class="td_tabul_2_1">
+<table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
+<td class="tab_2_on">Create PC</td>
+<td class="tab_2_off" onclick="location.href='pg_createEG.php'">Create EG</td>
+<td class="tab_2_off" onclick="location.href='pg_createPQ.php'">Create PQ</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs.php'">Non ticketed PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_t.php'">Ticketed PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_r.php'">Refunded PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_c.php'">Canceled PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_p.php'">Problem PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_pnrs_all.php'">All PNRs</td>
+<td class="tab_2_off" onclick="location.href='pg_group.php'">Group</td>
+</tr></tbody></table>
+</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_3">&nbsp;</td>
+  </tr>
+</tbody></table>
+
+<script>
+ function print_din_tab(xmlDoc){
+
+	txt = xmlDoc.getElementsByTagName('req')[0].childNodes[0].nodeValue;
+	if (txt == 0) {txt=''};	document.getElementById('_req').innerHTML = 'Status update ' + txt;
+}
+</script>
+<script> start_time(); </script>
+<h3>&nbsp; &nbsp;</h3>
+<link href="CalendarControl.css" rel="stylesheet" type="text/css">
+<script src="CalendarControl.js" language="javascript"> </script><iframe id="CalendarControlIFrame" src="javascript:false;" style="border: 0px; overlow: hidden;" title="Calendar Control"></iframe><div id="CalendarControl"></div>
+
+<h2>Выбрать авиакомпанию:</h2>
+
+<div class="airlines">
+	<a href="#"><img src="images/pegasus-logo.svg" onerror="this.onerror=null; this.src='images/default-logo.svg'" alt="Pegasus" width="120" height="60"></a>
+	<a href="#"><img src="images/skyup-logo.svg" onerror="this.onerror=null; this.src='images/default-logo.svg'" alt="Skyup"></a>
+	<a href="#"><img src="images/uia-logo.svg" onerror="this.onerror=null; this.src='images/default-logo.svg'" alt="Мау"></a>
+	<a href="#"><img src="images/ernest-logo.svg" onerror="this.onerror=null; this.src='images/default-logo.svg'" alt="Ernest"></a>
+	<a href="#"><img src="#" onerror="this.onerror=null; this.src='images/default-logo.svg'" alt=""></a>
+	<a href="#"><img src="#" onerror="this.onerror=null; this.src='images/default-logo.svg'" alt=""></a>
+	<a href="#"><img src="#" onerror="this.onerror=null; this.src='images/default-logo.svg'" alt=""></a>
+	<a href="#"><img src="#" onerror="this.onerror=null; this.src='images/default-logo.svg'" alt=""></a>
+	<a href="#"><img src="#" onerror="this.onerror=null; this.src='images/default-logo.svg'" alt=""></a>
+</div>
+
+
+
+
+
+
+
+
+
+	
+	</body></html>

@@ -1418,3 +1418,26 @@ a.pnr-ssrs:active {
 	/* .pax-valid-doc {
 		width: 100%;
 	} */
+
+
+	/* Кнопки авиалиний */
+	
+	.airlines a {
+		text-decoration: none;
+		margin: 0 5px 12px;
+		display: inline-block;
+	}
+
+	.airlines a img {
+		border: solid 1px #d9d9d9;
+		border-radius: 5px;
+	}
+
+	.airlines a img:hover {
+		box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+	}
+
+	
+	.airlines a img:active {
+		box-shadow: none; 
+	}
