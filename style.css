@@ -150,7 +150,7 @@ td.inp {
 
 */
 input.but_long_L {
-	background-color: #f2f2f2;
+	background-color: #fbfbfb;;
 	border-style: outset; 
 	background-repeat:no-repeat; 
 	background-position:center left ; 
@@ -274,6 +274,7 @@ td.tab_1_off {
 	 /* background: #D1D4E0; */
 	 /* background: #cfe0d3; */
 	 background: #f8f8f8;
+	 background: #bcf1eb;
 	 opacity: 0.80;
 	 /* height: 20px; */
 	 height:31px;
@@ -462,7 +463,7 @@ td.td_tabul_2_3 {
  /*2- 򳱮랠- 3-硲᢫鷻 */
 input.but_long_W {
 
-background-color: #f2f2f2;
+background-color: #fbfbfb;
 border-style: outset; 
 background-repeat:no-repeat; 
 background-position:center left ; 
@@ -510,7 +511,7 @@ width: 100px;
 cursor: pointer;
  margin-bottom: 2px; */
 
- background-color: #f2f2f2;
+ background-color: #fbfbfb;;
 border-style: outset; 
 background-repeat:no-repeat; 
 background-position:center left ; 
@@ -546,21 +547,6 @@ background-image: url(images/but_arr.gif);
 height: 23px;
 width: 31px;
 cursor: hand;
-
-/* background-color: #f2f2f2;
-border-style: outset; 
-background-repeat:no-repeat; 
-background-position:center left ; 
-font-size: 10pt;
-FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
-border: 1px solid #cccccc;
-height: 27px;
-min-width: 100px;
-margin-right: 5px;
-cursor: pointer; 
-margin-bottom: 4px;
-border-radius: 3px;
-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25); */
 }
 /*
  ˭ﰪힺ���잭 -->;
@@ -896,29 +882,13 @@ form#av_fare input {
 		text-decoration: none;
 		/* padding: .8em 1em calc(.8em + 3px); */
 		border-radius: 3px;
-		background-color: #ff5389;
-		box-shadow: 0 -3px #cc2c5e inset; 
 		background-color: #0050ff;
 		box-shadow: 0 -3px #0139b1 inset;
-		background-color: #00e1a0;
-		box-shadow: 0 -3px #05c38c inset;
-		/* background-color:#f2f2f2;
-		box-shadow: 0 -2px #a0a0a0 inset; */
-
-		/* ff5389 */
-		/* background-color: #00e1a0; */
-		/* background-color: rgb(64,199,129);
-		box-shadow: 0 -3px rgb(53,167,110) inset;  */
-
-		
-		/* box-shadow: 0 -3px rgb(53,167,110) inset;  */
 		transition: 0.2s;
-		/* height: 23px; */
 		min-width: 90px;
 		cursor: pointer;
 		border: none;
-		/* margin-left:5px; */
-	
+
 	}
 	.form button {
 		min-width: 100%;
@@ -931,10 +901,11 @@ form#av_fare input {
 	
 
 	
-	 .form button:hover { background-color: #05c38c; }
+	 .form button:hover { 
+		 background-color: #0241ca; 
+		}
 	 .form button:active {
-		background: rgb(33,147,90);
-		box-shadow: 0 3px rgb(33,147,90) inset;
+		background-color:  #0139b1;
 
 	}
 	
@@ -1225,6 +1196,7 @@ border-right:1px solid #00e1a0;
 
 .pme-navigation table tr td {
 	background-color: #bddeee;
+	background-color: #d3e1f3
 	/* border-top: 1px solid #d0d0d0; */
 	/* border-bottom: 1px solid #d0d0d0;  */
 	/* background-color: #00e1a0;  */
@@ -1331,7 +1303,7 @@ color: #000;
 
 .pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests, .pnr-ssr, .pnr-flight  {
 
-	background-color: #B4D2FA; 
+	/* background-color: #B4D2FA;  */
 	margin: 20px 0 5px ;
 	padding: 4px 0 2px 18px;
 	/* border-radius: 3px; */
@@ -1344,7 +1316,7 @@ color: #000;
 
 
 .pnr-number {
-	background-image: url(images/pnr.png);
+	background-image: url(images/pnr.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
@@ -1358,7 +1330,7 @@ color: #000;
 .pnr-ssr {
 	margin: 20px 0 0;
 	padding: 4px 0 2px 18px;
-	background-image: url(images/shopping-basket.png);
+	background-image: url(images/shopping-basket.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
@@ -1376,7 +1348,7 @@ color: #000;
 }
 
 .pnr-guests {
-	background-image: url(images/guests.png);
+	background-image: url(images/guests.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
@@ -1385,7 +1357,7 @@ a.pnr-ssrs {
 padding: 2px 5px;
 border-radius: 3px;
 color: #000;
-background-color: #f2f2f2;
+background-color: #fbfbfb;;
 border: 1px solid #cccccc;
 text-decoration: none;
 box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
@@ -1401,7 +1373,7 @@ a.pnr-ssrs:active {
 }
 
 .pnr-payment-info {
-	background-image: url(images/payment.png);
+	background-image: url(images/payment.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
@@ -1412,14 +1384,14 @@ a.pnr-ssrs:active {
 	margin-left:5px;
 	border: 0px;
 	padding-left: 18px;
-	background-image: url(images/total.png);
+	background-image: url(images/total.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 
 }
 
 .pnr-active-requests {
-	background-image: url(images/requests.png);
+	background-image: url(images/requests.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 }

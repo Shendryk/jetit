@@ -4,29 +4,29 @@
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-		"http://www.w3.org/TR/html4/loose.dtd">
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>GSA Reservation system</title>
-	<link href="style_db.css" rel="stylesheet" type="text/css">
-	<style type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GSA Reservation system</title>
+<link href="style_db.css" rel="stylesheet" type="text/css">
+<style type="text/css">
 <!--
-	@import url("style.css");
+@import url("style.css");
 -->
-	</style>
+</style>
 
 </head>
 <body>
 
 
 <TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
-  <TR>
-    <TD  class="top_1">
- ID:4/HELPDESK/CMPT/MAIN/h0/ </TD>
+<TR>
+<TD  class="top_1">
+ID:4/HELPDESK/CMPT/MAIN/h0/ </TD>
 
-    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
-  </TR>
+<td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+</TR>
 </TABLE>
 
 
@@ -36,36 +36,36 @@
 
 <script language="Javascript">
 
-	function start_time() {
-	  setInterval("postRequest()", 1000);
+function start_time() {
+setInterval("postRequest()", 1000);
+}
+
+		function postRequest() {
+
+var xmlHttp;
+		var strURL =  "ajax.tab.php";
+		if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+		 var xmlHttp = new XMLHttpRequest();
+		 } else if (window.ActiveXObject) { // IE
+			 var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+	xmlHttp.open('GET', strURL, true);
+	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xmlHttp.onreadystatechange = function() {
+
+			if (xmlHttp.readyState == 4) {
+	xmlDoc = xmlHttp.responseXML;
+							print_din_tab(xmlDoc);
+			}
 	}
-
-        function postRequest() {
-
-	var xmlHttp;
-        var strURL =  "ajax.tab.php";
-        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-         var xmlHttp = new XMLHttpRequest();
-       	} else if (window.ActiveXObject) { // IE
-         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-      	}
-
-    	xmlHttp.open('GET', strURL, true);
-    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    	xmlHttp.onreadystatechange = function() {
-
-        	if (xmlHttp.readyState == 4) {
-			xmlDoc = xmlHttp.responseXML;
-                	print_din_tab(xmlDoc);
-        	}
-    	}
-    	xmlHttp.send(strURL);
-	}
+	xmlHttp.send(strURL);
+}
 </script>
 
 <table cellpadding="0" cellspacing="0" class="table_top100">
-  <tr>
-    <td class="td_tabul_1">
+<tr>
+<td class="td_tabul_1">
 <TABLE cellPadding=0 cellspacing=0 border=0>
 <TR>
 <td class=tab_1_off   onclick="location.href='pg_hd_new.php'">Requests</td>
@@ -76,74 +76,74 @@
 </table>
 
 <table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
-  <tr>
-    <td class="td_tabul_2_1">
+<tr>
+<td class="td_tabul_2_1">
 <TABLE cellPadding=0 cellspacing=0 border=0><TR>
 <td class=tab_2_off onclick="location.href='pg_hd_pnrp.php'">Problems PNR</td>
 <td class=tab_2_on  >All PNR</td>
 <td class=tab_2_off onclick="location.href='pg_grouph.php'">Group</td>
 </TR></TABLE>
 </td>
-  </tr>
-  <tr>
-    <td class="td_tabul_2_2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td class="td_tabul_2_3">&nbsp;</td>
-  </tr>
+</tr>
+<tr>
+<td class="td_tabul_2_2">&nbsp;</td>
+</tr>
+<tr>
+<td class="td_tabul_2_3">&nbsp;</td>
+</tr>
 </table>
 
 <script>
- function print_din_tab(xmlDoc){
+function print_din_tab(xmlDoc){
 
 }
 </script>
 <script>
 function openurl(myurl)
 {
-    if (document.getElementsByClassName("pme-form-view").length!=0) {
-     var id = mSysRec;
-    } else { 
-	   var id = document.querySelector('input[name="PME_sys_rec"]:checked').value;
-    }
-	var wrk_url=myurl+"?sys_rec="+id;
-	window.location.href =  wrk_url;
+if (document.getElementsByClassName("pme-form-view").length!=0) {
+ var id = mSysRec;
+} else { 
+ var id = document.querySelector('input[name="PME_sys_rec"]:checked').value;
+}
+var wrk_url=myurl+"?sys_rec="+id;
+window.location.href =  wrk_url;
 }
 </script>
 <script> var mSysRec=26583;</script>
-    <script>
-    function toggleServices() {
-         var elem=document.getElementById("SerTbl");
-         var hide = elem.style.display =="none";
-         if (hide) {
-             elem.style.display="table";
+<script>
+function toggleServices() {
+		 var elem=document.getElementById("SerTbl");
+		 var hide = elem.style.display =="none";
+		 if (hide) {
+				 elem.style.display="table";
 document.getElementById("seg1").style.display ="inline-block"; document.getElementById("seg2").style.display ="inline-block"; document.getElementById("pax1").style.display ="inline-block"; document.getElementById("pax2").style.display ="inline-block"; 
-          } 
-          else {
-           elem.style.display="none";
+			} 
+			else {
+			 elem.style.display="none";
 document.getElementById("seg1").style.display ="none"; document.getElementById("seg2").style.display ="none"; document.getElementById("pax1").style.display ="none"; document.getElementById("pax2").style.display ="none"; 
-          }
-    }
-    </script>
+			}
+}
+</script>
 
 <script>
 function click_by_id(id_EG) {
-  document.getElementById(id_EG).style.display='block';
+document.getElementById(id_EG).style.display='block';
 }
 
 window.onclick = function(event) {
-    if (event.target == document.getElementById('id_EG')) {
-        document.getElementById('id_EG').style.display='none';
-    }
+if (event.target == document.getElementById('id_EG')) {
+		document.getElementById('id_EG').style.display='none';
+}
 }
 
 
 </script>
 
 <div id='id_EG' class='w3-modal'>
-    <div class='w3-modal-content'>
-      <div class='w3-container'>
-        <span onclick="document.getElementById('id_EG').style.display='none'" class='w3-display-topright'>&times;</span>
+<div class='w3-modal-content'>
+	<div class='w3-container'>
+		<span onclick="document.getElementById('id_EG').style.display='none'" class='w3-display-topright'>&times;</span>
 Ernest Airlines<br>Fare/Package Info<br><table>
 <tr><td></td><td>PRO</td><td>FLY</td><td>PLUS</td><td>TOP</td></tr>
 <tr><td>Hand Luggage (55х40х20cm)</td><td>10 kg</td><td>10 kg</td><td>10 kg</td><td>10 kg</td></tr>
@@ -155,15 +155,17 @@ Ernest Airlines<br>Fare/Package Info<br><table>
 <tr><td>Cancellation Penalty</td><td>100%</td><td>75%</td><td>50%</td><td>25%</td></tr>
 <tr><td>No-Show Penalty(less than 72h)</td><td>100%</td><td>100%</td><td>100%</td><td>100%</td></tr>
 </table>
-      </div>
-    </div>
-  </div>
+	</div>
+</div>
+</div>
 <table>
 <tr>
-<td>PNR NO:&nbsp &nbsp &nbsp EG/UQH77X(1418550)&nbsp &nbsp &nbspLOG:UkraineOTA(SF)<BR>TK TL:&nbsp &nbsp &nbsp &nbsp &nbsp------<BR><BR></td>
+<td><div class="pnr-number">PNR NO:&nbsp &nbsp &nbsp EG/UQH77X(1418550)&nbsp &nbsp &nbspLOG:UkraineOTA(SF)</div>
+	<BR>TK TL:&nbsp &nbsp &nbsp &nbsp &nbsp------<BR><BR></td>
 </tr>
-<tr><td><div style='display:none;' id='seg1'>1 &nbsp</div>EG544&nbsp&nbsp&nbsp &nbsp 01MAR20&nbsp &nbsp &nbspODS FCO 1315 1450  A319-111 Z <a href="javascript:void(0)" onclick= "click_by_id('id_EG');">PRO </a> <BR></td></tr><tr><td><div style='display:none;' id='seg2'>2 &nbsp</div>EG543&nbsp&nbsp&nbsp &nbsp 05MAR20&nbsp &nbsp &nbspFCO ODS 0900 1235  A319-111 Y <a href="javascript:void(0)" onclick= "click_by_id('id_EG');">PRO </a> <BR></td></tr><tr>
-<TD><BR>GUESTS</TD></tr>
+
+<tr><td><div class="pnr-flight">FLIGHT</div><div style='display:none;' id='seg1'>1 &nbsp</div>EG544&nbsp&nbsp&nbsp &nbsp 01MAR20&nbsp &nbsp &nbspODS FCO 1315 1450  A319-111 Z <a href="javascript:void(0)" onclick= "click_by_id('id_EG');">PRO </a> <BR></td></tr><tr><td><div style='display:none;' id='seg2'>2 &nbsp</div>EG543&nbsp&nbsp&nbsp &nbsp 05MAR20&nbsp &nbsp &nbspFCO ODS 0900 1235  A319-111 Y <a href="javascript:void(0)" onclick= "click_by_id('id_EG');">PRO </a> <BR></td></tr><tr>
+<TD><div class="pnr-guests">GUESTS</div></TD></tr>
 
 <tr>
 <td><div style='display:none;' id='pax1'>1 &nbsp</div>ADT KHVICHA CHIKHVARIIA(Male) 1964-03-02 5842100110655C2 +380 976236236 inna@veditour.com.ua  <BR></td>
@@ -173,14 +175,14 @@ Ernest Airlines<br>Fare/Package Info<br><table>
 <td><div style='display:none;' id='pax2'>2 &nbsp</div>ADT TAMARA TSYNTSADZE(Female) 1968-08-14 5842100110656C2    <BR></td>
 </tr>
 <tr>
-<td><a onclick='toggleServices();' href='#'>SYSTEM SSRs</a><br><table id="SerTbl"  align="left" style="display:none"><tr><td>S:1</td><td>P:1&nbsp </td><td>Cat:1st bag&nbsp </td><td>Type:PBAA&nbsp </td><td>Value:20 kg&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
+<td><div class="pnr-ssr"><a class="hide-content" onclick='toggleServices();' href='#'>SYSTEM SSRs</a></div><table id="SerTbl"  align="left" style="display:none"><tr><td>S:1</td><td>P:1&nbsp </td><td>Cat:1st bag&nbsp </td><td>Type:PBAA&nbsp </td><td>Value:20 kg&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
 <tr><td>S:2</td><td>P:1&nbsp </td><td>Cat:1st bag&nbsp </td><td>Type:PBAA&nbsp </td><td>Value:20 kg&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
 <tr><td>S:1</td><td>P:2&nbsp </td><td>Cat:1st bag&nbsp </td><td>Type:PBAA&nbsp </td><td>Value:20 kg&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
 <tr><td>S:2</td><td>P:2&nbsp </td><td>Cat:1st bag&nbsp </td><td>Type:PBAA&nbsp </td><td>Value:20 kg&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
 </table>
 </td>
 </tr><tr>
-<td><BR>PAYMENT INFO<BR>
+<td><div class="pnr-payment-info">PAYMENT INFO</div>
 <table>
 <tr>
 <td>221</td><td>FLIGHT</td><td>PAID</td><td>5842100110655C2</td><td>KHVICHA CHIKHVARIIA</td><td>EUR</td><td>51.16</td><td>75.74</td><td>0.00</td><td>(0.00)</td><td>:126.9</td><td>R 26.130000</td><td></td></tr>
@@ -195,11 +197,11 @@ Ernest Airlines<br>Fare/Package Info<br><table>
 <tr>
 <td>221</td><td>SERVICE</td><td>PAID</td><td>XBAG20/Bag-20kg FCO-ODS</td><td>TAMARA TSYNTSADZE</td><td>EUR</td><td>19.90</td><td>0.00</td><td>0.00</td><td>(0.00)</td><td>:19.9</td><td>R 26.120000</td><td></td></tr>
 </table>
-<BR>TOTAL&nbspHOST: EUR 333.4
+<div class="pnr-total">TOTAL&nbspHOST: EUR 333.4</div>
 </td>
 </tr><tr>
-<td><BR>ACTIVE REQUESTS
-<BR>&nbsp &nbsp 221-HF-XBAG20/Bag-20kg-CONF-ACCEPT<BR>&nbsp &nbsp 221-HV-INRF/INVOLUNTARY FULL REF-HOLD-REQUEST</td>
+<td><div class="pnr-active-requests">ACTIVE REQUESTS</div>
+&nbsp &nbsp 221-HF-XBAG20/Bag-20kg-CONF-ACCEPT<BR>&nbsp &nbsp 221-HV-INRF/INVOLUNTARY FULL REF-HOLD-REQUEST</td>
 </tr></table><form class="pme-form-view" method="post" action="pg_hd_pnr.php" name="PME_sys_form">
 <input type="hidden" name="PME_sys_sfn[0]" value="-8" />
 <input type="hidden" name="PME_sys_qf2" value="eg" />
