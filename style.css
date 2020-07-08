@@ -748,7 +748,7 @@ form#av_fare {
     /* background-color: #00e1a0; */
 		/* max-width: 1000px; */
 		border: 2px solid #00e1a0;
-		border-radius: 10px;
+		border-radius: 0 10px 10px 10px;
 		display: inline-block;
 }
 
@@ -1155,17 +1155,15 @@ border-right:1px solid #00e1a0;
 	}
 
 	/* pnp System SSRs */
-	#SerTbl {
+	#SerTbl, #DocTbl {
 		/* border: 1px solid #dadada; */
 		border: 1px solid #B4D2FA;
-
-	width: 100%;
+		width: 100%;
 	/* border */
 	}
 
-	#SerTbl tr:nth-child(even) {
+	#SerTbl tr:nth-child(even), #DocTbl tr:nth-child(even) {
 		background-color: #f8f8f8;
-
 	}
 
 
@@ -1301,10 +1299,10 @@ color: #000;
 
 /* Стили для PNR */
 
-.pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests, .pnr-ssr, .pnr-flight  {
+.pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests, .pnr-ssr, .pnr-documents, .pnr-flight  {
 
 	/* background-color: #B4D2FA;  */
-	margin: 20px 0 5px ;
+	margin: 10px 0 0 ;
 	padding: 4px 0 2px 18px;
 	/* border-radius: 3px; */
 	border-radius: 3px 3px 0 0;
@@ -1328,22 +1326,30 @@ color: #000;
 }
 
 .pnr-ssr {
-	margin: 20px 0 0;
+	margin: 10px 0 0;
 	padding: 4px 0 2px 18px;
 	background-image: url(images/shopping-basket.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
 
-.pnr-ssr a {
+.pnr-documents {
+	margin: 10px 0 0;
+	padding: 4px 0 2px 18px;
+	background-image: url(images/documents.svg);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.pnr-ssr a, .pnr-documents a {
 	text-decoration: none;
 }
 
-.pnr-ssr a.hide-content:after {
+.pnr-ssr a.hide-content:after, .pnr-documents a.hide-content:after {
 	content: " ►";
 }
 
-.pnr-ssr a.show-content:after {
+.pnr-ssr a.show-content:after, .pnr-documents a.show-content:after {
 	content: " ▼";
 }
 
@@ -1353,7 +1359,7 @@ color: #000;
 	background-position: left center;
 }
 
-a.pnr-ssrs {
+/* a.pnr-ssrs {
 padding: 2px 5px;
 border-radius: 3px;
 color: #000;
@@ -1370,7 +1376,7 @@ a.pnr-ssrs:hover {
 a.pnr-ssrs:active {
 	background-color: #e2e2e2;
 	box-shadow: none;
-}
+} */
 
 .pnr-payment-info {
 	background-image: url(images/payment.svg);
@@ -1441,3 +1447,13 @@ a.pnr-ssrs:active {
 	.airlines a img:active {
 		box-shadow: none; 
 	}
+
+	/* Выбор авиакомпании  */
+	.airline-choice select {
+		min-width: 150px; 
+		height: 30px;
+		border: 2px solid #00e1a0;
+		border-bottom: none;
+		background-color: #00e1a0;
+		border-radius: 10px 10px 0 0;
+	} 

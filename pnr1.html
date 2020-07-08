@@ -1,0 +1,259 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GSA Reservation system</title>
+	<link href="style_db.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+<!--
+	@import url("style.css");
+-->
+	</style>
+
+</head>
+<body>
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+  <TR>
+    <TD  class="top_1">
+ ID:14/SALE/pupkin travel/pupkin HRK/pu22/(W6) </TD>
+
+    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+  </TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+	function start_time() {
+	  setInterval("postRequest()", 1000);
+	}
+
+        function postRequest() {
+
+	var xmlHttp;
+        var strURL =  "ajax.tab.php";
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+         var xmlHttp = new XMLHttpRequest();
+       	} else if (window.ActiveXObject) { // IE
+         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      	}
+
+    	xmlHttp.open('GET', strURL, true);
+    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    	xmlHttp.onreadystatechange = function() {
+
+        	if (xmlHttp.readyState == 4) {
+			xmlDoc = xmlHttp.responseXML;
+                	print_din_tab(xmlDoc);
+        	}
+    	}
+    	xmlHttp.send(strURL);
+	}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+  <tr>
+    <td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_on >Reservation</td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_d.php'"><div id='_req'>Status update</div></td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_s.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='pg_term_s.php'">Settings & Info</td>
+<td class=tab_1_off   onclick="location.href='pg_mapPC.php'">Maps</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+  <tr>
+    <td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='pg_create.php'">Create new</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs.php'">Non ticketed PNRs</td>
+<td class=tab_2_on  >Ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_r.php'">Refunded PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_c.php'">Canceled PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_p.php'">Problem PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_all.php'">All PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_group.php'">Group</td>
+</TR></TABLE>
+</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_3">&nbsp;</td>
+  </tr>
+
+
+
+</table>
+
+<script>
+ function print_din_tab(xmlDoc){
+
+	txt = xmlDoc.getElementsByTagName('req')[0].childNodes[0].nodeValue;
+	if (txt == 0) {txt=''};	document.getElementById('_req').innerHTML = 'Status update ' + txt;
+}
+</script>
+<script> start_time(); </script>
+<script>
+var newwindow = '';
+function popitup(myurl)
+{
+	if (!newwindow.closed && newwindow.location)
+	{  }
+	else {		
+    if (document.getElementsByClassName("pme-form-view").length!=0) {
+     var id = mSysRec;
+    } else { 
+	  var id = document.querySelector('input[name="PME_sys_rec"]:checked').value;
+    } 
+	var wrk_url=myurl+"?sys_rec="+id;
+newwindow=window.open(wrk_url,'_blank','top=0,left=0,scrollbars=yes,width=1024,height=768,resizable=yes, menubar=yes');
+		if (!newwindow.opener) newwindow.opener = self;
+	}
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+</script>
+<script>
+function openurl(myurl)
+{
+    if (document.getElementsByClassName("pme-form-view").length!=0) {
+     var id = mSysRec;
+    } else { 
+	   var id = document.querySelector('input[name="PME_sys_rec"]:checked').value;
+    }
+	var wrk_url=myurl+"?sys_rec="+id;
+	window.location.href =  wrk_url;
+}
+</script>
+<script> var mSysRec=2452;</script>
+    <script>
+    function toggleServices(tabName) {
+         var elem=document.getElementById(tabName);
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+document.getElementById("seg1").style.display ="inline-block"; document.getElementById("seg2").style.display ="inline-block"; document.getElementById("pax1").style.display ="inline-block"; document.getElementById("pax2").style.display ="inline-block"; document.getElementById("pax3").style.display ="inline-block"; 
+          } 
+          else {
+           elem.style.display="none";
+document.getElementById("seg1").style.display ="none"; document.getElementById("seg2").style.display ="none"; document.getElementById("pax1").style.display ="none"; document.getElementById("pax2").style.display ="none"; document.getElementById("pax3").style.display ="none"; 
+          }
+    }
+    </script>
+
+<script>
+function click_by_id(id_PQ) {
+  document.getElementById(id_PQ).style.display='block';
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('id_PQ')) {
+        document.getElementById('id_PQ').style.display='none';
+    }
+}
+
+
+</script>
+
+<div id='id_PQ' class='w3-modal'>
+    <div class='w3-modal-content'>
+      <div class='w3-container'>
+        <span onclick="document.getElementById('id_PQ').style.display='none'" class='w3-display-topright'>&times;</span>
+SkyUp<br>NO Fare/Package Info
+      </div>
+    </div>
+  </div>
+<table>
+<tr>
+<td><div class="pnr-number"> PNR </div> NO:&nbsp &nbsp &nbsp PQ/D0OQVG&nbsp PROMO:GL-6OEZ8SE<BR>TK TL:&nbsp &nbsp &nbsp &nbsp &nbsp------</td>
+</tr>
+<tr><td><div style='display:none;' id='seg1'>1 &nbsp</div>PQ431&nbsp&nbsp&nbsp &nbsp 15JUL20&nbsp &nbsp &nbspKBP BUS 1120 1450 02:30 UR-SQI  <a href="javascript:void(0)" onclick= "click_by_id('id_PQ');">Basic </a>  <BR></td></tr><tr><td><div style='display:none;' id='seg2'>2 &nbsp</div>PQ432&nbsp&nbsp&nbsp &nbsp 03AUG20&nbsp &nbsp &nbspBUS KBP 1550 1720 02:30 UR-SQI  <a href="javascript:void(0)" onclick= "click_by_id('id_PQ');">Basic </a>  <BR></td></tr><tr>
+<TD><div class='pnr-guests'>GUESTS</div></TD></tr>
+
+<tr>
+<td><div style='display:none;' id='pax1'>1 &nbsp</div>ADL OLYA OLYA(F) 1980-01-01 7694877,7694878 +380977548899 pupukin@gmail.com FF010101 2025-01-01<BR></td>
+</tr>
+
+<tr>
+<td><div style='display:none;' id='pax2'>2 &nbsp</div>INF MOLYA OLYA(M) 2020-01-01 7694879,7694880   TT020202 2026-01-01<BR></td>
+</tr>
+
+<tr>
+<td><div style='display:none;' id='pax3'>3 &nbsp</div>CHD KALINA OLYA(F) 2015-01-01 7694881,7694882   TT050505 2027-01-01<BR></td>
+</tr>
+<tr>
+<td><div class='pnr-ssr'><a onclick='toggleServices("SerTbl");' href='#'>SYSTEM SSRs</a></div>
+<table id="SerTbl"  align="left" style="display:none">
+<tr><td>S:1</td><td>P:1&nbsp </td><td>Cat:Bag&nbsp </td><td>Type:Inc&nbsp </td><td>Value:0PC&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
+<tr><td>S:1</td><td>P:2&nbsp </td><td>Cat:Bag&nbsp </td><td>Type:Inc&nbsp </td><td>Value:0PC&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
+<tr><td>S:1</td><td>P:3&nbsp </td><td>Cat:Bag&nbsp </td><td>Type:Inc&nbsp </td><td>Value:0PC&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
+<tr><td>S:2</td><td>P:1&nbsp </td><td>Cat:Bag&nbsp </td><td>Type:Inc&nbsp </td><td>Value:0PC&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
+<tr><td>S:2</td><td>P:2&nbsp </td><td>Cat:Bag&nbsp </td><td>Type:Inc&nbsp </td><td>Value:0PC&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
+<tr><td>S:2</td><td>P:3&nbsp </td><td>Cat:Bag&nbsp </td><td>Type:Inc&nbsp </td><td>Value:0PC&nbsp</td><td>St:HK&nbsp </td><td>PaySt:</td></tr>
+</table>
+</td>
+</tr><tr>
+<td><div class='pnr-documents'><a onclick='toggleServices("DocTbl");' href='#'>DOCUMENTS</a></div>
+<table id="DocTbl"  align="left" style="display:none">
+<tr><td>S:1</td><td>P:1&nbsp </td><td>7694877&nbsp/100</td></tr>
+<tr><td>S:1</td><td>P:2&nbsp </td><td>7694879&nbsp/100</td></tr>
+<tr><td>S:1</td><td>P:3&nbsp </td><td>7694881&nbsp/100</td></tr>
+<tr><td>S:2</td><td>P:1&nbsp </td><td>7694878&nbsp/100</td></tr>
+<tr><td>S:2</td><td>P:2&nbsp </td><td>7694880&nbsp/100</td></tr>
+<tr><td>S:2</td><td>P:3&nbsp </td><td>7694882&nbsp/100</td></tr>
+</table>
+</td>
+</tr><tr>
+<td><div class='pnr-payment-info'>PAYMENT INFO</div>
+<table>
+<tr>
+<td>86</td><td>FLIGHT</td><td>PAID</td><td>7694877</td><td>OLYA OLYA</td><td>UAH</td><td>1424.05</td><td>451.25</td><td>0.00</td><td>(0.00)</td><td>:1875.3</td><td></td></tr>
+<tr>
+<td>86</td><td>FLIGHT</td><td>PAID</td><td>7694878</td><td>OLYA OLYA</td><td>UAH</td><td>1803.10</td><td>391.40</td><td>0.00</td><td>(0.00)</td><td>:2194.5</td><td></td></tr>
+<tr>
+<td>86</td><td>FLIGHT</td><td>PAID</td><td>7694879</td><td>MOLYA OLYA</td><td>UAH</td><td>142.50</td><td>0.00</td><td>0.00</td><td>(0.00)</td><td>:142.5</td><td></td></tr>
+<tr>
+<td>86</td><td>FLIGHT</td><td>PAID</td><td>7694880</td><td>MOLYA OLYA</td><td>UAH</td><td>180.50</td><td>36.10</td><td>0.00</td><td>(0.00)</td><td>:216.6</td><td></td></tr>
+<tr>
+<td>86</td><td>FLIGHT</td><td>PAID</td><td>7694881</td><td>KALINA OLYA</td><td>UAH</td><td>1424.05</td><td>451.25</td><td>0.00</td><td>(0.00)</td><td>:1875.3</td><td></td></tr>
+<tr>
+<td>86</td><td>FLIGHT</td><td>PAID</td><td>7694882</td><td>KALINA OLYA</td><td>UAH</td><td>1803.10</td><td>391.40</td><td>0.00</td><td>(0.00)</td><td>:2194.5</td><td></td></tr>
+</table>
+<BR>TOTAL&nbsp &nbspPNR: UAH 8498.7
+</td>
+</tr></table><form class="pme-form-view" method="post" action="pg_pnrs_t.php" name="PME_sys_form">
+<input type="hidden" name="PME_sys_sfn[0]" value="-9" />
+<input type="hidden" name="PME_sys_cur_tab" value="PME_dhtml_tab0" />
+<input type="hidden" name="PME_sys_qfn" value="" />
+<input type="hidden" name="PME_sys_rec" value="2452" />
+<input type="hidden" name="PME_sys_fm" value="14" />
+<input type="hidden" name="PME_sys_fl" value="0" />
+<table summary="navigation" class="pme-navigation-view">
+<tr class="pme-navigation-view">
+<td class="pme-buttons-view">
+<input type="submit" class="pme-change-view" name="PME_sys_operation" value="Change" title="Change" />
+<input type="submit" class="pme-cancel-view" name="PME_sys_cancelview" value="Ignore" title="Ignore" />
+<input type="button" value="print" class="pme-print-view" onclick="popitup('pg_prn_doc.php')" />
+<input type="button" value="request" class="pme-ssr-view" onclick="openurl('pg_req_main.php')" />
+</td>
+</tr></table>
+<hr size="1" class="pme-hr-view" />
+<table class="pme-main-view" summary="pg_pnr">
+</table>
+</form>
+</body>
