@@ -1456,4 +1456,6 @@ a.pnr-ssrs:active {
 		border-bottom: none;
 		background-color: #00e1a0;
 		border-radius: 10px 10px 0 0;
+		cursor: pointer;
+		font-size: 11pt;
 	} 
