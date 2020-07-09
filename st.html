@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GSA Reservation system</title>
+	<link href="style_db.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+<!--
+	@import url("style.css");
+-->
+
+td.top_1 {                                              
+
+	background-image: url(images/logoPQ.png);
+  background-size: 150px 50px;
+}
+
+	</style>
+
+</head>
+<body onload="from_to_set()">
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+  <TR>
+    <TD  class="top_1">
+ ID:14/SALE/pupkin travel/pupkin HRK/pu22/(W6) </TD>
+
+    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+  </TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+	function start_time() {
+	  setInterval("postRequest()", 1000);
+	}
+
+        function postRequest() {
+
+	var xmlHttp;
+        var strURL =  "ajax.tab.php";
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+         var xmlHttp = new XMLHttpRequest();
+       	} else if (window.ActiveXObject) { // IE
+         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      	}
+
+    	xmlHttp.open('GET', strURL, true);
+    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    	xmlHttp.onreadystatechange = function() {
+
+        	if (xmlHttp.readyState == 4) {
+			xmlDoc = xmlHttp.responseXML;
+                	print_din_tab(xmlDoc);
+        	}
+    	}
+    	xmlHttp.send(strURL);
+	}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+  <tr>
+    <td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_on >Reservation</td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_d.php'"><div id='_req'>Status update</div></td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_s.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='pg_term_s.php'">Settings & Info</td>
+<td class=tab_1_off   onclick="location.href='pg_mapPC.php'">Maps</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+  <tr>
+    <td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='pg_create.php'">Create PC</td>
+<td class=tab_2_off onclick="location.href='pg_createEG.php'">Create EG</td>
+<td class=tab_2_on  >Create PQ</td>
+<td class=tab_2_off onclick="location.href='pg_createPS.php'">Create PS</td>
+<td class=tab_2_off onclick="location.href='pg_createG9.php'">Create G9</td>
+<td class=tab_2_off onclick="location.href='pg_createFZ.php'">Create FZ</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs.php'">Non ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_t.php'">Ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_r.php'">Refunded PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_c.php'">Canceled PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_p.php'">Problem PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_all.php'">All PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_group.php'">Group</td>
+</TR></TABLE>
+</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_3">&nbsp;</td>
+  </tr>
+
+
+
+</table>
+
+<div class="alert-box warning"><span>WARNING:</span>Empty Flight List</div>
+
+<script>
+ function print_din_tab(xmlDoc){
+
+	txt = xmlDoc.getElementsByTagName('req')[0].childNodes[0].nodeValue;
+	if (txt == 0) {txt=''};	document.getElementById('_req').innerHTML = 'Status update ' + txt;
+}
+</script>
+<script> start_time(); </script>
+<h3>&nbsp &nbsp</h3>
+<link href="CalendarControl.css" rel="stylesheet" type="text/css">
+<script src="CalendarControl.js" language="javascript"> </script>
+
+<form name="av_fare" action="pg_farePQ.php" method="POST" id="av_fare">
+<table><tr><td>
+<script type='text/javascript' >
+function from_to_set() {
+  document.getElementById('from').value='BCN';
+  if (document.getElementById('from').selectedIndex <0) {document.getElementById('from').selectedIndex=0 };
+cp_ret(document.getElementById('from').value);
+  document.getElementById('to').value='IEV';
+  if (document.getElementById('to').selectedIndex <0) {document.getElementById('to').selectedIndex=0 };
+}
+CityCode = new Array (['BCN','Barcelona'],['BUS','Batumi'],['IEV','Kiev'],['KBP','Kiev'],['LWO','Lvov'],['ODS','Odessa'],['TBS','Tbilisi'],['OZH','Zaporozhye']);
+CityPair = new Array (['BCN','IEV','KBP'],['BUS','IEV','KBP'],['IEV','BCN','BUS','LWO','ODS','TBS'],['KBP','BCN','BUS','ODS','OZH'],['LWO','IEV'],['ODS','IEV','KBP'],['TBS','IEV'],['OZH','KBP']);
+function city_name(code) {
+  var depPortIndex = 0;
+  while ((depPortIndex < CityCode.length) && (code != CityCode[depPortIndex][0])){
+      depPortIndex++;
+  }
+  if (depPortIndex==CityCode.length) {
+    return 'XXX';
+  } else {
+    return CityCode[depPortIndex][1];
+ } 
+}
+
+function city_full_name(code) {
+  return city_name(code)+'('+code+')';
+}
+
+function cp_ret(dcity) {
+  document.getElementById("to").options.length=0;
+  var depPortIndex = 0;
+  while ((depPortIndex < CityPair.length) && (dcity != CityPair[depPortIndex][0])){
+      depPortIndex++;
+  }
+  if (depPortIndex==CityPair.length) {
+       return ;
+  } 
+  i=1;
+  while (i< CityPair[depPortIndex].length){document.getElementById("to").options[document.getElementById("to").options.length] = new Option(city_full_name(CityPair[depPortIndex][i]),CityPair[depPortIndex][i]);
+      i++;
+  }
+}  
+</script>
+
+<label>&nbsp &nbsp From</label><SELECT name='from' id='from' class='pme-input-change-0' onChange='cp_ret(this.value)'>
+<OPTION  SELECTED value=BCN>Barcelona(BCN)</OPTION>
+<OPTION value=BUS>Batumi(BUS)</OPTION>
+<OPTION value=IEV>Kiev(IEV)</OPTION>
+<OPTION value=KBP>Kiev(KBP)</OPTION>
+<OPTION value=LWO>Lvov(LWO)</OPTION>
+<OPTION value=ODS>Odessa(ODS)</OPTION>
+<OPTION value=TBS>Tbilisi(TBS)</OPTION>
+<OPTION value=OZH>Zaporozhye(OZH)</OPTION>
+</select>
+  
+  <label>&nbsp &nbsp To</label><select id='to' name='to' class='pme-input-change-0'>
+  </select>
+
+
+
+<script>
+function rotate_date(dateField) {
+    if(dateField) {
+      try {
+        var dateString = new String(dateField);
+        var dateParts = dateString.split("-");
+        return  dateParts[2]+dateParts[1]+dateParts[0];
+      } catch(e) {}
+    }
+}
+
+function pick_ret_date(field,showDays) {
+
+  var dd = rotate_date(document.getElementById('date_d').value);
+  var dr = rotate_date(document.getElementById('date_r').value);
+ 
+  if (dd>dr) {
+    document.getElementById('date_r').value=document.getElementById('date_d').value;
+  }
+  showCalendarControl(field,showDays);
+}
+
+</script>
+ 
+
+
+	    <label>&nbsp &nbsp Departure</label>
+	    <input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="12-08-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" 
+
+  placeholder="dd-mm-yyyy"
+
+    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+
+    onkeyup="
+        var v = this.value;
+        if (v.match(/^\d{2}$/) !== null) {
+            this.value = v + '-';
+        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+            this.value = v + '-';
+        }"
+  />
+	    <label>Return</label>
+	    <input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="19-08-2020" disabled    class="pme-input-change-1" onfocus="pick_ret_date(this,'');" 
+
+  placeholder="dd-mm-yyyy"
+
+    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+
+    onkeyup="
+        var v = this.value;
+
+        if (v.match(/^\d{2}$/) !== null) {
+            this.value = v + '-';
+        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+            this.value = v + '-';
+        }"
+ />
+
+      <input id='owrt' type='checkbox' name='oneway' value=0 checked            <label>One Way Adt </label>
+   <input id="adt" name="adt" type="text" size="1" maxlength="1" value="1" class="pme-input-change-1">
+chd<input id="chd" name="chd" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
+inf<input id="inf" name="inf" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
+
+	    <input type='submit' value='Search'  class="but_long_W" onclick='this.form.action="pg_farePQ.php"' />
+
+<label>Promo </label><input id="promo" name="promo" type="text" size="10" maxlength="30" value="" class="pme-input-change-1">
+
+
+
+<script language="javascript"> 
+
+document.getElementById('owrt').onchange = function() {
+    document.getElementById('date_r').disabled = this.checked;
+};
+ 
+</script>
+
+	</form>
+</td></tr>
+<tr><td>
+<br>
+<dl>
+<h3>
+<i>
+<dt>Послуги</dt>
+<dd><a href="https://skyup.aero/uk/faq/additional-services"target="_blank">click here</a>
+<p>
+<dt>Правила тарифів</dt>
+<dd><a href="https://skyup.aero/uk/faq/rates"target="_blank">click here</a>
+</i>
+</h3>
+</dl>
+
+
+
+
+
+<br>
+SkyUp Airlines призупиняє польоти до Об’єднаних Арабських Еміратів<br>
+<br>
+З 1 лютого 2020 року SkyUp Airlines призупинить виконання регулярних рейсів до Шарджі (ОАЕ) із Запоріжжя, Львова та Харкова. <br>
+Це пов’язано із продовженням заборони виконання польотів у повітряному просторі Ісламської Республіки Іран та Республіки Ірак, введеної Державіаслужбою України з 9 січня 2020 року.<br>
+<br>
+Прохання інформувати пасажирів та зробити відповідні SSR запити в системі бронювання Jetit:<br>
+<br>
+• INVOLUNTARY CHANGE (зміна дати без штрафу)<br>
+• INVOLUNTARY FULL REFUND (повне повернення вартості квитка)<br>
+• PARTLY INVOLUNTARY REFUND (часткове повернення вартості квитка)<br>
+<br>
+Що стосується регулярних рейсів SkyUp до Коломбо (Шрі-Ланка), авіакомпанія продовжить їхнє виконання з додатковою посадкою в Анталії на зворотному шляху.
+<br>
+З повагою,<br>
+ТОВ «ДЖЕТ ТІМ УКРАЇНА<br>
+<br>
+</td></tr>
+</table>
+
+	</body>
+	</html>

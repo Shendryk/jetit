@@ -1302,8 +1302,9 @@ color: #000;
 .pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests, .pnr-ssr, .pnr-documents, .pnr-flight  {
 
 	/* background-color: #B4D2FA;  */
-	margin: 10px 0 0 ;
-	padding: 4px 0 2px 18px;
+	/* margin: 10px 0 0 ; */
+	/* padding: 4px 0 2px 18px; */
+	padding: 0 0 0 18px;
 	/* border-radius: 3px; */
 	border-radius: 3px 3px 0 0;
 	border: 0px;
@@ -1326,16 +1327,18 @@ color: #000;
 }
 
 .pnr-ssr {
-	margin: 10px 0 0;
-	padding: 4px 0 2px 18px;
+	/* margin: 10px 0 0; */
+	/* padding: 4px 0 2px 18px; */
+	padding: 0 0 0 18px;
 	background-image: url(images/shopping-basket.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
 
 .pnr-documents {
-	margin: 10px 0 0;
-	padding: 4px 0 2px 18px;
+	/* margin: 10px 0 0; */
+	/* padding: 4px 0 2px 18px; */
+	padding: 0 0 0 18px;
 	background-image: url(images/documents.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
