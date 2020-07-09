@@ -743,10 +743,17 @@ h1, h2, h3, h4, h5, p {
 	}
 
 
+
+form#av_fare>label {
+		margin-left: 5px;
+		word-break: normal;
+		display: inline-block;
+}
 form#av_fare {
 	padding: 15px 5px;
     /* background-color: #00e1a0; */
 		/* max-width: 1000px; */
+
 		border: 2px solid #00e1a0;
 		border-radius: 0 10px 10px 10px;
 		display: inline-block;
@@ -754,19 +761,25 @@ form#av_fare {
 
 form#av_fare input, form#av_fare select {
 	/* height: 20px; */
-
+	margin: 5px 10px 5px 5px;
 }
 
 form#av_fare select {
-	margin: 0 10px 0 5px;
 	border: 1px solid #00e1a0;
 	border-radius: 3px;
 }
 
-form#av_fare input {
-	/* text-align: center; */
-	margin: 0 10px 0 5px;
+	form#av_fare input#owrt {
+		margin: 0 5px 0 0;
 	}
+
+	form#av_fare input:hover, form#av_fare select:hover {
+	cursor: pointer;
+	}
+
+form#av_fare input#owrt>label {
+		margin: 0 15px 0 0;
+		}
 
 #av_fare input.but_long_W {
 		background-image: url(images/search.png);
@@ -1461,4 +1474,5 @@ a.pnr-ssrs:active {
 		border-radius: 10px 10px 0 0;
 		cursor: pointer;
 		font-size: 11pt;
+		padding-left: 5px;
 	} 

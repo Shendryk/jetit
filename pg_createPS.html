@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+		"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GSA Reservation system</title>
+	<link href="style_db.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+<!--
+	@import url("style.css");
+-->
+
+td.top_1 {                                              
+
+	background-image: url(images/logoPS.png);
+  background-size: 150px 50px;
+}
+
+	</style>
+
+</head>
+<body onload="from_to_set()">
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+  <TR>
+    <TD  class="top_1">
+ ID:14/SALE/pupkin travel/pupkin HRK/pu22/(W6) </TD>
+
+    <td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+  </TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+	function start_time() {
+	  setInterval("postRequest()", 1000);
+	}
+
+        function postRequest() {
+
+	var xmlHttp;
+        var strURL =  "ajax.tab.php";
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+         var xmlHttp = new XMLHttpRequest();
+       	} else if (window.ActiveXObject) { // IE
+         	var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      	}
+
+    	xmlHttp.open('GET', strURL, true);
+    	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    	xmlHttp.onreadystatechange = function() {
+
+        	if (xmlHttp.readyState == 4) {
+			xmlDoc = xmlHttp.responseXML;
+                	print_din_tab(xmlDoc);
+        	}
+    	}
+    	xmlHttp.send(strURL);
+	}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+  <tr>
+    <td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_on >Reservation</td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_d.php'"><div id='_req'>Status update</div></td>
+<td class=tab_1_off   onclick="location.href='pg_tickets_s.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='pg_term_s.php'">Settings & Info</td>
+<td class=tab_1_off   onclick="location.href='pg_mapPC.php'">Maps</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+  <tr>
+    <td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_on  >Create new</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs.php'">Non ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_t.php'">Ticketed PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_r.php'">Refunded PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_c.php'">Canceled PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_p.php'">Problem PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_pnrs_all.php'">All PNRs</td>
+<td class=tab_2_off onclick="location.href='pg_group.php'">Group</td>
+</TR></TABLE>
+</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="td_tabul_2_3">&nbsp;</td>
+  </tr>
+
+
+
+</table>
+
+<script>
+ function print_din_tab(xmlDoc){
+
+	txt = xmlDoc.getElementsByTagName('req')[0].childNodes[0].nodeValue;
+	if (txt == 0) {txt=''};	document.getElementById('_req').innerHTML = 'Status update ' + txt;
+}
+</script>
+<script> start_time(); </script>
+<h3>&nbsp &nbsp</h3>
+<link href="CalendarControl.css" rel="stylesheet" type="text/css">
+<script src="CalendarControl.js" language="javascript"> </script>
+
+<form name="av_fare" action="pg_farePS.php" method="POST" id="av_fare">
+
+<script>
+function airlinesRedirect(al) {
+   window.location.href="pg_create"+al+".php";
+}
+</script>
+<label>&nbsp &nbsp Airline</label><select id="Airline" name="Airline"  class="pme-input-change-0" onChange="airlinesRedirect(this.value)">
+<OPTION value="PC" >Pegasus Airlines(PC) </OPTION>\n<OPTION value="EG" >Ernest Airlines(EG) </OPTION>\n<OPTION value="W6" >Wizzair(W6) </OPTION>\n<OPTION value="PQ" >SkyUp(PQ) </OPTION>\n<OPTION value="PS" selected  >UIA(PS) </OPTION>\n<OPTION value="G9" >AirArabia(G9) </OPTION>\n<OPTION value="FZ" >FlyDubai(FZ) </OPTION>\n</select><Br><script type='text/javascript' >
+ function from_to_set()
+ {}
+ </script>
+<label>&nbsp &nbsp From</label><SELECT name='from' class='pme-input-change-0'>
+<OPTION value=ALA>Alma-ata(ALA)</OPTION>
+<OPTION value=AMS>Amsterdam(AMS)</OPTION>
+<OPTION value=IST>Istanbul_(IST)</OPTION>
+<OPTION value=HRK>Kharkov(HRK)</OPTION>
+<OPTION value=KBP>Kiev(KBP)</OPTION>
+<OPTION value=JFK>New York(JFK)</OPTION>
+<OPTION value=ODS>Odessa(ODS)</OPTION>
+<OPTION value=TLV>Tel-aviv(TLV)</OPTION>
+<OPTION value=VIE>Vienna(VIE)</OPTION>
+<OPTION value=VNO>Vilnius(VNO)</OPTION>
+</select>
+<label>&nbsp &nbsp To</label><SELECT name='to' class='pme-input-change-0'>
+<OPTION value=ALA>Alma-ata(ALA)</OPTION>
+<OPTION value=AMS>Amsterdam(AMS)</OPTION>
+<OPTION value=IST>Istanbul_(IST)</OPTION>
+<OPTION value=HRK>Kharkov(HRK)</OPTION>
+<OPTION value=KBP>Kiev(KBP)</OPTION>
+<OPTION value=JFK>New York(JFK)</OPTION>
+<OPTION value=ODS>Odessa(ODS)</OPTION>
+<OPTION value=TLV>Tel-aviv(TLV)</OPTION>
+<OPTION value=VIE>Vienna(VIE)</OPTION>
+<OPTION value=VNO>Vilnius(VNO)</OPTION>
+</select>
+
+<script>
+function rotate_date(dateField) {
+    if(dateField) {
+      try {
+        var dateString = new String(dateField);
+        var dateParts = dateString.split("-");
+        return  dateParts[2]+dateParts[1]+dateParts[0];
+      } catch(e) {}
+    }
+}
+
+function pick_ret_date(field,showDays) {
+
+  var dd = rotate_date(document.getElementById('date_d').value);
+  var dr = rotate_date(document.getElementById('date_r').value);
+ 
+  if (dd>dr) {
+    document.getElementById('date_r').value=document.getElementById('date_d').value;
+  }
+  showCalendarControl(field,showDays);
+}
+
+</script>
+ 
+
+
+	    <label>&nbsp &nbsp Departure</label>
+	    <input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="12-08-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" 
+
+  placeholder="dd-mm-yyyy"
+
+    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+
+    onkeyup="
+        var v = this.value;
+        if (v.match(/^\d{2}$/) !== null) {
+            this.value = v + '-';
+        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+            this.value = v + '-';
+        }"
+  />
+	    <label>Return</label>
+	    <input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="19-08-2020"     class="pme-input-change-1" onfocus="pick_ret_date(this,'');" 
+
+  placeholder="dd-mm-yyyy"
+
+    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+
+    onkeyup="
+        var v = this.value;
+
+        if (v.match(/^\d{2}$/) !== null) {
+            this.value = v + '-';
+        } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+            this.value = v + '-';
+        }"
+ />
+
+      <input id='owrt' type='checkbox' name='oneway' value=0             <label>One Way Adt </label>
+   <input id="adt" name="adt" type="text" size="1" maxlength="1" value="1" class="pme-input-change-1">
+chd<input id="chd" name="chd" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
+inf<input id="inf" name="inf" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
+bag<select id="Baggage" name="Baggage"  class="pme-input-change-0">
+<OPTION value=0>No</OPTION>
+<OPTION value=1>Yes</OPTION>
+</select>
+cabin<select id="Cabin" name="Cabin"  class="pme-input-change-0">
+<OPTION value=7>All</OPTION>
+<OPTION value=6>Economy discounted</OPTION>
+<OPTION value=5>Economy</OPTION>
+<OPTION value=4>Economy premium</OPTION>
+<OPTION value=3>Lowest</OPTION>
+<OPTION value=2>Medium</OPTION>
+<OPTION value=1>Highest</OPTION>
+</select>
+
+<input type='submit' value='Search'  class="but_long_W" onclick='this.form.action="pg_farePS.php"' />
+
+
+
+<script language="javascript"> 
+
+document.getElementById('owrt').onchange = function() {
+    document.getElementById('date_r').disabled = this.checked;
+};
+ 
+</script>
+
+	</form>
+<br>
+<br>
+<div>
+<label for="comment">
+Оставьте комментарий<br>
+</label>
+<textarea id="comment"></textarea>
+</div>
+<br>
+<br>
+<input type="text" value="Имя">
+<input type="phine" value="Телефон">
+<button type="submit">
+<b>Перезвоните</b>
+</button>
+
+	</body>
+	</html>
