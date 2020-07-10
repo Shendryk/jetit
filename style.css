@@ -1215,7 +1215,7 @@ border-right:1px solid #00e1a0;
 
 .flight-oneway {
 	position: relative;
-	padding: 3px;
+	/* padding: 3px; */
 	border-radius: 5px;
 	/* margin: 5px; */
 	/* background-color: #f3f3f3; */
