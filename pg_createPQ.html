@@ -127,7 +127,7 @@ function airlinesRedirect(al) {
 </script>
 <!-- <label>Airline</label> -->
 <select id="Airline" name="Airline"  class="pme-input-change-0" onChange="airlinesRedirect(this.value)">
-<OPTION value="PC" >Pegasus Airlines(PC) </OPTION>\n<OPTION value="EG" >Ernest Airlines(EG) </OPTION>\n<OPTION value="W6" >Wizzair(W6) </OPTION>\n<OPTION value="PQ" selected  >SkyUp(PQ) </OPTION>\n<OPTION value="PS" >UIA(PS) </OPTION>\n<OPTION value="G9" >AirArabia(G9) </OPTION>\n<OPTION value="FZ" >FlyDubai(FZ) </OPTION>\n</select><Br><script type='text/javascript' >
+<OPTION value="PC" >Pegasus Airlines(PC) </OPTION>\n<OPTION value="EG" >Ernest Airlines(EG) </OPTION>\n<OPTION value="W6" >Wizzair(W6) </OPTION>\n<OPTION value="PQ" selected  >SkyUp(PQ) </OPTION>\n<OPTION value="PS" >UIA(PS) </OPTION>\n<OPTION value="G9" >AirArabia(G9) </OPTION>\n<OPTION value="FZ" >FlyDubai(FZ) </OPTION>\n</select><script type='text/javascript' >
 function from_to_set() {
   document.getElementById('from').value='ORY';
   if (document.getElementById('from').selectedIndex <0) {document.getElementById('from').selectedIndex=0 };
@@ -211,8 +211,7 @@ function pick_ret_date(field,showDays) {
  
 
 
-	    <label>Departure
-	    <input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="12-08-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" 
+	    <label>Departure<input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="12-08-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" 
 
   placeholder="dd-mm-yyyy"
 
@@ -226,8 +225,7 @@ function pick_ret_date(field,showDays) {
             this.value = v + '-';
         }"
   /></label>
-	    <label>Return
-	    <input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="19-08-2020"     class="pme-input-change-1" onfocus="pick_ret_date(this,'');" 
+	    <label>Return<input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="19-08-2020"     class="pme-input-change-1" onfocus="pick_ret_date(this,'');" 
 
   placeholder="dd-mm-yyyy"
 
@@ -243,14 +241,14 @@ function pick_ret_date(field,showDays) {
         }"
  /></label>
 
- 		<label><input id='owrt' type='checkbox' name='oneway' value=0> One Way Adt </label>
-   <input id="adt" name="adt" type="text" size="1" maxlength="1" value="1" class="pme-input-change-1">
-chd<input id="chd" name="chd" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
-inf<input id="inf" name="inf" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
+ 		<label><input id='owrt' type='checkbox' name='oneway' value=0>One Way Adt </label>
+		 <label><input id="adt" name="adt" type="text" size="1" maxlength="1" value="1" class="pme-input-change-1"></label>
+	 <label>chd<input id="chd" name="chd" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1"></label>
+	 <label>inf<input id="inf" name="inf" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1"></label>
 
 	    <input type='submit' value='Search'  class="but_long_W" onclick='this.form.action="pg_farePQ.php"' />
 
-<label>Promo </label><input id="promo" name="promo" type="text" size="10" maxlength="30" value="" class="pme-input-change-1">
+<label>Promo<input id="promo" name="promo" type="text" size="10" maxlength="30" value="" class="pme-input-change-1"></label>
 
 
 
