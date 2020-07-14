@@ -125,7 +125,8 @@ function airlinesRedirect(al) {
    window.location.href="pg_create"+al+".php";
 }
 </script>
-<label>&nbsp &nbsp Airline</label><select id="Airline" name="Airline"  class="pme-input-change-0" onChange="airlinesRedirect(this.value)">
+<!-- <label>Airline</label> -->
+<select id="Airline" name="Airline"  class="pme-input-change-0" onChange="airlinesRedirect(this.value)">
 <OPTION value="PC" >Pegasus Airlines(PC) </OPTION>\n<OPTION value="EG" >Ernest Airlines(EG) </OPTION>\n<OPTION value="W6" >Wizzair(W6) </OPTION>\n<OPTION value="PQ" selected  >SkyUp(PQ) </OPTION>\n<OPTION value="PS" >UIA(PS) </OPTION>\n<OPTION value="G9" >AirArabia(G9) </OPTION>\n<OPTION value="FZ" >FlyDubai(FZ) </OPTION>\n</select><Br><script type='text/javascript' >
 function from_to_set() {
   document.getElementById('from').value='ORY';
@@ -168,7 +169,7 @@ function cp_ret(dcity) {
 }  
 </script>
 
-<label>&nbsp &nbsp From</label><SELECT name='from' id='from' class='pme-input-change-0' onChange='cp_ret(this.value)'>
+<label>From<SELECT name='from' id='from' class='pme-input-change-0' onChange='cp_ret(this.value)'>
 <OPTION value=BCN>Barcelona(BCN)</OPTION>
 <OPTION value=BUS>Batumi(BUS)</OPTION>
 <OPTION value=IEV>Kiev(IEV)</OPTION>
@@ -177,10 +178,10 @@ function cp_ret(dcity) {
 <OPTION value=ODS>Odessa(ODS)</OPTION>
 <OPTION value=TBS>Tbilisi(TBS)</OPTION>
 <OPTION value=OZH>Zaporozhye(OZH)</OPTION>
-</select>
+</select></label>
   
-  <label>&nbsp &nbsp To</label><select id='to' name='to' class='pme-input-change-0'>
-  </select>
+  <label>To<select id='to' name='to' class='pme-input-change-0'>
+  </select></label>
 
 
 
@@ -210,7 +211,7 @@ function pick_ret_date(field,showDays) {
  
 
 
-	    <label>&nbsp &nbsp Departure</label>
+	    <label>Departure
 	    <input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="12-08-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" 
 
   placeholder="dd-mm-yyyy"
@@ -224,8 +225,8 @@ function pick_ret_date(field,showDays) {
         } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
             this.value = v + '-';
         }"
-  />
-	    <label>Return</label>
+  /></label>
+	    <label>Return
 	    <input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="19-08-2020"     class="pme-input-change-1" onfocus="pick_ret_date(this,'');" 
 
   placeholder="dd-mm-yyyy"
@@ -240,9 +241,9 @@ function pick_ret_date(field,showDays) {
         } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
             this.value = v + '-';
         }"
- />
+ /></label>
 
-      <input id='owrt' type='checkbox' name='oneway' value=0             <label>One Way Adt </label>
+ 		<label><input id='owrt' type='checkbox' name='oneway' value=0> One Way Adt </label>
    <input id="adt" name="adt" type="text" size="1" maxlength="1" value="1" class="pme-input-change-1">
 chd<input id="chd" name="chd" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">
 inf<input id="inf" name="inf" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1">

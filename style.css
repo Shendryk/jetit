@@ -1479,7 +1479,7 @@ a.pnr-ssrs:active {
 	}
 
 
-	#av_fare .airline-choice select {
+	#av_fare select#Airline {
 		position:absolute;
 		top: -35px;
 		left: -7px;
