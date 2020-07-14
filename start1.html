@@ -190,7 +190,7 @@ function cp_ret(dcity) {
 }  
 </script>
 
-<label>From</label><select name="from" id="from" class="pme-input-change-0" onchange="cp_ret(this.value)">
+<label>From<select name="from" id="from" class="pme-input-change-0" onchange="cp_ret(this.value)">
 <option value="AAL">Aalborg(AAL)</option>
 <option value="AUH">Abu Dhabi(AUH)</option>
 <option value="ADA">Adana(ADA)</option>
@@ -322,10 +322,11 @@ function cp_ret(dcity) {
 <option value="VIE">Vienna(VIE)</option>
 <option value="OZH">Zaporozhye(OZH)</option>
 <option value="ZRH">Zurich(ZRH)</option>
-</select>
+</select></label>
   
-  <label>To</label><select id="to" name="to" class="pme-input-change-0">
-  <option value="ADA">Adana(ADA)</option><option value="ESB">Ankara(ESB)</option><option value="BJV">Bodrum(BJV)</option><option value="DLM">Dalaman(DLM)</option><option value="SAW">Istanbul (SAW)</option></select>
+  <label>To<select id="to" name="to" class="pme-input-change-0">
+	<option value="ADA">Adana(ADA)</option><option value="ESB">Ankara(ESB)</option><option value="BJV">Bodrum(BJV)</option><option value="DLM">Dalaman(DLM)</option><option value="SAW">Istanbul (SAW)</option></select>
+</label>
 
 
 
@@ -355,15 +356,15 @@ function pick_ret_date(field,showDays) {
  
 
 
-	    <label>Departure</label>
+	    <label>Departure
 	    <input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="29-04-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" placeholder="dd-mm-yyyy" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" onkeyup="
         var v = this.value;
         if (v.match(/^\d{2}$/) !== null) {
             this.value = v + '-';
         } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
             this.value = v + '-';
-        }">
-	    <label>Return</label>
+        }"></label>
+	    <label>Return
 	    <input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="06-05-2020" class="pme-input-change-1" onfocus="pick_ret_date(this,'');" placeholder="dd-mm-yyyy" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" onkeyup="
         var v = this.value;
 
@@ -371,7 +372,7 @@ function pick_ret_date(field,showDays) {
             this.value = v + '-';
         } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
             this.value = v + '-';
-        }">
+        }"></label>
 
 <label for="owrt"><input id="owrt" type="checkbox" name="oneway" value="0">One Way Seat</label>
 			<input id="adt" name="seat" type="text" size="1" maxlength="1" value="1" class="pme-input-change-1">
