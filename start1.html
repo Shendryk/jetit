@@ -139,13 +139,7 @@ td.top_1 {
 <h3>&nbsp; &nbsp;</h3>
 <link href="CalendarControl.css" rel="stylesheet" type="text/css">
 <script src="CalendarControl.js" language="javascript"> </script><iframe id="CalendarControlIFrame" src="javascript:false;" style="border: 0px; overlow: hidden;" title="Calendar Control"></iframe><div id="CalendarControl"></div>
-<div class="airline-choice">
-	<select>
-		<option>Pegasus</option>
-		<option>Skyup</option>
-		<option>Ernest</option>
-	</select>
-</div>
+
 <form name="av_fare" action="pg_fare.php" method="POST" id="av_fare">
 
 <script type="text/javascript">
@@ -189,6 +183,13 @@ function cp_ret(dcity) {
   }
 }  
 </script>
+<div class="airline-choice">
+	<select>
+		<option>Pegasus</option>
+		<option>Skyup</option>
+		<option>Ernest</option>
+	</select>
+</div>
 
 <label>From<select name="from" id="from" class="pme-input-change-0" onchange="cp_ret(this.value)">
 <option value="AAL">Aalborg(AAL)</option>

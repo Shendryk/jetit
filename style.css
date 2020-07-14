@@ -1461,7 +1461,28 @@ a.pnr-ssrs:active {
 	}
 
 	/* Выбор авиакомпании  */
-	.airline-choice select {
+	/* .airline-choice select {
+		min-width: 150px; 
+		height: 30px;
+		border: 2px solid #00e1a0;
+		border-bottom: none;
+		background-color: #00e1a0;
+		border-radius: 10px 10px 0 0;
+		cursor: pointer;
+		font-size: 11pt;
+		padding-left: 5px;
+	}  */
+
+	#av_fare {
+		position: relative;
+		
+	}
+
+
+	#av_fare .airline-choice select {
+		position:absolute;
+		top: -35px;
+		left: -7px;
 		min-width: 150px; 
 		height: 30px;
 		border: 2px solid #00e1a0;
