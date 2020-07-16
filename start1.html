@@ -357,16 +357,14 @@ function pick_ret_date(field,showDays) {
 </label>
 
 
-	    <label>Departure
-	    <input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="29-04-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" placeholder="dd-mm-yyyy" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" onkeyup="
+	    <label>Departure<input id="date_d" name="date_d" type="text" size="10" maxlength="10" minlength="10" value="29-04-2020" class="pme-input-change-1" onfocus="showCalendarControl(this,'','date_r');" placeholder="dd-mm-yyyy" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" onkeyup="
         var v = this.value;
         if (v.match(/^\d{2}$/) !== null) {
             this.value = v + '-';
         } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
             this.value = v + '-';
         }"></label>
-	    <label>Return
-	    <input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="06-05-2020" class="pme-input-change-1" onfocus="pick_ret_date(this,'');" placeholder="dd-mm-yyyy" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" onkeyup="
+	    <label>Return<input id="date_r" name="date_r" type="text" size="10" maxlength="10" minlength="10" value="06-05-2020" class="pme-input-change-1" onfocus="pick_ret_date(this,'');" placeholder="dd-mm-yyyy" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" onkeyup="
         var v = this.value;
 
         if (v.match(/^\d{2}$/) !== null) {
