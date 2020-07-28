@@ -1500,3 +1500,8 @@ a.pnr-ssrs:active {
 	#av_fare select#Airline option:not(:checked) {
 		background-color: #fff;
 	} 
+
+	/* http://185.247.141.11/mantisbt/view.php?id=506 */
+	.body-background {
+		background-color:#00e1a0;
+	}
