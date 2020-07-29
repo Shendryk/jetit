@@ -1506,6 +1506,6 @@ a.pnr-ssrs:active {
 		background-color:#00e1a0;
 	}
 	/* http://185.247.141.11/mantisbt/view.php?id=506#c1033 */
-	.form-error {
+	.error-form {
 		color: #FF0000;
 	}
