@@ -1307,11 +1307,11 @@ color: #000;
 }
 
 /* Стили для PNR */
-
-.pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests, .pnr-ssr, .pnr-documents, .pnr-flight  {
+/* 31.07 http://185.247.141.11/mantisbt/view.php?id=502#c1020 */
+.pnr-number, .pnr-guests, .pnr-payment-info, .pnr-active-requests, .pnr-ssr, .pnr-documents, .pnr-flight, .pnr-notes  {
 
 	/* background-color: #B4D2FA;  */
-	/* margin: 10px 0 0 ; */
+	margin: 10px 0 0 ;
 	/* padding: 4px 0 2px 18px; */
 	padding: 0 0 0 18px;
 	/* border-radius: 3px; */
@@ -1340,6 +1340,13 @@ color: #000;
 	/* padding: 4px 0 2px 18px; */
 	padding: 0 0 0 18px;
 	background-image: url(images/shopping-basket.svg);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+/* 31.07.20 http://185.247.141.11/mantisbt/view.php?id=502#c1019 */
+.pnr-notes {
+	background-image: url(images/pnr-note.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
 }
@@ -1501,11 +1508,11 @@ a.pnr-ssrs:active {
 		background-color: #fff;
 	} 
 
-	/* http://185.247.141.11/mantisbt/view.php?id=506 */
+	/*28.07 http://185.247.141.11/mantisbt/view.php?id=506 */
 	.body-background {
 		background-color:#00e1a0;
 	}
-	/* http://185.247.141.11/mantisbt/view.php?id=506#c1033 */
+	/*29.07 http://185.247.141.11/mantisbt/view.php?id=506#c1033 */
 	.error-form {
 		color: #FF0000;
 	}
