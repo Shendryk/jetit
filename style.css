@@ -432,12 +432,14 @@ td.tab_2_on {
 
 td.td_tabul_2_2 {
 	 height: 20px;
-	 /* background: #B8C6F7; */
+	 /* 03.08.20 http://185.247.141.11/mantisbt/view.php?id=464#c1041 */
+	 display: none;
 }
 
 td.td_tabul_2_3 {
 	 height: 7px;
-	 /* background: #9FA9E5; */
+	 /* 03.08.20 http://185.247.141.11/mantisbt/view.php?id=464#c1041 */
+	 display: none;
 }
 
  td.td_table_3_1{
