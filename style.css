@@ -1518,3 +1518,12 @@ a.pnr-ssrs:active {
 	.error-form {
 		color: #FF0000;
 	}
+
+	.pme-navigation table#shedTable {
+		border: none;
+	}
+
+	
+	.pme-navigation table#shedTable tr td {
+		border: none;
+	}

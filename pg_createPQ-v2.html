@@ -246,6 +246,28 @@ function pick_ret_date(field,showDays) {
 	 <label>chd<input id="chd" name="chd" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1"></label>
 	 <label>inf<input id="inf" name="inf" type="text" size="1" maxlength="1" value="0" class="pme-input-change-1"></label>
 
+	 <!-- 06.08.20 http://185.247.141.11/mantisbt/view.php?id=470#c1023 -->
+<style>
+	#av_fare input.but_long_W {
+		border-radius: 3px;
+		border:none;
+    background-color: #0050ff;
+    box-shadow: 0 -2px #0139b1 inset;
+		transition: 0.2s;
+		color: #fff;
+	}
+
+	#av_fare input.but_long_W {
+    background-image: url(images/search-white.png);
+		padding-left: 20px;
+	}
+	#av_fare input.but_long_W:hover {
+		/* background: rgb(53, 167, 110); */
+		background-color:#0139b1;
+		cursor: pointer;
+	}
+}
+</style>
 	    <input type='submit' value='Search'  class="but_long_W" onclick='this.form.action="pg_farePQ.php"' />
 
 <label>Promo<input id="promo" name="promo" type="text" size="10" maxlength="30" value="" class="pme-input-change-1"></label>
