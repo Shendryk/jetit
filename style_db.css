@@ -936,6 +936,7 @@ color: #000000;
 font-size: 7pt; 
    /* border: 0px; */
 	margin: 0px;
+	/*06.08.20 http://185.247.141.11/mantisbt/view.php?id=503#c1021 */
 	border-radius: 3px;
 	border: 1px solid #6ddd99;
 }

@@ -441,7 +441,7 @@ window.onclick = function(event) {
 <table valign='top'><tr>
 <td class="pme-buttons" valign="middle" align="center">Antalya-Tel-aviv<BR>22-07-2020<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=22-07-2020&date_r=28-07-2020&seat=1'" class="pme-prev" name="PME_sys_navop" value="<" /> &nbsp23-07-2020 &nbsp<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=24-07-2020&date_r=28-07-2020&seat=1'" class="pme-next" name="PME_sys_navop" value=">" />24-07-2020</td><td class="pme-buttons" valign="middle" align="center">Tel-aviv-Antalya<BR>27-07-2020<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=23-07-2020&date_r=27-07-2020&seat=1'" class="pme-prev" name="PME_sys_navop" value="<" /> &nbsp28-07-2020 &nbsp<input type="button" onclick="location.href='pg_fare.php?from=AYT&to=TLV&date_d=23-07-2020&date_r=29-07-2020&seat=1'" class="pme-next" name="PME_sys_navop" value="<" />29-07-2020</td></tr>
 <tr class='pme-navigation'><td valign='top'>
-<table border="1" ><tr><td><input  type='radio' id='DFl' name='DFl' value='0' onchange='recalc_all()' /></td>
+<table border="1" id="shedTable"><tr><td><input  type='radio' id='DFl' name='DFl' value='0' onchange='recalc_all()' /></td>
 <td><abbr title="Antalya, Antalya International Airport(AYT) - Tel-aviv, Ben Gurion International Airport(TLV)">AYT TLV</abbr> 10:00 11:35 PC791&nbsp  
 <input id='D1sel0F' name='D1sel0F'   type='text' hidden value='AYTTLVPC7910723' />
 <SELECT id='D1sel0' name='D1sel0'  class='fare-input-change'  onchange='chng_select1("D",0)' >
@@ -841,7 +841,7 @@ window.onclick = function(event) {
 </table>
 <font color='red'> RED TIME! DATE IS DIFFERENT FROM YOUR REQUEST</font></td>
 <td valign='top'>
-<table border="1" ><tr><td><input  type='radio' id='RFl' name='RFl' value='0' onchange='recalc_all()' /></td>
+<table border="1" id="shedTable"><tr><td><input  type='radio' id='RFl' name='RFl' value='0' onchange='recalc_all()' /></td>
 <td><abbr title="Tel-aviv, Ben Gurion International Airport(TLV) - Antalya, Antalya International Airport(AYT)">TLV AYT</abbr> 07:45 09:20 PC788&nbsp  
 <input id='R1sel0F' name='R1sel0F'   type='text' hidden value='TLVAYTPC7880728' />
 <SELECT id='R1sel0' name='R1sel0'  class='fare-input-change'  onchange='chng_select1("R",0)' >

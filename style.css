@@ -1523,7 +1523,9 @@ a.pnr-ssrs:active {
 		border: none;
 	}
 
-	
 	.pme-navigation table#shedTable tr td {
 		border: none;
+		FONT-FAMILY: Tahoma, Arial, sans-serif;
 	}
+
+
