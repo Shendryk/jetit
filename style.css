@@ -761,10 +761,7 @@ form#av_fare {
 		display: inline-block;
 		/* 10.08.20 http://185.247.141.11/mantisbt/view.php?id=464#c1075 */
 		margin-left:15px;
-<<<<<<< HEAD
 		margin-top: 40px;
-=======
->>>>>>> 0ab9187ff3f847ec9fe9ee32da18a4137f24ba0a
 }
 
 form#av_fare input, form#av_fare select {
