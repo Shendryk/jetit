@@ -186,7 +186,13 @@ background-color: #B8C6F7;
 
 table.table_title {       
 		width: 100%;
-		 border: 0px;
+		 border: 0;
+}
+
+/* 14.08.20 http://185.247.141.11/mantisbt/view.php?id=504  */
+table.table_title tr td {       
+
+	 border: none;
 }
 /*
 
@@ -245,7 +251,8 @@ td.top_1 {
 	background-position:  bottom;
 	background-position: left;
 	text-align: left;
-	padding-left: 300px;
+	/* 14.08.20 http://185.247.141.11/mantisbt/view.php?id=504 */
+	padding-left: 200px;
 }
 
 
@@ -1537,4 +1544,63 @@ a.pnr-ssrs:active {
 }
 
 
+
+#shedTable tr.fare-header td {
+	background: #b8c7df;
+}
+
+.fare-icon-route {
+	padding-right: 2px;
+	border-right: solid 1px #fff;
+}
+
+.fare-icon-departure {
+
+	padding-right:5px;
+	border-right: solid 1px #fff;
+}
+
+.fare-icon-arrival {
+
+	padding-right:5px;
+	border-right: solid 1px #fff;
+}
+
+/* Выпадающие меню */
+
+.header-contacts .dropdown h3 {
+	margin: 5px 0 0 0;
+}
+
+.header-contacts .dropdown p {
+	margin: 7px 0 10px 0;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	min-width: 160px;
+	box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+	border: 3px solid #00e1a0;
+	box-sizing:border-box;
+	border-radius: 0 7px 7px 7px;
+	padding: 5px 10px;
+	z-index: 1;
+	text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover {
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+}
 
