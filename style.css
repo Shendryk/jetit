@@ -1560,6 +1560,11 @@ a.pnr-ssrs:active {
 	border-right: solid 1px #fff;
 }
 
+.fare-icon-number {
+	padding-right:10px;
+	border-right: solid 1px #fff;
+}
+
 .fare-icon-arrival {
 
 	padding-right:5px;
