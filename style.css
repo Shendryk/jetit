@@ -1569,7 +1569,7 @@ a.pnr-ssrs:active {
 /* Выпадающие меню */
 
 .header-contacts {
-	float:left;
+	float:right;
 }
 
 .header-contacts .dropdown h3 {
@@ -1622,14 +1622,15 @@ a.pnr-ssrs:active {
 
 
 .working-hours {
-	padding-left: 120px;
-	text-align:left;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
 }
 
-.working-hours div {
+/* .working-hours div {
 	float:left;
 	text-align:left;
-}
+} */
 
 .working-time {
 padding-left: 5px;
