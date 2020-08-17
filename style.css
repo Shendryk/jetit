@@ -1568,6 +1568,10 @@ a.pnr-ssrs:active {
 
 /* Выпадающие меню */
 
+.header-contacts {
+	float:left;
+}
+
 .header-contacts .dropdown h3 {
 	margin: 5px 0 0 0;
 }
@@ -1603,4 +1607,34 @@ a.pnr-ssrs:active {
 .dropdown:hover {
 	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
 }
+
+.button-contacts {
+	padding: 0 15px;
+	background-color: #00e1a0;
+	display: inline-block;
+}
+
+.dropdown {
+	background-color: #00e1a0;
+	box-shadow: 0 -3px #05c38c inset;
+	border-radius: 3px;
+}
+
+
+.working-hours {
+	padding-left: 120px;
+	text-align:left;
+}
+
+.working-hours div {
+	float:left;
+	text-align:left;
+}
+
+.working-time {
+padding-left: 5px;
+}
+
+
+
 

@@ -1,0 +1,292 @@
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>GSA Reservation system</title>
+<link href="style_db.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+@import url("style.css");
+-->
+</style>
+
+</head>
+<body>
+
+
+<TABLE cellpadding="0" cellspacing="0" class="table_title" border=1>
+<TR>
+<TD  class="top_1">
+ID:1/ADMIN/CMPT/MAIN/adminzza/</td><td class="top_1_1">
+
+<!-- Контакты начало -->
+<div class="header-contacts">
+<div class="dropdown">
+<p class="button-contacts">Контакты</p>
+<div class="dropdown-content">
+<h3 class="contact-phones">Телефоны:</h3>
+	<p><a href="tel:+380441234567">044 123 45 67</a><br>
+		<a href="tel:+380441234567">044 123 45 68</a></p>
+		<h3 class="contact-skype">Skype:</h3>
+	<p><a href="skype:Skype_User">Skype_User</a></p>
+
+	
+	<h3 class="contact-email">Email:</h3>
+	<p><a href="mailto:hd@jetit.com.ua">hd@jetit.com.ua</a></p>
+	<h3 class="contact-work">Время работы:</h3>
+	<p>Пн - Пт:	09:00-18:00<br>
+	Сб - Вс: 10:00-14:00
+	</p>
+</div>
+</div>
+</div>
+<!-- Контакты конец -->
+
+
+</td>
+
+<td class="top_1_1"><A HREF='lt_login.php'><IMG src='images/exit.png'  border=0 ></A> </td>
+</TR>
+</TABLE>
+
+
+
+
+
+
+<script language="Javascript">
+
+function start_time() {
+setInterval("postRequest()", 1000);
+}
+
+		function postRequest() {
+
+var xmlHttp;
+		var strURL =  "ajax.tab.php";
+		if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+		 var xmlHttp = new XMLHttpRequest();
+		 } else if (window.ActiveXObject) { // IE
+			 var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+	xmlHttp.open('GET', strURL, true);
+	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xmlHttp.onreadystatechange = function() {
+
+			if (xmlHttp.readyState == 4) {
+	xmlDoc = xmlHttp.responseXML;
+							print_din_tab(xmlDoc);
+			}
+	}
+	xmlHttp.send(strURL);
+}
+</script>
+
+<table cellpadding="0" cellspacing="0" class="table_top100">
+<tr>
+<td class="td_tabul_1">
+<TABLE cellPadding=0 cellspacing=0 border=0>
+<TR>
+<td class=tab_1_on >Users</td>
+<td class=tab_1_off   onclick="location.href='pg_airlines.php'">Airlines</td>
+<td class=tab_1_off   onclick="location.href='pg_pay_new.php'">Payments</td>
+<td class=tab_1_off   onclick="location.href='pg_deposits.php'">Finances</td>
+<td class=tab_1_off   onclick="location.href='pg_rate.php'">ROE</td>
+<td class=tab_1_off   onclick="location.href='pg_user_marg.php'">Markups</td>
+<td class=tab_1_off   onclick="location.href='pg_pnr.php'">Reports</td>
+<td class=tab_1_off   onclick="location.href='lt_user_types.php'">Lists</td>
+<td class=tab_1_off   onclick="location.href='pg_hist.php'">Investigation</td>
+</TR></TABLE>
+</td>
+</tr>
+</table>
+
+<table width="100" border="0" cellpadding="0" cellspacing="0" class="table_top">
+<tr>
+<td class="td_tabul_2_1">
+<TABLE cellPadding=0 cellspacing=0 border=0><TR>
+<td class=tab_2_off onclick="location.href='lt_users.php'">Agencies</td>
+<td class=tab_2_on  >Locations</td>
+<td class=tab_2_off onclick="location.href='lt_terminals.php'">Terminals</td>
+</TR></TABLE>
+</td>
+</tr>
+<tr>
+<td class="td_tabul_2_2">&nbsp;</td>
+</tr>
+<tr>
+<td class="td_tabul_2_3">&nbsp;</td>
+</tr>
+
+
+
+</table>
+
+<script>
+function print_din_tab(xmlDoc){
+
+}
+</script>
+<script>
+function openurl(myurl)
+{
+if (document.getElementsByClassName("pme-form-view").length!=0) {
+ var id = mSysRec;
+} else { 
+ var id = document.querySelector('input[name="PME_sys_rec"]:checked').value;
+}
+var wrk_url=myurl+"?sys_rec="+id;
+window.location.href =  wrk_url;
+}
+</script>
+<form class="pme-form" method="post" action="pg_locations.php" name="PME_sys_form">
+<input type="hidden" name="PME_sys_sfn[0]" value="-0" />
+<input type="hidden" name="PME_sys_fl" value="0" />
+<table summary="navigation" class="pme-navigation">
+<tr class="pme-navigation">
+<td class="pme-buttons">
+<input disabled type="submit" class="pme-first" name="PME_sys_disablednavop" value="<<" title="<<" />
+<input disabled type="submit" class="pme-prev" name="PME_sys_disablednavop" value="<" title="<" />
+<input type="submit" class="pme-add" name="PME_sys_operation" value="Add New" title="Add New" />
+<input type="submit" class="pme-view" name="PME_sys_operation" value="View" title="View" />
+<input type="submit" class="pme-change" name="PME_sys_operation" value="Change" title="Change" />
+<input type="submit" class="pme-copy" name="PME_sys_operation" value="Copy" title="Copy" />
+<input type="submit" class="pme-delete" name="PME_sys_operation" value="Delete" title="Delete" />
+<input type="submit" class="pme-next" name="PME_sys_navop" value=">" title=">" />
+<input type="submit" class="pme-last" name="PME_sys_navop" value=">>" title=">>" />
+<input type="submit" class="pme-goto" name="PME_sys_navop" value="Go to" title="Go to" />
+<select class="pme-goto" name="PME_sys_navfmup" onchange="return this.form.submit();">
+<option value="0" selected="selected">1</option>
+<option value="15">2</option>
+</select>
+</td>
+<td class="pme-stats">
+Page:&nbsp;1&nbsp;of&nbsp;2&nbsp; Records:&nbsp;26</td></tr></table>
+<hr size="1" class="pme-hr" />
+<input type="hidden" name="PME_sys_qfn" value="" />
+<input type="hidden" name="PME_sys_fm" value="0" />
+<table class="pme-main" summary="pg_locations">
+<tr class="pme-header">
+<th class="pme-header" colspan="1"><input type="submit" class="pme-search" name="PME_sys_sw" value="v" title="v" /></th>
+<th class="pme-header"><a class="pme-header" href="pg_locations.php?PME_sys_fm=0&amp;PME_sys_fl=0&amp;PME_sys_qfn=&amp;PME_sys_sfn[0]=0&amp;PME_sys_sfn[1]=-0">ID</a></th>
+<th class="pme-header"><a class="pme-header" href="pg_locations.php?PME_sys_fm=0&amp;PME_sys_fl=0&amp;PME_sys_qfn=&amp;PME_sys_sfn[0]=1&amp;PME_sys_sfn[1]=-0">NAME</a></th>
+<th class="pme-header"><a class="pme-header" href="pg_locations.php?PME_sys_fm=0&amp;PME_sys_fl=0&amp;PME_sys_qfn=&amp;PME_sys_sfn[0]=3&amp;PME_sys_sfn[1]=-0">AGENCY</a></th>
+<th class="pme-header"><a class="pme-header" href="pg_locations.php?PME_sys_fm=0&amp;PME_sys_fl=0&amp;PME_sys_qfn=&amp;PME_sys_sfn[0]=4&amp;PME_sys_sfn[1]=-0">COMMENTS</a></th>
+</tr>
+<tr class="pme-sortinfo">
+<td class="pme-sortinfo" colspan="1"><a class="pme-sortinfo" href="pg_locations.php?PME_sys_fl=0&amp;PME_sys_fm=0&amp;PME_sys_qfn=">X</a></td>
+<td class="pme-sortinfo" colspan="4">Sorted By: ID descending</td></tr>
+<tr class="pme-row-0">
+<td class="pme-navigation-0"><input class="pme-navigation-0" type="radio" name="PME_sys_rec" value="32" checked /></td>
+<td class="pme-cell-0">32</td>
+<td class="pme-cell-0"><a href="lt_terminals.php?O=__NO AGENCY__&L=_NO_LOCAT_">_NO_LOCAT_</a></td>
+<td class="pme-cell-0">__NO AGENCY__</td>
+<td class="pme-cell-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-1">
+<td class="pme-navigation-1"><input class="pme-navigation-1" type="radio" name="PME_sys_rec" value="31" /></td>
+<td class="pme-cell-1">31</td>
+<td class="pme-cell-1"><a href="lt_terminals.php?O=Demianyk S V&L=dem">dem</a></td>
+<td class="pme-cell-1">Demianyk S V</td>
+<td class="pme-cell-1">dem</td>
+</tr>
+<tr class="pme-row-0">
+<td class="pme-navigation-0"><input class="pme-navigation-0" type="radio" name="PME_sys_rec" value="30" /></td>
+<td class="pme-cell-0">30</td>
+<td class="pme-cell-0"><a href="lt_terminals.php?O=_NO CONTRACT&L=DIRECT">DIRECT</a></td>
+<td class="pme-cell-0">_NO CONTRACT</td>
+<td class="pme-cell-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-1">
+<td class="pme-navigation-1"><input class="pme-navigation-1" type="radio" name="PME_sys_rec" value="29" /></td>
+<td class="pme-cell-1">29</td>
+<td class="pme-cell-1"><a href="lt_terminals.php?O=Test travel&L=Lviv">Lviv</a></td>
+<td class="pme-cell-1">Test travel</td>
+<td class="pme-cell-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-0">
+<td class="pme-navigation-0"><input class="pme-navigation-0" type="radio" name="PME_sys_rec" value="28" /></td>
+<td class="pme-cell-0">28</td>
+<td class="pme-cell-0"><a href="lt_terminals.php?O=AVIALIGA&L=VIDEOTOUR">VIDEOTOUR</a></td>
+<td class="pme-cell-0">AVIALIGA</td>
+<td class="pme-cell-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-1">
+<td class="pme-navigation-1"><input class="pme-navigation-1" type="radio" name="PME_sys_rec" value="27" /></td>
+<td class="pme-cell-1">27</td>
+<td class="pme-cell-1"><a href="lt_terminals.php?O=AVIALIGA&L=EUROTOUR">EUROTOUR</a></td>
+<td class="pme-cell-1">AVIALIGA</td>
+<td class="pme-cell-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-0">
+<td class="pme-navigation-0"><input class="pme-navigation-0" type="radio" name="PME_sys_rec" value="26" /></td>
+<td class="pme-cell-0">26</td>
+<td class="pme-cell-0"><a href="lt_terminals.php?O=AVIALIGA&L=NOTOZ">NOTOZ</a></td>
+<td class="pme-cell-0">AVIALIGA</td>
+<td class="pme-cell-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-1">
+<td class="pme-navigation-1"><input class="pme-navigation-1" type="radio" name="PME_sys_rec" value="25" /></td>
+<td class="pme-cell-1">25</td>
+<td class="pme-cell-1">&nbsp;</td>
+<td class="pme-cell-1">24</td>
+<td class="pme-cell-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-0">
+<td class="pme-navigation-0"><input class="pme-navigation-0" type="radio" name="PME_sys_rec" value="24" /></td>
+<td class="pme-cell-0">24</td>
+<td class="pme-cell-0"><a href="lt_terminals.php?O=pupkin travel&L=pupkin ODS">pupkin ODS</a></td>
+<td class="pme-cell-0">pupkin travel</td>
+<td class="pme-cell-0">ODS branch</td>
+</tr>
+<tr class="pme-row-1">
+<td class="pme-navigation-1"><input class="pme-navigation-1" type="radio" name="PME_sys_rec" value="21" /></td>
+<td class="pme-cell-1">21</td>
+<td class="pme-cell-1"><a href="lt_terminals.php?O=TG travel&L=TG loc">TG loc</a></td>
+<td class="pme-cell-1">TG travel</td>
+<td class="pme-cell-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-0">
+<td class="pme-navigation-0"><input class="pme-navigation-0" type="radio" name="PME_sys_rec" value="20" /></td>
+<td class="pme-cell-0">20</td>
+<td class="pme-cell-0"><a href="lt_terminals.php?O=VALENTIN&L=VALENTIN">VALENTIN</a></td>
+<td class="pme-cell-0">VALENTIN</td>
+<td class="pme-cell-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-1">
+<td class="pme-navigation-1"><input class="pme-navigation-1" type="radio" name="PME_sys_rec" value="19" /></td>
+<td class="pme-cell-1">19</td>
+<td class="pme-cell-1"><a href="lt_terminals.php?O=khomenko&L=Khom HRK">Khom HRK</a></td>
+<td class="pme-cell-1">khomenko</td>
+<td class="pme-cell-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-0">
+<td class="pme-navigation-0"><input class="pme-navigation-0" type="radio" name="PME_sys_rec" value="17" /></td>
+<td class="pme-cell-0">17</td>
+<td class="pme-cell-0"><a href="lt_terminals.php?O=B3&L=B33">B33</a></td>
+<td class="pme-cell-0">B3</td>
+<td class="pme-cell-0">&nbsp;</td>
+</tr>
+<tr class="pme-row-1">
+<td class="pme-navigation-1"><input class="pme-navigation-1" type="radio" name="PME_sys_rec" value="14" /></td>
+<td class="pme-cell-1">14</td>
+<td class="pme-cell-1"><a href="lt_terminals.php?O=jet it&L=jet it iev">jet it iev</a></td>
+<td class="pme-cell-1">jet it</td>
+<td class="pme-cell-1">&nbsp;</td>
+</tr>
+<tr class="pme-row-0">
+<td class="pme-navigation-0"><input class="pme-navigation-0" type="radio" name="PME_sys_rec" value="13" /></td>
+<td class="pme-cell-0">13</td>
+<td class="pme-cell-0"><a href="lt_terminals.php?O=jet it&L=jet it hrk">jet it hrk</a></td>
+<td class="pme-cell-0">jet it</td>
+<td class="pme-cell-0">&nbsp;</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
