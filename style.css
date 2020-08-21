@@ -1037,75 +1037,8 @@ form#av_fare input#owrt>label {
 /* Таблица */
 
 
-
-.pme-main a {
-	color: #2a7ab8;
-	color: #0050ff;
-	text-decoration: none;
-	}
-	
-	.pme-main tr:hover {
-		background-color: rgb(224, 224, 224);
-	}
-	
-	tr.pme-header th{
-		border: 1px solid #d9d9d9;
-		text-align: left;
-		padding: 5px 3px;
-	}
-	
-	tr.pme-header th a::after{
-		content: ""; 
-		display: inline-block;
-		width: 10px;
-		height: 10px;
-		/* background-color: #000; */
-		background-image: url(images/arrow.svg);
-		background-repeat: no-repeat;
-		background-position-y: bottom;
-		color: #0050ff; 
-		margin-left: 5px;
-		padding-left: 2px;
-	}
-	
-	.pme-main tr {
-		border-top: 1px solid #d9d9d9;
-		border-bottom: 1px solid #d9d9d9;
-	}
-	
-	.pme-main tr td {
-		border-left: 1px solid #d9d9d9;
-		border-right: 1px solid #d9d9d9;
-	}
-	
-	.pme-main tbody {
-		border: 2px solid #d9d9d9;
-		/* box-shadow: 0px 2px 4px #d1d1d1; */
-	}
-	
-	input.pme-filter {
-		width: 90%;
-	}
-	
-	tr.pme-filter:hover {
-		background-color: inherit;
-	}
-	
-	tr.pme-navigation table td {
-		padding: 3px;
-	}
-	
-	tr.pme-navigation table select {
-		margin: 3px 0;
-		padding: 3px;
-	}
-	
-	.pme-navigation tr td {
-		margin: 10px;
-	}
-	
 	table.article {
-		max-width: 824px;
+		/* max-width: 824px; */
 	}
 	
 	
@@ -1137,7 +1070,7 @@ form#av_fare input#owrt>label {
 	} */
 
 	/* popup Окно */
-
+/* 21.08.20 http://185.247.141.11/mantisbt/view.php?id=464#c1112 */
 .w3-display-topright {
 	position: absolute;
 	right: 0;
@@ -1146,32 +1079,27 @@ form#av_fare input#owrt>label {
 	font-size: 25px;
 }
 
+.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+.w3-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:400px}
+.w3-container:after,.w3-container:before {content:"";display:table;clear:both}
 .w3-container {
+	/* padding:0.01em 16px; */
 	padding: 15px;
 }
-
 .w3-container table {
 	border: 1px solid #dadada;
 	width: 100%;
 }
-
 .w3-container table tr:nth-child(odd)  {
 	background-color: #f8f8f8;
 	}
-
 .w3-container table tr:first-child {
-background-color: #00e1a0;
-background-color: #B4D2FA;
-
-border-right:1px solid #00e1a0;
+	background-color: #00e1a0;
+	background-color: #B4D2FA;
+	border-right:1px solid #00e1a0;
 }
-
 .w3-container table tr td{
 	padding: 5px;
-	}
-.w3-container table tr td:first-child {
-	/* background-color: #00e1a0; */
-	/* border-right:1px solid #00e1a0; */
 	}
 
 	/* pnp System SSRs */
@@ -1192,32 +1120,18 @@ border-right:1px solid #00e1a0;
 
 	/* Стили для оформления fare */
 
-.pme-navigation table {
+table#shedTable {
 	border-spacing: 1px 7px;
 	margin: 0 5px;
-	/* border: 2px solid #a4a4a4; */
-	/* border-spacing: 5px; */
-	/* border-collapse: collapse; */
 }
-
-.pme-navigation table tr td:first-child {
+table#shedTable tr td:first-child {
 	border-radius:5px 0 0 5px;
-	/* border-left: 1px solid #d0d0d0; */
 }
-
-.pme-navigation table tr td:last-child {
+table#shedTable tr td:last-child {
 	border-radius: 0 5px 5px 0;
-	/* border: 1px solid #a4a4a4;; */
-	/* border-right: 1px solid #d0d0d0; */
 }
-
-
-.pme-navigation table tr td {
-	background-color: #bddeee;
+table#shedTable tr td {
 	background-color: #d3e1f3
-	/* border-top: 1px solid #d0d0d0; */
-	/* border-bottom: 1px solid #d0d0d0;  */
-	/* background-color: #00e1a0;  */
 }
 
 .flight-oneway {
@@ -1529,11 +1443,11 @@ a.pnr-ssrs:active {
 		color: #FF0000;
 	}
 
-	.pme-navigation table#shedTable {
+	table#shedTable {
 		border: none;
 	}
 
-	.pme-navigation table#shedTable tr td {
+	table#shedTable tr td {
 		border: none;
 		FONT-FAMILY: Tahoma, Arial, sans-serif;
 	}
@@ -1542,8 +1456,6 @@ a.pnr-ssrs:active {
 	.pnr-wrapper, .content {
 	margin-left: 15px;
 }
-
-
 
 #shedTable tr.fare-header td {
 	background: #b8c7df;
@@ -1631,7 +1543,3 @@ a.pnr-ssrs:active {
 	vertical-align: middle;
 	padding-left: 5px;
 }
-
-
-
-

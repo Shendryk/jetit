@@ -12,13 +12,6 @@
 .sel_cnl {background:#FF0000;}
 .sel_tkt {background:#b6e992;}
 
-.w3-display-topright{position:absolute;right:0;top:0;cursor:pointer;}
-.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
-.w3-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:400px}
-.w3-container:after,.w3-container:before {content:"";display:table;clear:both}
-.w3-container {padding:0.01em 16px}
-
-
 /*
 #FF0000  -red
 #008000  -green 
@@ -112,9 +105,33 @@ table.pme-main-change input:focus   {
 	border: 1px solid #0050ff;
 }
 
+/*21.08.20 http://185.247.141.11/mantisbt/view.php?id=464#c1112 */
+
 .pme-main-change textarea:focus  {
 	border: 1px solid #0050ff;
 }
+.pme-main tbody {
+	border: 2px solid #d9d9d9;
+}
+.pme-main a {
+	color: #2a7ab8;
+	color: #0050ff;
+	text-decoration: none;
+}
+.pme-main tr {
+	border-top: 1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
+}
+.pme-main tr td {
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+}
+.pme-main tr:hover {
+	background-color: rgb(224, 224, 224);
+}
+
+
+
 
 th{ 
 /* this border inherited below */
@@ -136,6 +153,28 @@ FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
 padding-left: 3px;
 padding-right: 2px; */
 }
+
+/* 21.08.20 http://185.247.141.11/mantisbt/view.php?id=464#c1112 */
+tr.pme-header th{
+	border: 1px solid #d9d9d9;
+	text-align: left;
+	padding: 5px 3px;
+}
+tr.pme-header th a::after{
+	content: ""; 
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	/* background-color: #000; */
+	background-image: url(images/arrow.svg);
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+	color: #0050ff; 
+	margin-left: 5px;
+	padding-left: 2px;
+}
+
+
 /* Row 1, table.pme-main Clear/Hide/Search INPUT's */
 .pme-hide {
 /* background-color: #9DC6FF; */
@@ -261,6 +300,14 @@ font-size:8pt;
 /* background-color: #cccccc; */
 color:#000000;
 }
+/* 21.08.20 http://185.247.141.11/mantisbt/view.php?id=464#c1112 */
+tr.pme-filter:hover {
+	background-color: inherit;
+}
+
+
+
+
 input.pme-filter 
 {
 background-color:#ffffff;
@@ -269,6 +316,7 @@ FONT-FAMILY: 'Euclid Circular B', Tahoma, Arial, sans-serif;
  font-size: 8pt;
 /* border:1px solid #336699; */
 border: 1px solid #9f9f9f;
+width: 90%;
 }
 input.pme-filter:focus {
 	border: 1px solid #0050ff;
@@ -308,6 +356,23 @@ background-position: top; */
 text-align:  center;
 color:#000000;
 }
+
+/* 21.08.20 http://185.247.141.11/mantisbt/view.php?id=464#c1112 */
+
+tr.pme-navigation table td {
+	padding: 3px;
+}
+
+tr.pme-navigation table select {
+	margin: 3px 0;
+	padding: 3px;
+}
+
+.pme-navigation tr td {
+	margin: 10px;
+}
+
+
 
 /* table.pme-navigation Prev/Add/Next... buttons */
 input.pme-first:enabled {
