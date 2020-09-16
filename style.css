@@ -8,6 +8,7 @@
 			url('font/EuclidCircularB-Light.ttf') format('truetype');
 	font-weight: 300;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -20,6 +21,7 @@
 			url('font/EuclidCircularB-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -32,6 +34,7 @@
 			url('font/EuclidCircularB-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
+	font-display: swap;
 } 
 
 * {
@@ -252,7 +255,7 @@ td.top_1 {
 	background-position: left;
 	text-align: left;
 	/* 14.08.20 http://185.247.141.11/mantisbt/view.php?id=504 */
-	padding-left: 200px;
+	padding-left: 150px;
 }
 
 
@@ -841,7 +844,8 @@ form#av_fare input#owrt>label {
 	font-weight: 300;
     /* background: #0050ff; */
   border-radius: 15px;
-  max-width: 360px;
+	max-width: 360px;
+	
   margin: 0 auto;
   padding: 20px 45px 45px 45px;
 /*   text-align: center; */
