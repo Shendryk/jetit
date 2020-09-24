@@ -1541,9 +1541,26 @@ a.pnr-ssrs:active {
 	display: inline-block;
 }
 
+/*24.09.20 http://185.247.141.11/mantisbt/view.php?id=504#c1151 */
 .working-hours {
 	display: inline-block;
-	text-align: center;
+	text-align: justify;
 	vertical-align: middle;
 	padding-left: 5px;
+	font-family:  'Euclid Circular B', Tahoma, Arial, sans-serif;
+	width: 135px;
 }
+
+.working-hours .work-day {
+	text-align: left;
+	display: table-cell;
+	width: 60px;
+}
+
+.working-hours .work-hours {
+	text-align: justify;
+	display: table-cell;
+	width: 75px;
+	font-family:  Tahoma, Arial, sans-serif;
+}
+
