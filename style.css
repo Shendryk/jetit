@@ -1548,7 +1548,7 @@ a.pnr-ssrs:active {
 	vertical-align: middle;
 	padding-left: 5px;
 	font-family:  'Euclid Circular B', Tahoma, Arial, sans-serif;
-	width: 135px;
+	width: 140px;
 }
 
 .working-hours .work-day {
@@ -1560,7 +1560,7 @@ a.pnr-ssrs:active {
 .working-hours .work-hours {
 	text-align: justify;
 	display: table-cell;
-	width: 75px;
+	width: 80px;
 	font-family:  Tahoma, Arial, sans-serif;
 }
 
