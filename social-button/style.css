@@ -1576,18 +1576,22 @@ a.pnr-ssrs:active {
 	font-family:  Tahoma, Arial, sans-serif;
 }
 
-/* 23.08.2022 */
+/* 02.09.2022 */
+
+.dropdown-content {
+	min-width: 155px;
+}
 
 .icon-social {
-	width: 30px;
-	height: 30px;
+	width: 28px;
+	height: 28px;
 	margin-top: 5px;
 	transition: 0.2s all;
 }
 
 .icon-social:hover {
-	width: 30px;
-	height: 30px;
+	width: 28px;
+	height: 28px;
 	margin-top: 0;
 }
 
@@ -1606,4 +1610,8 @@ a.pnr-ssrs:active {
 .social-container .social {
 	margin-right: 4px;
 	margin-top: 4px;
+}
+
+.social-container .icon-social {
+	border-radius: 3px;
 }
