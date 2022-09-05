@@ -1615,3 +1615,13 @@ a.pnr-ssrs:active {
 .social-container .icon-social {
 	border-radius: 3px;
 }
+
+/* 05.09.2022 */
+
+.working-hours {
+	width: 190px;
+  }
+
+.working-hours .work-hours {
+  width: 120px;
+}
