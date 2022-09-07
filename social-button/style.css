@@ -1576,22 +1576,22 @@ a.pnr-ssrs:active {
 	font-family:  Tahoma, Arial, sans-serif;
 }
 
-/* 02.09.2022 */
+/* 07.09.2022 */
 
 .dropdown-content {
-	min-width: 155px;
+	min-width: 165px;
 }
 
 .icon-social {
-	width: 28px;
-	height: 28px;
+	width: 30px;
+	height: 30px;
 	margin-top: 5px;
 	transition: 0.2s all;
 }
 
 .icon-social:hover {
-	width: 28px;
-	height: 28px;
+	width: 30px;
+	height: 30px;
 	margin-top: 0;
 }
 
