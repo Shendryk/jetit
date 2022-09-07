@@ -1583,15 +1583,15 @@ a.pnr-ssrs:active {
 }
 
 .icon-social {
-	width: 28px;
-	height: 28px;
+	width: 30px;
+	height: 30px;
 	margin-top: 5px;
 	transition: 0.2s all;
 }
 
 .icon-social:hover {
-	width: 28px;
-	height: 28px;
+	width: 30px;
+	height: 30px;
 	margin-top: 0;
 }
 
